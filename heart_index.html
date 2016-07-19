@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" style="height:100%">
+	<head>
+		<title>Silo6_heart</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				font-family: Monospace;
+				background-color: #000;
+				color: #fff;
+				margin: 0px;
+				overflow: hidden;
+			}
+		</style>
+		<link rel="stylesheet" href="styles/my_style.css">
+		<script src="js/three.min.js"></script>
+		<script src="js/zinc_threejs_control.js"></script>
+		<script src="js/zinc_3js_renderer.js"></script>
+	</head>
+	
+	
+	<body style="height:100%;background-color:black;">
+	
+
+	<div id="main_page" class="heartpage">
+		<div id="header" class="closed">
+			<div id="headerTitleHeaderBackround" class="closed">
+					<font size=10>INFO PANEL (normal)</font>
+			</div>
+			<div id="infoButton">
+				<img src="images/information.png" alt="information" style="height:100%" onclick="infoClicked()">
+			</div>
+			<div id="back">
+				<img src="images/back.png" alt="back" style="height:100%">
+			</div>
+			<div id="home">
+				<img src="images/home.png" alt="home" style="height:100%" onclick="homeClicked()">
+			</div>	
+		</div>
+		
+		<div id="myRenderer">
+		</div>
+
+
+		<div id="more" class="closed">
+			<img src="images/more.png" alt="more" style="height:40%;">
+		</div>
+		<div id="footInformation" class="closed">
+			<div id="footRateLabel">
+				<font size=6>Heart Rate</font>
+			</div>
+			<div id="footRate">
+				<input id="speed_slider" type="range" min="0" max="3000" value ="500" step="1" oninput="updateSlider(this.value)" style="height: 64px;"/>
+			</div>
+			<div id="footECG">
+				ECG Here
+			</div>
+
+			<div id="footLVP">
+				LVP Here
+			</div>
+		</div>
+		<div id="footMore" class="open" onclick="footMoreClicked()">
+			<div style="position:absolute;left:47%">
+				<img src="images/more.png" alt="more" style="height:100%;">
+			</div>
+		</div>	
+	</div>
+	
+	<script>
+	
+		var container = document.getElementById("myRenderer");
+	
+		var zincRenderer = new Zinc.Renderer(container, window);
+		Zinc.defaultMaterialColor = 0xFFFF9C
+		zincRenderer.initialiseVisualisation();
+		zincRenderer.getThreeJSRenderer().setClearColor( 0x000000, 1);
+		loadMyModel("deforming_heart");
+		zincRenderer.animate();
+		document.getElementById("speed_slider").value = 500;
+		
+		function infoClicked() {
+			document.getElementById('headerTitleHeaderBackround').className = 'open';
+		}
+		
+		function homeClicked() {
+			document.getElementById('header').className = 'closed';
+			document.getElementById('footMore').className = 'open';
+			document.getElementById('footInformation').className = 'closed';
+			document.getElementById('more').className = 'closed';
+			document.getElementById('headerTitleHeaderBackround').className = 'closed';
+		}
+		
+		function footMoreClicked() {
+			document.getElementById('header').className = 'open';
+			document.getElementById('footMore').className = 'closed';
+			document.getElementById('footInformation').className = 'open';
+			document.getElementById('more').className = 'open';
+		}
+		
+		function loadMyModel(model_name) {
+			var scene = zincRenderer.getSceneByName(model_name);
+			if (scene == undefined) {
+				scene = zincRenderer.createScene(model_name);
+				scene.loadFromViewURL("models/"+model_name);
+				zincRenderer.setCurrentScene(scene);
+				scene.viewAll();
+			}
+		}
+		
+		function resetView()	{
+			zincRenderer.viewAll()
+		}
+		
+		function updateSlider(newValue)	{
+			zincRenderer.setPlayRate(newValue);
+		}
+
+	</script>
+	
+	
+	
+
+	</body>
+</html>

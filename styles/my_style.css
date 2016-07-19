@@ -1,0 +1,144 @@
+div.open {
+	display:block
+}
+
+div.closed {
+	display:none
+}
+
+div#heartpage {
+	background-color:#000000;
+	height:100%;
+	width:100%
+}
+
+div#header {
+	background-color:#000000;
+	z-index:4;
+	top:0%;
+	width:100%;
+	height: 11%;
+	position: absolute;
+}
+
+div#headerTitleHeaderBackround{
+	background-color:#555555;
+	text-align:center;
+	z-index:4;
+	top:0%;
+	width:100%;
+	height: 100%;
+	position: absolute;
+}
+
+div#infoButton {
+text-align: right;
+position: absolute;
+height:95%;
+width:9%;
+top:1%;
+right:3%;
+margin: auto;
+z-index:10
+}
+
+div#back, div#more, div#home {
+ text-align: left;
+ z-index: 10;
+ margin: auto;
+ position: absolute;
+}
+
+div#back {
+ float: left;
+ height:95%;
+ width:7%;
+ max-width:7%;
+ top:1%;
+ left:2%;
+}
+
+div#home {
+ float: left;
+ height:95%;
+ width:7%;
+ max-width:7%;
+ top:1%;
+ left:12%;
+}
+
+div#more {
+ left: 3%;
+ float: left;
+ width: 5%;
+ max-height: 5%;
+ top:75%
+}
+
+
+div#footInformation {
+	text-align:center;
+	background-color:#555555;
+	z-index:1;
+	top:85%;
+	width:100%;
+	height: 15%;
+	position: absolute;
+}
+
+div#footRateLabel{
+	text-align:center;
+	background-color:#555555;
+	z-index:3;
+	left:3%;
+	width:10%;
+	top:50%;
+	height: 100%;
+	position: absolute;
+}
+
+div#footRate{
+	background-color:#555555;
+	z-index:3;
+	left:5%;
+	width:10%;
+	top:10%;
+	height: 40%;
+	position: absolute;
+}
+
+div#footECG {
+	background-color:#888888;
+	z-index:3;
+	left:25%;
+	width:20%;
+	height: 100%;
+	position: absolute;
+}
+
+div#footLVP {
+	background-color:#888888;
+	z-index:3;
+	left:55%;
+	width:20%;
+	height: 100%;
+	position: absolute;
+}
+
+div#myRenderer{
+	text-align:center;
+	z-index:0;
+	left:0%;
+	width:100%;
+	height: 100%;
+	position: absolute;
+}
+
+div#footMore {
+	background-color:#555555;
+	z-index:1;
+	top:93%;
+	width:100%;
+	height: 7%;
+	position: absolute;
+}
