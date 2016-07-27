@@ -17,10 +17,11 @@
 		<script src="js/three.min.js"></script>
 		<script src="js/zinc_threejs_control.js"></script>
 		<script src="js/zinc_3js_renderer.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	</head>
 	
 	
-	<body style="height:100%;background-color:black;">
+	<body style="height:100%;">
 	
 
 	<div id="main_page" class="heartpage">
@@ -28,21 +29,17 @@
 			<div id="headerTitleHeaderBackround" class="closed">
 					<font size=10>INFO PANEL (normal)</font>
 			</div>
-			<div id="infoButton">
+			<div id="infoButton">				
 				<img src="images/information.png" alt="information" style="height:100%" onclick="infoClicked()">
 			</div>
 			<div id="back">
-				<img src="images/back.png" alt="back" style="height:100%">
+				<img src="images/back.png" alt="back" style="height:100%" onclick="backClicked()">
 			</div>
 			<div id="home">
 				<img src="images/home.png" alt="home" style="height:100%" onclick="homeClicked()">
 			</div>	
 		</div>
 		
-		<div id="myRenderer">
-		</div>
-
-
 		<div id="more" class="closed">
 			<img src="images/more.png" alt="more" style="height:40%;">
 		</div>
@@ -51,7 +48,7 @@
 				<font size=6>Heart Rate</font>
 			</div>
 			<div id="footRate">
-				<input id="speed_slider" type="range" min="0" max="3000" value ="500" step="1" oninput="updateSlider(this.value)" style="height: 64px;"/>
+				<input id="speed_slider" type="range" min="0" max="5000" value ="3000" step="1" oninput="updateSlider(this.value)" style="height: 64px;"/>
 			</div>
 			<div id="footECG">
 				ECG Here
@@ -65,23 +62,29 @@
 			<div style="position:absolute;left:47%">
 				<img src="images/more.png" alt="more" style="height:100%;">
 			</div>
+		</div>
+
+		<div id="myRenderer">
 		</div>	
 	</div>
 	
 	<script>
-	
-		var container = document.getElementById("myRenderer");
-	
+		var container = document.getElementById('myRenderer')
+		<!--var container = document.createElement('myRenderer')-->;
 		var zincRenderer = new Zinc.Renderer(container, window);
 		Zinc.defaultMaterialColor = 0xFFFF9C
 		zincRenderer.initialiseVisualisation();
-		zincRenderer.getThreeJSRenderer().setClearColor( 0x000000, 1);
+		zincRenderer.getThreeJSRenderer().setClearColor( 0xffffff, 0);
 		loadMyModel("deforming_heart");
 		zincRenderer.animate();
-		document.getElementById("speed_slider").value = 500;
+		document.getElementById("speed_slider").value = 3000;
 		
 		function infoClicked() {
-			document.getElementById('headerTitleHeaderBackround').className = 'open';
+			$('#headerTitleHeaderBackround').slideToggle();
+		}
+		
+		function backClicked() { 
+			document.getElementById('headerTitleHeaderBackround').className = 'closed';
 		}
 		
 		function homeClicked() {
@@ -103,7 +106,7 @@
 			var scene = zincRenderer.getSceneByName(model_name);
 			if (scene == undefined) {
 				scene = zincRenderer.createScene(model_name);
-				scene.loadFromViewURL("models/"+model_name);
+				scene.loadFromViewURL("http://130.216.208.95:8000/models/"+model_name);
 				zincRenderer.setCurrentScene(scene);
 				scene.viewAll();
 			}
