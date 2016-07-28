@@ -14,16 +14,20 @@
 			}
 		</style>
 		<link rel="stylesheet" href="styles/my_style.css">
+		<link rel="stylesheet" href="styles/circular_slider.css">
+		<link rel="stylesheet" href="styles/circular_menu.css">
+		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<script src="js/three.min.js"></script>
 		<script src="js/zinc_threejs_control.js"></script>
 		<script src="js/zinc_3js_renderer.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+		<script src="js/jquery.wheel.js"></script>
 	</head>
-	
 	
 	<body style="height:100%;">
 	
-
 	<div id="main_page" class="heartpage">
 		<div id="header" class="closed">
 			<div id="headerTitleHeaderBackround" class="closed">
@@ -32,20 +36,20 @@
 			<div id="infoButton">				
 				<img src="images/information.png" alt="information" style="height:100%" onclick="infoClicked()">
 			</div>
-			<div id="back">
-				<img src="images/back.png" alt="back" style="height:100%" onclick="backClicked()">
+			<div id="back" class="closed" onclick="backClicked()">
+				<img src="images/back.png" alt="back" style="height:100%" onclick="backClicked()" >
 			</div>
 			<div id="home">
 				<img src="images/home.png" alt="home" style="height:100%" onclick="homeClicked()">
 			</div>	
 		</div>
 		
-		<div id="more" class="closed">
+		<div id="more" class="closed" onclick="moreClicked()">
 			<img src="images/more.png" alt="more" style="height:40%;">
 		</div>
 		<div id="footInformation" class="closed">
 			<div id="footRateLabel">
-				<font size=6>Heart Rate</font>
+				<font size=4>Heart Rate</font>
 			</div>
 			<div id="footRate">
 				<input id="speed_slider" type="range" min="0" max="5000" value ="3000" step="1" oninput="updateSlider(this.value)" style="height: 64px;"/>
@@ -64,8 +68,33 @@
 			</div>
 		</div>
 
-		<div id="myRenderer">
-		</div>	
+		<div id="myRenderer" class="open" onclick="clearRenderer()">
+		</div>
+		
+		<div id="heartElectricity" class="closed">
+		</div>
+
+		<div id="circularMenu" class="closed">
+		<div class="menu">
+  			<div class="btn trigger"> <span class="line"></span> </div>
+  			<div class="rotater">
+    				<div class="btn btn-icon" onclick="heartElectricity()"> <i class="fa fa-github"></i> </div>
+  			</div>
+			<div class="rotater">
+    				<div class="btn btn-icon"> <i class="fa fa-facebook"></i> </div>
+  			</div>
+			<div class="rotater">
+    				<div class="btn btn-icon"> <i class="fa fa-twitter"></i> </div>
+  			</div>
+		</div>
+		</div>
+		<script>
+			$(document).ready(function() {
+  				$(".trigger").click(function() {
+    					$(".menu").toggleClass("active"); 
+  				});
+			});
+		</script>
 	</div>
 	
 	<script>
@@ -93,6 +122,7 @@
 			document.getElementById('footInformation').className = 'closed';
 			document.getElementById('more').className = 'closed';
 			document.getElementById('headerTitleHeaderBackround').className = 'closed';
+			document.getElementById('circularMenu').className = 'closed';
 		}
 		
 		function footMoreClicked() {
@@ -101,17 +131,31 @@
 			document.getElementById('footInformation').className = 'open';
 			document.getElementById('more').className = 'open';
 		}
+
+		function moreClicked() {
+			document.getElementById('circularMenu').className = 'open';
+			document.getElementById('more').className = 'closed';
+		}
 		
 		function loadMyModel(model_name) {
 			var scene = zincRenderer.getSceneByName(model_name);
 			if (scene == undefined) {
 				scene = zincRenderer.createScene(model_name);
-				scene.loadFromViewURL("http://130.216.208.95:8000/models/"+model_name);
+				<!--scene.loadFromViewURL("http://130.216.208.95:8000/models/"+model_name)-->;
+				scene.loadFromViewURL("models/"+model_name);
 				zincRenderer.setCurrentScene(scene);
 				scene.viewAll();
 			}
 		}
 		
+		function clearRenderer(){
+			if (document.getElementById('circularMenu').className=='open') {
+				document.getElementById('circularMenu').className='closed';
+				document.getElementById('more').className='open';
+				document.getElementById('headerTitleHeaderBackround').className='closed';
+			}
+		}		
+
 		function resetView()	{
 			zincRenderer.viewAll()
 		}
@@ -120,10 +164,32 @@
 			zincRenderer.setPlayRate(newValue);
 		}
 
-	</script>
-	
-	
-	
+		function backClicked() {
+			document.getElementById('myRenderer').className='open';
+			document.getElementById('heartElectricity').className='closed';
+			document.getElementById('circularMenu').className='open';
+			document.getElementById('back').className='closed';
+		}
 
+		function heartElectricity() {
+			document.getElementById('myRenderer').className='closed';
+			document.getElementById('heartElectricity').className='open';  
+			$(document).ready(function() {
+    				$(".menu").toggleClass("active"); 
+			});
+			document.getElementById('circularMenu').className='closed';			
+			document.getElementById('more').className='open';
+			document.getElementById('back').className='open';
+			
+			var container = document.getElementById('heartElectricity')
+			var zincRenderer = new Zinc.Renderer(container, window);
+			Zinc.defaultMaterialColor = 0xFFFF9C
+			zincRenderer.initialiseVisualisation();
+			zincRenderer.getThreeJSRenderer().setClearColor( 0xffffff, 0);
+			loadMyModel("heart_electricity");
+			zincRenderer.animate();
+			document.getElementById("speed_slider").value = 3000;
+		}
+	</script>	
 	</body>
 </html>
