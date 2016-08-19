@@ -23,15 +23,29 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script>	
 		<script src="js/jquery.wheel.js"></script>
+		<script>
+			var dojoConfig = {
+		        async: true,
+		        // This code registers the correct location of the "demo" package
+		        // so we can load Dojo from the CDN whilst still being able to
+		        // load local modules
+		        packages: [{
+		            name: "js",
+		            location: location.pathname.replace(/\/[^/]+$/, '')  + '/js'
+		        }]
+			};
+		</script>
 	</head>
-	
 	<body style="height:100%;">
-	
-	<div id="main_page" class="heartpage">
+	<div id="main_page" class="heartpage" onload="loadNormalHeart()">
 		<div id="header" class="closed">
 			<div id="headerTitleHeaderBackround" class="closed">
 					<font size=10>INFO PANEL (normal)</font>
+			</div>
+			<div id="headerTitleHeaderBackround_electricity" class="closed">
+					<font size=10>INFO PANEL (arrhythmia)</font>
 			</div>
 			<div id="infoButton">				
 				<img src="images/information.png" alt="information" style="height:100%" onclick="infoClicked()">
@@ -43,7 +57,6 @@
 				<img src="images/home.png" alt="home" style="height:100%" onclick="homeClicked()">
 			</div>	
 		</div>
-		
 		<div id="more" class="closed" onclick="moreClicked()">
 			<img src="images/more.png" alt="more" style="height:40%;">
 		</div>
@@ -52,7 +65,7 @@
 				<font size=4>Heart Rate</font>
 			</div>
 			<div id="footRate">
-				<input id="speed_slider" type="range" min="0" max="5000" value ="3000" step="1" oninput="updateSlider(this.value)" style="height: 64px;"/>
+				<input id="speed_slider" type="range" min="0" max="5000" value ="1000" step="1" oninput="updateSlider(this.value)" style="height: 64px;"/>
 			</div>
 			<div id="footECG">
 				ECG Here
@@ -62,18 +75,34 @@
 				LVP Here
 			</div>
 		</div>
+		<div id="footInformation_electricity" class="closed">
+			<div id="footRateLabel">
+				<font size=4>Heart Rate</font>
+			</div>
+			<div id="footRate">
+				<input id="speed_slider" type="range" min="0" max="5000" value ="1000" step="1" oninput="updateSlider(this.value)" style="height: 64px;"/>
+			</div>
+			<div id="footECG">
+				ECG Here
+			</div>
+
+			<div id="footLVP">
+				LVP Here
+			</div>
+
+			<div id="footHealthStatus">
+				Health status
+			</div>
+		</div>		
 		<div id="footMore" class="open" onclick="footMoreClicked()">
 			<div style="position:absolute;left:47%">
 				<img src="images/more.png" alt="more" style="height:100%;">
 			</div>
 		</div>
-
 		<div id="myRenderer" class="open" onclick="clearRenderer()">
 		</div>
-		
 		<div id="heartElectricity" class="closed">
 		</div>
-
 		<div id="circularMenu" class="closed">
 		<div class="menu">
   			<div class="btn trigger"> <span class="line"></span> </div>
@@ -99,37 +128,100 @@
 	
 	<script>
 		var container = document.getElementById('myRenderer')
-		<!--var container = document.createElement('myRenderer')-->;
 		var zincRenderer = new Zinc.Renderer(container, window);
 		Zinc.defaultMaterialColor = 0xFFFF9C
 		zincRenderer.initialiseVisualisation();
 		zincRenderer.getThreeJSRenderer().setClearColor( 0xffffff, 0);
 		loadMyModel("deforming_heart");
 		zincRenderer.animate();
-		document.getElementById("speed_slider").value = 3000;
+		document.getElementById("speed_slider").value = 1000;
 		
-		function infoClicked() {
-			$('#headerTitleHeaderBackround').slideToggle();
+		require(["dojo/ready"], function(ready){
+			ready(function(){
+				require([ "dojo/_base/declare", "dojox/charting/Chart", "dojox/charting/plot2d/StackedLines", "dojox/charting/plot2d/Grid", "dojox/charting/themes/Claro", "dojox/charting/axis2d/Default", "dojox/charting/plot2d/Indicator"], 
+					function(declare, Chart, StackedLines, Grid, Claro, axis2dDefault, plot2dIndicator){
+						ready(function(){
+								/* get the html element (dom) where we want the chart to be drawn on */
+								var chartDom = document.getElementById("footECG");
+								/* create the chart on the dom */
+								var mychart = new Chart(chartDom);
+								/* add the x-axis */
+								mychart.addAxis("x", {min: 0, max: 100});
+								/* add the y-axis */
+								mychart.addAxis("y", {vertical: true, min: 0, max: 110});
+								/* optional add the grid */
+								mychart.addPlot("grid", { type: Grid,
+									hMajorLines: true,
+									hMinorLines: false, 
+									vMajorLines: false,
+									vMinorLines: false,
+									majorHLine: { color: "green", width: 3 },
+									majorVLine: { color: "red", width: 3 } });
+								/* setting up the data  */          
+								var myData = [];
+								myData.push( {x : 0, y : 0});
+								myData.push( {x : 100, y : 100});
+								/* now draw the series of data*/
+								mychart.addSeries("MyDataName", myData,  {stroke: {color: "red", width: 0.5}});
+							
+								/* the following add the time line */
+								indicator = new plot2dIndicator(mychart, { type: plot2dIndicator,
+									vertical: false,
+									lineStroke: { color: "red", style: "ShortDash"},
+									labels: null,
+									stroke: null,
+									outline: null,
+									fill: null,
+									values: 20});
+								/* to change the position of the timeline, you need to put the following code in a function that update with the time */
+								/*
+								indicator.opt.values = [value];
+								indicator.dirty = true;
+								indicator.render(); 
+								*/
+								mychart.render()
+							});
+					});
+			});
+		});
+		
+		function loadNormalHeart(){
+			var container = document.getElementById('myRenderer')
+			var zincRenderer = new Zinc.Renderer(container, window);
+			Zinc.defaultMaterialColor = 0xFFFF9C
+			zincRenderer.initialiseVisualisation();
+			zincRenderer.getThreeJSRenderer().setClearColor( 0xffffff, 0);
+			loadMyModel("deforming_heart");
+			zincRenderer.animate();
+			document.getElementById("speed_slider").value = 1000;
 		}
-		
-		function backClicked() { 
-			document.getElementById('headerTitleHeaderBackround').className = 'closed';
+			
+		function infoClicked() {
+			if (document.getElementById('myRenderer').className == 'open'){
+				$('#headerTitleHeaderBackround').slideToggle();
+			}
+			if (document.getElementById('heartElectricity').className == 'open'){
+				$('#headerTitleHeaderBackround_electricity').slideToggle();
+			}
 		}
 		
 		function homeClicked() {
 			document.getElementById('header').className = 'closed';
 			document.getElementById('footMore').className = 'open';
 			document.getElementById('footInformation').className = 'closed';
+			document.getElementById('footInformation_electricity').className = 'closed';
 			document.getElementById('more').className = 'closed';
 			document.getElementById('headerTitleHeaderBackround').className = 'closed';
 			document.getElementById('circularMenu').className = 'closed';
+			document.getElementById('heartElectricity').className = 'closed';
+			document.getElementById('myRenderer').className = 'open';
 		}
 		
 		function footMoreClicked() {
 			document.getElementById('header').className = 'open';
 			document.getElementById('footMore').className = 'closed';
 			document.getElementById('footInformation').className = 'open';
-			document.getElementById('more').className = 'open';
+			document.getElementById('circularMenu').className = 'open';
 		}
 
 		function moreClicked() {
@@ -162,34 +254,46 @@
 		
 		function updateSlider(newValue)	{
 			zincRenderer.setPlayRate(newValue);
+			document.getElementById('circularMenu').className='closed';
+			document.getElementById('more').className='open';
 		}
 
 		function backClicked() {
-			document.getElementById('myRenderer').className='open';
 			document.getElementById('heartElectricity').className='closed';
+			document.getElementById('myRenderer').className='open';
 			document.getElementById('circularMenu').className='open';
 			document.getElementById('back').className='closed';
+			document.getElementById('more').className='closed';
+			document.getElementById('footInformation').className='open';
+			//$('#footInformation_electricity').slideDown();	
 		}
 
 		function heartElectricity() {
-			document.getElementById('myRenderer').className='closed';
-			document.getElementById('heartElectricity').className='open';  
-			$(document).ready(function() {
-    				$(".menu").toggleClass("active"); 
-			});
-			document.getElementById('circularMenu').className='closed';			
-			document.getElementById('more').className='open';
+			document.getElementById('myRenderer').className='closed';			
 			document.getElementById('back').className='open';
-			
-			var container = document.getElementById('heartElectricity')
-			var zincRenderer = new Zinc.Renderer(container, window);
+			document.getElementById('heartElectricity').className='open';
+			var container_e = document.getElementById('heartElectricity')
+			var zincRenderer_e = new Zinc.Renderer(container_e, window);
 			Zinc.defaultMaterialColor = 0xFFFF9C
-			zincRenderer.initialiseVisualisation();
-			zincRenderer.getThreeJSRenderer().setClearColor( 0xffffff, 0);
-			loadMyModel("heart_electricity");
-			zincRenderer.animate();
-			document.getElementById("speed_slider").value = 3000;
+			zincRenderer_e.initialiseVisualisation();
+			zincRenderer_e.getThreeJSRenderer().setClearColor( 0xffffff, 0);
+			model_name = 'beating_heart';
+			var scene = zincRenderer_e.getSceneByName(model_name);
+			if (scene == undefined) {
+				scene = zincRenderer_e.createScene(model_name);
+				scene.loadFromViewURL("models/"+model_name);
+				zincRenderer_e.setCurrentScene(scene);
+				scene.viewAll();
+			}
+			zincRenderer_e.animate();
+			document.getElementById("speed_slider").value = 1000;
+			if (document.getElementById('circularMenu').className=='open') {
+				document.getElementById('circularMenu').className='closed';
+			}
+			//document.getElementById('footInformation').background-color = '#4d94ff';
 		}
-	</script>	
+	</script>
+	
+	
 	</body>
 </html>
