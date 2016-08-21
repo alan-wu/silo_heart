@@ -60,7 +60,7 @@
 		<div id="more" class="closed" onclick="moreClicked()">
 			<img src="images/more.png" alt="more" style="height:40%;">
 		</div>
-		<div id="footInformation" class="closed">
+		<div id="footInformation" class="open">
 			<div id="footRateLabel">
 				<font size=4>Heart Rate</font>
 			</div>
@@ -68,7 +68,6 @@
 				<input id="speed_slider" type="range" min="0" max="5000" value ="1000" step="1" oninput="updateSlider(this.value)" style="height: 64px;"/>
 			</div>
 			<div id="footECG">
-				ECG Here
 			</div>
 
 			<div id="footLVP">
@@ -138,8 +137,8 @@
 		
 		require(["dojo/ready"], function(ready){
 			ready(function(){
-				require([ "dojo/_base/declare", "dojox/charting/Chart", "dojox/charting/plot2d/StackedLines", "dojox/charting/plot2d/Grid", "dojox/charting/themes/Claro", "dojox/charting/axis2d/Default", "dojox/charting/plot2d/Indicator"], 
-					function(declare, Chart, StackedLines, Grid, Claro, axis2dDefault, plot2dIndicator){
+				require([ "dojo/_base/declare", "dojo/dom-construct","dojox/charting/Chart", "dojox/charting/plot2d/StackedLines", "dojox/charting/plot2d/Grid", "dojox/charting/themes/Claro", "dojox/charting/axis2d/Default", "dojox/charting/plot2d/Indicator"], 
+					function(declare, domConstruct, Chart, StackedLines, Grid, Claro, axis2dDefault, plot2dIndicator){
 						ready(function(){
 								/* get the html element (dom) where we want the chart to be drawn on */
 								var chartDom = document.getElementById("footECG");
@@ -180,6 +179,7 @@
 								indicator.render(); 
 								*/
 								mychart.render()
+								document.getElementById('footInformation').className = 'closed';
 							});
 					});
 			});
@@ -221,7 +221,7 @@
 			document.getElementById('header').className = 'open';
 			document.getElementById('footMore').className = 'closed';
 			document.getElementById('footInformation').className = 'open';
-			document.getElementById('circularMenu').className = 'open';
+			document.getElementById('more').className = 'open';
 		}
 
 		function moreClicked() {
