@@ -1,5 +1,71 @@
+
+@media screen and (min-height: 960px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-height: 800px) {
+    html {
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-height: 429px) {
+    html {
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-height: 390px) {
+    html {
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-height: 362px) {
+    html {
+        font-size: 9px;
+    }
+}
+
+@media screen and (max-height: 351px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-height: 311px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-height: 240px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+
 div.open {
+	animation: fadein 2s;
 	display:block
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1.0;
+    }
 }
 
 div.closed {
@@ -42,17 +108,24 @@ div#headerTitleHeaderBackround_electricity{
 }
 
 div#infoButton {
+border-radius: 50%;
 text-align: right;
 position: absolute;
 height:80%;
 width:5%;
 top:10%;
-right:2%;
+right:7%;
 margin: auto;
 z-index:10
 }
 
-div#back, div#more, div#home {
+div#infoButton:hover {
+ background-color:#888888;
+ cursor: pointer;
+ cursor: hand;
+}
+
+div#back, div#more, div#arrhythmia, div#AED, div#home {
  text-align: left;
  z-index: 10;
  margin: auto;
@@ -69,22 +142,54 @@ div#back {
 }
 
 div#home {
+ border-radius: 50%;
  float: left;
  height:80%;
  width:5%;
  max-width:5%;
  top:10%;
  left:2%;
+ vertical-align: middle;
+ text-align: center;
+}
+
+div#home:hover {
+ background-color:#888888;
+ cursor: pointer;
+ cursor: hand;
 }
 
 div#more {
+ border-radius: 20px;
  left: 3%;
  float: left;
  width: 5%;
  max-height: 5%;
- top:75%
+ top:75%;
+ vertical-align: middle;
+ text-align: center;
 }
 
+div#more:hover {
+ background-color:#888888;
+ cursor: pointer;
+ cursor: hand;
+}
+
+div#arrhythmia, div#AED{
+ left: 3%;
+ float: left;
+ max-height: 7%;
+ width:7%;
+ top:15%;
+ z-index:10;
+ text-align:center;
+ font-size: 230%;
+}
+
+div.selectedItem {
+	background-color:#5555BB;
+}
 
 div#footInformation {
 	text-align:center;
@@ -112,21 +217,22 @@ div#footRateLabel{
 	background-color:#555555;
 	opacity:0.5;
 	z-index:3;
-	left:3%;
-	width:10%;
-	top:50%;
-	height: 100%;
+	left:2%;
+	top:60%;
+	height: 30%;
 	position: absolute;
+	text-align: center;
+  	vertical-align: middle;
 }
 
 div#footRate{
 	background-color:#555555;
 	z-index:3;
 	opacity:0.5;
-	left:5%;
-	width:10%;
-	top:10%;
-	height: 40%;
+	left:2%;
+	width:8%;
+	top:20%;
+	height: 20%;
 	position: absolute;
 }
 
@@ -135,7 +241,7 @@ div#footECG {
 	z-index:3;
 	opacity:1;
 	left:25%;
-	width:20%;
+	width:30%;
 	height: 100%;
 	position: absolute;
 }
@@ -143,9 +249,9 @@ div#footECG {
 div#footLVP {
 	background-color:#888888;
 	z-index:3;
-	opacity:0.5;
-	left:50%;
-	width:20%;
+	opacity:1;
+	left:60%;
+	width:30%;
 	height: 100%;
 	position: absolute;
 }
@@ -205,5 +311,75 @@ div#footMore {
 	top:93%;
 	width:100%;
 	height: 7%;
+	position: absolute;
+}
+
+div#heartAttackButtonsContainer {
+	border-radius: 25px 25px 0% 0%;
+	background-color:#555555;
+	z-index:1;
+	bottom:15%;
+	width:54%;
+	height: 7%;
+	left: 23%;
+	position: absolute;
+}
+
+div.actionButtons {
+	border: 2px solid;
+    border-radius: 25px;
+ 	text-align:center;
+ 	width:25%;
+ 	top:10%;
+ 	height:80%;
+ 	position: absolute;
+ 	font-size: 140%;
+ 	z-index:2;
+}
+
+div.buttonText {
+  text-align: center;
+  vertical-align: middle;
+  position: absolute;
+  top: 25%;
+  width:100%;
+}
+
+div.actionButtons:hover {
+	background-color:#999999;
+	cursor: pointer;
+	cursor: hand;
+}
+
+div#headerInfoText {
+	font-size: 3em;
+	text-align: center;
+  	vertical-align: middle;
+  	position: absolute;
+  	top: 25%;
+  	width:100%;
+  	height:100%;
+}
+
+
+div#SceneButtonsContainer {
+	border-radius: 0% 0% 25px 25px;
+	background-color:#555555;
+	z-index:1;
+	top: 0%;
+	width:70%;
+	height: 7%;
+	left: 15%;
+	position: absolute;
+}
+
+div#halfHeartButton {
+	border-radius: 25px 25px 25px 25px;
+	background-color:#555555;
+	z-index:1;
+	bottom:16%;
+	width:7%;
+	height: 7%;
+	left: 13%;
 	position: absolute;
 }

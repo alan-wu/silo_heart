@@ -39,60 +39,70 @@
 		</script>
 	</head>
 	<body style="height:100%;">
-	<div id="main_page" class="heartpage" onload="loadNormalHeart()">
+	<div id="main_page" class="heartpage">
 		<div id="header" class="closed">
 			<div id="headerTitleHeaderBackround" class="closed">
-					<font size=10>INFO PANEL (normal)</font>
+				<div id="headerInfoText">
+					INFO PANEL (normal)
+				</div>
 			</div>
 			<div id="headerTitleHeaderBackround_electricity" class="closed">
 					<font size=10>INFO PANEL (arrhythmia)</font>
 			</div>
-			<div id="infoButton">				
+			<div id="infoButton" class="closed">
 				<img src="images/information.png" alt="information" style="height:100%" onclick="infoClicked()">
 			</div>
 			<div id="back" class="closed" onclick="backClicked()">
 				<img src="images/back.png" alt="back" style="height:100%" onclick="backClicked()" >
 			</div>
 			<div id="home">
-				<img src="images/home.png" alt="home" style="height:100%" onclick="homeClicked()">
-			</div>	
+				<img src="images/home.png" alt="home" style="top:5%;height:90%" onclick="homeClicked()">
+			</div>
+
+		</div>
+		<div id="arrhythmia" class="closed" onclick="arrhythmiaClicked()">
+			<img src="images/arrhythmia.png" alt="arrhythmia" style="height:10%;">
+			Arrhythmia
+		</div>
+		<div id="AED" class="closed" onclick="AEDClicked()">
+			<img src="images/AED.png" alt="AED" style="height:10%;">
+			AED
 		</div>
 		<div id="more" class="closed" onclick="moreClicked()">
 			<img src="images/more.png" alt="more" style="height:40%;">
 		</div>
+	
 		<div id="footInformation" class="open">
-			<div id="footRateLabel">
-				<font size=4>Heart Rate</font>
-			</div>
 			<div id="footRate">
 				<input id="speed_slider" type="range" min="0" max="5000" value ="1000" step="1" oninput="updateSlider(this.value)" style="height: 64px;"/>
+			</div>
+			<div id="footRateLabel">
+				<font size=4>Heart Rate</font>
 			</div>
 			<div id="footECG">
 			</div>
 
 			<div id="footLVP">
-				LVP Here
+			</div>
+		</div>	
+		<div id="heartAttackButtonsContainer" class="closed">
+			<div id="NoHeartAttack" class="actionButtons" onclick="heartAttackStagePressed('NoInfarct', this)" style="left:5%">
+				<div class="buttonText">Normal</div>
+			</div>
+			
+			<div id="MildHeartAttack" class="actionButtons" onclick="heartAttackStagePressed('SmallInfarct', this)" style="left:35%">
+				<div class="buttonText">Mild</div>
+			</div>
+			
+			<div id="SevereHeartAttack" class="actionButtons" onclick="heartAttackStagePressed('LargeInfarct', this)" style="left:65%">
+				<div class="buttonText">Severe</div>
 			</div>
 		</div>
-		<div id="footInformation_electricity" class="closed">
-			<div id="footRateLabel">
-				<font size=4>Heart Rate</font>
-			</div>
-			<div id="footRate">
-				<input id="speed_slider" type="range" min="0" max="5000" value ="1000" step="1" oninput="updateSlider(this.value)" style="height: 64px;"/>
-			</div>
-			<div id="footECG">
-				ECG Here
-			</div>
-
-			<div id="footLVP">
-				LVP Here
-			</div>
-
-			<div id="footHealthStatus">
-				Health status
-			</div>
-		</div>		
+		
+		<div id="halfHeartButton" class="open" onclick="halfHeartPressed()">
+			<div class="buttonText">Half</div>
+		</div>
+		
 		<div id="footMore" class="open" onclick="footMoreClicked()">
 			<div style="position:absolute;left:47%">
 				<img src="images/more.png" alt="more" style="height:100%;">
@@ -100,19 +110,38 @@
 		</div>
 		<div id="myRenderer" class="open" onclick="clearRenderer()">
 		</div>
-		<div id="heartElectricity" class="closed">
+
+
+		<div id="SceneButtonsContainer" class="closed">
+			<div id="heartElectrictyButton" class="actionButtons" onclick="heartElectricityClicked()" style="left:5%">
+				<div class="buttonText">Heart Electricity</div>
+			</div>
+			<div id="heartAttackButton" class="actionButtons" onclick="heartAttackClicked()" style="left:35%">
+				<div class="buttonText">Heart Attack</div>
+			</div>
+			
+			<div id="heartFailureButton" class="actionButtons" onclick="heartFailureClicked()" style="left:65%">
+				<div class="buttonText">Heart Failure</div>
+			</div>
 		</div>
+
 		<div id="circularMenu" class="closed">
 		<div class="menu">
   			<div class="btn trigger"> <span class="line"></span> </div>
   			<div class="rotater">
-    				<div class="btn btn-icon" onclick="heartElectricity()"> <i class="fa fa-github"></i> </div>
+    				<div class="btn btn-icon" onclick="heartElectricityClicked()" id="cicle_top_left">
+    					<div class="buttonText">Heart Electricity</div>
+    				</div>
   			</div>
 			<div class="rotater">
-    				<div class="btn btn-icon"> <i class="fa fa-facebook"></i> </div>
+    				<div class="btn btn-icon" onclick="heartAttackClicked()" id="cicle_top_right">
+    					<div class="buttonText">Heart Attack</div>
+    				</div>
   			</div>
 			<div class="rotater">
-    				<div class="btn btn-icon"> <i class="fa fa-twitter"></i> </div>
+    				<div class="btn btn-icon" onclick="heartFailureClicked()" id="cicle_bottom">
+    					<div class="buttonText">Heart Failure</div>
+    				</div>
   			</div>
 		</div>
 		</div>
@@ -126,14 +155,116 @@
 	</div>
 	
 	<script>
+		var ECGchart = undefined;
+		var LVPchart = undefined;
+		var ECGurls = [];
+		var LVPurls = [];
+		var ECGs = [];
+		var LVPs = [];
+		var modelURLsArray = [];
+		var currentECGName = 'None';
+		var currentLVPName = 'None';
+		var ecgIndicator = undefined;
+		var lvpIndicator = undefined;
+		var maxECGTime = 0.0, maxLVPTime = 0.0;
+		var minECGTime = 0.0, minLVPTime = 0.0
+		var timeLineOffset = 0.0;
+		setUpArrays();
 		var container = document.getElementById('myRenderer')
 		var zincRenderer = new Zinc.Renderer(container, window);
-		Zinc.defaultMaterialColor = 0xFFFF9C
+		Zinc.defaultMaterialColor = 0xFFFF9C;
 		zincRenderer.initialiseVisualisation();
 		zincRenderer.getThreeJSRenderer().setClearColor( 0xffffff, 0);
-		loadMyModel("deforming_heart");
+		var halfHeartFlag = true;
+		
+		loadModel("DeformingHeart", 1.0);
 		zincRenderer.animate();
 		document.getElementById("speed_slider").value = 1000;
+		
+		var updateIndicators = function() {
+			var normaliseTime = zincRenderer.getCurrentTime() / 3000.0;
+			if (lvpIndicator && (currentLVPName != ' None') &&
+				ecgIndicator && (currentECGName != ' None') &&
+				document.getElementById('footInformation').className.includes("open")) {
+				var lvpTime = normaliseTime * (maxLVPTime - minLVPTime) + minLVPTime;
+				var ecgTime = normaliseTime * (maxECGTime - minECGTime) + minECGTime;
+				if (timeLineOffset != 0.0) {
+        			lvpTime = lvpTime + timeLineOffset;
+        			ecgTime = ecgTime + timeLineOffset;
+        			if (lvpTime > maxLVPTime) {
+        				lvpTime = lvpTime - maxLVPTime + minLVPTime;
+        			} else if ( lvpTime < minLVPTime) {
+        				lvpTime = maxLVPTime - (minLVPTime - lvpTime);
+        			}
+        			if (ecgTime > maxECGTime) {
+        				ecgTime = ecgTime - maxECGTime + minECGTime;
+        			} else if ( ecgTime < minECGTime) {
+        				ecgTime = maxECGTime - (minECGTime - ecgTime);
+        			}
+        		}
+        		lvpIndicator.opt.values = [lvpTime];
+        		ecgIndicator.opt.values = [ecgTime];
+        		lvpIndicator.dirty = true;
+        		lvpIndicator.render();
+        		ecgIndicator.dirty = true;
+        		ecgIndicator.render();
+			}
+		}
+		
+		zincRenderer.addPreRenderCallbackFunction(updateIndicators);
+		
+		var geometryShowHalf = function() {
+			return function(zincGeometry) {
+				if (zincGeometry.groupName && zincGeometry.groupName.includes("Post")) {
+					zincGeometry.setVisibility(!halfHeartFlag);
+				}
+			}
+		}
+		
+		var showHalf = function () {
+			var currentScene = zincRenderer.getCurrentScene();
+			currentScene.forEachGeometry(geometryShowHalf());
+		}
+		
+		var halfHeartPressed = function() {
+			if (halfHeartFlag) {
+				halfHeartFlag = false;
+			} else {
+				halfHeartFlag = true;
+			}
+			showHalf();
+		}
+	
+		function setUpArrays() {
+			ECGurls['Normal'] = 'ECG/NormalECG.json';
+			ECGurls['Diastolic'] = 'ECG/DiastolicECG.json';
+			ECGurls['Systolic'] = 'ECG/SystolicECG.json';
+			LVPurls['Normal'] = 'LVP/NormalLVP.json';
+			LVPurls['Diastolic'] = 'LVP/DiastolicLVP.json';
+			LVPurls['Systolic'] = 'LVP/SystolicLVP.json';
+			ECGurls['NoInfarct'] = 'ECG/NormalECG.json';
+			ECGurls['SmallInfarct'] = 'ECG/MildInfarctECG.json';
+			ECGurls['LargeInfarct'] = 'ECG/LargeInfarctECG.json';
+			LVPurls['NoInfarct'] = 'LVP/NormalLVP.json';
+			LVPurls['SmallInfarct'] = 'LVP/smallInfarctLVP.json';
+			LVPurls['LargeInfarct'] = 'LVP/largeInfarctLVP.json';
+			ECGurls['Arrhythmia'] = 'ECG/ArrhythmiaECG.json';
+			LVPurls['Arrhythmia'] = 'LVP/ArrhythmiaLVP.json';
+			
+			modelURLsArray['DeformingHeart'] = ['models/deforming_heart_metadata.json',
+				'models/deforming_heart_view.json'];
+			modelURLsArray['NormalElectricity'] = ['heartElectricity/normalActivity_metadata.json',
+				'heartElectricity/normalActivity_view.json'];
+			modelURLsArray['ArrythmiaElectricity'] = ['heartElectricity/arrythmiaActivity_metadata.json',
+				'heartElectricity/arrythmiaActivity_view.json'];
+			modelURLsArray['LargeInfarct'] = ['heartInfarct/largeInfarct_metadata.json',
+				'heartInfarct/largeInfarct_view.json'];
+			modelURLsArray['SmallInfarct'] = ['heartInfarct/smallInfarct_metadata.json',
+				'heartInfarct/smallInfarct_view.json'];
+			modelURLsArray['NoInfarct'] = ['heartInfarct/noInfarct_metadata.json',
+				'heartInfarct/noInfarct_view.json'];
+		}
+		
 		
 		require(["dojo/ready"], function(ready){
 			ready(function(){
@@ -143,65 +274,85 @@
 								/* get the html element (dom) where we want the chart to be drawn on */
 								var chartDom = document.getElementById("footECG");
 								/* create the chart on the dom */
-								var mychart = new Chart(chartDom);
+								ECGchart = new Chart(chartDom, {title: "ECG", titleGap: 0, titleFont: "normal normal normal 13pt Arial"});
 								/* add the x-axis */
-								mychart.addAxis("x", {min: 0, max: 100});
+								ECGchart.addAxis("x", {type: "Invisible", majorLabels: false,
+									minorTicks: false,
+									minorLabels: false,
+									microTicks: false});		
 								/* add the y-axis */
-								mychart.addAxis("y", {vertical: true, min: 0, max: 110});
+								ECGchart.addAxis("y", {type: "Invisible", vertical: true,
+									majorLabels: false,
+									minorTicks: false,
+									minorLabels: false,
+									microTicks: false});
 								/* optional add the grid */
-								mychart.addPlot("grid", { type: Grid,
-									hMajorLines: true,
+								ECGchart.addPlot("grid", { type: Grid,
+									hMajorLines: false,
 									hMinorLines: false, 
 									vMajorLines: false,
 									vMinorLines: false,
-									majorHLine: { color: "green", width: 3 },
-									majorVLine: { color: "red", width: 3 } });
-								/* setting up the data  */          
-								var myData = [];
-								myData.push( {x : 0, y : 0});
-								myData.push( {x : 100, y : 100});
-								/* now draw the series of data*/
-								mychart.addSeries("MyDataName", myData,  {stroke: {color: "red", width: 0.5}});
+									majorHLine: { color: "green", width: 0.2 },
+									majorVLine: { color: "red", width: 0.2 } });
 							
-								/* the following add the time line */
-								indicator = new plot2dIndicator(mychart, { type: plot2dIndicator,
-									vertical: false,
-									lineStroke: { color: "red", style: "ShortDash"},
-									labels: null,
-									stroke: null,
-									outline: null,
-									fill: null,
-									values: 20});
-								/* to change the position of the timeline, you need to put the following code in a function that update with the time */
-								/*
-								indicator.opt.values = [value];
-								indicator.dirty = true;
-								indicator.render(); 
-								*/
-								mychart.render()
+							   ECGchart.addPlot("time", { type: plot2dIndicator,
+				        			vertical: true,
+				        			lineStroke: { color: "blue"},
+				        			labels: null,
+				        			stroke: null,
+				        			outline: null,
+				        			fill: null,
+				        			offset: { y: -7, x: -10 },
+				        			values: 0.0});
+								ecgIndicator = ECGchart.getPlot("time");
+	
+								/* get the html element (dom) where we want the chart to be drawn on */
+								var chartDom = document.getElementById("footLVP");
+								/* create the chart on the dom */
+								LVPchart = new Chart(chartDom, {title: "Pressure", titleGap: 0, titleFont: "normal normal normal 13pt Arial"});
+								/* add the x-axis */
+								LVPchart.addAxis("x", {type: "Invisible",
+									majorLabels: false,
+									minorTicks: false,
+									minorLabels: false,
+									microTicks: false});
+								/* add the y-axis */
+								LVPchart.addAxis("y", {
+									vertical: true,
+									min: 0,
+									max: 150});
+								/* optional add the grid */
+								LVPchart.addPlot("grid", { type: Grid,
+									hMajorLines: false,
+									hMinorLines: false, 
+									vMajorLines: false,
+									vMinorLines: false,
+									majorHLine: { color: "green", width: 0.2 },
+									majorVLine: { color: "red", width: 0.2 } });
+								LVPchart.addPlot("time", { type: plot2dIndicator,
+				        			vertical: true,
+				        			lineStroke: { color: "blue"},
+				        			labels: null,
+				        			stroke: null,
+				        			outline: null,
+				        			fill: null,
+				        			offset: { y: -7, x: -10 },
+				        			values: 0.0});
+								lvpIndicator = LVPchart.getPlot("time");
 								document.getElementById('footInformation').className = 'closed';
 							});
 					});
 			});
 		});
 		
-		function loadNormalHeart(){
-			var container = document.getElementById('myRenderer')
-			var zincRenderer = new Zinc.Renderer(container, window);
-			Zinc.defaultMaterialColor = 0xFFFF9C
-			zincRenderer.initialiseVisualisation();
-			zincRenderer.getThreeJSRenderer().setClearColor( 0xffffff, 0);
-			loadMyModel("deforming_heart");
-			zincRenderer.animate();
-			document.getElementById("speed_slider").value = 1000;
+		function updateInfoText(text) {
+			document.getElementById('headerInfoText').innerHTML = text;
+		
 		}
 			
 		function infoClicked() {
 			if (document.getElementById('myRenderer').className == 'open'){
 				$('#headerTitleHeaderBackround').slideToggle();
-			}
-			if (document.getElementById('heartElectricity').className == 'open'){
-				$('#headerTitleHeaderBackround_electricity').slideToggle();
 			}
 		}
 		
@@ -209,19 +360,31 @@
 			document.getElementById('header').className = 'closed';
 			document.getElementById('footMore').className = 'open';
 			document.getElementById('footInformation').className = 'closed';
-			document.getElementById('footInformation_electricity').className = 'closed';
 			document.getElementById('more').className = 'closed';
 			document.getElementById('headerTitleHeaderBackround').className = 'closed';
 			document.getElementById('circularMenu').className = 'closed';
-			document.getElementById('heartElectricity').className = 'closed';
 			document.getElementById('myRenderer').className = 'open';
+			document.getElementById('arrhythmia').className = 'closed';
+			document.getElementById('AED').className = 'closed';
+			document.getElementById('heartAttackButtonsContainer').className = 'closed';
+			document.getElementById('SceneButtonsContainer').className = 'closed';
+			loadModel("DeformingHeart", 1.0);
+			updateInfoText("Normal Heart");
 		}
 		
 		function footMoreClicked() {
+			document.getElementById('heartElectrictyButton').classList.remove('selectedItem');
+			document.getElementById('heartAttackButton').classList.remove('selectedItem');
+			document.getElementById('heartFailureButton').classList.remove('selectedItem');
 			document.getElementById('header').className = 'open';
 			document.getElementById('footMore').className = 'closed';
 			document.getElementById('footInformation').className = 'open';
-			document.getElementById('more').className = 'open';
+			document.getElementById('more').className = 'closed';
+			document.getElementById('arrhythmia').className = 'closed';
+			document.getElementById('AED').className = 'closed';
+			document.getElementById('heartAttackButtonsContainer').className = 'closed';
+			document.getElementById('SceneButtonsContainer').className = 'open';
+			showECGAndLVP("Normal", -0.075);
 		}
 
 		function moreClicked() {
@@ -229,21 +392,36 @@
 			document.getElementById('more').className = 'closed';
 		}
 		
-		function loadMyModel(model_name) {
+				
+		function loadViewModel(model_name, modelURLs) {
 			var scene = zincRenderer.getSceneByName(model_name);
 			if (scene == undefined) {
 				scene = zincRenderer.createScene(model_name);
-				<!--scene.loadFromViewURL("http://130.216.208.95:8000/models/"+model_name)-->;
-				scene.loadFromViewURL("models/"+model_name);
+				scene.loadFromViewURL(modelURLs);
+				scene.viewAll();
+			}
+			zincRenderer.setCurrentScene(scene);
+		}
+		
+		function loadModel(model_name, rateScaling) {
+			metaURL = modelURLsArray[model_name][0];
+			viewURL = modelURLsArray[model_name][1];
+			var scene = zincRenderer.getSceneByName(model_name);
+			if (scene == undefined) {
+				scene = zincRenderer.createScene(model_name);
+				scene.setDuration(scene.getDuration() / rateScaling);
+				scene.loadViewURL(viewURL);
+				scene.loadMetadataURL(metaURL);
 				zincRenderer.setCurrentScene(scene);
 				scene.viewAll();
 			}
+			zincRenderer.setCurrentScene(scene);
 		}
-		
+
 		function clearRenderer(){
 			if (document.getElementById('circularMenu').className=='open') {
 				document.getElementById('circularMenu').className='closed';
-				document.getElementById('more').className='open';
+				document.getElementById('more').className='closed';
 				document.getElementById('headerTitleHeaderBackround').className='closed';
 			}
 		}		
@@ -252,12 +430,71 @@
 			zincRenderer.viewAll()
 		}
 		
+		function arrhythmiaClicked() {
+			loadModel('ArrythmiaElectricity', 0.25);
+			showECGAndLVP('Arrhythmia', 0.0);
+			document.getElementById('arrhythmia').className = 'closed';
+			document.getElementById('AED').className = 'open';
+		}
+		
+		function AEDClicked() {
+			loadModel('NormalElectricity', 1.0);
+			showECGAndLVP('Normal', 0.0);
+			document.getElementById('arrhythmia').className = 'open';
+			document.getElementById('AED').className = 'closed';
+		}
+		
+		var heartAttackStagePressed = function(StageName, pressedElement) {
+			loadModel(StageName, 1.0);
+			showECGAndLVP(StageName, 0.0);
+			document.getElementById('NoHeartAttack').classList.remove('selectedItem');
+			document.getElementById('MildHeartAttack').classList.remove('selectedItem');
+			document.getElementById('SevereHeartAttack').classList.remove('selectedItem');
+			pressedElement.classList.add('selectedItem');
+		}
+		
+		function heartAttackClicked() {
+			document.getElementById('arrhythmia').className = 'closed';
+			document.getElementById('AED').className = 'closed';
+			document.getElementById('heartAttackButtonsContainer').className = 'open';
+			document.getElementById('NoHeartAttack').classList.add('selectedItem');
+			document.getElementById('MildHeartAttack').classList.remove('selectedItem');
+			document.getElementById('SevereHeartAttack').classList.remove('selectedItem');
+			document.getElementById('heartElectrictyButton').classList.remove('selectedItem');
+			document.getElementById('heartAttackButton').classList.add('selectedItem');
+			document.getElementById('heartFailureButton').classList.remove('selectedItem');
+			loadModel('NoInfarct', 1.0);
+			showECGAndLVP('NoInfarct', 0.0);
+			updateInfoText("Heart Attack");
+		}
+		
+		function heartFailureClicked() {
+			document.getElementById('heartAttackButtonsContainer').className = 'closed';
+			document.getElementById('arrhythmia').className = 'closed';
+			document.getElementById('AED').className = 'closed';
+			document.getElementById('heartElectrictyButton').classList.remove('selectedItem');
+			document.getElementById('heartAttackButton').classList.remove('selectedItem');
+			document.getElementById('heartFailureButton').classList.add('selectedItem');
+			heartElectrictyButton
+			updateInfoText("Heart Failure");
+		
+		}
+		
+		function heartElectricityClicked() {
+			document.getElementById('arrhythmia').className = 'open';
+			document.getElementById('heartAttackButtonsContainer').className = 'closed';
+			loadModel('NormalElectricity', 1.0);
+			showECGAndLVP('Normal', 0.0);
+			updateInfoText("Heart Electricity");
+			document.getElementById('heartElectrictyButton').classList.add('selectedItem');
+			document.getElementById('heartAttackButton').classList.remove('selectedItem');
+			document.getElementById('heartFailureButton').classList.remove('selectedItem');
+		}
+		
 		function updateSlider(newValue)	{
 			zincRenderer.setPlayRate(newValue);
-			document.getElementById('circularMenu').className='closed';
-			document.getElementById('more').className='open';
 		}
-
+		
 		function backClicked() {
 			document.getElementById('heartElectricity').className='closed';
 			document.getElementById('myRenderer').className='open';
@@ -267,31 +504,76 @@
 			document.getElementById('footInformation').className='open';
 			//$('#footInformation_electricity').slideDown();	
 		}
-
-		function heartElectricity() {
-			document.getElementById('myRenderer').className='closed';			
-			document.getElementById('back').className='open';
-			document.getElementById('heartElectricity').className='open';
-			var container_e = document.getElementById('heartElectricity')
-			var zincRenderer_e = new Zinc.Renderer(container_e, window);
-			Zinc.defaultMaterialColor = 0xFFFF9C
-			zincRenderer_e.initialiseVisualisation();
-			zincRenderer_e.getThreeJSRenderer().setClearColor( 0xffffff, 0);
-			model_name = 'beating_heart';
-			var scene = zincRenderer_e.getSceneByName(model_name);
-			if (scene == undefined) {
-				scene = zincRenderer_e.createScene(model_name);
-				scene.loadFromViewURL("models/"+model_name);
-				zincRenderer_e.setCurrentScene(scene);
-				scene.viewAll();
+		
+		var showLVPInternal = function(chartName) {
+			if (chartName != currentLVPName) {
+				var currentLVP = LVPs[chartName];
+				maxLVPTime = currentLVP[currentLVP.length - 1]['x'];
+				minLVPTime = currentLVP[0]['x'];
+				LVPchart.removeSeries(currentLVPName);
+				currentLVPName = chartName;
+				LVPchart.addSeries(chartName, currentLVP, { stroke: "green"});
+				LVPchart.render();
+				LVPchart.resize('100%','100%');
 			}
-			zincRenderer_e.animate();
-			document.getElementById("speed_slider").value = 1000;
-			if (document.getElementById('circularMenu').className=='open') {
-				document.getElementById('circularMenu').className='closed';
-			}
-			//document.getElementById('footInformation').background-color = '#4d94ff';
 		}
+		
+		var onLVPLoaded = function(xmlhttp, chartName) {
+			return function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					var viewData = JSON.parse(xmlhttp.responseText);
+					LVPs[chartName] = viewData;
+					showLVPInternal(chartName);
+				}
+			};
+		}
+		
+		var showECGInternal = function(chartName) {
+			if (chartName != currentECGName) {
+				var currentECG = ECGs[chartName];
+				maxECGTime = currentECG[currentECG.length - 1]['x'];
+				minECGTime = currentECG[0]['x'];
+				ECGchart.removeSeries(currentECGName);
+				currentECGName = chartName;
+				ECGchart.addSeries(chartName, currentECG, { stroke: "green"});
+				ECGchart.render();
+				ECGchart.resize('100%','100%');
+			}
+		}
+		
+		var onECGLoaded = function(xmlhttp, chartName) {
+			return function() {
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+					var viewData = JSON.parse(xmlhttp.responseText);
+					ECGs[chartName] = viewData;
+					showECGInternal(chartName);
+				}
+			};
+		}
+		
+		function showECGAndLVP(chartName, timeOffset) {
+			timeLineOffset = timeOffset;
+			if (ECGs[chartName]) {
+				showECGInternal(chartName);
+			} else {
+				var xmlhttp = new XMLHttpRequest();	
+				xmlhttp.onreadystatechange = onECGLoaded(xmlhttp, chartName);
+				requestURL = ECGurls[chartName];
+				xmlhttp.open("GET", requestURL, true);
+				xmlhttp.send();
+			}
+			
+			if (LVPs[chartName]) {
+				showLVPInternal(chartName);
+			} else {
+				var xmlhttp = new XMLHttpRequest();	
+				xmlhttp.onreadystatechange = onLVPLoaded(xmlhttp, chartName);
+				requestURL = LVPurls[chartName];
+				xmlhttp.open("GET", requestURL, true);
+				xmlhttp.send();
+			}
+		}
+				
 	</script>
 	
 	

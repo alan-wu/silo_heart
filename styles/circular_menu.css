@@ -27,8 +27,8 @@ body {
 }
 
 .menu {
-  width: 5em;
-  height: 5em;
+  width: 7em;
+  height: 7em;
 }
 
 .menu .btn {
@@ -39,7 +39,7 @@ body {
   height: 100%;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.15);
-  color: rgba(0, 0, 0, 1);
+  color: rgba(255, 255, 255, 1);
   opacity: 0;
   z-index: -10;
   cursor: pointer;
@@ -48,6 +48,8 @@ body {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
+  font-size: 25px;
+  text-align: center;
 }
 
 .menu .btn .fa {
@@ -56,7 +58,7 @@ body {
   transition: color 0.3s;
 }
 
-.menu .btn:hover .fa { color: rgba(255, 255, 255, 0.7); }
+.menu .btn:hover .fa { color: rgba(255, 255, 255, 0.7);  background-color:#888888;}
 
 .menu .btn.trigger {
   opacity: 1;
@@ -70,6 +72,7 @@ body {
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);
+ 
 }
 
 .menu .btn.trigger:hover .line { background-color: rgba(255, 255, 255, 0.7); }
@@ -104,7 +107,7 @@ body {
   top: -12px;
   -webkit-transform-origin: 15% 100%;
   -ms-transform-origin: 15% 100%;
-  transform-origin: 15% 100%;
+  transform-origin: 30% 100%;
 }
 
 .menu .btn.trigger .line:after {
@@ -159,9 +162,9 @@ for some reason nth-child(1) is always busy and elements starting from 2 */
 }
 
 .menu.active .rotater:nth-child(1) .btn-icon {
-  -webkit-transform: translateX(-300%) rotate(22.5deg);
-  -ms-transform: translateX(-300%) rotate(22.5deg);
-  transform: translateX(-300%) rotate(22.5deg);
+  -webkit-transform: translateX(-150%) rotate(22.5deg);
+  -ms-transform: translateX(-150%) rotate(22.5deg);
+  transform: translateX(-150%) rotate(22.5deg);
 }
 
 .rotater:nth-child(2) {
@@ -171,9 +174,9 @@ for some reason nth-child(1) is always busy and elements starting from 2 */
 }
 
 .menu.active .rotater:nth-child(2) .btn-icon {
-  -webkit-transform: translateX(-300%) rotate(-30deg);
-  -ms-transform: translateX(-300%) rotate(-30deg);
-  transform: translateX(-300%) rotate(-30deg);
+  -webkit-transform: translateX(-150%) rotate(-30deg);
+  -ms-transform: translateX(-150%) rotate(-30deg);
+  transform: translateX(-150%) rotate(-30deg);
 }
 
 .rotater:nth-child(3) {
@@ -183,9 +186,9 @@ for some reason nth-child(1) is always busy and elements starting from 2 */
 }
 
 .menu.active .rotater:nth-child(3) .btn-icon {
-  -webkit-transform: translateX(-300%) rotate(-150deg);
-  -ms-transform: translateX(-300%) rotate(-150deg);
-  transform: translateX(-300%) rotate(-150deg);
+  -webkit-transform: translateX(-150%) rotate(-150deg);
+  -ms-transform: translateX(-150%) rotate(-150deg);
+  transform: translateX(-150%) rotate(-150deg);
 }
 
 .rotater:nth-child(4) {
@@ -195,9 +198,9 @@ for some reason nth-child(1) is always busy and elements starting from 2 */
 }
 
 .menu.active .rotater:nth-child(4) .btn-icon {
-  -webkit-transform: translateX(-300%) rotate(-270deg);
-  -ms-transform: translateX(-300%) rotate(-270deg);
-  transform: translateX(-300%) rotate(-270deg);
+  -webkit-transform: translateX(-150%) rotate(-270deg);
+  -ms-transform: translateX(-150%) rotate(-270deg);
+  transform: translateX(-150%) rotate(-270deg);
 }
 
 

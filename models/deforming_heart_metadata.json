@@ -1,0 +1,9 @@
+[
+   {
+      "MorphColours" : false,
+      "MorphNormals" : false,
+      "MorphVertices" : true,
+      "Type" : "Surfaces",
+      "URL" : "models/deforming_heart_1.json"
+   }
+]
