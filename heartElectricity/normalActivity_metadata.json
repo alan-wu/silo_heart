@@ -8,43 +8,11 @@
       "URL" : "heartElectricity/normalActivity_1.json"
    },
    {
-      "GroupName" : "Ant",
+      "GroupName" : "Post",
       "MorphColours" : true,
       "MorphNormals" : false,
       "MorphVertices" : false,
       "Type" : "Surfaces",
       "URL" : "heartElectricity/normalActivity_2.json"
-   },
-   {
-      "GroupName" : "Ant",
-      "MorphColours" : true,
-      "MorphheartElectricity/normals" : false,
-      "MorphVertices" : false,
-      "Type" : "Surfaces",
-      "URL" : "heartElectricity/normalActivity_3.json"
-   },
-   {
-      "GroupName" : "Post",
-      "MorphColours" : true,
-      "MorphheartElectricity/normals" : false,
-      "MorphVertices" : false,
-      "Type" : "Surfaces",
-      "URL" : "heartElectricity/normalActivity_4.json"
-   },
-   {
-      "GroupName" : "Post",
-      "MorphColours" : true,
-      "MorphheartElectricity/normals" : false,
-      "MorphVertices" : false,
-      "Type" : "Surfaces",
-      "URL" : "heartElectricity/normalActivity_5.json"
-   },
-   {
-      "GroupName" : "Post",
-      "MorphColours" : true,
-      "MorphheartElectricity/normals" : false,
-      "MorphVertices" : false,
-      "Type" : "Surfaces",
-      "URL" : "heartElectricity/normalActivity_6.json"
    }
 ]

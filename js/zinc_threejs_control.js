@@ -22,6 +22,8 @@ ZincCameraControls = function ( object, domElement, renderer, scene ) {
 	var cameraPath = undefined;
 	var numerOfCameraPoint = undefined;
 	var updateLightWithPathFlag = false;
+	var playRate = 500;
+	var deviceOrientationControl = undefined;
 	
 	this._state = STATE.NONE;
 	this.targetTouchId = -1;
@@ -371,6 +373,10 @@ ZincCameraControls = function ( object, domElement, renderer, scene ) {
 	this.setTime = function(time) {
 		inbuildTime = time;
 	}
+	
+	this.setPlayRate = function(playRateIn) {
+		playRate = playRateIn;
+	}
 	 
 	var updateTime = function(delta) {
 		var targetTime = inbuildTime + delta;
@@ -390,6 +396,15 @@ ZincCameraControls = function ( object, domElement, renderer, scene ) {
 		var top_frame =  Math.ceil(current_time);
 		return [bottom_frame, top_frame, proportion];
 	}
+	
+	this.setCurrentTimeFrame = function(targetTimeFrame) {
+		inbuildTime = duration * targetTimeFrame / (numerOfCameraPoint - 1);
+		if (inbuildTime < 0.0)
+			inbuildTime = 0.0;
+		if (inbuildTime > duration)
+			inbuildTime = duration;	
+	}
+	
 	
 	var updatePath = function(delta)	{
 		if (enablePath) {
@@ -416,7 +431,8 @@ ZincCameraControls = function ( object, domElement, renderer, scene ) {
 		}
 	}
 	
-	this.update = function (delta) {
+	this.update = function (timeChanged) {
+		var delta = timeChanged * playRate;
 		updatePath(delta);
 		if (enabled) {
 			if ((_this._state === STATE.ROTATE) || (_this._state === STATE.TOUCH_ROTATE)){
@@ -425,7 +441,13 @@ ZincCameraControls = function ( object, domElement, renderer, scene ) {
 				translate();
 			} else if (_this._state === STATE.ZOOM){
 				flyZoom();
-			}
+			}	
+		}
+		if (deviceOrientationControl) {
+			deviceOrientationControl.update();
+			//_this.directionalLight.target.position.set(_this.cameraObject.target.x, 
+			//	_this.cameraObject.target.y, _this.cameraObject.target.z);
+		} else {
 			_this.cameraObject.lookAt( _this.cameraObject.target );
 		}
 	};
@@ -444,6 +466,25 @@ ZincCameraControls = function ( object, domElement, renderer, scene ) {
 	
 	this.enableDirectionalLightUpdateWithPath = function (flag) {
 		updateLightWithPathFlag = flag;
+	}
+	
+	this.enableDeviceOrientation = function() {
+		if (!deviceOrientationControl)
+			deviceOrientationControl = new ModifiedDeviceOrientationControls(_this.cameraObject);
+	}
+	
+	this.disableDeviceOrientation = function() {
+		if (deviceOrientationControl) {
+			deviceOrientationControl.dispose();
+			deviceOrientationControl = undefined;
+		}
+	}
+	
+	this.isDeviceOrientationEnabled = function() {
+		if (deviceOrientationControl) {
+			return true;
+		}
+		return false;
 	}
 	
 	this.enable();
@@ -586,4 +627,117 @@ THREE.StereoEffect = function ( renderer ) {
 	};
 
 };
+
+/**
+ * @author richt / http://richt.me
+ * @author WestLangley / http://github.com/WestLangley
+ *
+ * W3C Device Orientation control (http://w3c.github.io/deviceorientation/spec-source-orientation.html)
+ */
+
+ModifiedDeviceOrientationControls = function ( object ) {
+
+	var scope = this;
+
+	this.object = object;
+	this.object.rotation.reorder( "YXZ" );
+
+	this.enabled = true;
+
+	this.deviceOrientation = {};
+	this.screenOrientation = 0;
+
+	var onDeviceOrientationChangeEvent = function ( event ) {
+
+		scope.deviceOrientation = event;
+
+	};
+
+	var onScreenOrientationChangeEvent = function () {
+
+		scope.screenOrientation = window.orientation || 0;
+
+	};
+
+	// The angles alpha, beta and gamma form a set of intrinsic Tait-Bryan angles of type Z-X'-Y''
+
+	var setObjectQuaternion = function () {
+
+		var zee = new THREE.Vector3( 0, 0, 1 );
+
+		var euler = new THREE.Euler();
+
+		var q0 = new THREE.Quaternion();
+
+		var q1 = new THREE.Quaternion( - Math.sqrt( 0.5 ), 0, 0, Math.sqrt( 0.5 ) ); // - PI/2 around the x-axis
+
+		return function ( cameraObject, alpha, beta, gamma, orient ) {
+			
+			var vector = new THREE.Vector3(0, 0, 1);
+			
+			vector.subVectors(cameraObject.target, cameraObject.position);
+
+			euler.set( beta, alpha, - gamma, 'YXZ' );                       // 'ZXY' for the device, but 'YXZ' for us
+
+			var quaternion = new THREE.Quaternion();
+			
+			quaternion.setFromEuler( euler );                               // orient the device
+
+			quaternion.multiply( q1 );                                      // camera looks out the back of the device, not the top
+
+			quaternion.multiply( q0.setFromAxisAngle( zee, - orient ) );    // adjust for screen orientation
+			
+			vector.applyQuaternion(quaternion);
+				
+			vector.addVectors(cameraObject.position, vector);
+			
+			cameraObject.lookAt(vector);
+
+		}
+
+	}();
+
+	this.connect = function() {
+
+		onScreenOrientationChangeEvent(); // run once on load
+
+		window.addEventListener( 'orientationchange', onScreenOrientationChangeEvent, false );
+		window.addEventListener( 'deviceorientation', onDeviceOrientationChangeEvent, false );
+
+		scope.enabled = true;
+
+	};
+
+	this.disconnect = function() {
+
+		window.removeEventListener( 'orientationchange', onScreenOrientationChangeEvent, false );
+		window.removeEventListener( 'deviceorientation', onDeviceOrientationChangeEvent, false );
+
+		scope.enabled = false;
+
+	};
+
+	this.update = function () {
+
+		if ( scope.enabled === false ) return;
+
+		var alpha  = scope.deviceOrientation.alpha ? THREE.Math.degToRad( scope.deviceOrientation.alpha ) : 0; // Z
+		var beta   = scope.deviceOrientation.beta  ? THREE.Math.degToRad( scope.deviceOrientation.beta  ) : 0; // X'
+		var gamma  = scope.deviceOrientation.gamma ? THREE.Math.degToRad( scope.deviceOrientation.gamma ) : 0; // Y''
+		var orient = scope.screenOrientation       ? THREE.Math.degToRad( scope.screenOrientation       ) : 0; // O
+
+		setObjectQuaternion( scope.object, alpha, beta, gamma, orient );
+
+	};
+
+	this.dispose = function () {
+
+		this.disconnect();
+
+	};
+
+	this.connect();
+
+};
+
 
