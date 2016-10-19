@@ -6,7 +6,8 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<style>
 			body {
-				font-family: Monospace;
+				font-family: Helvetica;
+				font-size: 100%;
 				background-color: #000;
 				color: #fff;
 				margin: 0px;
@@ -14,8 +15,6 @@
 			}
 		</style>
 		<link rel="stylesheet" href="styles/new_style.css">
-		<link rel="stylesheet" href="styles/circular_slider.css">
-		<link rel="stylesheet" href="styles/circular_menu.css">
 		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<script src="js/three.min.js"></script>
 		<script src="js/zinc_threejs_control.js"></script>
@@ -41,91 +40,92 @@
 	<body style='height:100%;font-family="Helvetica"'>
 	<div id="main_page" class="heartpage">
 		<div id="footMore" class="open">
-			<div style="position:absolute;left:5%;">
-				<img src="images/new_image/click2.png" alt="more" style="max-width:80%;height:auto;">
+			<div style="position:absolute;left:5%">
+				<img src="images/new_image/click2.png" alt="more" style="float:left;width:60%">
 			</div>
-			<div style="position:absolute;left:75%;">
-				<img src="images/new_image/spin2.png" alt="more" style="max-width:80%;height:auto;top:0%;">
+			<div style="position:absolute;right:5%">
+				<img src="images/new_image/spin2.png" alt="more" style="float:right;width:60%">
 			</div>
 		</div>
 		
 		<div id="rightInformation" class="open">
-			<div class="rightChartTitle">
+			<div class="rightChartTitle" style = "width:75%;float:right;padding:10px">
 				<b>ECG</b>
 			</div>
-			<div id="rightECG" class="rightChart">
+			<div id="rightECG" class="rightChart" style="width:75%;float:right;padding:10px">
 			</div>
-			<div id="ECGDescription" class="rightChartDescription">
+			<div id="ECGDescription" class="rightChartDescription" style="width:75%;clear:right;float:right;padding:10px">
 				electrical pulses make the heart muscle contract
 			</div>
-			<div class="rightChartTitle" style="top:6%">
+			<div class="rightChartTitle" style="top:6%;width:75%;float:right;padding:10px">
 				<b>Pressure</b>
 			</div>
-			<div id="rightLVP" class="rightChart"  style="top:6%">
+			<div id="rightLVP" class="rightChart"  style="top:6%;float:right">
 			</div>
-			<div id="LVPDescription" class="rightChartDescription" style="top:6%">
+			<div id="LVPDescription" class="rightChartDescription" style="top:6%;clear:right;width:75%;float:right;padding:10px">
 				muscle contraction generates pump pressure
 			</div>
-			<div id="rightRateLabel">
+			<div class="rightChartTitle" style = "top:10%;width:75%;float:right;padding:10px;clear:right">
 				<b>Heart Rate</b>
 			</div>
-			<div id="rightRate">
-				<input id="speed_slider" type="range" min="0" max="5000" value ="1000" step="1" oninput="updateSlider(this.value)" style="width: 80%;"/>
+			<div id="rightRate" style = "top:10%;width:75%;clear:right;float:right;padding:10px">
+				<input id="speed_slider" type="range" min="0" max="5000" value ="1000" step="1" oninput="updateSlider(this.value)" style="width:80%;"/>
 			</div>
-			<div class="rightChartDescription" style="top:85%;">
+			<div class="rightChartDescription" style="top:10%;width:75%;clear:right;float:right;padding:10px">
 				make the heart beat faster or slower
 			</div>
 		</div>
 		
 		<div id="bottom_control" class="closed">
-			<div id="home" class="open" style="left:2%;position:absolute;z-index:10;height:100%;">
+			<div id="home_icon" class="closed" style="left:0%;bottom:0%;position:absolute;z-index:10;height:75%;">
 				<img src="images/new_image/home.png" alt="home"  onclick="homeClicked()" style="max-height:100%;">
 			</div>
-			<div id="halfHeart" class="halfHeart closed" style="right:2%;position:absolute;z-index:10;height:100%;"">
+			<div id="home_selected_icon" class="open" style="left:0%;bottom:0%;position:absolute;z-index:10;height:75%;">
+				<img src="images/new_image/home_selected.png" alt="home"  onclick="homeClicked()" style="max-height:100%;">
+			</div>
+			<div id="halfHeart" class="halfHeart closed" style="right:2%;bottom:0%;position:absolute;z-index:10;height:75%;">
 				<img src="images/new_image/half_heart.png" alt="halfHeart" style="max-height:100%;" onclick="halfHeartPressed()">
 			</div>
-			<div id="fibrillation_icon" class="bottomButton open" style="left:14%;position:absolute;z-index:10;height:100%;">
+			<div id="fibrillation_icon" class="bottomButton open" style="left:10%;bottom:0%;position:absolute;z-index:10;height:75%;">
 				<img src="images/heart_v7/fibrillation_icon.png" alt="information" style="max-height:100%;" onclick="heartElectricityClicked()">
 			</div>
-			<div id="attack_icon" lass="bottomButton open" style="left:25%;position:absolute;z-index:10;height:100%;">
+			<div id="attack_icon" lass="bottomButton open" style="left:20%;bottom:0%;position:absolute;z-index:10;height:75%;">
 				<img src="images/heart_v7/attack_icon.png" alt="information" style="max-height:100%;" onclick="heartAttackClicked()">
 			</div>
-			<div id="failure_icon" class="bottomButton open" style="left:36%;position:absolute;z-index:10;height:100%;">
+			<div id="failure_icon" class="bottomButton open" style="left:30%;bottom:0%;position:absolute;z-index:10;height:75%;">
 				<img src="images/heart_v7/failure_icon.png" alt="information" style="max-height:100%;" onclick="heartFailureClicked()">
 			</div>
-			<div id="fibrillation_selected_icon" class="bottomButton closed" style="left:14%;position:absolute;z-index:10;height:100%;">
+			<div id="fibrillation_selected_icon" class="bottomButton closed" style="left:10%;bottom:0%;position:absolute;z-index:10;height:75%;">
 				<img src="images/heart_v7/fibrillation_selected_icon.png" alt="information" style="max-height:100%;">
 			</div>
-			<div id="attack_selected_icon" class="bottomButton closed" style="left:25%;position:absolute;z-index:10;height:100%;">
+			<div id="attack_selected_icon" class="bottomButton closed" style="left:20%;bottom:0%;position:absolute;z-index:10;height:75%;">
 				<img src="images/heart_v7/attack_selected_icon.png" alt="information" style="max-height:100%;">
 			</div>
-			<div id="failure_selected_icon" class="bottomButton closed" style="left:36%;position:absolute;z-index:10;height:100%;">
+			<div id="failure_selected_icon" class="bottomButton closed" style="left:30%;bottom:0%;position:absolute;z-index:10;height:75%;">
 				<img src="images/heart_v7/failure_selected_icon.png" alt="information" style="max-height:100%;">
 			</div>
-			<div id="fullHeart" class="halfHeart closed" style="right:2%;position:absolute;z-index:10;height:100%;"">
+			<div id="fullHeart" class="halfHeart closed" style="right:2%;bottom:0%;position:absolute;z-index:10;height:75%;"">
 				<img src="images/new_image/full_heart.png" alt="fullHeart"  style="max-height:100%;"onclick="halfHeartPressed()">
 			</div>
 		</div>
 		
 		<div id="initialNormal" class="closed leftPanel">
-			<div class="leftTitle" style="color:rgb(0,185,255);" >
+			<div class="leftTitle" style="color:#00ccff" >
 				<b>The Heart</b>
 			</div>
-			<div class="leftDescription" style="color:rgb(0,185,255);">
+			<div class="leftDescription" style="color:#00ccff">
 				<b>Muscles pumping blood</b>
 			</div>
 			<div class="leftDetail" style="color:rgb(175, 175, 175);">
-				<b>
-					<p>The main job of the heart is to pump blood around the body to meet the demands of the organ systems.</p>
-					<p>The main pumping chambers of the heart are the left and right ventricles.</p>
-					<p>Contraction of the thick muscular walls of the ventricles generates the pressure needed to pump blood around the body.</p>
-				</b>
+				<p>The main job of the heart is to pump blood around the body to meet the demands of the organ systems.</p>
+				<p>The main pumping chambers of the heart are the left and right ventricles.</p>
+				<p>Contraction of the thick muscular walls of the ventricles generates the pressure needed to pump blood around the body.</p>
 			</div>
 			<div class="leftFootnote" style="color:rgb(255, 255, 255);">
 				<b>
-					<p>To learn about some common heart problems, select below.</p>
-
+				<p>Select below to learn about some common heart problems.</p>
 				</b>
+
 			</div>
 		</div>
 		
@@ -137,10 +137,10 @@
 				<b>Coordinated squeezing</b>
 			</div>
 			<div class="leftDetail" style="color:rgb(175, 175, 175);">
-				<b>In a healthy heart, the electrical wave passes through the muscle in an orderly fashion to activate coordinated squeezing.</b>
+				In a healthy heart, electrical waves pass smoothly through the muscle to provide coordinated contraction and efficient pumping.
 			</div>
-			<div class="leftClickable">
-				<img src="images/heart_v7/to_fibrillation.png" alt="information" style="max-width:100%;" onclick="arrhythmiaClicked()">
+			<div class="leftClickable" style="font-size:2em" onclick="arrhythmiaClicked()">
+				<b>What happens when the smooth electrical waves are disrupted?</b>
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
@@ -154,20 +154,18 @@
 		</div>
 		
 		<div id="leftHeartArrhythmia" class="closed leftPanel">
-			<div class="leftTitle" style="color:rgb(255,255,255);" >
-				<b>Heart Fibrillation</b>
+			<div class="leftTitle" style="color:rgb(255,192,0);" >
+				<b>Fibrillation</b>
 			</div>
-			<div class="leftDescription" style="color:rgb(255,255,255);">
-				<b>Disorderly squeezing</b>
+			<div class="leftDescription" style="color:rgb(255,192,0);">
+				<b>Chaotic contraction</b>
 			</div>
 			<div class="leftDetail" style="color:rgb(175, 175, 175);">
-				<b>
-					<p>Electrical disruption leads to fibrillation and chaotic contraction. This means the heart cannot generate enough pressure to pump the blood.</p>
-					<p>To fix a fibrillating heart, we need to apply a large electrical shock to reset the electrical waves. We need an Automated External Defibrillator (AED).</p>
-				</b>
+				<p>Electrical disruption leads to fibrillation and chaotic contraction. This means the heart cannot generate enough pressure to pump the blood.</p>
+				<p>To fix a fibrillating heart, we need to apply a large electrical shock to reset the electrical waves. We need an Automated External Defibrillator (AED).</p>
 			</div>
-			<div class="leftClickable">
-				<img src="images/heart_v7/defibrillation.png" alt="information" style="max-width:100%;" onclick="AEDClicked()">
+			<div class="leftClickable" style="font-size:2em" onclick="AEDClicked()">
+				<b>Defibrillate</b>
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
@@ -188,10 +186,11 @@
 				<b>Healthy muscle</b>
 			</div>
 			<div id="NormalHeartAttackDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
-				<b>The heart muscle needs blood to survive. The healthy heart pumps blood to nourish itself through its coronary arteries.</b>
+				The heart muscle needs blood to survive. The healthy heart pumps blood to nourish itself through its coronary arteries.
 			</div>
-			<div class="leftClickable">
-				<img src="images/heart_v7/to_moderate_attack.png" alt="information" style="max-width:100%;" onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
+			
+			<div class="leftClickable" style="font-size:2em" onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
+				<b>What happens during a heart attack?</b>
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
@@ -215,13 +214,13 @@
 				<b>Damaged muscle</b>
 			</div>
 			<div id="NormalHeartAttackDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
-				<b>In a heart attack, blocked arteries lead to muscle damage, which reduces the heart’s ability to pump blood.</b>
+				In a heart attack, blocked arteries lead to muscle damage, which reduces the heart’s ability to pump blood.
 			</div>
 			<div class="leftLargeClickable">
 				<img src="images/heart_v7/medication.png" alt="information" style="max-width:100%;max-height:100%;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
 			</div>
-			<div class="leftClickable">
-				<img src="images/heart_v7/to_severe_attack.png" alt="information" style="max-width:100%;" onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
+			<div class="leftClickable" style="font-size:2em" onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')" >
+				<b>What happens if you don't take your medication?</b>
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
@@ -244,10 +243,10 @@
 				<b>Severe muscle damage</b>
 			</div>
 			<div id="NormalHeartAttackDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
-				<b>If blocked arteries are left untreated, more of the muscle gets damaged, and the pumping ability of the heart is severely reduced. </b>
+				If blocked arteries are left untreated, more of the muscle gets damaged, and the pumping ability of the heart is severely reduced.
 			</div>
 			<div class="leftLargeClickable">
-				<img src="images/heart_v7/medication.png" alt="information" style="max-width:100%;max-height:100%;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
+				<img src="images/heart_v7/medication.png" alt="information" style="max-width:100%;max-height:100%;"  onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
@@ -309,7 +308,7 @@
 		var idleTimeLimit = 120000;
 		var oldTime = new Date();
 		var iconIds = ["fibrillation_icon", "attack_icon", "failure_icon", "fibrillation_selected_icon",
-			"attack_selected_icon", "failure_selected_icon"];
+			"attack_selected_icon", "failure_selected_icon", "home_icon", "home_selected_icon"];
 
 		function displayHalfHeartIcon() {
 			if (halfHeartFlag) {
@@ -349,6 +348,8 @@
 				document.getElementById('fullHeart').classList.remove('open');
 				document.getElementById('fullHeart').classList.add('closed');
 				loadModel("DeformingHeart", 1.0);
+				document.getElementById("home_icon").className = 'closed';
+				document.getElementById("home_selected_icon").className = 'open';
 			}
 		}
 		
@@ -401,6 +402,8 @@
 		function heartElectricityClicked() {
 			leftPanelTrigger('leftHeartElectricity');
 			showIcons("fibrillation_selected_icon", "attack_icon", "failure_icon");
+			document.getElementById("home_icon").className = 'open';
+			document.getElementById("home_selected_icon").className = 'closed';
 			loadModel('NormalElectricity', 1.0);
 			showECGAndLVP('Normal', 0.0);
 		}
@@ -432,6 +435,8 @@
 		
 		function heartAttackClicked() {
 			showIcons("fibrillation_icon", "attack_selected_icon", "failure_icon");
+			document.getElementById("home_icon").className = 'open';
+			document.getElementById("home_selected_icon").className = 'closed';
 			leftPanelTrigger('leftHeartAttack');
 			heartAttackStagePressed('NoInfarct','NoHeartAttack', 'leftHeartAttack');
 		}
@@ -538,8 +543,8 @@
 			modelURLsArray['NoInfarct'] = ['heartInfarct/noInfarct_metadata.json',
 				'heartInfarct/noInfarct_view.json'];
 				
-			ECGTexts['Normal'] = "Electrical pulses activates heart muscles to squeeze";
-			LVPTexts['Normal'] = "Muscles squeezes to increase pressure to push blood out";
+			ECGTexts['Normal'] = "electrical pulses make the heart muscle contract";
+			LVPTexts['Normal'] = "muscle contraction generates pump pressure";
 			ECGTexts['Arrhythmia'] = "Abnormal electrical pattern";
 			LVPTexts['Arrhythmia'] = "Very little pressure produced";
 			ECGTexts['NoInfarct'] = "Electrical pulses activates heart muscles to squeeze";
@@ -559,6 +564,7 @@
 						ready(function(){
 								tomTheme.chart.fill="transparent";
 								tomTheme.plotarea.fill = "transparent";
+								tomTheme.chart.stroke = "transparent";
 								/* get the html element (dom) where we want the chart to be drawn on */
 								var chartDom = document.getElementById("rightECG");
 								/* create the chart on the dom */
@@ -570,14 +576,11 @@
 									minorLabels: false,
 									microTicks: false});		
 								/* add the y-axis */
-								ECGchart.addAxis("y", {vertical: true,
+								ECGchart.addAxis("y", {type: "Invisible", vertical: true,
+									majorLabels: false,
 									minorTicks: false,
-									majorTickStep: 10,
-									majorTick: {color: "transparent"},
-									stroke: "transparent",
-									title: "(ecg)",
-									fontColor: "transparent",
-									titleFontColor: "transparent"});
+									minorLabels: false,
+									microTicks: false});
 								/* optional add the grid */
 								ECGchart.addPlot("grid", { type: Grid,
 									hMajorLines: false,
@@ -588,7 +591,7 @@
 									majorVLine: { color: "red", width: 0.2 } });
 							   ECGchart.addPlot("time", { type: plot2dIndicator,
 				        			vertical: true,
-				        			lineStroke: { color: "blue"},
+				        			lineStroke: { color: "#00ccff"},
 				        			labels: null,
 				        			stroke: null,
 				        			outline: null,
@@ -611,10 +614,11 @@
 								/* add the y-axis */
 								LVPchart.addAxis("y", {
 									vertical: true,
-									min: 0,
+									min: -40,
 									max: 160,
 									minorTicks: false,
 									majorTickStep: 40,
+									titleFont: "normal normal normal 11pt Helvetica",
 									title:"(mmHg)",
 									titleFontColor:[120, 120, 120]
         						});
@@ -628,7 +632,7 @@
 									majorVLine: { color: "red", width: 0.2 } });
 								LVPchart.addPlot("time", { type: plot2dIndicator,
 				        			vertical: true,
-				        			lineStroke: { color: "blue"},
+				        			lineStroke: { color: "#00ccff"},
 				        			labels: null,
 				        			stroke: null,
 				        			outline: null,
@@ -681,6 +685,8 @@
 			document.getElementById('heartAttackButton').classList.remove('selectedItem');
 			document.getElementById('heartFailureButton').classList.add('selectedItem');
 			heartElectrictyButton
+			document.getElementById("home_icon").className = 'open';
+			document.getElementById("home_selected_icon").className = 'closed';
 			updateInfoText("Heart Failure");
 		}
 		
@@ -695,7 +701,7 @@
 				minLVPTime = currentLVP[0]['x'];
 				LVPchart.removeSeries(currentLVPName);
 				currentLVPName = chartName;
-				LVPchart.addSeries(chartName, currentLVP, { stroke: "green"});
+				LVPchart.addSeries(chartName, currentLVP, { stroke: {color: "green", width: 2}});
 				LVPchart.render();
 				LVPchart.resize('100%','100%');
 			}
@@ -718,7 +724,7 @@
 				minECGTime = currentECG[0]['x'];
 				ECGchart.removeSeries(currentECGName);
 				currentECGName = chartName;
-				ECGchart.addSeries(chartName, currentECG, { stroke: "orange"});
+				ECGchart.addSeries(chartName, currentECG, { stroke: {color: "orange", width: 2}});
 				ECGchart.render();
 				ECGchart.resize('100%','100%');
 			}
