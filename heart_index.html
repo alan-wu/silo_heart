@@ -143,6 +143,12 @@
 				<img src="images/heart_v7/to_fibrillation.png" alt="information" style="max-width:100%;" onclick="arrhythmiaClicked()">
 			</div>
 			<div class="leftProgressBar">
+				<div style="max-width:100%;background-color: transparent;">
+					<div class="progressClickable" style="left:0%;width:45%;background-color: transparent;">
+					</div>
+					<div class="progressClickable" style="left:45%;width:50%;background-color: transparent;" onclick="arrhythmiaClicked()">
+					</div>
+				</div>
 				<img src="images/heart_v7/health_electricity.png" alt="information" style="max-width:100%;">
 			</div>
 		</div>
@@ -164,6 +170,12 @@
 				<img src="images/heart_v7/defibrillation.png" alt="information" style="max-width:100%;" onclick="AEDClicked()">
 			</div>
 			<div class="leftProgressBar">
+				<div style="max-width:100%;background-color: transparent;">
+					<div class="progressClickable" style="left:0%;width:45%;background-color: transparent;" onclick="heartElectricityClicked()">
+					</div>
+					<div class="progressClickable" style="left:45%;width:50%;background-color: transparent;">
+					</div>
+				</div>
 				<img src="images/heart_v7/fibrillation_electricity.png" alt="information" style="max-width:100%;">
 			</div>
 		</div>
@@ -182,6 +194,14 @@
 				<img src="images/heart_v7/to_moderate_attack.png" alt="information" style="max-width:100%;" onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
 			</div>
 			<div class="leftProgressBar">
+				<div style="max-width:100%;background-color: transparent;">
+					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;">
+					</div>
+					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
+					</div>
+					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
+					</div>
+				</div>
 				<img src="images/heart_v7/health_attack.png" alt="information" style="max-width:100%;">
 			</div>		
 		</div>
@@ -204,6 +224,14 @@
 				<img src="images/heart_v7/to_severe_attack.png" alt="information" style="max-width:100%;" onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
 			</div>
 			<div class="leftProgressBar">
+				<div style="max-width:100%;background-color: transparent;">
+					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
+					</div>
+					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;">
+					</div>
+					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
+					</div>
+				</div>
 				<img src="images/heart_v7/moderate_attack.png" alt="information" style="max-width:100%;">
 			</div>
 		</div>
@@ -219,9 +247,17 @@
 				<b>If blocked arteries are left untreated, more of the muscle gets damaged, and the pumping ability of the heart is severely reduced. </b>
 			</div>
 			<div class="leftLargeClickable">
-				<img src="images/heart_v7/medication.png" alt="information" style="max-width:100%;max-height:100%;"  onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
+				<img src="images/heart_v7/medication.png" alt="information" style="max-width:100%;max-height:100%;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
 			</div>
 			<div class="leftProgressBar">
+				<div style="max-width:100%;background-color: transparent;">
+					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
+					</div>
+					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
+					</div>
+					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;">
+					</div>
+				</div>
 				<img src="images/heart_v7/severe_attack.png" alt="information" style="max-width:100%;">
 			</div>
 		</div>
@@ -534,11 +570,14 @@
 									minorLabels: false,
 									microTicks: false});		
 								/* add the y-axis */
-								ECGchart.addAxis("y", {type: "Invisible", vertical: true,
-									majorLabels: false,
+								ECGchart.addAxis("y", {vertical: true,
 									minorTicks: false,
-									minorLabels: false,
-									microTicks: false});
+									majorTickStep: 10,
+									majorTick: {color: "transparent"},
+									stroke: "transparent",
+									title: "(ecg)",
+									fontColor: "transparent",
+									titleFontColor: "transparent"});
 								/* optional add the grid */
 								ECGchart.addPlot("grid", { type: Grid,
 									hMajorLines: false,

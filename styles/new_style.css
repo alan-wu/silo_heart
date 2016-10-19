@@ -345,7 +345,7 @@ div#halfHeartButton {
 div.leftPanel {
   z-index:1;
   background-color: transparent;
-  height:85%;
+  height:81%;
   width:25%;
   left:2%;
   top:4%;
@@ -421,9 +421,9 @@ div.leftProgressBar {
   text-align: left;
   vertical-align: middle;
   font-size: 1.3em;
-  bottom:0%;
+  bottom:3%;
   z-index:1;
-  height:15%;
+  overflow:auto;
   position: absolute;
 }
 
@@ -460,8 +460,8 @@ div.rightChartTitle{
 
 div.rightChart {
   z-index:3;
-  left:0%;
-  width:95%;
+  left:-10%;
+  width:105%;
   height: 17%;
   position: relative;
 }
@@ -531,3 +531,13 @@ div#bottom_control {
  position: absolute;
 }
 
+div.progressClickable:hover {
+ cursor: pointer;
+ cursor: hand;
+}
+
+div.progressClickable {
+	background-color: transparent;
+ 	height:100%;
+ 	position: absolute;
+}
