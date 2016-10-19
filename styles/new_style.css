@@ -401,8 +401,6 @@ div.leftClickable{
 }
 
 
-
-
 div.leftClickable:hover {
  cursor: pointer;
  cursor: hand;
