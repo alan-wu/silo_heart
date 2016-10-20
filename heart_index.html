@@ -23,7 +23,6 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script>	
-		<script src="js/jquery.wheel.js"></script>
 		<script>
 			var dojoConfig = {
 		        async: true,
@@ -503,6 +502,19 @@
 			currentScene.forEachGeometry(geometryShowHalf());
 		}
 		
+		function geometryIsShowingHalf() {
+			return function(zincGeometry) {
+				if (zincGeometry.groupName && zincGeometry.groupName.includes("Post")) {
+					halfHeartFlag = zincGeometry.morph.visible;
+				}
+			}
+		}
+		
+		function isShowingHalf() {
+			var currentScene = zincRenderer.getCurrentScene();
+			currentScene.forEachGeometry(geometryIsShowingHalf());
+		}
+		
 		var halfHeartPressed = function() {
 			if (halfHeartFlag) {
 				halfHeartFlag = false;
@@ -666,10 +678,9 @@
 				scene.loadViewURL(viewURL);
 				scene.loadMetadataURL(metaURL);
 			}
-			halfHeartFlag = false;			
+			isShowingHalf();
 			displayHalfHeartIcon();
-			showHalf();
-			scene.resetView();
+			//scene.resetView();
 			zincRenderer.setCurrentScene(scene);
 		}
 
