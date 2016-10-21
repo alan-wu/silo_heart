@@ -259,6 +259,84 @@
 				<img src="images/heart_v7/severe_attack.png" alt="information" style="max-width:100%;">
 			</div>
 		</div>
+
+		<div id="leftHeartFailure" class="closed leftPanel">
+			<div class="leftTitle" style="color:rgb(255,0,128);" >
+				<b>Heart Failure</b>
+			</div>
+			<div class="leftDescription" style="color:rgb(255,0,128);">
+				<b>Healthy heart</b>
+			</div>
+			<div id="NormalHeartFailureDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
+				<p>The shape, stiffness and contraction force in the healthy heart maximises pumping performance. </p>
+				<p>Heart failure involves long term changes in heart properties due to factors such as high blood pressure.</p>
+			</div>
+			<div class="leftClickable" style="font-size:2em" onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')" >
+				<b>What can long term high blood pressure do to the heart?</b>
+			</div>
+			<div class="leftProgressBar">
+				<div style="max-width:100%;background-color: transparent;">
+					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;">
+					</div>
+					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')">
+					</div>
+					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
+					</div>
+				</div>
+				<img src="images/heart_v7/heart_failure.png" alt="information" style="max-width:100%;">
+			</div>
+		</div>
+		
+		<div id="leftCompensatedFailure" class="closed leftPanel">
+			<div class="leftTitle" style="color:rgb(255,0,128);" >
+				<b>Heart Failure</b>
+			</div>
+			<div class="leftDescription" style="color:rgb(255,0,128);">
+				<b>Diseased heart</b>
+			</div>
+			<div id="NormalHeartFailureDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
+				<p>High blood pressure can make the heart muscle get thicker to maintain its pumping performance.</p>
+				<p>This means the heart needs to work harder to compensate.</p>
+			</div>
+			<div class="leftClickable" style="font-size:2em"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
+				<b>What happens if high blood pressure is left untreated?</b>
+			</div>
+			<div class="leftProgressBar">
+				<div style="max-width:100%;background-color: transparent;">
+					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure')">
+					</div>
+					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;">
+					</div>
+					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
+					</div>
+				</div>
+				<img src="images/heart_v7/compensated_failure.png" alt="information" style="max-width:100%;">
+			</div>
+		</div>
+
+		<div id="leftDecompensatedFailure" class="closed leftPanel">
+			<div class="leftTitle" style="color:rgb(255,0,128);" >
+				<b>Heart Failure</b>
+			</div>
+			<div class="leftDescription" style="color:rgb(255,0,128);">
+				<b>Diseased heart</b>
+			</div>
+			<div id="NormalHeartFailureDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
+				<p>Long term high blood pressure can lead to larger heart with thinner muscular walls.</p>
+				<p>The heart can no longer compensate and loses its ability to pump blood.</p>
+			</div>
+			<div class="leftProgressBar">
+				<div style="max-width:100%;background-color: transparent;">
+					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure')">
+					</div>
+					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')">
+					</div>
+					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;">
+					</div>
+				</div>
+				<img src="images/heart_v7/decompensated_failure.png" alt="information" style="max-width:100%;">
+			</div>
+		</div>
 	
 		<div id="more" class="closed" onclick="moreClicked()">
 			<img src="images/more.png" alt="more" style="height:40%;">
@@ -302,12 +380,12 @@
 		zincRenderer.getThreeJSRenderer().setClearColor( 0xffffff, 0);
 		var halfHeartFlag = false;
 		var leftPanelIDs = ["initialNormal", "leftHeartElectricity", "leftHeartArrhythmia", "leftHeartAttack",
-			"leftModerateAttack", "leftSevereAttack"];
+			"leftModerateAttack", "leftSevereAttack", "leftHeartFailure"];
 		var idleTime = 0;
 		var idleTimeLimit = 120000;
 		var oldTime = new Date();
 		var iconIds = ["fibrillation_icon", "attack_icon", "failure_icon", "fibrillation_selected_icon",
-			"attack_selected_icon", "failure_selected_icon", "home_icon", "home_selected_icon"];
+			"attack_selected_icon", "failure_selected_icon"];
 
 		function displayHalfHeartIcon() {
 			if (halfHeartFlag) {
@@ -377,9 +455,9 @@
 		}
 		
 		function showIcons(showIcon1, showIcon2, showIcon3) {
-			for(var i = 0; i < leftPanelIDs.length; i++){
-    			var id = iconIds[i];
-    			if ((id != showIcon1) && (id != showIcon2) && (id != showIcon3)) {
+			for(var i = 0; i < iconIds.length; i++){
+	    			var id = iconIds[i];
+	    			if ((id != showIcon1) && (id != showIcon2) && (id != showIcon3)) {
 					document.getElementById(id).classList.remove('open');
 					document.getElementById(id).classList.add('closed');
 				}
@@ -541,6 +619,12 @@
 			LVPurls['LargeInfarct'] = 'LVP/largeInfarctLVP.json';
 			ECGurls['Arrhythmia'] = 'ECG/ArrhythmiaECG.json';
 			LVPurls['Arrhythmia'] = 'LVP/ArrhythmiaLVP.json';
+			ECGurls['NoFailure'] = 'ECG/NormalECG.json';
+			LVPurls['NoFailure'] = 'LVP/NormalLVP.json';
+			ECGurls['CompensatedFailure'] = 'ECG/DiastolicECG.json';
+			LVPurls['CompensatedFailure'] = 'LVP/DiastolicLVP.json';
+			ECGurls['DecompensatedFailure'] = 'ECG/SystolicECG.json';
+			LVPurls['DecompensatedFailure'] = 'LVP/SystolicLVP.json';
 			
 			modelURLsArray['DeformingHeart'] = ['models/deforming_heart_metadata.json',
 				'models/deforming_heart_view.json'];
@@ -554,17 +638,27 @@
 				'heartInfarct/smallInfarct_view.json'];
 			modelURLsArray['NoInfarct'] = ['heartInfarct/noInfarct_metadata.json',
 				'heartInfarct/noInfarct_view.json'];
+			modelURLsArray['NoFailure'] = ['heartInfarct/noInfarct_metadata.json',
+				'heartInfarct/noInfarct_view.json'];
+			modelURLsArray['CompensatedFailure'] = ['heartFailure/compensated_metadata.json', 'heartFailure/compensated_view.json'];
+			modelURLsArray['DecompensatedFailure'] = ['heartFailure/decompensated_metadata.json', 'heartFailure/decompensated_view.json'];
 				
 			ECGTexts['Normal'] = "electrical pulses make the heart muscle contract";
 			LVPTexts['Normal'] = "muscle contraction generates pump pressure";
-			ECGTexts['Arrhythmia'] = "Abnormal electrical pattern";
-			LVPTexts['Arrhythmia'] = "Very little pressure produced";
-			ECGTexts['NoInfarct'] = "Electrical pulses activates heart muscles to squeeze";
-			LVPTexts['NoInfarct'] = "Muscles squeezes to increase pressure to push blood out";
-			ECGTexts['SmallInfarct'] = "Electrical pulses activates heart muscles to squeeze";
-			LVPTexts['SmallInfarct'] = "Dead muscle means less squeeze force and less pressure generated";
-			ECGTexts['LargeInfarct'] = "Electrical pulses activates heart muscles to squeeze";
-			LVPTexts['LargeInfarct'] = "Dead muscle means less squeeze force and less pressure generated";
+			ECGTexts['Arrhythmia'] = "abnormal electrical pattern";
+			LVPTexts['Arrhythmia'] = "very little pressure produced";
+			ECGTexts['NoInfarct'] = "electrical pulses make the heart muscle contract";
+			LVPTexts['NoInfarct'] = "muscle contraction generates pump pressure";
+			ECGTexts['SmallInfarct'] = "electrical pulses make the heart muscle contract";
+			LVPTexts['SmallInfarct'] = "dead muscle means less squeeze force and less pressure generated";
+			ECGTexts['LargeInfarct'] = "electrical pulses make the heart muscle contract";
+			LVPTexts['LargeInfarct'] = "dead muscle means less squeeze force and less pressure generated";
+			ECGTexts['NoFailure'] = "electrical pulses make the heart muscle contract";
+			LVPTexts['NoFailure'] = "muscle contraction generates pump pressure";
+			ECGTexts['CompensatedFailure'] = "electrical pulses make the heart muscle contract";
+			LVPTexts['CompensatedFailure'] = "muscle contraction generates pump pressure";
+			ECGTexts['DecompensatedFailure'] = "electrical pulses make the heart muscle contract";
+			LVPTexts['DecompensatedFailure'] = "muscle contraction generates pump pressure";
 		}
 		
 		
@@ -689,18 +783,25 @@
 		}
 		
 		function heartFailureClicked() {
-			document.getElementById('heartAttackButtonsContainer').className = 'closed';
-			document.getElementById('arrhythmia').className = 'closed';
-			document.getElementById('AED').className = 'closed';
-			document.getElementById('heartElectrictyButton').classList.remove('selectedItem');
-			document.getElementById('heartAttackButton').classList.remove('selectedItem');
-			document.getElementById('heartFailureButton').classList.add('selectedItem');
-			heartElectrictyButton
-			document.getElementById("home_icon").className = 'open';
-			document.getElementById("home_selected_icon").className = 'closed';
-			updateInfoText("Heart Failure");
+			showIcons("fibrillation_icon", "attack_icon", "failure_selected_icon");
+			document.getElementById("home_icon").className = "open";
+			document.getElementById("home_selected_icon").className = "closed";
+			leftPanelTrigger('leftHeartFailure');
+			heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure');
 		}
 		
+		var heartFailureStagePressed = function(StageName, pressedElement, descriptionId){
+			loadModel(StageName, 1.0);
+			showECGAndLVP(StageName, 0.0);
+			document.getElementById('leftHeartFailure').classList.remove('open');
+			document.getElementById('leftHeartFailure').classList.add('closed');
+			document.getElementById('leftCompensatedFailure').classList.remove('open');
+			document.getElementById('leftCompensatedFailure').classList.add('closed');
+			document.getElementById('leftDecompensatedFailure').classList.remove('open');
+			document.getElementById('leftDecompensatedFailure').classList.add('closed');
+			document.getElementById(descriptionId).classList.remove('closed');
+			document.getElementById(descriptionId).classList.add('open');
+		}
 		function updateSlider(newValue)	{
 			zincRenderer.setPlayRate(newValue);
 		}
