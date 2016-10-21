@@ -539,7 +539,7 @@
 			var normaliseTime = zincRenderer.getCurrentTime() / 3000.0;
 			if (lvpIndicator && (currentLVPName != ' None') &&
 				ecgIndicator && (currentECGName != ' None') &&
-				document.getElementById('rightInformation').className.includes("open")) {
+				document.getElementById('rightInformation').className == "open") {
 				var lvpTime = normaliseTime * (maxLVPTime - minLVPTime) + minLVPTime;
 				var ecgTime = normaliseTime * (maxECGTime - minECGTime) + minECGTime;
 				if (timeLineOffset != 0.0) {
