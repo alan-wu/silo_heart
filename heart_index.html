@@ -474,6 +474,7 @@
 				document.getElementById(showIcon3).classList.remove('closed');
 				document.getElementById(showIcon3).classList.add('open');
 			}
+
 		}
 		
 		function heartElectricityClicked() {
@@ -636,9 +637,9 @@
 				'heartInfarct/largeInfarct_view.json'];
 			modelURLsArray['SmallInfarct'] = ['heartInfarct/smallInfarct_metadata.json',
 				'heartInfarct/smallInfarct_view.json'];
-			modelURLsArray['NoInfarct'] = ['heartInfarct/noInfarct_metadata.json',
+			modelURLsArray['NoInfarct'] = ['heartFailure/noFailure_metadata.json',
 				'heartInfarct/noInfarct_view.json'];
-			modelURLsArray['NoFailure'] = ['heartInfarct/noInfarct_metadata.json',
+			modelURLsArray['NoFailure'] = ['heartFailure/noFailure_metadata.json',
 				'heartInfarct/noInfarct_view.json'];
 			modelURLsArray['CompensatedFailure'] = ['heartFailure/compensated_metadata.json', 'heartFailure/compensated_view.json'];
 			modelURLsArray['DecompensatedFailure'] = ['heartFailure/decompensated_metadata.json', 'heartFailure/decompensated_view.json'];
@@ -650,9 +651,9 @@
 			ECGTexts['NoInfarct'] = "electrical pulses make the heart muscle contract";
 			LVPTexts['NoInfarct'] = "muscle contraction generates pump pressure";
 			ECGTexts['SmallInfarct'] = "electrical pulses make the heart muscle contract";
-			LVPTexts['SmallInfarct'] = "dead muscle means less squeeze force and less pressure generated";
+			LVPTexts['SmallInfarct'] = "damaged muscle means less contraction force and less pressure generated";
 			ECGTexts['LargeInfarct'] = "electrical pulses make the heart muscle contract";
-			LVPTexts['LargeInfarct'] = "dead muscle means less squeeze force and less pressure generated";
+			LVPTexts['LargeInfarct'] = "damaged muscle means less contraction force and less pressure generated";
 			ECGTexts['NoFailure'] = "electrical pulses make the heart muscle contract";
 			LVPTexts['NoFailure'] = "muscle contraction generates pump pressure";
 			ECGTexts['CompensatedFailure'] = "electrical pulses make the heart muscle contract";
@@ -788,6 +789,7 @@
 			document.getElementById("home_selected_icon").className = "closed";
 			leftPanelTrigger('leftHeartFailure');
 			heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure');
+			displayHalfHeartIcon();
 		}
 		
 		var heartFailureStagePressed = function(StageName, pressedElement, descriptionId){
