@@ -1,9 +1,18 @@
 [
    {
+      "GroupName" : "Post",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
       "Type" : "Surfaces",
       "URL" : "models/deforming_heart_1.json"
+   },
+   {
+      "GroupName" : "Ant",
+      "MorphColours" : false,
+      "MorphNormals" : false,
+      "MorphVertices" : true,
+      "Type" : "Surfaces",
+      "URL" : "models/deforming_heart_2.json"
    }
 ]
