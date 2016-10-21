@@ -583,7 +583,7 @@
 		function geometryIsShowingHalf() {
 			return function(zincGeometry) {
 				if (zincGeometry.groupName && zincGeometry.groupName.includes("Post")) {
-					halfHeartFlag = zincGeometry.morph.visible;
+					halfHeartFlag = zincGeometry.morph.visible ? false : true;
 				}
 			}
 		}
@@ -771,11 +771,14 @@
 				scene.setDuration(scene.getDuration() / rateScaling);
 				scene.loadViewURL(viewURL);
 				scene.loadMetadataURL(metaURL);
+				zincRenderer.setCurrentScene(scene);
+				halfHeartFlag = false;
+				displayHalfHeartIcon();
+			} else {
+				zincRenderer.setCurrentScene(scene);
+				isShowingHalf();
+				displayHalfHeartIcon();
 			}
-			isShowingHalf();
-			displayHalfHeartIcon();
-			//scene.resetView();
-			zincRenderer.setCurrentScene(scene);
 		}
 
 		function resetView()	{
