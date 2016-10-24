@@ -1,17 +1,17 @@
 [
    {
-      "GroupName" : "Ant",
+      "GroupName" : "Post",
       "MorphColours" : true,
       "MorphNormals" : false,
-      "MorphVertices" : false,
+      "MorphVertices" : true,
       "Type" : "Surfaces",
       "URL" : "heartElectricity/normalActivity_1.json"
    },
    {
-      "GroupName" : "Post",
+      "GroupName" : "Ant",
       "MorphColours" : true,
       "MorphNormals" : false,
-      "MorphVertices" : false,
+      "MorphVertices" : true,
       "Type" : "Surfaces",
       "URL" : "heartElectricity/normalActivity_2.json"
    }
