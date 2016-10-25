@@ -1,6 +1,6 @@
 [
    {
-      "GroupName" : "Ant_NonInfarct",
+      "GroupName" : "Base_Ant",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
@@ -8,7 +8,7 @@
       "URL" : "heartInfarct/noInfarct_1.json"
    },
    {
-      "GroupName" : "Base_Ant",
+      "GroupName" : "Post_NonInfarct",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
@@ -16,7 +16,7 @@
       "URL" : "heartInfarct/noInfarct_2.json"
    },
    {
-      "GroupName" : "Post_NonInfarct",
+      "GroupName" : "Ant_NonInfarct",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,

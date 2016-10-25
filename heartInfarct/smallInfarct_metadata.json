@@ -8,7 +8,7 @@
       "URL" : "heartInfarct/smallInfarct_1.json"
    },
    {
-      "GroupName" : "Ant_NonInfarct",
+      "GroupName" : "Base_Ant",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
@@ -32,7 +32,7 @@
       "URL" : "heartInfarct/smallInfarct_4.json"
    },
    {
-      "GroupName" : "Base_Ant",
+      "GroupName" : "Ant_NonInfarct",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
