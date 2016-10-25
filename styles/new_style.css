@@ -367,7 +367,7 @@ div.leftDescription {
   background-color: transparent;
   text-align: left;
   vertical-align: middle;
-  font-size: 1.3em;
+  font-size: 1.7em;
   top: 0%;
   width:100%;
   z-index:1;
@@ -378,7 +378,7 @@ div.leftDetail {
   background-color: transparent;
   text-align: left;
   vertical-align: middle;
-  font-size: 1.3em;
+  font-size: 1.7em;
   font-weight:normal;
   top: 2%;
   z-index:1;
@@ -388,14 +388,31 @@ div.leftDetail {
 div.leftClickable{
   background-image: url(../images/heart_v7/question_mark.png);
   background-repeat: no-repeat;
-  padding-left: 15%;
+  background-size: 60px 60px;
+  padding-left: 16%;
   vertical-align: middle;
   display: block;
   position: absolute;
-  top: 70%;
+  top: 80%;
   height:15%;
+  width: 90%; 
+  font-size: 1.7em;
+  z-index:1;
+  font-weight: normal;
+}
+
+div.leftClickableAED{
+  background-image: url(../images/heart_v7/defibrillation.png);
+  background-repeat: no-repeat;
+  background-size: 65px;
+  padding-left: 16%;
+  vertical-align: middle;
+  display: block;
+  position: absolute;
+  top: 80%;
+  height:20%;
   width: 100%; 
-  font-size: 1.3em;
+  font-size: 1.7em;
   z-index:1;
   font-weight: normal;
 }
@@ -408,10 +425,10 @@ div.leftClickable:hover {
 
 div.leftLargeClickable {
   background-color: transparent;
-  text-align: left;
   vertical-align: middle;
   font-size: 1.3em;
-  top: 10%;
+  top: 0%;
+  left: 0%;
   z-index:1;
   height:30%;
   position: relative;
@@ -427,7 +444,7 @@ div.leftProgressBar {
   text-align: left;
   vertical-align: middle;
   font-size: 1.3em;
-  bottom:0%;
+  top: 90%;
   z-index:1;
   height:15%;
   position: absolute;
@@ -435,10 +452,10 @@ div.leftProgressBar {
 
 div.leftFootnote {
   background-color: transparent;
-  text-align: left;
+  text-align: center;
   vertical-align: middle;
-  font-size: 1.3em;
-  bottom: 10%;
+  font-size: 1.5em;
+  bottom: 5%;
   z-index:1;
   position: absolute;
 }
@@ -453,11 +470,20 @@ div#rightInformation {
   position: absolute;
 }
 
+div.rightLogo {
+  z-index: 3;
+  left: 35%;
+  width:95%;
+  bottom: 2%;
+  height: 8%;
+  position: absolute;
+}
+
 div.rightChartTitle{
 	background-color: transparent;
   	text-align: center;
   	vertical-align: middle;
-	font-size: 1.5em;
+	font-size: 1.7em;
 	z-index:3;
 	left:1%;
 	width:97%;
@@ -497,14 +523,13 @@ div.rightChartDescription{
 	background-color: transparent;
   	text-align: center;
   	vertical-align: middle;
-	font-size: 1.3em;
+	font-size: 1.5em;
 	font-weight:normal;
 	z-index:3;
 	left:1%;
 	width:97%;
 	top:2%;
 	position: relative;
-	color:rgb(175,175,175);
 }
 
 div#home {
