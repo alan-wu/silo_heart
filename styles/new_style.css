@@ -428,7 +428,7 @@ div.leftLargeClickable {
   vertical-align: middle;
   font-size: 1.3em;
   top: 0%;
-  left: 20%;
+  left: 0%;
   z-index:1;
   height:30%;
   position: relative;
