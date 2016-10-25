@@ -45,20 +45,20 @@
 		</div>
 		
 		<div id="rightInformation" class="open">
-			<div class="rightChartTitle" style = "width:75%;float:right;padding:10px">
+			<div class="rightChartTitle" style = "width:75%;float:right;padding:10px;color:orange;">
 				<b>ECG</b>
 			</div>
-			<div id="rightECG" class="rightChart" style="width:75%;float:right;padding:10px">
+			<div id="rightECG" class="rightChart" style="width:75%;float:right;padding:10px;">
 			</div>
-			<div id="ECGDescription" class="rightChartDescription" style="width:75%;clear:right;float:right;padding:10px">
+			<div id="ECGDescription" class="rightChartDescription" style="width:75%;clear:right;float:right;padding:10px;color:orange;">
 				electrical pulses make the heart muscle contract
 			</div>
-			<div class="rightChartTitle" style="top:6%;width:75%;float:right;padding:10px">
+			<div class="rightChartTitle" style="top:6%;width:75%;float:right;padding:10px;color:green">
 				<b>Pressure</b>
 			</div>
 			<div id="rightLVP" class="rightChart"  style="top:6%;float:right">
 			</div>
-			<div id="LVPDescription" class="rightChartDescription" style="top:6%;clear:right;width:75%;float:right;padding:10px">
+			<div id="LVPDescription" class="rightChartDescription" style="top:6%;clear:right;width:75%;float:right;padding:10px;color:green;">
 				muscle contraction generates pump pressure
 			</div>
 			<div class="rightChartTitle" style = "top:10%;width:75%;float:right;padding:10px;clear:right">
@@ -70,6 +70,10 @@
 			<div class="rightChartDescription" style="top:10%;width:75%;clear:right;float:right;padding:10px">
 				make the heart beat faster or slower
 			</div>
+			<div id="rightLogo" class="rightLogo">
+				<img src="images/heart_v7/medtechCORE.png"  height="75px">
+			</div>
+			
 		</div>
 		
 		<div id="bottom_control" class="closed">
@@ -116,13 +120,9 @@
 				<p>The main job of the heart is to pump blood around the body to meet the demands of the organ systems.</p>
 				<p>The main pumping chambers of the heart are the left and right ventricles.</p>
 				<p>Contraction of the thick muscular walls of the ventricles generates the pressure needed to pump blood around the body.</p>
+				<p>Select below to learn about some common heart problems. </p>
 			</div>
-			<div class="leftFootnote" style="color:rgb(255, 255, 255);">
-				<b>
-				<p>Select below to learn about some common heart problems.</p>
-				</b>
-
-			</div>
+			
 		</div>
 		
 		<div id="leftHeartElectricity" class="closed leftPanel">
@@ -135,17 +135,17 @@
 			<div class="leftDetail" style="color:rgb(175, 175, 175);">
 				In a healthy heart, electrical waves pass smoothly through the muscle to provide coordinated contraction and efficient pumping.
 			</div>
-			<div class="leftClickable" style="font-size:2em" onclick="arrhythmiaClicked()">
+			<div class="leftClickable" onclick="arrhythmiaClicked()">
 				<b>What happens when the smooth electrical waves are disrupted?</b>
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;width:45%;background-color: transparent;">
+					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;">
 					</div>
-					<div class="progressClickable" style="left:45%;width:50%;background-color: transparent;" onclick="arrhythmiaClicked()">
+					<div class="progressClickable" style="left:45%;width:33%;background-color: transparent;" onclick="arrhythmiaClicked()">
 					</div>
 				</div>
-				<img src="images/heart_v7/health_electricity.png" alt="information" style="max-width:100%;">
+				<img src="images/heart_v7/health_electricity.png" alt="information" height="50px">
 			</div>
 		</div>
 		
@@ -160,17 +160,17 @@
 				<p>Electrical disruption leads to fibrillation and chaotic contraction. This means the heart cannot generate enough pressure to pump the blood.</p>
 				<p>To fix a fibrillating heart, we need to apply a large electrical shock to reset the electrical waves. We need an Automated External Defibrillator (AED).</p>
 			</div>
-			<div class="leftClickable" style="font-size:2em" onclick="AEDClicked()">
-				<b>Defibrillate</b>
+			<div class="leftClickableAED" onclick="AEDClicked()">
+				<b><br>Defibrillate</b>
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;width:45%;background-color: transparent;" onclick="heartElectricityClicked()">
+					<div class="progressClickable" style="left:0%;width:33%;height:50px;background-color: transparent;" onclick="heartElectricityClicked()">
 					</div>
-					<div class="progressClickable" style="left:45%;width:50%;background-color: transparent;">
+					<div class="progressClickable" style="left:45%;width:33%;height:50px;background-color: transparent;">
 					</div>
 				</div>
-				<img src="images/heart_v7/fibrillation_electricity.png" alt="information" style="max-width:100%;">
+				<img src="images/heart_v7/fibrillation_electricity.png" alt="information" height="50px">
 			</div>
 		</div>
 	
@@ -185,19 +185,19 @@
 				The heart muscle needs blood to survive. The healthy heart pumps blood to nourish itself through its coronary arteries.
 			</div>
 			
-			<div class="leftClickable" style="font-size:2em" onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
+			<div class="leftClickable"  onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
 				<b>What happens during a heart attack?</b>
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;">
+					<div class="progressClickable" style="left:0%;height:40%;width:33%;background-color: transparent;">
 					</div>
-					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
+					<div class="progressClickable" style="left:33%;height:40%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
 					</div>
-					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
+					<div class="progressClickable" style="left:66%;height:40%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
 					</div>
 				</div>
-				<img src="images/heart_v7/health_attack.png" alt="information" style="max-width:100%;">
+				<img src="images/heart_v7/health_attack.png" alt="information" height="50px">
 			</div>		
 		</div>
 		
@@ -210,24 +210,25 @@
 				<b>Damaged muscle</b>
 			</div>
 			<div id="NormalHeartAttackDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
-				In a heart attack, blocked arteries lead to muscle damage, which reduces the heart’s ability to pump blood.
+				<p>In a heart attack, blocked arteries lead to muscle damage, which reduces the heart’s ability to pump blood. </p>
+				<p>Medication can help to unblock the arteries.</p>
 			</div>
 			<div class="leftLargeClickable">
-				<img src="images/heart_v7/medication.png" alt="information" style="max-width:100%;max-height:100%;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
+				<img src="images/heart_v7/coronary_block_moderate.png" alt="information" style="float:center" height="300px">
 			</div>
-			<div class="leftClickable" style="font-size:2em" onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')" >
+			<div class="leftClickable"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')" >
 				<b>What happens if you don't take your medication?</b>
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
+					<div class="progressClickable" style="left:0%;height:40%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
 					</div>
-					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;">
+					<div class="progressClickable" style="left:33%;height:40%;width:33%;background-color: transparent;">
 					</div>
-					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
+					<div class="progressClickable" style="left:66%;height:40%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
 					</div>
 				</div>
-				<img src="images/heart_v7/moderate_attack.png" alt="information" style="max-width:100%;">
+				<img src="images/heart_v7/moderate_attack.png" alt="information" height="50px">
 			</div>
 		</div>
 		
@@ -239,21 +240,22 @@
 				<b>Severe muscle damage</b>
 			</div>
 			<div id="NormalHeartAttackDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
-				If blocked arteries are left untreated, more of the muscle gets damaged, and the pumping ability of the heart is severely reduced.
+				<p>If blocked arteries are left untreated, more of the muscle gets damaged, and the pumping ability of the heart is severely reduced. </p>
+				<p>Medication can help to unblock the arteries.</p>
 			</div>
 			<div class="leftLargeClickable">
-				<img src="images/heart_v7/medication.png" alt="information" style="max-width:100%;max-height:100%;"  onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
+				<img src="images/heart_v7/coronary_block_severe.png" alt="information" style="float:center" height="300px">
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
+					<div class="progressClickable" style="left:0%;height:40%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
 					</div>
-					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
+					<div class="progressClickable" style="left:33%;height:40%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
 					</div>
-					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;">
+					<div class="progressClickable" style="left:66%;height:40%;width:33%;background-color: transparent;">
 					</div>
 				</div>
-				<img src="images/heart_v7/severe_attack.png" alt="information" style="max-width:100%;">
+				<img src="images/heart_v7/severe_attack.png" alt="information" height="50px">
 			</div>
 		</div>
 
@@ -268,19 +270,19 @@
 				<p>The shape, stiffness and contraction force in the healthy heart maximises pumping performance. </p>
 				<p>Heart failure involves long term changes in heart properties due to factors such as high blood pressure.</p>
 			</div>
-			<div class="leftClickable" style="font-size:2em" onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')" >
+			<div class="leftClickable" onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')" >
 				<b>What can long term high blood pressure do to the heart?</b>
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;">
+					<div class="progressClickable" style="left:0%;height:40%;width:33%;background-color: transparent;">
 					</div>
-					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')">
+					<div class="progressClickable" style="left:33%;height:40%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')">
 					</div>
-					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
+					<div class="progressClickable" style="left:66%;height:40%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
 					</div>
 				</div>
-				<img src="images/heart_v7/heart_failure.png" alt="information" style="max-width:100%;">
+				<img src="images/heart_v7/heart_failure.png" alt="information" height="50px">
 			</div>
 		</div>
 		
@@ -295,19 +297,19 @@
 				<p>High blood pressure can make the heart muscle get thicker to maintain its pumping performance.</p>
 				<p>This means the heart needs to work harder to compensate.</p>
 			</div>
-			<div class="leftClickable" style="font-size:2em"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
+			<div class="leftClickable"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
 				<b>What happens if high blood pressure is left untreated?</b>
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure')">
+					<div class="progressClickable" style="left:0%;height:40%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure')">
 					</div>
-					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;">
+					<div class="progressClickable" style="left:33%;height:40%;width:33%;background-color: transparent;">
 					</div>
-					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
+					<div class="progressClickable" style="left:66%;height:40%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
 					</div>
 				</div>
-				<img src="images/heart_v7/compensated_failure.png" alt="information" style="max-width:100%;">
+				<img src="images/heart_v7/compensated_failure.png" alt="information" height="50px">
 			</div>
 		</div>
 
@@ -324,14 +326,14 @@
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure')">
+					<div class="progressClickable" style="left:0%;height:40%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure')">
 					</div>
-					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')">
+					<div class="progressClickable" style="left:33%;height:40%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')">
 					</div>
-					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;">
+					<div class="progressClickable" style="left:66%;height:40%;width:33%;background-color: transparent;">
 					</div>
 				</div>
-				<img src="images/heart_v7/decompensated_failure.png" alt="information" style="max-width:100%;">
+				<img src="images/heart_v7/decompensated_failure.png" alt="information" height="50px">
 			</div>
 		</div>
 	
@@ -661,9 +663,9 @@
 			ECGTexts['NoInfarct'] = "electrical pulses make the heart muscle contract";
 			LVPTexts['NoInfarct'] = "muscle contraction generates pump pressure";
 			ECGTexts['SmallInfarct'] = "electrical pulses make the heart muscle contract";
-			LVPTexts['SmallInfarct'] = "damaged muscle means less contraction force and less pressure generated";
+			LVPTexts['SmallInfarct'] = "damaged muscle leads to less contraction force and less pressure generated";
 			ECGTexts['LargeInfarct'] = "electrical pulses make the heart muscle contract";
-			LVPTexts['LargeInfarct'] = "damaged muscle means less contraction force and less pressure generated";
+			LVPTexts['LargeInfarct'] = "damaged muscle leads to less contraction force and less pressure generated";
 			ECGTexts['NoFailure'] = "electrical pulses make the heart muscle contract";
 			LVPTexts['NoFailure'] = "muscle contraction generates pump pressure";
 			ECGTexts['CompensatedFailure'] = "electrical pulses make the heart muscle contract";
