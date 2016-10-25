@@ -1,4 +1,4 @@
-var Zinc = { REVISION: '17' };
+var Zinc = { REVISION: '18' };
 
 Zinc.Glyph = function(geometry, materialIn, idIn)  {
 	var material = materialIn.clone();
@@ -969,9 +969,9 @@ Zinc.Scene = function ( containerIn, rendererIn) {
 		newGeometry.mixer = mixer;
 		newGeometry.clipAction = clipAction;
 		zincGeometries.push ( newGeometry ) ;
+		
 		if (finishCallback != undefined && (typeof finishCallback == 'function'))
 			finishCallback(newGeometry);
-		
 		return newGeometry;
 	}
 	
@@ -981,8 +981,10 @@ Zinc.Scene = function ( containerIn, rendererIn) {
 	    	if (materials && materials[0]) {
 	    		material = materials[0];
 	    	}
-	    	var zincGeometry = _this.addZincGeometry(geometry, modelId, colour, opacity, localTimeEnabled, localMorphColour, false, finishCallback, material);
+	    	var zincGeometry = _this.addZincGeometry(geometry, modelId, colour, opacity, localTimeEnabled, localMorphColour, false, undefined, material);
 	    	zincGeometry.groupName = groupName;
+			if (finishCallback != undefined && (typeof finishCallback == 'function'))
+				finishCallback(zincGeometry);
 	    }
 	}
 	
