@@ -15,12 +15,11 @@
 			}
 		</style>
 		<link rel="stylesheet" href="styles/new_style.css">
-		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<script src="js/three.min.js"></script>
 		<script src="js/zinc_threejs_control.js"></script>
 		<script src="js/zinc_3js_renderer.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script>
-		<script src="../dojo-release-1.11.2/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script>
+		<script src="../../dojo-release-1.11.2/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script>
 		<script>
 			var dojoConfig = {
 		        async: true,
@@ -420,10 +419,10 @@
 				previousCamera = undefined;
 				resetAllModelsView();
 				halfHeartFlag = false;
-				document.getElementById('halfHeart').classList.remove('open');
-				document.getElementById('halfHeart').classList.add('closed');
-				document.getElementById('fullHeart').classList.remove('closed');
-				document.getElementById('fullHeart').classList.add('open');				
+				document.getElementById('halfHeart').classList.remove('closed');
+				document.getElementById('halfHeart').classList.add('open');
+				document.getElementById('fullHeart').classList.remove('open');
+				document.getElementById('fullHeart').classList.add('closed');				
 				loadModel("DeformingHeart", 1.0);
 				document.getElementById("home_icon").className = 'closed';
 				document.getElementById("home_selected_icon").className = 'open';
@@ -449,10 +448,10 @@
 				document.getElementById('footMore').className = 'closed';
 				document.getElementById('rightInformation').className = 'open';
 				document.getElementById('bottom_control').className = 'open';
-				document.getElementById('halfHeart').classList.remove('open');
-				document.getElementById('halfHeart').classList.add('closed');
-				document.getElementById('fullHeart').classList.remove('closed');
-				document.getElementById('fullHeart').classList.add('open');
+				document.getElementById('halfHeart').classList.remove('closed');
+				document.getElementById('halfHeart').classList.add('open');
+				document.getElementById('fullHeart').classList.remove('open');
+				document.getElementById('fullHeart').classList.add('closed');	
 				document.getElementById("home_icon").className = 'closed';
 				document.getElementById("home_selected_icon").className = 'open';
 				showECGAndLVP("Normal", -0.075);
