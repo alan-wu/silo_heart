@@ -536,6 +536,10 @@
 		container.addEventListener("mousemove", function() {flag = 1; idleTime = 0;oldTime = new Date();}, false);
 		container.addEventListener("mouseup", function(){idleTime = 0;oldTime = new Date();
 		    if(flag === 0){pageClicked();}}, false);
+		container.addEventListener("touchstart", function() {idleTime = 0;oldTime = new Date(); }, false);
+		container.addEventListener("touchend", function() {idleTime = 0;oldTime = new Date();}, false);
+		container.addEventListener("touchcancel", function(){idleTime = 0;oldTime = new Date();}, false);
+		container.addEventListener("touchmove", function(){idleTime = 0;oldTime = new Date();}, false);
 		
 		loadModel("DeformingHeart", 1.0);
 		zincRenderer.animate();
