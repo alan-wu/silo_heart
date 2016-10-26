@@ -19,7 +19,8 @@
 		<script src="js/three.min.js"></script>
 		<script src="js/zinc_threejs_control.js"></script>
 		<script src="js/zinc_3js_renderer.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script>	
+		<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script>
+		<script src="../dojo-release-1.11.2/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script>
 		<script>
 			var dojoConfig = {
 		        async: true,
@@ -416,11 +417,13 @@
 				showIcons("fibrillation_icon", "attack_icon", "failure_icon");
 				leftPanelTrigger("initialNormal");
 				document.getElementById('footMore').className = 'closed';
+				previousCamera = undefined;
+				resetAllModelsView();
+				halfHeartFlag = false;
 				document.getElementById('halfHeart').classList.remove('open');
 				document.getElementById('halfHeart').classList.add('closed');
-				document.getElementById('fullHeart').classList.remove('open');
-				document.getElementById('fullHeart').classList.add('closed');
-				previousCamera = undefined;
+				document.getElementById('fullHeart').classList.remove('closed');
+				document.getElementById('fullHeart').classList.add('open');				
 				loadModel("DeformingHeart", 1.0);
 				document.getElementById("home_icon").className = 'closed';
 				document.getElementById("home_selected_icon").className = 'open';
@@ -446,7 +449,12 @@
 				document.getElementById('footMore').className = 'closed';
 				document.getElementById('rightInformation').className = 'open';
 				document.getElementById('bottom_control').className = 'open';
-				displayHalfHeartIcon();
+				document.getElementById('halfHeart').classList.remove('open');
+				document.getElementById('halfHeart').classList.add('closed');
+				document.getElementById('fullHeart').classList.remove('closed');
+				document.getElementById('fullHeart').classList.add('open');
+				document.getElementById("home_icon").className = 'closed';
+				document.getElementById("home_selected_icon").className = 'open';
 				showECGAndLVP("Normal", -0.075);
 			}
 		}
