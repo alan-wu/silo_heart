@@ -51,14 +51,14 @@
 			<div id="rightECG" class="rightChart" style="width:75%;float:right;padding:10px;">
 			</div>
 			<div id="ECGDescription" class="rightChartDescription" style="width:75%;clear:right;float:right;padding:10px;color:orange;">
-				electrical pulses make the heart muscle contract
+				electrical waves make the heart muscle contract
 			</div>
-			<div class="rightChartTitle" style="top:6%;width:75%;float:right;padding:10px;color:green">
+			<div class="rightChartTitle" style="top:6%;width:75%;float:right;padding:10px;color:lime">
 				<b>Pressure</b>
 			</div>
 			<div id="rightLVP" class="rightChart"  style="top:6%;float:right">
 			</div>
-			<div id="LVPDescription" class="rightChartDescription" style="top:6%;clear:right;width:75%;float:right;padding:10px;color:green;">
+			<div id="LVPDescription" class="rightChartDescription" style="top:6%;clear:right;width:75%;float:right;padding:10px;color:lime;">
 				muscle contraction generates pump pressure
 			</div>
 			<div class="rightChartTitle" style = "top:10%;width:75%;float:right;padding:10px;clear:right">
@@ -68,7 +68,7 @@
 				<input id="speed_slider" type="range" min="0" max="5000" value ="1000" step="1" oninput="updateSlider(this.value)" style="width:80%;"/>
 			</div>
 			<div class="rightChartDescription" style="top:10%;width:75%;clear:right;float:right;padding:10px">
-				make the heart beat faster or slower
+				speed control
 			</div>
 			<div id="rightLogo" class="rightLogo">
 				<img src="images/heart_v7/medtechCORE.png"  height="75px">
@@ -211,10 +211,12 @@
 			</div>
 			<div id="NormalHeartAttackDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
 				<p>In a heart attack, blocked arteries lead to muscle damage, which reduces the heart’s ability to pump blood. </p>
-				<p>Medication can help to unblock the arteries.</p>
 			</div>
 			<div class="leftLargeClickable">
 				<img src="images/heart_v7/coronary_block_moderate.png" alt="information" style="float:center" height="300px">
+			</div>
+			<div id="NormalHeartAttackDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
+				<p>Medication can help to unblock the arteries.</p>
 			</div>
 			<div class="leftClickable"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')" >
 				<b>What happens if you don't take your medication?</b>
@@ -241,10 +243,12 @@
 			</div>
 			<div id="NormalHeartAttackDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
 				<p>If blocked arteries are left untreated, more of the muscle gets damaged, and the pumping ability of the heart is severely reduced. </p>
-				<p>Medication can help to unblock the arteries.</p>
 			</div>
 			<div class="leftLargeClickable">
 				<img src="images/heart_v7/coronary_block_severe.png" alt="information" style="float:center" height="300px">
+			</div>
+			<div id="NormalHeartAttackDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
+				<p>Medication can help to unblock the arteries.</p>
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
@@ -291,11 +295,11 @@
 				<b>Heart Failure</b>
 			</div>
 			<div class="leftDescription" style="color:rgb(255,0,128);">
-				<b>Diseased heart</b>
+				<b>Coping with extra load</b>
 			</div>
 			<div id="NormalHeartFailureDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
-				<p>High blood pressure can make the heart muscle get thicker to maintain its pumping performance.</p>
-				<p>This means the heart needs to work harder to compensate.</p>
+				<p>High blood pressure means the heart needs to work harder to compensate and maintain its pumping performance.</p>
+				<p>This extra effort can make the heart muscle walls get thicker.</p>
 			</div>
 			<div class="leftClickable"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
 				<b>What happens if high blood pressure is left untreated?</b>
@@ -318,11 +322,10 @@
 				<b>Heart Failure</b>
 			</div>
 			<div class="leftDescription" style="color:rgb(255,0,128);">
-				<b>Diseased heart</b>
+				<b>Over-loaded heart</b>
 			</div>
 			<div id="NormalHeartFailureDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
-				<p>Long term high blood pressure can lead to larger heart with thinner muscular walls.</p>
-				<p>The heart can no longer compensate and loses its ability to pump blood.</p>
+				<p>Following long-term high blood pressure, the heart loses its ability to compensate and effectively pump. This results in a larger heart with thinner muscular walls.</p>
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
@@ -669,8 +672,8 @@
 				
 			ECGTexts['Normal'] = "electrical pulses make the heart muscle contract";
 			LVPTexts['Normal'] = "muscle contraction generates pump pressure";
-			ECGTexts['Arrhythmia'] = "abnormal electrical pattern";
-			LVPTexts['Arrhythmia'] = "very little pressure produced";
+			ECGTexts['Arrhythmia'] = "abnormal electricity";
+			LVPTexts['Arrhythmia'] = "poor pump pressure";
 			ECGTexts['NoInfarct'] = "electrical pulses make the heart muscle contract";
 			LVPTexts['NoInfarct'] = "muscle contraction generates pump pressure";
 			ECGTexts['SmallInfarct'] = "electrical pulses make the heart muscle contract";
@@ -682,7 +685,7 @@
 			ECGTexts['CompensatedFailure'] = "electrical pulses make the heart muscle contract";
 			LVPTexts['CompensatedFailure'] = "muscle contraction generates pump pressure";
 			ECGTexts['DecompensatedFailure'] = "electrical pulses make the heart muscle contract";
-			LVPTexts['DecompensatedFailure'] = "muscle contraction generates pump pressure";
+			LVPTexts['DecompensatedFailure'] = "thin-walled hearts struggle to maintain pump pressure";
 		}
 		
 		
@@ -849,7 +852,7 @@
 				minLVPTime = currentLVP[0]['x'];
 				LVPchart.removeSeries(currentLVPName);
 				currentLVPName = chartName;
-				LVPchart.addSeries(chartName, currentLVP, { stroke: {color: "green", width: 2}});
+				LVPchart.addSeries(chartName, currentLVP, { stroke: {color: "lime", width: 2}});
 				LVPchart.render();
 				LVPchart.resize('100%','100%');
 			}
