@@ -345,7 +345,7 @@ div#halfHeartButton {
 div.leftPanel {
   z-index:1;
   background-color: transparent;
-  height:85%;
+  height:80%;
   width:30%;
   left:2%;
   top:4%;
@@ -393,7 +393,7 @@ div.leftClickable{
   vertical-align: middle;
   display: block;
   position: absolute;
-  top: 80%;
+  top: 75%;
   height:15%;
   width: 90%; 
   font-size: 1.7em;
@@ -409,7 +409,7 @@ div.leftClickableAED{
   vertical-align: middle;
   display: block;
   position: absolute;
-  top: 80%;
+  top: 75%;
   height:20%;
   width: 100%; 
   font-size: 1.7em;
@@ -417,6 +417,10 @@ div.leftClickableAED{
   font-weight: normal;
 }
 
+div.leftClickableAED:hover {
+ cursor: pointer;
+ cursor: hand;
+}
 
 div.leftClickable:hover {
  cursor: pointer;
@@ -444,9 +448,8 @@ div.leftProgressBar {
   text-align: left;
   vertical-align: middle;
   font-size: 1.3em;
-  top: 90%;
+  top: 85%;
   z-index:1;
-  height:15%;
   position: absolute;
 }
 
@@ -560,7 +563,7 @@ div#bottom_control {
  z-index:1;
  left: 2%;
  bottom: 2%;
- height:13%;
+ height:18%;
  width:80%;
  position: absolute;
 }

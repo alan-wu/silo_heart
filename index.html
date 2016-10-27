@@ -37,10 +37,10 @@
 	<div id="main_page" class="heartpage">
 		<div id="footMore" class="open">
 			<div style="position:absolute;left:5%">
-				<img src="images/new_image/click2.png" alt="more" style="float:left;width:60%">
+				<img src="images/new_image/click2.png" alt="more" style="float:left;width:60%" onclick="pageClicked();">
 			</div>
 			<div style="position:absolute;right:5%">
-				<img src="images/new_image/spin2.png" alt="more" style="float:right;width:60%">
+				<img src="images/new_image/spin2.png" alt="more" style="float:right;width:60%" onclick="pageClicked();">
 			</div>
 		</div>
 		
@@ -77,35 +77,35 @@
 		</div>
 		
 		<div id="bottom_control" class="closed">
-			<div id="home_icon" class="closed" style="left:0%;bottom:0%;position:absolute;z-index:10;height:75%;">
-				<img src="images/new_image/home.png" alt="home"  onclick="homeClicked()" style="max-height:100%;">
+			<div id="home_icon" class="closed" style="left:0%;bottom:0%;position:absolute;z-index:10;height:85%;">
+				<img src="images/new_image/home.png" alt="home"  onclick="homeClicked()" style="height:83%">
+			</div> 
+			<div id="home_selected_icon" class="open" style="left:0%;bottom:0%;position:absolute;z-index:10;height:85%;">
+				<img src="images/new_image/home_selected.png" alt="home"  onclick="homeClicked()" style="height:83%">
 			</div>
-			<div id="home_selected_icon" class="open" style="left:0%;bottom:0%;position:absolute;z-index:10;height:75%;">
-				<img src="images/new_image/home_selected.png" alt="home"  onclick="homeClicked()" style="max-height:100%;">
+			<div id="halfHeart" class="halfHeart closed" style="right:2%;bottom:0%;position:absolute;z-index:10;height:85%;">
+				<img src="images/new_image/half_heart.png" alt="halfHeart" style="height:83%" onclick="halfHeartPressed()">
 			</div>
-			<div id="halfHeart" class="halfHeart closed" style="right:2%;bottom:0%;position:absolute;z-index:10;height:75%;">
-				<img src="images/new_image/half_heart.png" alt="halfHeart" style="max-height:100%;" onclick="halfHeartPressed()">
+			<div id="fibrillation_icon" class="bottomButton open" style="left:12%;bottom:0%;position:absolute;z-index:10;height:85%;">
+				<img src="images/heart_v7/fibrillation_icon.png" alt="information" style="height:83%" onclick="heartElectricityClicked()">
 			</div>
-			<div id="fibrillation_icon" class="bottomButton open" style="left:10%;bottom:0%;position:absolute;z-index:10;height:75%;">
-				<img src="images/heart_v7/fibrillation_icon.png" alt="information" style="max-height:100%;" onclick="heartElectricityClicked()">
+			<div id="attack_icon" lass="bottomButton open" style="left:24%;bottom:0%;position:absolute;z-index:10;height:85%;">
+				<img src="images/heart_v7/attack_icon.png" alt="information" style="height:83%" onclick="heartAttackClicked()">
 			</div>
-			<div id="attack_icon" lass="bottomButton open" style="left:20%;bottom:0%;position:absolute;z-index:10;height:75%;">
-				<img src="images/heart_v7/attack_icon.png" alt="information" style="max-height:100%;" onclick="heartAttackClicked()">
+			<div id="failure_icon" class="bottomButton open" style="left:36%;bottom:0%;position:absolute;z-index:10;height:85%;">
+				<img src="images/heart_v7/failure_icon.png" alt="information" style="height:83%" onclick="heartFailureClicked()">
 			</div>
-			<div id="failure_icon" class="bottomButton open" style="left:30%;bottom:0%;position:absolute;z-index:10;height:75%;">
-				<img src="images/heart_v7/failure_icon.png" alt="information" style="max-height:100%;" onclick="heartFailureClicked()">
+			<div id="fibrillation_selected_icon" class="bottomButton closed" style="left:12%;bottom:0%;position:absolute;z-index:10;height:85%;">
+				<img src="images/heart_v7/fibrillation_selected_icon.png" alt="information" style="height:83%">
 			</div>
-			<div id="fibrillation_selected_icon" class="bottomButton closed" style="left:10%;bottom:0%;position:absolute;z-index:10;height:75%;">
-				<img src="images/heart_v7/fibrillation_selected_icon.png" alt="information" style="max-height:100%;">
+			<div id="attack_selected_icon" class="bottomButton closed" style="left:24%;bottom:0%;position:absolute;z-index:10;height:85%;">
+				<img src="images/heart_v7/attack_selected_icon.png" alt="information" style="height:83%">
 			</div>
-			<div id="attack_selected_icon" class="bottomButton closed" style="left:20%;bottom:0%;position:absolute;z-index:10;height:75%;">
-				<img src="images/heart_v7/attack_selected_icon.png" alt="information" style="max-height:100%;">
+			<div id="failure_selected_icon" class="bottomButton closed" style="left:36%;bottom:0%;position:absolute;z-index:10;height:85%;">
+				<img src="images/heart_v7/failure_selected_icon.png" alt="information" style="height:83%">
 			</div>
-			<div id="failure_selected_icon" class="bottomButton closed" style="left:30%;bottom:0%;position:absolute;z-index:10;height:75%;">
-				<img src="images/heart_v7/failure_selected_icon.png" alt="information" style="max-height:100%;">
-			</div>
-			<div id="fullHeart" class="halfHeart closed" style="right:2%;bottom:0%;position:absolute;z-index:10;height:75%;"">
-				<img src="images/new_image/full_heart.png" alt="fullHeart"  style="max-height:100%;"onclick="halfHeartPressed()">
+			<div id="fullHeart" class="halfHeart closed" style="right:2%;bottom:0%;position:absolute;z-index:10;height:85%;"">
+				<img src="images/new_image/full_heart.png" alt="fullHeart" style="height:83% "onclick="halfHeartPressed()">
 			</div>
 		</div>
 		
@@ -145,7 +145,7 @@
 					<div class="progressClickable" style="left:45%;width:33%;background-color: transparent;" onclick="arrhythmiaClicked()">
 					</div>
 				</div>
-				<img src="images/heart_v7/health_electricity.png" alt="information" height="50px">
+				<img src="images/heart_v7/health_electricity.png" alt="information" height="60px">
 			</div>
 		</div>
 		
@@ -165,12 +165,12 @@
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;width:33%;height:50px;background-color: transparent;" onclick="heartElectricityClicked()">
+					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartElectricityClicked()">
 					</div>
-					<div class="progressClickable" style="left:45%;width:33%;height:50px;background-color: transparent;">
+					<div class="progressClickable" style="left:45%;width:33%;background-color: transparent;">
 					</div>
 				</div>
-				<img src="images/heart_v7/fibrillation_electricity.png" alt="information" height="50px">
+				<img src="images/heart_v7/fibrillation_electricity.png" alt="information" height="60px">
 			</div>
 		</div>
 	
@@ -190,14 +190,14 @@
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;height:40%;width:33%;background-color: transparent;">
+					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;">
 					</div>
-					<div class="progressClickable" style="left:33%;height:40%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
+					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
 					</div>
-					<div class="progressClickable" style="left:66%;height:40%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
+					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
 					</div>
 				</div>
-				<img src="images/heart_v7/health_attack.png" alt="information" height="50px">
+				<img src="images/heart_v7/health_attack.png" alt="information" height="60px">
 			</div>		
 		</div>
 		
@@ -223,14 +223,14 @@
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;height:40%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
+					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
 					</div>
-					<div class="progressClickable" style="left:33%;height:40%;width:33%;background-color: transparent;">
+					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;">
 					</div>
-					<div class="progressClickable" style="left:66%;height:40%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
+					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
 					</div>
 				</div>
-				<img src="images/heart_v7/moderate_attack.png" alt="information" height="50px">
+				<img src="images/heart_v7/moderate_attack.png" alt="information" height="60px">
 			</div>
 		</div>
 		
@@ -252,14 +252,14 @@
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;height:40%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
+					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
 					</div>
-					<div class="progressClickable" style="left:33%;height:40%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
+					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
 					</div>
-					<div class="progressClickable" style="left:66%;height:40%;width:33%;background-color: transparent;">
+					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;">
 					</div>
 				</div>
-				<img src="images/heart_v7/severe_attack.png" alt="information" height="50px">
+				<img src="images/heart_v7/severe_attack.png" alt="information" height="60px">
 			</div>
 		</div>
 
@@ -279,14 +279,14 @@
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;height:40%;width:33%;background-color: transparent;">
+					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;">
 					</div>
-					<div class="progressClickable" style="left:33%;height:40%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')">
+					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')">
 					</div>
-					<div class="progressClickable" style="left:66%;height:40%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
+					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
 					</div>
 				</div>
-				<img src="images/heart_v7/heart_failure.png" alt="information" height="50px">
+				<img src="images/heart_v7/heart_failure.png" alt="information" height="60px">
 			</div>
 		</div>
 		
@@ -306,14 +306,14 @@
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;height:40%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure')">
+					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure')">
 					</div>
-					<div class="progressClickable" style="left:33%;height:40%;width:33%;background-color: transparent;">
+					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;">
 					</div>
-					<div class="progressClickable" style="left:66%;height:40%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
+					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
 					</div>
 				</div>
-				<img src="images/heart_v7/compensated_failure.png" alt="information" height="50px">
+				<img src="images/heart_v7/compensated_failure.png" alt="information" height="60px">
 			</div>
 		</div>
 
@@ -329,14 +329,14 @@
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;height:40%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure')">
+					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure')">
 					</div>
-					<div class="progressClickable" style="left:33%;height:40%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')">
+					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')">
 					</div>
-					<div class="progressClickable" style="left:66%;height:40%;width:33%;background-color: transparent;">
+					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;">
 					</div>
 				</div>
-				<img src="images/heart_v7/decompensated_failure.png" alt="information" height="50px">
+				<img src="images/heart_v7/decompensated_failure.png" alt="information" height="60px">
 			</div>
 		</div>
 	
@@ -377,7 +377,7 @@
 		var leftPanelIDs = ["initialNormal", "leftHeartElectricity", "leftHeartArrhythmia", "leftHeartAttack",
 			"leftModerateAttack", "leftSevereAttack", "leftHeartFailure", "leftCompensatedFailure", "leftDecompensatedFailure"];
 		var idleTime = 0;
-		var idleTimeLimit = 120000;
+		var idleTimeLimit = 300000;
 		var oldTime = new Date();
 		var iconIds = ["fibrillation_icon", "attack_icon", "failure_icon", "fibrillation_selected_icon",
 			"attack_selected_icon", "failure_selected_icon"];
@@ -429,6 +429,7 @@
 				loadModel("DeformingHeart", 1.0);
 				document.getElementById("home_icon").className = 'closed';
 				document.getElementById("home_selected_icon").className = 'open';
+				showECGAndLVP("Normal", -0.075);
 			}
 		}
 		
@@ -542,14 +543,14 @@
 		}
 		
 		var dragFlag = 0;
-		container.addEventListener("mousedown", function() {flag = 0; idleTime = 0;oldTime = new Date(); }, false);
-		container.addEventListener("mousemove", function() {flag = 1; idleTime = 0;oldTime = new Date();}, false);
-		container.addEventListener("mouseup", function(){idleTime = 0;oldTime = new Date();
+		window.addEventListener("mousedown", function() {flag = 0; idleTime = 0;oldTime = new Date(); }, false);
+		window.addEventListener("mousemove", function() {flag = 1; idleTime = 0;oldTime = new Date();}, false);
+		window.addEventListener("mouseup", function(){idleTime = 0;oldTime = new Date();
 		    if(flag === 0){pageClicked();}}, false);
-		container.addEventListener("touchstart", function() {idleTime = 0;oldTime = new Date(); }, false);
-		container.addEventListener("touchend", function() {idleTime = 0;oldTime = new Date();}, false);
-		container.addEventListener("touchcancel", function(){idleTime = 0;oldTime = new Date();}, false);
-		container.addEventListener("touchmove", function(){idleTime = 0;oldTime = new Date();}, false);
+		window.addEventListener("touchstart", function() {idleTime = 0;oldTime = new Date(); }, false);
+		window.addEventListener("touchend", function() {idleTime = 0;oldTime = new Date();}, false);
+		window.addEventListener("touchcancel", function(){idleTime = 0;oldTime = new Date();}, false);
+		window.addEventListener("touchmove", function(){idleTime = 0;oldTime = new Date();}, false);
 		
 		loadModel("DeformingHeart", 1.0);
 		zincRenderer.animate();
