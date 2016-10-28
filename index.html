@@ -35,14 +35,6 @@
 	</head>
 	<body style='height:100%;font-family="Helvetica"'>
 	<div id="main_page" class="heartpage">
-		<div id="footMore" class="open">
-			<div style="position:absolute;left:5%">
-				<img src="images/new_image/click2.png" alt="more" style="float:left;width:60%" onclick="pageClicked();">
-			</div>
-			<div style="position:absolute;right:5%">
-				<img src="images/new_image/spin2.png" alt="more" style="float:right;width:60%" onclick="pageClicked();">
-			</div>
-		</div>
 		
 		<div id="rightInformation" class="open">
 			<div class="rightChartTitle" style = "width:75%;float:right;padding:10px;color:orange;">
@@ -399,26 +391,39 @@
 		}
 		
 		function idleTimerReached() {
-			if (document.getElementById('footMore').classList.contains('closed')) {
-				leftPanelTrigger(undefined);
-				document.getElementById('rightInformation').className = 'closed';
-				document.getElementById('footMore').className = 'open';
-				document.getElementById('bottom_control').className = 'closed';
-				document.getElementById('halfHeart').classList.remove('open');
-				document.getElementById('halfHeart').classList.add('closed');
-				document.getElementById('fullHeart').classList.remove('open');
-				document.getElementById('fullHeart').classList.add('closed');
-				resetAllModelsView();
-				halfHeartFlag = false;
-				loadModel("DeformingHeart", 1.0);
+			var openedPage = "";
+			for (var i = 0; i < leftPanelIDs.length; i++) {
+				if (document.getElementById(leftPanelIDs[i]).classList.contains('open')) {
+					openedPage = leftPanelIDs[i];
+				}
 			}
+			if (openedPage == "initialNormal"){
+				heartElectricityClicked();
+			} else if (openedPage == "leftHeartElectricity") {
+				arrhythmiaClicked();
+			} else if (openedPage == "leftHeartArrhythmia") {
+				heartAttackClicked();
+			} else if (openedPage == "leftHeartAttack") {
+				heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack');
+			} else if (openedPage == "leftModerateAttack") {
+				heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack');
+			} else if (openedPage == "leftSevereAttack") {
+				heartFailureClicked();
+			} else if (openedPage == "leftHeartFailure") {
+				heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure');
+			} else if (openedPage == "leftCompensatedFailure") {
+				heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure');
+			} else if (openedPage == "leftDecompensatedFailure") {
+				homeClicked();
+			}
+			idleTime = 0;
+			oldTime = new Date();
 		}
 		
 		function homeClicked() {
 			if (document.getElementById('initialNormal').classList.contains('closed')) {
 				showIcons("fibrillation_icon", "attack_icon", "failure_icon");
 				leftPanelTrigger("initialNormal");
-				document.getElementById('footMore').className = 'closed';
 				previousCamera = undefined;
 				resetAllModelsView();
 				halfHeartFlag = false;
@@ -445,21 +450,18 @@
 			}
 		}
 		
-		var pageClicked = function() {
-			if (document.getElementById('footMore').className == 'open'){
-				showIcons("fibrillation_icon", "attack_icon", "failure_icon");
-				leftPanelTrigger('initialNormal');
-				document.getElementById('footMore').className = 'closed';
-				document.getElementById('rightInformation').className = 'open';
-				document.getElementById('bottom_control').className = 'open';
-				document.getElementById('halfHeart').classList.remove('closed');
-				document.getElementById('halfHeart').classList.add('open');
-				document.getElementById('fullHeart').classList.remove('open');
-				document.getElementById('fullHeart').classList.add('closed');	
-				document.getElementById("home_icon").className = 'closed';
-				document.getElementById("home_selected_icon").className = 'open';
-				showECGAndLVP("Normal", -0.075);
-			}
+		function pageClicked() {
+			showIcons("fibrillation_icon", "attack_icon", "failure_icon");
+			leftPanelTrigger('initialNormal');
+			document.getElementById('rightInformation').className = 'open';
+			document.getElementById('bottom_control').className = 'open';
+			document.getElementById('halfHeart').classList.remove('closed');
+			document.getElementById('halfHeart').classList.add('open');
+			document.getElementById('fullHeart').classList.remove('open');
+			document.getElementById('fullHeart').classList.add('closed');	
+			document.getElementById("home_icon").className = 'closed';
+			document.getElementById("home_selected_icon").className = 'open';
+			showECGAndLVP("Normal", -0.075);
 		}
 		
 		function showIcons(showIcon1, showIcon2, showIcon3) {
@@ -542,11 +544,9 @@
 			heartAttackStagePressed('NoInfarct','NoHeartAttack', 'leftHeartAttack');
 		}
 		
-		var dragFlag = 0;
-		window.addEventListener("mousedown", function() {flag = 0; idleTime = 0;oldTime = new Date(); }, false);
-		window.addEventListener("mousemove", function() {flag = 1; idleTime = 0;oldTime = new Date();}, false);
-		window.addEventListener("mouseup", function(){idleTime = 0;oldTime = new Date();
-		    if(flag === 0){pageClicked();}}, false);
+		window.addEventListener("mousedown", function() {idleTime = 0;oldTime = new Date(); }, false);
+		window.addEventListener("mousemove", function() {idleTime = 0;oldTime = new Date();}, false);
+		window.addEventListener("mouseup", function(){idleTime = 0;oldTime = new Date();}, false);
 		window.addEventListener("touchstart", function() {idleTime = 0;oldTime = new Date(); }, false);
 		window.addEventListener("touchend", function() {idleTime = 0;oldTime = new Date();}, false);
 		window.addEventListener("touchcancel", function(){idleTime = 0;oldTime = new Date();}, false);
@@ -774,7 +774,7 @@
 				        			offset: { y: -7, x: -10 },
 				        			values: 0.0});
 								lvpIndicator = LVPchart.getPlot("time");
-								document.getElementById('rightInformation').className = 'closed';
+								pageClicked();
 							});
 					});
 			});
@@ -918,6 +918,7 @@
 			if (LVPTexts[chartName])
 				document.getElementById('LVPDescription').innerHTML = LVPTexts[chartName];
 		}
+		
 				
 	</script>
 	
