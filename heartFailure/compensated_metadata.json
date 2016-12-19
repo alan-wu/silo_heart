@@ -1,6 +1,6 @@
 [
    {
-      "GroupName" : "Base_Ant",
+      "GroupName" : "Ant_top",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
@@ -8,7 +8,7 @@
       "URL" : "heartFailure/compensated_1.json"
    },
    {
-      "GroupName" : "Ant_NonInfarct",
+      "GroupName" : "Cut",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
@@ -16,11 +16,27 @@
       "URL" : "heartFailure/compensated_2.json"
    },
    {
-      "GroupName" : "Post_NonInfarct",
+      "GroupName" : "Post_top",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
       "Type" : "Surfaces",
       "URL" : "heartFailure/compensated_3.json"
+   },
+   {
+      "GroupName" : "Ant_NonInfarct",
+      "MorphColours" : false,
+      "MorphNormals" : false,
+      "MorphVertices" : true,
+      "Type" : "Surfaces",
+      "URL" : "heartFailure/compensated_4.json"
+   },
+   {
+      "GroupName" : "Post_NonInfarct",
+      "MorphColours" : false,
+      "MorphNormals" : false,
+      "MorphVertices" : true,
+      "Type" : "Surfaces",
+      "URL" : "heartFailure/compensated_5.json"
    }
 ]

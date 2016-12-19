@@ -1,6 +1,6 @@
 [
    {
-      "GroupName" : "Base_Ant",
+      "GroupName" : "Ant_NonInfarct",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
@@ -8,7 +8,7 @@
       "URL" : "heartInfarct/noInfarct_1.json"
    },
    {
-      "GroupName" : "Post_NonInfarct",
+      "GroupName" : "Cut",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
@@ -16,11 +16,27 @@
       "URL" : "heartInfarct/noInfarct_2.json"
    },
    {
-      "GroupName" : "Ant_NonInfarct",
+      "GroupName" : "Ant_top",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
       "Type" : "Surfaces",
       "URL" : "heartInfarct/noInfarct_3.json"
+   },
+   {
+      "GroupName" : "Post_NonInfarct",
+      "MorphColours" : false,
+      "MorphNormals" : false,
+      "MorphVertices" : true,
+      "Type" : "Surfaces",
+      "URL" : "heartInfarct/noInfarct_4.json"
+   },
+   {
+      "GroupName" : "Post_top",
+      "MorphColours" : false,
+      "MorphNormals" : false,
+      "MorphVertices" : true,
+      "Type" : "Surfaces",
+      "URL" : "heartInfarct/noInfarct_5.json"
    }
 ]
