@@ -78,6 +78,12 @@
 			<div id="halfHeart" class="halfHeart closed" style="right:2%;bottom:0%;position:absolute;z-index:10;height:85%;">
 				<img src="images/new_image/half_heart.png" alt="halfHeart" style="height:83%" onclick="halfHeartPressed()">
 			</div>
+			<div id="showFibres" class="showFibres closed" style="right:13%;bottom:0%;position:absolute;z-index:10;height:85%;">
+				<img src="images/new_image/muscle_fibres.png" alt="halfHeart" style="height:83%" onclick="showFibres(true)">
+			</div>
+			<div id="hideFibres" class="showFibres closed" style="right:13%;bottom:0%;position:absolute;z-index:10;height:85%;">
+				<img src="images/new_image/heart_surface.png" alt="halfHeart" style="height:83%" onclick="showFibres(false)">
+			</div>
 			<div id="fibrillation_icon" class="bottomButton open" style="left:12%;bottom:0%;position:absolute;z-index:10;height:85%;">
 				<img src="images/heart_v7/fibrillation_icon.png" alt="information" style="height:83%" onclick="heartElectricityClicked()">
 			</div>
@@ -390,6 +396,21 @@
 			}
 		}
 		
+		function displayFibresIcon(flag) {
+			if (flag) {
+				document.getElementById('showFibres').classList.remove('closed');
+				document.getElementById('showFibres').classList.add('open');
+				document.getElementById('hideFibres').classList.remove('open');
+				document.getElementById('hideFibres').classList.add('closed');
+			} else {
+				document.getElementById('showFibres').classList.remove('open');
+				document.getElementById('showFibres').classList.add('closed');
+				document.getElementById('hideFibres').classList.remove('open');
+				document.getElementById('hideFibres').classList.add('closed');
+			}
+		}
+		
+		
 		function idleTimerReached() {
 			var openedPage = "";
 			for (var i = 0; i < leftPanelIDs.length; i++) {
@@ -432,6 +453,8 @@
 				document.getElementById('fullHeart').classList.remove('open');
 				document.getElementById('fullHeart').classList.add('closed');				
 				loadModel("DeformingHeart", 1.0);
+				showFibres(false);
+				displayFibresIcon(true);
 				document.getElementById("home_icon").className = 'closed';
 				document.getElementById("home_selected_icon").className = 'open';
 				showECGAndLVP("Normal", -0.075);
@@ -450,7 +473,7 @@
 			}
 		}
 		
-		function pageClicked() {
+		function loadFirstPage() {
 			showIcons("fibrillation_icon", "attack_icon", "failure_icon");
 			leftPanelTrigger('initialNormal');
 			document.getElementById('rightInformation').className = 'open';
@@ -461,6 +484,8 @@
 			document.getElementById('fullHeart').classList.add('closed');	
 			document.getElementById("home_icon").className = 'closed';
 			document.getElementById("home_selected_icon").className = 'open';
+			showFibres(false);
+			displayFibresIcon(true);
 			showECGAndLVP("Normal", -0.075);
 		}
 		
@@ -490,6 +515,7 @@
 		function heartElectricityClicked() {
 			leftPanelTrigger('leftHeartElectricity');
 			showIcons("fibrillation_selected_icon", "attack_icon", "failure_icon");
+			displayFibresIcon(false);
 			document.getElementById("home_icon").className = 'open';
 			document.getElementById("home_selected_icon").className = 'closed';
 			previousCamera = undefined;
@@ -537,6 +563,7 @@
 		
 		function heartAttackClicked() {
 			showIcons("fibrillation_icon", "attack_selected_icon", "failure_icon");
+			displayFibresIcon(false);
 			document.getElementById("home_icon").className = 'open';
 			document.getElementById("home_selected_icon").className = 'closed';
 			leftPanelTrigger('leftHeartAttack');
@@ -595,6 +622,34 @@
 		
 		zincRenderer.addPreRenderCallbackFunction(updateIndicatorsAndTimer);
 		
+		function geometryShowFibres(flag) {
+			return function(zincGeometry) {
+				if (zincGeometry.groupName && zincGeometry.groupName.includes("Fibres")) {
+					zincGeometry.setVisibility(flag);
+				} else {
+					zincGeometry.setVisibility(!flag);
+				}
+			}
+		}
+		
+		function showFibres(flag) {
+			var currentScene = zincRenderer.getCurrentScene();
+			currentScene.forEachGeometry(geometryShowFibres(flag));
+			if (flag) {
+				document.getElementById('showFibres').classList.remove('open');
+				document.getElementById('showFibres').classList.add('closed');
+				document.getElementById('hideFibres').classList.remove('closed');
+				document.getElementById('hideFibres').classList.add('open');
+			} else {
+				document.getElementById('showFibres').classList.remove('closed');
+				document.getElementById('showFibres').classList.add('open');
+				document.getElementById('hideFibres').classList.remove('open');
+				document.getElementById('hideFibres').classList.add('closed');
+			}
+			
+			//currentScene.forEachGeometry(geometryShowHalf());
+		}
+		
 		function geometryShowHalf() {
 			return function(zincGeometry) {
 				if (zincGeometry.groupName && zincGeometry.groupName.includes("Post")) {
@@ -622,14 +677,16 @@
 		}
 		
 		var halfHeartPressed = function() {
-			if (halfHeartFlag) {
-				halfHeartFlag = false;
-			} else {
-				halfHeartFlag = true;
+			if (!document.getElementById('hideFibres').classList.contains('open')) {
+				if (halfHeartFlag) {
+					halfHeartFlag = false;
+				} else {
+					halfHeartFlag = true;
+				}
+				displayHalfHeartIcon();
+				
+				showHalf();
 			}
-			displayHalfHeartIcon();
-			
-			showHalf();
 		}
 	
 		function setUpArrays() {
@@ -774,7 +831,7 @@
 				        			offset: { y: -7, x: -10 },
 				        			values: 0.0});
 								lvpIndicator = LVPchart.getPlot("time");
-								pageClicked();
+								loadFirstPage();
 							});
 					});
 			});
@@ -793,6 +850,10 @@
 				if (mygeometry.groupName && mygeometry.groupName.includes("Post")) {
 					mygeometry.setVisibility(!halfHeartFlag);
 				}
+				if (mygeometry.groupName && mygeometry.groupName.includes("Fibres")) {
+					mygeometry.setVisibility(false);
+				}
+				
 				shareCameraSettings(oldCam);
 			}
 		}
@@ -821,6 +882,7 @@
 		
 		function heartFailureClicked() {
 			showIcons("fibrillation_icon", "attack_icon", "failure_selected_icon");
+			displayFibresIcon(false);
 			document.getElementById("home_icon").className = "open";
 			document.getElementById("home_selected_icon").className = "closed";
 			leftPanelTrigger('leftHeartFailure');

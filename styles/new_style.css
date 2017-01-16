@@ -125,7 +125,7 @@ div#infoButton:hover {
  cursor: hand;
 }
 
-div#back, div#more, div#arrhythmia, div#AED, div#home, div.halfHeart{
+div#back, div#more, div#arrhythmia, div#AED, div#home, div.halfHeart, div.showFibres{
  text-align: left;
  z-index: 10;
  margin: auto;
@@ -332,6 +332,17 @@ div#SceneButtonsContainer {
 }
 
 div#halfHeartButton {
+	border-radius: 25px 25px 25px 25px;
+	background-color:#555555;
+	z-index:1;
+	bottom:16%;
+	width:7%;
+	height: 100%;
+	left: 13%;
+	position: absolute;
+}
+
+div#showFibresButton {
 	border-radius: 25px 25px 25px 25px;
 	background-color:#555555;
 	z-index:1;
@@ -549,6 +560,11 @@ div#home:hover {
 }
 
 div.halfHeart:hover {
+ cursor: pointer;
+ cursor: hand;
+}
+
+div.showFibres:hover {
  cursor: pointer;
  cursor: hand;
 }
