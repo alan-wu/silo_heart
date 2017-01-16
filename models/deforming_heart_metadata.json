@@ -1,6 +1,6 @@
 [
    {
-      "GroupName" : "Ant_top",
+      "GroupName" : "Fibres",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
@@ -8,7 +8,7 @@
       "URL" : "models/deforming_heart_1.json"
    },
    {
-      "GroupName" : "Post",
+      "GroupName" : "Ant",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
@@ -24,7 +24,7 @@
       "URL" : "models/deforming_heart_3.json"
    },
    {
-      "GroupName" : "Ant",
+      "GroupName" : "Post",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
@@ -38,5 +38,29 @@
       "MorphVertices" : true,
       "Type" : "Surfaces",
       "URL" : "models/deforming_heart_5.json"
+   },
+   {
+      "GroupName" : "Ant_top",
+      "MorphColours" : false,
+      "MorphNormals" : false,
+      "MorphVertices" : true,
+      "Type" : "Surfaces",
+      "URL" : "models/deforming_heart_6.json"
+   },
+   {
+      "GroupName" : "Fibres",
+      "MorphColours" : false,
+      "MorphNormals" : false,
+      "MorphVertices" : true,
+      "Type" : "Surfaces",
+      "URL" : "models/deforming_heart_7.json"
+   },
+   {
+      "GroupName" : "Fibres",
+      "MorphColours" : false,
+      "MorphNormals" : false,
+      "MorphVertices" : true,
+      "Type" : "Surfaces",
+      "URL" : "models/deforming_heart_8.json"
    }
 ]
