@@ -68,20 +68,23 @@
 			
 		</div>
 		<div id="rightPanel" class="closed">
-			<div class="aspirin_icon" class = "medicationLifestyle">
-				<img src="images/heart_v7/aspirin.png" alt="home"  onclick="homeClicked()" style="height:83%;position:relative">
-			</div>
-			<div class="statin_icon" class = "medicationLifestyle" >
-				<img src="images/heart_v7/statin.png" alt="home"  onclick="homeClicked()" style="top:10%;height:83%;position:relative">
-			</div>
-			<div class="exercise_icon" class = "medicationLifestyle" >
+
+			<div id="exercise_icon" class = "medicationLifestyle" >
 				<img src="images/heart_v7/exercise.png" alt="home"  onclick="homeClicked()" style="top:10%;height:83%;position:relative">
 			</div>
-			<div class="diet_icon" class = "medicationLifestyle" >
+			<div id="diet_icon" class = "medicationLifestyle" >
 				<img src="images/heart_v7/diet.png" alt="home"  onclick="homeClicked()" style="top:10%;height:83%;position:relative">
 			</div>
-			<div class="smoking_icon" class = "medicationLifestyle" >
+			<div id="smoking_icon" class = "medicationLifestyle" >
 				<img src="images/heart_v7/smoking.png" alt="home"  onclick="homeClicked()" style="top:10%;height:83%;position:relative">
+			</div>		
+		</div>
+		<div id="rightPanelBottom" class = "closed">
+			<div id="aspirin_icon" class = "medicationLifestyle">
+				<img src="images/heart_v7/aspirin.png" alt="home"  onclick="homeClicked()" style="height:83%;position:relative">
+			</div>
+			<div id="statin_icon" class = "medicationLifestyle" >
+				<img src="images/heart_v7/statin.png" alt="home"  onclick="homeClicked()" style="top:10%;height:83%;position:relative">
 			</div>
 		</div>
 		<div id="bottom_control" class="closed">
@@ -480,6 +483,7 @@
 				document.getElementById("home_selected_icon").className = 'open';
 				showECGAndLVP("Normal", -0.075);
 				document.getElementById('rightPanel').className = 'closed';
+				document.getElementById('rightPanelBottom').className = 'closed'
 			}
 		}
 		
@@ -494,6 +498,7 @@
 				document.getElementById(elementIdToDisplay).classList.add('open');
 			}
 			document.getElementById('rightPanel').className = 'closed';
+			document.getElementById('rightPanelBottom').className = 'closed';
 		}
 		
 		function loadFirstPage() {
@@ -508,6 +513,7 @@
 			document.getElementById("home_icon").className = 'closed';
 			document.getElementById("home_selected_icon").className = 'open';
 			document.getElementById('rightPanel').className = 'closed';
+			document.getElementById('rightPanelBottom').className = 'closed';
 			showFibres(false);
 			displayFibresIcon(true);
 			showECGAndLVP("Normal", -0.075);
@@ -582,11 +588,18 @@
 			document.getElementById('leftSevereAttack').classList.remove('open');
 			document.getElementById('leftSevereAttack').classList.add('closed');
 			document.getElementById("rightPanel").className = "closed";
+			document.getElementById('rightPanelBottom').className = 'closed';
 			document.getElementById(descriptionId).classList.remove('closed');
 			document.getElementById(descriptionId).classList.add('open');
 			if (descriptionId== 'leftSevereAttack'){
 				document.getElementById("rightPanel").className = "open";
+				document.getElementById('rightPanelBottom').className = 'open';
 			}
+			if (descriptionId== 'leftModerateAttack'){
+				document.getElementById("rightPanel").className = "open";
+				document.getElementById('rightPanelBottom').className = 'closed';
+			}
+			
 		}
 		
 		function heartAttackClicked() {
