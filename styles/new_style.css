@@ -508,7 +508,15 @@ div#rightPanel {
   top:4%;
   position: absolute;
 }
-
+div#rightPanelBottom {
+  background-color: transparent;
+  z-index:1;
+  height:96%;
+  width:5%;
+  right:21%;
+  top:40%;
+  position: absolute;
+}
 div.rightLogo {
   z-index: 3;
   left: 28%;
