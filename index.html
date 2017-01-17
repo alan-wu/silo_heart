@@ -67,7 +67,23 @@
 			</div>
 			
 		</div>
-		
+		<div id="rightPanel" class="closed">
+			<div class="aspirin_icon" class = "medicationLifestyle">
+				<img src="images/heart_v7/aspirin.png" alt="home"  onclick="homeClicked()" style="height:83%;position:relative">
+			</div>
+			<div class="statin_icon" class = "medicationLifestyle" >
+				<img src="images/heart_v7/statin.png" alt="home"  onclick="homeClicked()" style="top:10%;height:83%;position:relative">
+			</div>
+			<div class="exercise_icon" class = "medicationLifestyle" >
+				<img src="images/heart_v7/exercise.png" alt="home"  onclick="homeClicked()" style="top:10%;height:83%;position:relative">
+			</div>
+			<div class="diet_icon" class = "medicationLifestyle" >
+				<img src="images/heart_v7/diet.png" alt="home"  onclick="homeClicked()" style="top:10%;height:83%;position:relative">
+			</div>
+			<div class="smoking_icon" class = "medicationLifestyle" >
+				<img src="images/heart_v7/smoking.png" alt="home"  onclick="homeClicked()" style="top:10%;height:83%;position:relative">
+			</div>
+		</div>
 		<div id="bottom_control" class="closed">
 			<div id="home_icon" class="closed" style="left:0%;bottom:0%;position:absolute;z-index:10;height:85%;">
 				<img src="images/new_image/home.png" alt="home"  onclick="homeClicked()" style="height:83%">
@@ -87,7 +103,7 @@
 			<div id="fibrillation_icon" class="bottomButton open" style="left:12%;bottom:0%;position:absolute;z-index:10;height:85%;">
 				<img src="images/heart_v7/fibrillation_icon.png" alt="information" style="height:83%" onclick="heartElectricityClicked()">
 			</div>
-			<div id="attack_icon" lass="bottomButton open" style="left:24%;bottom:0%;position:absolute;z-index:10;height:85%;">
+			<div id="attack_icon" class="bottomButton open" style="left:24%;bottom:0%;position:absolute;z-index:10;height:85%;">
 				<img src="images/heart_v7/attack_icon.png" alt="information" style="height:83%" onclick="heartAttackClicked()">
 			</div>
 			<div id="failure_icon" class="bottomButton open" style="left:36%;bottom:0%;position:absolute;z-index:10;height:85%;">
@@ -116,7 +132,13 @@
 			</div>
 			<div class="leftDetail" style="color:rgb(175, 175, 175);">
 				<p>The main job of the heart is to pump blood around the body to meet the demands of the organ systems.</p>
-				<p>The main pumping chambers of the heart are the left and right ventricles.</p>
+				
+			</div>
+			
+			<div class="leftClickableVideo" style="color:rgb(175, 175, 175);">
+				The main pumping chambers of the heart are the left and right ventricles.
+			</div>
+			<div class="leftDetail" style="color:rgb(175, 175, 175);">
 				<p>Contraction of the thick muscular walls of the ventricles generates the pressure needed to pump blood around the body.</p>
 				<p>Select below to learn about some common heart problems. </p>
 			</div>
@@ -180,7 +202,7 @@
 				<b>Healthy muscle</b>
 			</div>
 			<div id="NormalHeartAttackDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
-				The heart muscle needs blood to survive. The healthy heart pumps blood to itself through blood vessels called the coronary arteries. Unimpeded blood flow through these vessels is vitally important to the heart. 
+				The heart muscle needs blood to survive. The healthy heart pumps blood to itself through blood vessels called the coronary arteries. Unimpeded blood flow through these vessels is vitally important for maintaining a healthy heart. 
 			</div>
 			<div class="leftLargeClickable" style="height:300px">
 				<img src="images/heart_v7/coronary_heart.png" alt="information" style="float:center" height="300px">
@@ -210,16 +232,13 @@
 				<b>Damaged muscle</b>
 			</div>
 			<div id="NormalHeartAttackDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
-				<p>In a heart attack, blocked arteries lead to muscle damage, which reduces the heart’s ability to pump blood. </p>
+				<p>In a heart attack, blockages in the coronary arteries impede the flow of blood. This leads to muscle damage (see shaded region) which reduces the heart's ability to pump blood.  </p>
 			</div>
 			<div class="leftLargeClickable" style="height:300px">
 				<img src="images/heart_v7/coronary_block_moderate.png" alt="information" style="float:center" height="300px">
 			</div>
 			<div id="NormalHeartAttackDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
-				<p>Medication can help to unblock the arteries.</p>
-			</div>
-			<div class="leftClickable"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')" >
-				<b>What happens if you don't take your medication?</b>
+				<p>A healthy lifestyle and diet will help to prevent such blockages from forming.</p>
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
@@ -242,13 +261,13 @@
 				<b>Severe muscle damage</b>
 			</div>
 			<div id="NormalHeartAttackDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
-				<p>If blocked arteries are left untreated, more of the muscle gets damaged, and the pumping ability of the heart is severely reduced. </p>
+				<p>If blocked arteries are left untreated, more of the blood vessel becomes blocked which results in more muscle damage. The movement and pumping ability of the heart is severely affected. </p>
 			</div>
 			<div class="leftLargeClickable" style="height:300px">
 				<img src="images/heart_v7/coronary_block_severe.png" alt="information" style="float:center" height="300px">
 			</div>
 			<div id="NormalHeartAttackDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
-				<p>Medication can help to unblock the arteries.</p>
+				<p>Prevent this by taking medication and making lifestyle changes. </p>
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
@@ -460,6 +479,7 @@
 				document.getElementById("home_icon").className = 'closed';
 				document.getElementById("home_selected_icon").className = 'open';
 				showECGAndLVP("Normal", -0.075);
+				document.getElementById('rightPanel').className = 'closed';
 			}
 		}
 		
@@ -473,6 +493,7 @@
 				document.getElementById(elementIdToDisplay).classList.remove('closed');
 				document.getElementById(elementIdToDisplay).classList.add('open');
 			}
+			document.getElementById('rightPanel').className = 'closed';
 		}
 		
 		function loadFirstPage() {
@@ -486,6 +507,7 @@
 			document.getElementById('fullHeart').classList.add('closed');	
 			document.getElementById("home_icon").className = 'closed';
 			document.getElementById("home_selected_icon").className = 'open';
+			document.getElementById('rightPanel').className = 'closed';
 			showFibres(false);
 			displayFibresIcon(true);
 			showECGAndLVP("Normal", -0.075);
@@ -559,8 +581,12 @@
 			document.getElementById('leftModerateAttack').classList.add('closed');
 			document.getElementById('leftSevereAttack').classList.remove('open');
 			document.getElementById('leftSevereAttack').classList.add('closed');
+			document.getElementById("rightPanel").className = "closed";
 			document.getElementById(descriptionId).classList.remove('closed');
 			document.getElementById(descriptionId).classList.add('open');
+			if (descriptionId== 'leftSevereAttack'){
+				document.getElementById("rightPanel").className = "open";
+			}
 		}
 		
 		function heartAttackClicked() {
