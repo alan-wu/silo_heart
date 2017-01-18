@@ -35,7 +35,6 @@
 	</head>
 	<body style='height:100%;font-family="Helvetica"'>
 	<div id="main_page" class="heartpage">
-		
 		<div id="rightInformation" class="open">
 			<div class="rightChartTitle" style = "width:75%;float:right;padding:10px;color:orange;">
 				<b>ECG</b>
@@ -78,6 +77,14 @@
 			<div id="smoking_icon" class = "medicationLifestyle" >
 				<img src="images/heart_v7/smoking.png" alt="home"  onclick="homeClicked()" style="top:10%;height:83%;position:relative">
 			</div>		
+		</div>
+		<div id="rightPanelBottom" class = "closed">
+			<div id="statin_icon" class = "medicationLifestyle" >
+				<img src="images/heart_v7/statin.png" alt="home"  onclick="homeClicked()" style="top:10%;height:83%;position:relative">
+			</div>
+			<div id="aspirin_icon" class = "medicationLifestyle">
+				<img src="images/heart_v7/aspirin.png" alt="home"  onclick="homeClicked()" style="height:83%;position:relative">
+			</div>
 		</div>
 		<div id="rightPanelBottom" class = "closed">
 			<div id="aspirin_icon" class = "medicationLifestyle">
@@ -137,8 +144,7 @@
 				<p>The main job of the heart is to pump blood around the body to meet the demands of the organ systems.</p>
 				
 			</div>
-			
-			<div class="leftClickableVideo" style="color:rgb(175, 175, 175);">
+			<div class="leftClickableVideo" style="color:rgb(175, 175, 175);" onclick="healthyHeartVideoClicked()">
 				The main pumping chambers of the heart are the left and right ventricles.
 			</div>
 			<div class="leftDetail" style="color:rgb(175, 175, 175);">
@@ -205,7 +211,7 @@
 				<b>Healthy muscle</b>
 			</div>
 			<div id="NormalHeartAttackDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
-				The heart muscle needs blood to survive. The healthy heart pumps blood to itself through blood vessels called the coronary arteries. Unimpeded blood flow through these vessels is vitally important for maintaining a healthy heart. 
+				The heart muscle needs blood to survive. The healthy heart pumps blood to itself through vessels called the coronary arteries. Unimpeded blood flow through the coronary artery is vitally important for maintaining a healthy heart. 
 			</div>
 			<div class="leftLargeClickable" style="height:300px">
 				<img src="images/heart_v7/coronary_heart.png" alt="information" style="float:center" height="300px">
@@ -235,13 +241,13 @@
 				<b>Damaged muscle</b>
 			</div>
 			<div id="NormalHeartAttackDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
-				<p>In a heart attack, blockages in the coronary arteries impede the flow of blood. This leads to muscle damage (see shaded region) which reduces the heart's ability to pump blood.  </p>
+				<p>In a heart attack, blockages in the coronary arteries impede the flow of blood. This leads to muscle damage (shaded region) which reduces the heart's ability to pump blood.  </p>
 			</div>
 			<div class="leftLargeClickable" style="height:300px">
 				<img src="images/heart_v7/coronary_block_moderate.png" alt="information" style="float:center" height="300px">
 			</div>
 			<div id="NormalHeartAttackDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
-				<p>A healthy lifestyle and diet will help to prevent such blockages from forming.</p>
+				<p>A healthy lifestyle will help to prevent coronary artery blockages.</p>
 			</div>
 			<div class="leftProgressBar">
 				<div style="max-width:100%;background-color: transparent;">
@@ -365,7 +371,6 @@
 		<div id="more" class="closed" onclick="moreClicked()">
 			<img src="images/more.png" alt="more" style="height:40%;">
 		</div>
-
 		
 		<div id="myRenderer" class="open">
 		</div>
@@ -1022,6 +1027,56 @@
 			if (LVPTexts[chartName])
 				document.getElementById('LVPDescription').innerHTML = LVPTexts[chartName];
 		}
+		function healthyHeartVideoClicked(){
+			document.getElementById('popupVideo').className = 'open';
+		}
+
+		// popup examples
+		$( document ).on( "pagecreate", function() {
+		    // The window width and height are decreased by 30 to take the tolerance of 15 pixels at each side into account
+		    function scale( width, height, padding, border ) {
+			var scrWidth = $( window ).width() - 30,
+			    scrHeight = $( window ).height() - 30,
+			    ifrPadding = 2 * padding,
+			    ifrBorder = 2 * border,
+			    ifrWidth = width + ifrPadding + ifrBorder,
+			    ifrHeight = height + ifrPadding + ifrBorder,
+			    h, w;
+			if ( ifrWidth < scrWidth && ifrHeight < scrHeight ) {
+			    w = ifrWidth;
+			    h = ifrHeight;
+			} else if ( ( ifrWidth / scrWidth ) > ( ifrHeight / scrHeight ) ) {
+			    w = scrWidth;
+			    h = ( scrWidth / ifrWidth ) * ifrHeight;
+			} else {
+			    h = scrHeight;
+			    w = ( scrHeight / ifrHeight ) * ifrWidth;
+			}
+			return {
+			    'width': w - ( ifrPadding + ifrBorder ),
+			    'height': h - ( ifrPadding + ifrBorder )
+			};
+		    };
+		    $( ".ui-popup iframe" )
+			.attr( "width", 0 )
+			.attr( "height", "auto" );
+		    $( "#popupVideo" ).on({
+			popupbeforeposition: function() {
+			    // call our custom function scale() to get the width and height
+			    var size = scale( 497, 298, 15, 1 ),
+				w = size.width,
+				h = size.height;
+			    $( "#popupVideo iframe" )
+				.attr( "width", w )
+				.attr( "height", h );
+			},
+			popupafterclose: function() {
+			    $( "#popupVideo iframe" )
+				.attr( "width", 0 )
+				.attr( "height", 0 );
+			}
+		    });
+		});
 		
 				
 	</script>

@@ -353,6 +353,16 @@ div#showFibresButton {
 	position: absolute;
 }
 
+div.videoPanel {
+  z-index:1;
+  background-color: transparent;
+  height:80%;
+  width:30%;
+  left:35%;
+  top:4%;
+  position: absolute;
+}
+
 div.leftPanel {
   z-index:1;
   background-color: transparent;
@@ -632,3 +642,8 @@ div.progressClickable {
  	height:100%;
  	position: absolute;
 }
+
+iframe {
+    border: none;
+}
+
