@@ -1,6 +1,6 @@
 [
    {
-      "GroupName" : "Fibres",
+      "GroupName" : "Ant",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
@@ -8,7 +8,7 @@
       "URL" : "models/deforming_heart_1.json"
    },
    {
-      "GroupName" : "Post_top",
+      "GroupName" : "Cut",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
@@ -16,7 +16,7 @@
       "URL" : "models/deforming_heart_2.json"
    },
    {
-      "GroupName" : "Ant_top",
+      "GroupName" : "Fibres",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
@@ -24,23 +24,24 @@
       "URL" : "models/deforming_heart_3.json"
    },
    {
-      "GlyphGeometriesURL" : "models/deforming_heart_5.json",
-      "MorphColours" : true,
-      "MorphNormals" : false,
-      "MorphVertices" : true,
-      "Type" : "Glyph",
-      "URL" : "models/deforming_heart_4.json"
-   },
-   {
       "GroupName" : "Post",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
       "Type" : "Surfaces",
-      "URL" : "models/deforming_heart_6.json"
+      "URL" : "models/deforming_heart_4.json"
    },
    {
-      "GroupName" : "Cut",
+      "GlyphGeometriesURL" : "models/deforming_heart_6.json",
+      "GroupName" : "Fibres",
+      "MorphColours" : true,
+      "MorphNormals" : false,
+      "MorphVertices" : true,
+      "Type" : "Glyph",
+      "URL" : "models/deforming_heart_5.json"
+   },
+   {
+      "GroupName" : "Ant_top",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
@@ -56,7 +57,7 @@
       "URL" : "models/deforming_heart_8.json"
    },
    {
-      "GroupName" : "Ant",
+      "GroupName" : "Post_top",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,

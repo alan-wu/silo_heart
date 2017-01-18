@@ -689,6 +689,12 @@
 			}
 		}
 		
+		function glyphsetShowFibres(flag) {
+			return function(zincGlyphset) {
+				zincGlyphset.setVisibility(flag);
+			}
+		}
+		
 		function pauseVideo() {
     		document.getElementById('heart_video').pause();
 		}
@@ -696,6 +702,7 @@
 		function showFibres(flag) {
 			var currentScene = zincRenderer.getCurrentScene();
 			currentScene.forEachGeometry(geometryShowFibres(flag));
+			currentScene.forEachGlyphset(glyphsetShowFibres(flag));
 			if (flag) {
 				document.getElementById('showFibres').classList.remove('open');
 				document.getElementById('showFibres').classList.add('closed');
