@@ -415,13 +415,14 @@ div.leftClickable{
 div.leftClickableVideo{
   background-image: url(../images/heart_v7/video_button.png);
   background-repeat: no-repeat;
-  background-size: 82px 70px;
-  padding-left: 16%;
+  background-size: 20%;
+  background-position: 0% 20%;
+  padding-left: 25%;
   vertical-align: middle;
   position: relative;
   top: 2%;
-  height:10%;
-  width: 90%; 
+  height:30%;
+  width: 80%; 
   font-size: 1.7em;
   z-index:1;
   font-weight: normal;
@@ -632,3 +633,4 @@ div.progressClickable {
  	height:100%;
  	position: absolute;
 }
+
