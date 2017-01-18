@@ -68,31 +68,22 @@
 			
 		</div>
 		<div id="rightPanel" class="closed">
-
 			<div id="exercise_icon" class = "medicationLifestyle" >
 				<img src="images/heart_v7/exercise.png" alt="home"  onclick="showVideo('5_exercise.mp4')" style="top:10%;height:83%;position:relative">
 			</div>
-			<div id="diet_icon" class = "medicationLifestyle" >
+			<div id="diet_icon" class = "medicationLifestyle" style = "top:1%;position:relative">
 				<img src="images/heart_v7/diet.png" alt="home"  onclick="showVideo('6_diet.mp4')" style="top:10%;height:83%;position:relative">
 			</div>
-			<div id="smoking_icon" class = "medicationLifestyle" >
+			<div id="smoking_icon" class = "medicationLifestyle" style = "top:2%;position:relative" >
 				<img src="images/heart_v7/smoking.png" alt="home"  onclick="showVideo('7_smoking.mp4')" style="top:10%;height:83%;position:relative">
 			</div>		
 		</div>
 		<div id="rightPanelBottom" class = "closed">
-			<div id="aspirin_icon" class = "medicationLifestyle">
-				<img src="images/heart_v7/aspirin.png" alt="home"  onclick="showVideo('4_aspirin.mp4')" style="height:83%;position:relative">
+			<div id="statin_icon" class = "medicationLifestyle" style="top:1%;position:relative">
+				<img src="images/heart_v7/statin.png" alt="home"  onclick="showVideo('3_Statins.mp4')" style="height:83%;position:relative">
 			</div>
-			<div id="statin_icon" class = "medicationLifestyle" >
-				<img src="images/heart_v7/statin.png" alt="home"  onclick="showVideo('3_Statins.mp4')" style="top:10%;height:83%;position:relative">
-			</div>
-		</div>
-		<div id="rightPanelBottom" class = "closed">
-			<div id="aspirin_icon" class = "medicationLifestyle">
-				<img src="images/heart_v7/aspirin.png" alt="home"  onclick="homeClicked()" style="height:83%;position:relative">
-			</div>
-			<div id="statin_icon" class = "medicationLifestyle" >
-				<img src="images/heart_v7/statin.png" alt="home"  onclick="homeClicked()" style="top:10%;height:83%;position:relative">
+			<div id="aspirin_icon" class = "medicationLifestyle" style="top:2%;position:relative">
+				<img src="images/heart_v7/aspirin.png" alt="home"  onclick="showVideo('4_aspirin.mp4')" style="top:10%;height:83%;position:relative">
 			</div>
 		</div>
 		<div id="bottom_control" class="closed">
@@ -142,11 +133,11 @@
 				<b>Muscles pumping blood</b>
 			</div>
 			<div class="leftClickableVideo" onclick="showVideo('1_healthy_heart.mp4')" style="color:rgb(175, 175, 175);">
-				<p>The main job of the heart is to pump blood around the body to meet the demands of the organ systems.</p>
+				<p>The purpose of the heart is to pump blood around the body to meet the demands of the organ systems.</p>
 				<p>The main pumping chambers of the heart are the left and right ventricles.</p>
 			</div>
 
-			<div class="leftDetail" style="color:rgb(175, 175, 175);top:35%;position:relative">
+			<div class="leftDetail" style="color:rgb(175, 175, 175);top:15%;position:relative">
 				<p>Contraction of the thick muscular walls of the ventricles generates the pressure needed to pump blood around the body.</p>
 				<p>Select below to learn about some common heart problems. </p>
 			</div>
@@ -269,7 +260,7 @@
 				<b>Severe muscle damage</b>
 			</div>
 			<div id="NormalHeartAttackDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
-				<p>If left untreated, coronary artery blockages can get worse more which results in more muscle damage. The movement and pumping ability of the heart is severely affected. </p>
+				<p>If left untreated, coronary artery blockages can get worse which results in more muscle damage. The movement and pumping ability of the heart is severely affected. </p>
 			</div>
 			<div class="leftLargeClickable" style="height:300px">
 				<img src="images/heart_v7/coronary_block_severe.png" alt="information" style="float:center" height="300px">
@@ -374,9 +365,9 @@
 		<div id="myRenderer" class="open">
 		</div>
 		
-		<div data-dojo-type="dijit/Dialog" data-dojo-id="videoDialog" id='videoDialog' onHide="pauseVideo()">
+		<div data-dojo-type="dijit/Dialog" data-dojo-id="videoDialog" id='videoDialog' onHide="pauseVideo()" style="background-color:#666;width:980px;height:760px">
     		<table class="dijitDialogPaneContentArea">
-				<video width="960" height="720" id="heart_video" controls>
+				<video width="960" height="720" align="center" style = "left:10px;top:6px;position:relative" id="heart_video"  autoplay>
   					<source src="videos/1_healthy_heart.mp4" type="video/mp4">
 					Your browser does not support the video tag.
 				</video>
@@ -423,6 +414,9 @@
 			var videoURL = "videos/" + videoName;
 			document.getElementById("heart_video").src=videoURL;
 			videoDialog.show();
+			require(["dijit/registry"], function(registry){
+				registry.byId("dialogColor").show();
+			});
 		}
 
 		function displayHalfHeartIcon() {
