@@ -32,6 +32,7 @@
 		        }]
 			};
 		</script>
+		<script>require(["dijit/Dialog"]);</script>
 	</head>
 	<body style='height:100%;font-family="Helvetica"'>
 	<div id="main_page" class="heartpage">
@@ -70,21 +71,21 @@
 		<div id="rightPanel" class="closed">
 
 			<div id="exercise_icon" class = "medicationLifestyle" >
-				<img src="images/heart_v7/exercise.png" alt="home"  onclick="homeClicked()" style="top:10%;height:83%;position:relative">
+				<img src="images/heart_v7/exercise.png" alt="home"  onclick="showVideo('5_exercise.mp4')" style="top:10%;height:83%;position:relative">
 			</div>
 			<div id="diet_icon" class = "medicationLifestyle" >
-				<img src="images/heart_v7/diet.png" alt="home"  onclick="homeClicked()" style="top:10%;height:83%;position:relative">
+				<img src="images/heart_v7/diet.png" alt="home"  onclick="showVideo('6_diet.mp4')" style="top:10%;height:83%;position:relative">
 			</div>
 			<div id="smoking_icon" class = "medicationLifestyle" >
-				<img src="images/heart_v7/smoking.png" alt="home"  onclick="homeClicked()" style="top:10%;height:83%;position:relative">
+				<img src="images/heart_v7/smoking.png" alt="home"  onclick="showVideo('7_smoking.mp4')" style="top:10%;height:83%;position:relative">
 			</div>		
 		</div>
 		<div id="rightPanelBottom" class = "closed">
 			<div id="aspirin_icon" class = "medicationLifestyle">
-				<img src="images/heart_v7/aspirin.png" alt="home"  onclick="homeClicked()" style="height:83%;position:relative">
+				<img src="images/heart_v7/aspirin.png" alt="home"  onclick="showVideo('4_aspirin.mp4')" style="height:83%;position:relative">
 			</div>
 			<div id="statin_icon" class = "medicationLifestyle" >
-				<img src="images/heart_v7/statin.png" alt="home"  onclick="homeClicked()" style="top:10%;height:83%;position:relative">
+				<img src="images/heart_v7/statin.png" alt="home"  onclick="showVideo('3_Statins.mp4')" style="top:10%;height:83%;position:relative">
 			</div>
 		</div>
 		<div id="bottom_control" class="closed">
@@ -138,7 +139,7 @@
 				
 			</div>
 			
-			<div class="leftClickableVideo" style="color:rgb(175, 175, 175);">
+			<div class="leftClickableVideo" onclick="showVideo('1_healthy_heart.mp4')" style="color:rgb(175, 175, 175);">
 				The main pumping chambers of the heart are the left and right ventricles.
 			</div>
 			<div class="leftDetail" style="color:rgb(175, 175, 175);">
@@ -237,7 +238,7 @@
 			<div id="NormalHeartAttackDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
 				<p>In a heart attack, blockages in the coronary arteries impede the flow of blood. This leads to muscle damage (see shaded region) which reduces the heart's ability to pump blood.  </p>
 			</div>
-			<div class="leftLargeClickable" style="height:300px">
+			<div class="leftLargeClickable" style="height:300px" onclick="showVideo('2_blocked_arteries.mp4')">
 				<img src="images/heart_v7/coronary_block_moderate.png" alt="information" style="float:center" height="300px">
 			</div>
 			<div id="NormalHeartAttackDetail" class="leftDetail" style="color:rgb(175, 175, 175);">
@@ -369,6 +370,15 @@
 		
 		<div id="myRenderer" class="open">
 		</div>
+		
+		<div data-dojo-type="dijit/Dialog" data-dojo-id="videoDialog" id='videoDialog' onHide="pauseVideo()">
+    		<table class="dijitDialogPaneContentArea">
+				<video width="960" height="720" id="heart_video" controls>
+  					<source src="videos/1_healthy_heart.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+    		</table>
+		</div>
 
 	</div>
 	
@@ -405,6 +415,12 @@
 			"attack_selected_icon", "failure_selected_icon"];
 		var modelToSceneArray = [];
 		var previousCamera = undefined;
+		
+		function showVideo(videoName) {
+			var videoURL = "videos/" + videoName;
+			document.getElementById("heart_video").src=videoURL;
+			videoDialog.show();
+		}
 
 		function displayHalfHeartIcon() {
 			if (halfHeartFlag) {
@@ -671,6 +687,10 @@
 					zincGeometry.setVisibility(!flag);
 				}
 			}
+		}
+		
+		function pauseVideo() {
+    		document.getElementById('heart_video').pause();
 		}
 		
 		function showFibres(flag) {
