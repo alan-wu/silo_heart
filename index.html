@@ -69,13 +69,13 @@
 		</div>
 		<div id="rightPanel" class="closed">
 			<div id="exercise_icon" class = "medicationLifestyle" >
-				<img src="images/heart_v7/exercise.png" alt="home"  onclick="showVideo('5_exercise.mp4')" style="top:10%;height:83%;position:relative">
+				<img src="images/heart_v7/exercise.png" alt="home"  onclick="showVideo('5_exercise_v2.mp4')" style="top:10%;height:83%;position:relative">
 			</div>
 			<div id="diet_icon" class = "medicationLifestyle" style = "top:1%;position:relative">
-				<img src="images/heart_v7/diet.png" alt="home"  onclick="showVideo('6_diet.mp4')" style="top:10%;height:83%;position:relative">
+				<img src="images/heart_v7/diet.png" alt="home"  onclick="showVideo('6_diet_v2.mp4')" style="top:10%;height:83%;position:relative">
 			</div>
 			<div id="smoking_icon" class = "medicationLifestyle" style = "top:2%;position:relative" >
-				<img src="images/heart_v7/smoking.png" alt="home"  onclick="showVideo('7_smoking.mp4')" style="top:10%;height:83%;position:relative">
+				<img src="images/heart_v7/smoking.png" alt="home"  onclick="showVideo('7_smoking_v2.mp4')" style="top:10%;height:83%;position:relative">
 			</div>		
 		</div>
 		<div id="rightPanelBottom" class = "closed">
@@ -455,6 +455,7 @@
 					openedPage = leftPanelIDs[i];
 				}
 			}
+			zincRenderer.getCurrentScene().getZincCameraControls().stopAutoTumble();
 			if (openedPage == "initialNormal"){
 				heartElectricityClicked();
 			} else if (openedPage == "leftHeartElectricity") {
@@ -474,6 +475,10 @@
 			} else if (openedPage == "leftDecompensatedFailure") {
 				homeClicked();
 			}
+			zincRenderer.getCurrentScene().resetView();
+			zincRenderer.getCurrentScene().getZincCameraControls().autoTumble(
+				[1.0, 0.0], 0.01, true);
+			zincRenderer.getCurrentScene().getZincCameraControls().enableAutoTumble();
 			idleTime = 0;
 			oldTime = new Date();
 		}
@@ -676,19 +681,21 @@
 		
 		zincRenderer.addPreRenderCallbackFunction(updateIndicatorsAndTimer);
 		
-		function geometryShowFibres(flag) {
+		function geometryShowFibres(flag, currentTime) {
 			return function(zincGeometry) {
 				if (zincGeometry.groupName && zincGeometry.groupName.includes("Fibres")) {
 					zincGeometry.setVisibility(flag);
 				} else {
 					zincGeometry.setVisibility(!flag);
 				}
+				zincGeometry.setMorphTime(currentTime);
 			}
 		}
 		
-		function glyphsetShowFibres(flag) {
+		function glyphsetShowFibres(flag, currentTime) {
 			return function(zincGlyphset) {
 				zincGlyphset.setVisibility(flag);
+				zincGlyphset.setMorphTime(currentTime);
 			}
 		}
 		
@@ -698,8 +705,9 @@
 		
 		function showFibres(flag) {
 			var currentScene = zincRenderer.getCurrentScene();
-			currentScene.forEachGeometry(geometryShowFibres(flag));
-			currentScene.forEachGlyphset(glyphsetShowFibres(flag));
+			var currentTime = zincRenderer.getCurrentTime();
+			currentScene.forEachGeometry(geometryShowFibres(flag, currentTime));
+			currentScene.forEachGlyphset(glyphsetShowFibres(flag, currentTime));
 			if (flag) {
 				document.getElementById('showFibres').classList.remove('open');
 				document.getElementById('showFibres').classList.add('closed');
@@ -919,8 +927,8 @@
 				if (mygeometry.groupName && mygeometry.groupName.includes("Fibres")) {
 					mygeometry.setVisibility(false);
 				}
-				
 				shareCameraSettings(oldCam);
+				zincRenderer.getCurrentScene().getZincCameraControls().updateAutoTumble();
 			}
 		}
 		
