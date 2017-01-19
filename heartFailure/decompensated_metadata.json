@@ -1,6 +1,6 @@
 [
    {
-      "GroupName" : "Ant_top",
+      "GroupName" : "Post_NonInfarct",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
@@ -8,7 +8,7 @@
       "URL" : "heartFailure/decompensated_1.json"
    },
    {
-      "GroupName" : "Post_top",
+      "GroupName" : "inner",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
@@ -16,7 +16,7 @@
       "URL" : "heartFailure/decompensated_2.json"
    },
    {
-      "GroupName" : "Cut",
+      "GroupName" : "Ant_NonInfarct",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
@@ -24,7 +24,7 @@
       "URL" : "heartFailure/decompensated_3.json"
    },
    {
-      "GroupName" : "Post_NonInfarct",
+      "GroupName" : "Cut",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
@@ -32,11 +32,27 @@
       "URL" : "heartFailure/decompensated_4.json"
    },
    {
-      "GroupName" : "Ant_NonInfarct",
+      "GroupName" : "Post_top",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
       "Type" : "Surfaces",
       "URL" : "heartFailure/decompensated_5.json"
+   },
+   {
+      "GroupName" : "Post_inner",
+      "MorphColours" : false,
+      "MorphNormals" : false,
+      "MorphVertices" : true,
+      "Type" : "Surfaces",
+      "URL" : "heartFailure/decompensated_6.json"
+   },
+   {
+      "GroupName" : "Ant_top",
+      "MorphColours" : false,
+      "MorphNormals" : false,
+      "MorphVertices" : true,
+      "Type" : "Surfaces",
+      "URL" : "heartFailure/decompensated_7.json"
    }
 ]

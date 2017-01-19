@@ -1,6 +1,6 @@
 [
    {
-      "GroupName" : "Ant_NonInfarct",
+      "GroupName" : "Post_top",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
@@ -8,7 +8,7 @@
       "URL" : "heartInfarct/largeInfarct_1.json"
    },
    {
-      "GroupName" : "Post_NonInfarct",
+      "GroupName" : "Post_inner",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
@@ -16,7 +16,7 @@
       "URL" : "heartInfarct/largeInfarct_2.json"
    },
    {
-      "GroupName" : "Post_top",
+      "GroupName" : "inner",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
@@ -24,7 +24,7 @@
       "URL" : "heartInfarct/largeInfarct_3.json"
    },
    {
-      "GroupName" : "Ant_top",
+      "GroupName" : "Ant_NonInfarct",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
@@ -32,11 +32,27 @@
       "URL" : "heartInfarct/largeInfarct_4.json"
    },
    {
-      "GroupName" : "Cut",
+      "GroupName" : "Post_NonInfarct",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
       "Type" : "Surfaces",
       "URL" : "heartInfarct/largeInfarct_5.json"
+   },
+   {
+      "GroupName" : "Cut",
+      "MorphColours" : false,
+      "MorphNormals" : false,
+      "MorphVertices" : true,
+      "Type" : "Surfaces",
+      "URL" : "heartInfarct/largeInfarct_6.json"
+   },
+   {
+      "GroupName" : "Ant_top",
+      "MorphColours" : false,
+      "MorphNormals" : false,
+      "MorphVertices" : true,
+      "Type" : "Surfaces",
+      "URL" : "heartInfarct/largeInfarct_7.json"
    }
 ]
