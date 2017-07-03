@@ -634,3 +634,75 @@ div.progressClickable {
  	position: absolute;
 }
 
+div.leftQuestionWidget {
+  padding-top: 3%;
+  min-height: 10%;
+}
+
+div.leftQuestionPic{
+  background-image: url(../images/heart_v7/question_mark.png);
+  background-repeat: no-repeat;
+  padding-left: 14%;
+  vertical-align: middle;
+  position: relative;
+  height:65px;
+  width: 90%; 
+  font-size: 1.7em;
+  z-index:1;
+  font-weight: normal;
+}
+
+div.leftAnswer{
+  background-color: transparent;
+  padding-top: 40px;
+  text-align: left;
+  vertical-align: middle;
+  font-size: 1.6em;
+  font-weight:normal;
+  top: 2%;
+  z-index:1;
+  position: relative;
+  color: rgb(175, 175, 175);
+}
+
+div.downArrow{
+  background-image: url(../images/heart_v7/heart_arrow_down.png);
+  background-repeat: no-repeat;
+  background-size:40px 40px;
+  padding-left: 10%;
+  left: 10%;
+  vertical-align: middle;
+  position: relative;
+  height:50px;
+  width: 90%; 
+  font-size: 1.0em;
+  z-index:1;
+  font-weight: normal;
+}
+
+div.upArrow{
+  background-image: url(../images/heart_v7/heart_arrow_up.png);
+  padding-top: 40px;
+  background-repeat: no-repeat;
+  background-size:40px 40px;
+  left: 10%;
+  vertical-align: middle;
+  position: relative;
+  height:15%;
+  width: 90%; 
+  font-size: 1.7em;
+  z-index:1;
+  font-weight: normal;
+}
+
+div.downArrow:hover {
+	background-color:#999999;
+	cursor: pointer;
+	cursor: hand;
+}
+
+div.upArrow:hover {
+	background-color:#999999;
+	cursor: pointer;
+	cursor: hand;
+}
