@@ -179,6 +179,7 @@
 					Check your understanding
 				</div>
 				<div class="upArrow closed" id="normal_3_u" onclick="showNormalQuestions(3)">
+
 					Click to close
 				</div>
 			</div>
@@ -832,10 +833,15 @@ In a healthy heart, electrical waves pass smoothly through the muscle to provide
 		}
 
 		var halfHeartPressed = function() {
-			if (halfHeartFlag) {
-				halfHeartFlag = false;
-			} else {
-				halfHeartFlag = true;
+			if (!document.getElementById('hideFibres').classList.contains('open')) {
+				if (halfHeartFlag) {
+					halfHeartFlag = false;
+				} else {
+					halfHeartFlag = true;
+				}
+				displayHalfHeartIcon();
+
+				showHalf();
 			}
 			displayHalfHeartIcon();
 
