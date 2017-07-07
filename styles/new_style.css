@@ -372,6 +372,7 @@ div.leftTitle {
   height:5%
   width:100%;
   z-index:1;
+  color:rgb(255,255,255);
 }
 
 div.leftDescription {
@@ -383,6 +384,7 @@ div.leftDescription {
   width:100%;
   z-index:1;
   position: relative;
+  color:rgb(255,255,255);
 }
 
 div.leftDetail {
@@ -394,6 +396,7 @@ div.leftDetail {
   top: 2%;
   z-index:1;
   position: relative;
+  display: inline-block;
 }
 
 div.leftClickable{
@@ -528,14 +531,15 @@ div.rightLogo {
 }
 
 div.rightChartTitle{
-	background-color: transparent;
-  	text-align: center;
-  	vertical-align: middle;
-	font-size: 1.7em;
-	z-index:3;
-	left:1%;
-	width:97%;
-	position: relative;
+  background-color: transparent;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.7em;
+  z-index:3;
+  left:1%;
+  width:97%;
+  position: relative;
+  color:rgb(175,175,175);
 }
 
 div.rightChart {
@@ -635,21 +639,20 @@ div.progressClickable {
 }
 
 div.leftQuestionWidget {
-  padding-top: 3%;
+  padding-top: 1%;
   min-height: 10%;
 }
 
 div.leftQuestionPic{
-  background-image: url(../images/heart_v7/question_mark.png);
-  background-repeat: no-repeat;
-  padding-left: 14%;
+  padding-left: 0%;
   vertical-align: middle;
   position: relative;
-  height:65px;
   width: 90%;
   font-size: 1.7em;
   z-index:1;
   font-weight: normal;
+  display: inline-block;
+  color:rgb(175,175,175);
 }
 
 div.leftAnswer{
@@ -670,9 +673,9 @@ div.downArrow{
   background-image: url(../images/heart_v7/heart_arrow_down.png);
   background-repeat: no-repeat;
   background-size:55px 48px;
-  padding-left: 13%;
-  padding-top: 3%;
-  left:1%;
+  padding-left: 10%;
+  padding-top: 1%;
+  left:0%;
   vertical-align: middle;
   position: relative;
   height:50px;
@@ -680,31 +683,32 @@ div.downArrow{
   font-size: 1.3em;
   z-index:1;
   font-weight: normal;
+  color:rgb(175,175,175);
 }
 
 div.upArrow{
   background-image: url(../images/heart_v7/heart_arrow_up.png);
-  padding-top: 40px;
   background-repeat: no-repeat;
   background-size:55px 48px;
   left: 1%;
+  padding-left: 10%;
+  padding-top: 1%;
   vertical-align: middle;
   position: relative;
   height:15%;
   width: 90%;
-  font-size: 1.7em;
+  font-size: 1.3em;
   z-index:1;
   font-weight: normal;
+  color:rgb(175,175,175);
 }
 
 div.downArrow:hover {
-	background-color:#999999;
 	cursor: pointer;
 	cursor: hand;
 }
 
 div.upArrow:hover {
-	background-color:#999999;
 	cursor: pointer;
 	cursor: hand;
 }
