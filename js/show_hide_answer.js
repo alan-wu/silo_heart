@@ -14,6 +14,9 @@ var showQuestions = function(totalNumber, name) {
 		targetId = prefix + "u";
 		document.getElementById(targetId).classList.remove('open');
 		document.getElementById(targetId).classList.add('closed');	
+		targetId = prefix + "block";
+		document.getElementById(targetId).classList.remove('closed');
+		document.getElementById(targetId).classList.add('show');
 	}
 }
 
@@ -33,6 +36,9 @@ var showAnswer = function(currentIndex, totalNumber, name) {
 		targetId = prefix + "u";
 		document.getElementById(targetId).classList.remove('open');
 		document.getElementById(targetId).classList.add('closed');
+		targetId = prefix + "block";
+		document.getElementById(targetId).classList.remove('open');
+		document.getElementById(targetId).classList.add('closed');
 	}
 	var prefix = name + String(currentIndex) + "_"; 
 	var targetId = prefix + "q";
@@ -42,6 +48,9 @@ var showAnswer = function(currentIndex, totalNumber, name) {
 	document.getElementById(targetId).classList.remove('closed');
 	document.getElementById(targetId).classList.add('open');
 	targetId = prefix + "u";
+	document.getElementById(targetId).classList.remove('closed');
+	document.getElementById(targetId).classList.add('open');
+	targetId = prefix + "block";
 	document.getElementById(targetId).classList.remove('closed');
 	document.getElementById(targetId).classList.add('open');
 }
