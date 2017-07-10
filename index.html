@@ -88,408 +88,400 @@
 				<img src="images/heart_v7/aspirin.png" alt="home"  onclick="showVideo('4_aspirin.mp4')" style="top:10%;height:83%;position:relative">
 			</div>
 		</div>
-		<div id="bottom_control" class="closed">
-			<div id="home_icon" class="closed" style="left:0%;bottom:0%;position:absolute;z-index:10;height:85%;">
-				<img src="images/new_image/home.png" alt="home"  onclick="homeClicked()" style="height:83%">
+		<div id="leftPanel" class="open">
+			<div id="bottom_control" class="closed">       
+				<div id="home_icon" class="open" style="left:1%;position:absolute;bottom:0%;z-index:10;height:100%;">
+					<img src="images/new_image/home.png" alt="home"  onclick="homeClicked()" style="height:100%">
+				</div>
+				<div id="home_selected_icon" class="closed" style="left:1%;position:absolute;bottom:0%;z-index:10;height:100%;">
+					<img src="images/new_image/home_selected.png" alt="home"  onclick="homeClicked()" style="height:100%">
+				</div>
+				
+				<div id="healthy_heart_icon" class="closed" style="left:20%;position:absolute;bottom:0%;z-index:10;height:100%;">
+					<img src="images/heart_v7/healthy_heart_icon.png" alt="home"  onclick="homeClicked()" style="height:100%">
+				</div>
+				<div id="healthy_heart_selected_icon" class="open" style="left:20%;position:absolute;bottom:0%;z-index:10;height:100%;">
+					<img src="images/heart_v7/healthy_heart_selected_icon.png" alt="home"  onclick="homeClicked()" style="height:100%">
+				</div>
+				<div id="fibrillation_icon" class="bottomButton open" style="left:40%;position:absolute;bottom:0%;z-index:10;height:100%;">
+					<img src="images/heart_v7/fibrillation_icon.png" alt="information" style="height:100%" onclick="heartElectricityClicked()">
+				</div>
+				<div id="fibrillation_selected_icon" class="bottomButton closed" style="left:40%;position:absolute;;bottom:0%;z-index:10;height:100%;">
+					<img src="images/heart_v7/fibrillation_selected_icon.png" alt="information" style="height:100%">
+				</div>
+				<div id="attack_icon" class="bottomButton open" style="left:60%;position:absolute;bottom:0%;z-index:10;height:100%;">
+					<img src="images/heart_v7/attack_icon.png" alt="information" style="height:100%" onclick="heartAttackClicked()">
+				</div>
+				<div id="attack_selected_icon" class="bottomButton closed" style="left:60%;position:absolute;bottom:0%;z-index:10;height:100%;">
+					<img src="images/heart_v7/attack_selected_icon.png" alt="information" style="height:100%">
+				</div>
+				<div id="failure_icon" class="bottomButton open" style="left:80%;position:absolute;bottom:0%;z-index:10;height:100%;">
+					<img src="images/heart_v7/failure_icon.png" alt="information" style="height:100%" onclick="heartFailureClicked()">
+				</div>
+				<div id="failure_selected_icon" class="bottomButton closed" style="left:80%;position:absolute;bottom:0%;z-index:10;height:100%;">
+					<img src="images/heart_v7/failure_selected_icon.png" alt="information" style="height:100%">
+				</div>
+				
+				
+				
+				<!--
+				<div id="showFibres" class="showFibres closed" style="right:13%;bottom:0%;position:absolute;z-index:10;height:85%;">
+					<img src="images/new_image/muscle_fibres.png" alt="halfHeart" style="height:83%" onclick="showFibres(true)">
+				</div>
+				<div id="hideFibres" class="showFibres closed" style="right:13%;bottom:0%;position:absolute;z-index:10;height:85%;">
+					<img src="images/new_image/heart_surface.png" alt="halfHeart" style="height:83%" onclick="showFibres(false)">
+				</div>
+				-->
 			</div>
-			<div id="home_selected_icon" class="open" style="left:0%;bottom:0%;position:absolute;z-index:10;height:85%;">
-				<img src="images/new_image/home_selected.png" alt="home"  onclick="homeClicked()" style="height:83%">
+			<div id="initialNormal" class="closed">
+				<div class="leftTitle" >
+					<b>The Heart</b>
+				</div>
+				<div class="leftDescription">
+					<b>Te Manawa</b>
+				</div>
+				<div class ="leftQuestionWidget open" id="normal_1_block">
+					<div class="leftQuestionPic open" id="normal_1_q">
+						<b>Is this what your heart looks like?</b>
+					</div>
+					<div class="leftAnswer closed" id="normal_1_a">
+						<p>Mostly. The pumping chambers of the heart, called the left and the
+							right ventricles, are shown. There are two other chambers which sit
+							on top of these called the left and right atria, and they receive
+							blood from the body and push it to the ventricles for pumping.</p>
+					</div>
+					<div class="downArrow open" id="normal_1_d" onclick="showNormalAnswer(1, 3)">
+					</div>
+					<div class="upArrow closed" id="normal_1_u" onclick="showNormalQuestions(3)">
+					</div>
+				</div>
+				<div class ="leftQuestionWidget open" id="normal_2_block">
+					<div class="leftQuestionPic open" id="normal_2_q">
+						<b>What is the heart’s job?</b>
+					</div>
+					<div class="leftAnswer closed" id="normal_2_a">
+						<p>The purpose of the heart is to pump blood around the body so all the organ
+						systems get the oxygen and nutrients (food) they need, as well as having their
+						wastes taken away.</p>
+					</div>
+					<div class="downArrow open" id="normal_2_d" onclick="showNormalAnswer(2, 3)">
+					</div>
+					<div class="upArrow closed"  id="normal_2_u" onclick="showNormalQuestions(3)">
+					</div>
+				</div>
+				<div class ="leftQuestionWidget open" id="normal_3_block">
+					<div class="leftQuestionPic open" id="normal_3_q">
+						<b>What can you observe happening to the heart?</b>
+					</div>
+					<div class="leftAnswer closed" id="normal_3_a">
+						<p>Did you see it get smaller then larger? This contraction (shortening) of the
+						heart muscle squeezes the blood inside the ventricles increasing the pressure allowing
+						the blood to be pumped around the body. When the heart relaxes it fills with blood again.</p>
+					</div>
+					<div class="downArrow open" id="normal_3_d" onclick="showNormalAnswer(3, 3)">
+					</div>
+					<div class="upArrow closed" id="normal_3_u" onclick="showNormalQuestions(3)">
+					</div>
+				</div>
 			</div>
-			<div id="halfHeart" class="halfHeart closed" style="right:2%;bottom:0%;position:absolute;z-index:10;height:85%;">
-				<img src="images/new_image/half_heart.png" alt="halfHeart" style="height:83%" onclick="halfHeartPressed()">
+
+			<div id="leftHeartElectricity" class="closed">
+				<div class="leftTitle"  >
+					<b>Heart Electricity</b>
+				</div>
+				<div class="leftDescription">
+					<b>Coordinated contraction</b>
+				</div>
+				<div class="leftDetail" style="color:rgb(175, 175, 175);">
+					If you have ever had an electric shock you may have noticed it made you tense up (your muscles contracted).
+	In a healthy heart, electrical waves pass smoothly through the muscle to provide coordinated contraction (each part of the muscles contracts at just the right time) and efficient pumping.
+				</div>
+				<div class ="leftQuestionWidget open" id="electricity_1_block">
+					<div class="leftQuestionPic open" id="electricity_1_q">
+						<b>What happens when the smooth electrical waves are disrupted?</b>
+					</div>
+					<div class="leftAnswer closed" id="electricity_1_a">
+						<p>The electrical waves are randomly going all the time and the heart muscle just wobbles.
+						 Electrical disruption leads to fibrillation which is chaotic contracting of the heart. This means the heart cannot generate enough pressure to pump the blood.
+						</p>
+					</div>
+					<div class="downArrow open" id="electricity_1_d" onclick="showElectricityAnswer(1, 1)">
+					</div>
+					<div class="upArrow closed"  id="electricity_1_u" onclick="showElectricityQuestions(1)">
+					</div>
+				</div>
+
+				<div class="leftProgressBar">
+					<div style="max-width:100%;background-color: transparent;">
+						<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;">
+						</div>
+						<div class="progressClickable" style="left:45%;width:33%;background-color: transparent;" onclick="arrhythmiaClicked()">
+						</div>
+					</div>
+					<img src="images/heart_v7/health_electricity_hand.png" alt="information" height="60px">
+				</div>
 			</div>
-			<!--
-			<div id="showFibres" class="showFibres closed" style="right:13%;bottom:0%;position:absolute;z-index:10;height:85%;">
-				<img src="images/new_image/muscle_fibres.png" alt="halfHeart" style="height:83%" onclick="showFibres(true)">
+
+			<div id="leftHeartArrhythmia" class="closed">
+				<div class="leftTitle" >
+					<b>Fibrillation</b>
+				</div>
+				<div class="leftDescription">
+					<b>Chaotic contraction</b>
+				</div>
+				<div class ="leftQuestionWidget open" id="arrhythmia_1_block">
+					<div class="leftQuestionPic open" id="arrhythmia_1_q">
+						<b>What can we do to fix a fibrillating heart?</b>
+					</div>
+					<div class="leftAnswer closed" id="arrhythmia_1_a">
+						<p>CLEAR! We need to apply a large electrical shock to reset the electrical waves. We need an Automated External Defibrillator (AED).
+						</p>
+					</div>
+					<div class="downArrow open" id="arrhythmia_1_d" onclick="showArrhythmiaAnswer(1, 1)">
+
+					</div>
+					<div class="upArrow closed" id="arrhythmia_1_u" onclick="showArrhythmiaQuestions(1)">
+					</div>
+				</div>
+				<div class="leftClickableAED" onclick="AEDClicked()">
+					<b><br>Defibrillate</b>
+				</div>
+				<div class="leftProgressBar">
+					<div style="max-width:100%;background-color: transparent;">
+						<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartElectricityClicked()">
+						</div>
+						<div class="progressClickable" style="left:45%;width:33%;background-color: transparent;">
+						</div>
+					</div>
+					<img src="images/heart_v7/fibrillation_electricity_hand.png" alt="information" height="60px">
+				</div>
 			</div>
-			<div id="hideFibres" class="showFibres closed" style="right:13%;bottom:0%;position:absolute;z-index:10;height:85%;">
-				<img src="images/new_image/heart_surface.png" alt="halfHeart" style="height:83%" onclick="showFibres(false)">
+
+			<div id="leftHeartAttack" class="closed">
+				<div class="leftTitle" >
+					<b>Healthy Heart</b>
+				</div>
+				<div class="leftDescription">
+					<b>Healthy muscle</b>
+				</div>
+				<div class ="leftQuestionWidget open" id="attack_1_block">
+					<div class="leftQuestionPic open" id="attack_1_q">
+						<b> Does the heart need blood?</b>
+					</div>
+					<div class="leftAnswer closed" id="attack_1_a">
+						<p>The heart pumps blood, but it is also an organ which needs oxygen and nutrients from the blood to survive.
+						The heart pumps blood to itself through vessels called the coronary arteries.</p>
+					</div>
+					<div class="downArrow open" id="attack_1_d" onclick="showAttackAnswer(1, 2)">
+					</div>
+					<div class="upArrow closed" id="attack_1_u" onclick="showAttackQuestions(2)">
+					</div>
+				</div>
+				<div class ="leftQuestionWidget open" id="attack_2_block">
+					<div class="leftQuestionPic open" id="attack_2_q">
+						<b>What would happen if one of these coronary arteries became narrowed? </b>
+					</div>
+					<div class="leftAnswer closed" id="attack_2_a">
+						<p>If a coronary artery gets blockages, blood flow is impeded, which means less oxygen and nutrients.
+						Without oxygen and nutrients the heart muscle is damaged (the shaded part).</p>
+					</div>
+					<div class="downArrow open" id="attack_2_d" onclick="showAttackAnswer(2, 2)">
+					</div>
+					<div class="upArrow closed" id="attack_2_u" onclick="showAttackQuestions(2)">
+					</div>
+				</div>
+
+				<div class="leftProgressBar">
+					<div style="max-width:100%;background-color: transparent;">
+						<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;">
+						</div>
+						<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
+						</div>
+						<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
+						</div>
+					</div>
+					<img src="images/heart_v7/health_attack_hand.png" alt="information" height="60px">
+				</div>
 			</div>
-			-->
-			<div id="fibrillation_icon" class="bottomButton open" style="left:12%;bottom:0%;position:absolute;z-index:10;height:85%;">
-				<img src="images/heart_v7/fibrillation_icon.png" alt="information" style="height:83%" onclick="heartElectricityClicked()">
+
+
+			<div id="leftModerateAttack" class="closed">
+				<div class="leftTitle" >
+					<b>Heart Attack</b>
+				</div>
+				<div class="leftDescription">
+					<b>Damaged muscle</b>
+				</div>
+				<div class ="leftQuestionWidget open" id="moderate_1_block">
+					<div class="leftQuestionPic open" id="moderate_1_q">
+						<b>What changes can you observe in the heart after a heart attack?</b>
+					</div>
+					<div class="leftAnswer closed" id="moderate_1_a">
+						<p>Did you see the black part can’t contract as much? Did you notice the Pressure
+						trace doesn’t go as high anymore and the ‘bump’ is wider? If the heart cannot contract
+						very well then it’s ability to pump blood is reduced.</p>
+					</div>
+					<div class="downArrow open" id="moderate_1_d" onclick="showModerateAnswer(1, 2)">
+					</div>
+					<div class="upArrow closed" id="moderate_1_u" onclick="showModerateQuestions(2)">
+					</div>
+				</div>
+				<div class ="leftQuestionWidget open" id="moderate_2_block">
+					<div class="leftQuestionPic open" id="moderate_2_q">
+						<b>What would happen if the blockage got worse?</b>
+					</div>
+					<div class="leftAnswer closed" id="moderate_2_a">
+						<p>If it gets worse even less blood can get through which results in even more muscle damage.
+						 The movement and pumping ability of the heart is severely affected.</p>
+					</div>
+					<div class="downArrow open" id="moderate_2_d" onclick="showModerateAnswer(2, 2)">
+					</div>
+					<div class="upArrow closed" id="moderate_2_u" onclick="showModerateQuestions(2)">
+					</div>
+				</div>
+				<div class="leftProgressBar">
+					<div style="max-width:100%;background-color: transparent;">
+						<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
+						</div>
+						<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;">
+						</div>
+						<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
+						</div>
+					</div>
+					<img src="images/heart_v7/moderate_attack_hand.png" alt="information" height="60px">
+				</div>
 			</div>
-			<div id="attack_icon" class="bottomButton open" style="left:24%;bottom:0%;position:absolute;z-index:10;height:85%;">
-				<img src="images/heart_v7/attack_icon.png" alt="information" style="height:83%" onclick="heartAttackClicked()">
+
+			<div id="leftSevereAttack" class="closed">
+				<div class="leftTitle" >
+					<b>Heart Attack</b>
+				</div>
+				<div class="leftProgressBar">
+					<div style="max-width:100%;background-color: transparent;">
+						<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
+						</div>
+						<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
+						</div>
+						<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;">
+						</div>
+					</div>
+					<img src="images/heart_v7/severe_attack_hand.png" alt="information" height="60px">
+				</div>
 			</div>
-			<div id="failure_icon" class="bottomButton open" style="left:36%;bottom:0%;position:absolute;z-index:10;height:85%;">
-				<img src="images/heart_v7/failure_icon.png" alt="information" style="height:83%" onclick="heartFailureClicked()">
+
+			<div id="leftHeartFailure" class="closed">
+				<div class="leftTitle" >
+					<b>Heart Failure</b>
+				</div>
+				<div class="leftDescription">
+					<b>Healthy heart</b>
+				</div>
+				<div class ="leftQuestionWidget open" id="failure_1_block">
+					<div class="leftQuestionPic open" id="failure_1_q">
+						<b>Can our heart wear out?</b>
+					</div>
+					<div class="leftAnswer closed" id="failure_1_a">
+						<p>Yes. Over time the heart shape, stiffness and ability to contract can change
+						due to factors such as high blood pressure. These long term changes are what we call heart failure.</p>
+					</div>
+					<div class="downArrow open" id="failure_1_d" onclick="showFailureAnswer(1, 1)">
+					</div>
+					<div class="upArrow closed" id="failure_1_u" onclick="showFailureQuestions(1)">
+					</div>
+				</div>
+				<div class="leftProgressBar">
+					<div style="max-width:100%;background-color: transparent;">
+						<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;">
+						</div>
+						<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')">
+						</div>
+						<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
+						</div>
+					</div>
+					<img src="images/heart_v7/heart_failure_hand.png" alt="information" height="60px">
+				</div>
 			</div>
-			<div id="fibrillation_selected_icon" class="bottomButton closed" style="left:12%;bottom:0%;position:absolute;z-index:10;height:85%;">
-				<img src="images/heart_v7/fibrillation_selected_icon.png" alt="information" style="height:83%">
+
+			<div id="leftCompensatedFailure" class="closed">
+				<div class="leftTitle" >
+					<b>Heart Failure</b>
+				</div>
+				<div class="leftDescription">
+					<b>Coping with extra load</b>
+				</div>
+				<div class ="leftQuestionWidget open" id="compensated_1_block">
+					<div class="leftQuestionPic open" style="font-size:1.5em"; id="compensated_1_q">
+						<b>What changes can you observe in the heart of a person with long term high blood pressure?</b>
+					</div>
+					<div class="leftAnswer closed" id="compensated_1_a">
+						<p>The walls of the heart are thicker. If blood pressure is always high, the heart needs to
+						work harder to compensate and keep pumping blood around the body. This results in thicker muscle walls.</p>
+					</div>
+					<div class="downArrow open" id="compensated_1_d" onclick="showCompensatedAnswer(1, 1)">
+					</div>
+					<div class="upArrow closed" id="compensated_1_u" onclick="showCompensatedQuestions(1)">
+					</div>
+				</div>
+				<div class="leftProgressBar">
+					<div style="max-width:100%;background-color: transparent;">
+						<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure')">
+						</div>
+						<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;">
+						</div>
+						<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
+						</div>
+					</div>
+					<img src="images/heart_v7/compensated_failure_hand.png" alt="information" height="60px">
+				</div>
 			</div>
-			<div id="attack_selected_icon" class="bottomButton closed" style="left:24%;bottom:0%;position:absolute;z-index:10;height:85%;">
-				<img src="images/heart_v7/attack_selected_icon.png" alt="information" style="height:83%">
-			</div>
-			<div id="failure_selected_icon" class="bottomButton closed" style="left:36%;bottom:0%;position:absolute;z-index:10;height:85%;">
-				<img src="images/heart_v7/failure_selected_icon.png" alt="information" style="height:83%">
-			</div>
-			<div id="fullHeart" class="halfHeart closed" style="right:2%;bottom:0%;position:absolute;z-index:10;height:85%;"">
-				<img src="images/new_image/full_heart.png" alt="fullHeart" style="height:83% "onclick="halfHeartPressed()">
+
+			<div id="leftDecompensatedFailure" class="closed">
+				<div class="leftTitle" >
+					<b>Heart Failure</b>
+				</div>
+				<div class ="leftQuestionWidget open" id="decompensated_1_block">
+					<div class="leftQuestionPic open" id="decompensated_1_q">
+						<b>What happens if high blood pressure is left untreated?</b>
+					</div>
+					<div class="leftAnswer closed" id="decompensated_1_a">
+						<p>The heart is larger and the walls are thinner.</p>
+					</div>
+					<div class="downArrow open" id="decompensated_1_d" onclick="showDecompensatedAnswer(1, 1)">
+					</div>
+					<div class="upArrow closed" id="decompensated_1_u" onclick="showDecompensatedQuestions(1)">
+					</div>
+				</div>
+				<div class="leftProgressBar">
+					<div style="max-width:100%;background-color: transparent;">
+						<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure')">
+						</div>
+						<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')">
+						</div>
+						<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;">
+						</div>
+					</div>
+					<img src="images/heart_v7/decompensated_failure_hand.png" alt="information" height="60px">
+				</div>
 			</div>
 		</div>
-
-		<div id="initialNormal" class="closed leftPanel">
-			<div class="leftTitle" >
-				<b>The Heart</b>
-			</div>
-			<div class ="leftQuestionWidget open" id="normal_1_block">
-				<div class="leftQuestionPic open" id="normal_1_q">
-					<b>Is this what your heart looks like?</b>
-				</div>
-				<div class="leftAnswer closed" id="normal_1_a">
-					<p>Mostly. The pumping chambers of the heart, called the left and the
-						right ventricles, are shown. There are two other chambers which sit
-						on top of these called the left and right atria, and they receive
-						blood from the body and push it to the ventricles for pumping.</p>
-				</div>
-				<div class="downArrow open" id="normal_1_d" onclick="showNormalAnswer(1, 3)">
-					Check your understanding
-				</div>
-				<div class="upArrow closed" id="normal_1_u" onclick="showNormalQuestions(3)">
-					Click to close
-				</div>
-			</div>
-			<div class ="leftQuestionWidget open" id="normal_2_block">
-				<div class="leftQuestionPic open" id="normal_2_q">
-					<b>What is the heart’s job?</b>
-				</div>
-				<div class="leftAnswer closed" id="normal_2_a">
-					<p>The purpose of the heart is to pump blood around the body so all the organ
-					systems get the oxygen and nutrients (food) they need, as well as having their
-					wastes taken away.</p>
-				</div>
-				<div class="downArrow open" id="normal_2_d" onclick="showNormalAnswer(2, 3)">
-					Check your understanding
-				</div>
-				<div class="upArrow closed"  id="normal_2_u" onclick="showNormalQuestions(3)">
-					Click to close
-				</div>
-			</div>
-			<div class ="leftQuestionWidget open" id="normal_3_block">
-				<div class="leftQuestionPic open" id="normal_3_q">
-					<b>What can you observe happening to the heart?</b>
-				</div>
-				<div class="leftAnswer closed" id="normal_3_a">
-					<p>Did you see it get smaller then larger? This contraction (shortening) of the
-					heart muscle squeezes the blood inside the ventricles increasing the pressure allowing
-					the blood to be pumped around the body. When the heart relaxes it fills with blood again.</p>
-				</div>
-				<div class="downArrow open" id="normal_3_d" onclick="showNormalAnswer(3, 3)">
-					Check your understanding
-				</div>
-				<div class="upArrow closed" id="normal_3_u" onclick="showNormalQuestions(3)">
-					Click to close
-				</div>
-			</div>
-		</div>
-
-		<div id="leftHeartElectricity" class="closed leftPanel">
-			<div class="leftTitle"  >
-				<b>Heart Electricity</b>
-			</div>
-			<div class="leftDescription">
-				<b>Coordinated contraction</b>
-			</div>
-			<div class="leftDetail" style="color:rgb(175, 175, 175);">
-				If you have ever had an electric shock you may have noticed it made you tense up (your muscles contracted).
-In a healthy heart, electrical waves pass smoothly through the muscle to provide coordinated contraction (each part of the muscles contracts at just the right time) and efficient pumping.
-			</div>
-			<div class ="leftQuestionWidget open" id="electricity_1_block">
-				<div class="leftQuestionPic open" id="electricity_1_q">
-					<b>What happens when the smooth electrical waves are disrupted?</b>
-				</div>
-				<div class="leftAnswer closed" id="electricity_1_a">
-					<p>The electrical waves are randomly going all the time and the heart muscle just wobbles.
-					 Electrical disruption leads to fibrillation which is chaotic contracting of the heart. This means the heart cannot generate enough pressure to pump the blood.
-					</p>
-				</div>
-				<div class="downArrow open" id="electricity_1_d" onclick="showElectricityAnswer(1, 1)">
-					Check your understanding
-				</div>
-				<div class="upArrow closed"  id="electricity_1_u" onclick="showElectricityQuestions(1)">
-					Click to close
-				</div>
-			</div>
-
-			<div class="leftProgressBar">
-				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;">
-					</div>
-					<div class="progressClickable" style="left:45%;width:33%;background-color: transparent;" onclick="arrhythmiaClicked()">
-					</div>
-				</div>
-				<img src="images/heart_v7/health_electricity_hand.png" alt="information" height="60px">
-			</div>
-		</div>
-
-		<div id="leftHeartArrhythmia" class="closed leftPanel">
-			<div class="leftTitle" >
-				<b>Fibrillation</b>
-			</div>
-			<div class="leftDescription">
-				<b>Chaotic contraction</b>
-			</div>
-			<div class ="leftQuestionWidget open" id="arrhythmia_1_block">
-				<div class="leftQuestionPic open" id="arrhythmia_1_q">
-					<b>What can we do to fix a fibrillating heart?</b>
-				</div>
-				<div class="leftAnswer closed" id="arrhythmia_1_a">
-					<p>CLEAR! We need to apply a large electrical shock to reset the electrical waves. We need an Automated External Defibrillator (AED).
-					</p>
-				</div>
-				<div class="downArrow open" id="arrhythmia_1_d" onclick="showArrhythmiaAnswer(1, 1)">
-					Check your understanding
-				</div>
-				<div class="upArrow closed" id="arrhythmia_1_u" onclick="showArrhythmiaQuestions(1)">
-					Click to close
-				</div>
-			</div>
-			<div class="leftClickableAED" onclick="AEDClicked()">
-				<b><br>Defibrillate</b>
-			</div>
-			<div class="leftProgressBar">
-				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartElectricityClicked()">
-					</div>
-					<div class="progressClickable" style="left:45%;width:33%;background-color: transparent;">
-					</div>
-				</div>
-				<img src="images/heart_v7/fibrillation_electricity_hand.png" alt="information" height="60px">
-			</div>
-		</div>
-
-		<div id="leftHeartAttack" class="closed leftPanel">
-			<div class="leftTitle" >
-				<b>Healthy Heart</b>
-			</div>
-			<div class="leftDescription">
-				<b>Healthy muscle</b>
-			</div>
-			<div class ="leftQuestionWidget open" id="attack_1_block">
-				<div class="leftQuestionPic open" id="attack_1_q">
-					<b> Does the heart need blood?</b>
-				</div>
-				<div class="leftAnswer closed" id="attack_1_a">
-					<p>The heart pumps blood, but it is also an organ which needs oxygen and nutrients from the blood to survive.
-					The heart pumps blood to itself through vessels called the coronary arteries.</p>
-				</div>
-				<div class="downArrow open" id="attack_1_d" onclick="showAttackAnswer(1, 2)">
-					Check your understanding
-				</div>
-				<div class="upArrow closed" id="attack_1_u" onclick="showAttackQuestions(2)">
-					Click to close
-				</div>
-			</div>
-			<div class ="leftQuestionWidget open" id="attack_2_block">
-				<div class="leftQuestionPic open" id="attack_2_q">
-					<b>What would happen if one of these coronary arteries became narrowed? </b>
-				</div>
-				<div class="leftAnswer closed" id="attack_2_a">
-					<p>If a coronary artery gets blockages, blood flow is impeded, which means less oxygen and nutrients.
-					Without oxygen and nutrients the heart muscle is damaged (the shaded part).</p>
-				</div>
-				<div class="downArrow open" id="attack_2_d" onclick="showAttackAnswer(2, 2)">
-					Check your understanding
-				</div>
-				<div class="upArrow closed" id="attack_2_u" onclick="showAttackQuestions(2)">
-					Click to close
-				</div>
-			</div>
-
-			<div class="leftProgressBar">
-				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;">
-					</div>
-					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
-					</div>
-					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
-					</div>
-				</div>
-				<img src="images/heart_v7/health_attack_hand.png" alt="information" height="60px">
-			</div>
-		</div>
-
-
-		<div id="leftModerateAttack" class="closed leftPanel">
-			<div class="leftTitle" >
-				<b>Heart Attack</b>
-			</div>
-			<div class="leftDescription">
-				<b>Damaged muscle</b>
-			</div>
-			<div class ="leftQuestionWidget open" id="moderate_1_block">
-				<div class="leftQuestionPic open" id="moderate_1_q">
-					<b>What changes can you observe in the heart after a heart attack?</b>
-				</div>
-				<div class="leftAnswer closed" id="moderate_1_a">
-					<p>Did you see the black part can’t contract as much? Did you notice the Pressure
-					trace doesn’t go as high anymore and the ‘bump’ is wider? If the heart cannot contract
-					very well then it’s ability to pump blood is reduced.</p>
-				</div>
-				<div class="downArrow open" id="moderate_1_d" onclick="showModerateAnswer(1, 2)">
-					Check your understanding
-				</div>
-				<div class="upArrow closed" id="moderate_1_u" onclick="showModerateQuestions(2)">
-					Click to close
-				</div>
-			</div>
-			<div class ="leftQuestionWidget open" id="moderate_2_block">
-				<div class="leftQuestionPic open" id="moderate_2_q">
-					<b>What would happen if the blockage got worse?</b>
-				</div>
-				<div class="leftAnswer closed" id="moderate_2_a">
-					<p>If it gets worse even less blood can get through which results in even more muscle damage.
-					 The movement and pumping ability of the heart is severely affected.</p>
-				</div>
-				<div class="downArrow open" id="moderate_2_d" onclick="showModerateAnswer(2, 2)">
-					Check your understanding
-				</div>
-				<div class="upArrow closed" id="moderate_2_u" onclick="showModerateQuestions(2)">
-					Click to close
-				</div>
-			</div>
-			<div class="leftProgressBar">
-				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
-					</div>
-					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;">
-					</div>
-					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
-					</div>
-				</div>
-				<img src="images/heart_v7/moderate_attack_hand.png" alt="information" height="60px">
-			</div>
-		</div>
-
-		<div id="leftSevereAttack" class="closed leftPanel">
-			<div class="leftTitle" >
-				<b>Heart Attack</b>
-			</div>
-			<div class="leftProgressBar">
-				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
-					</div>
-					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
-					</div>
-					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;">
-					</div>
-				</div>
-				<img src="images/heart_v7/severe_attack_hand.png" alt="information" height="60px">
-			</div>
-		</div>
-
-		<div id="leftHeartFailure" class="closed leftPanel">
-			<div class="leftTitle" >
-				<b>Heart Failure</b>
-			</div>
-			<div class="leftDescription">
-				<b>Healthy heart</b>
-			</div>
-			<div class ="leftQuestionWidget open" id="failure_1_block">
-				<div class="leftQuestionPic open" id="failure_1_q">
-					<b>Can our heart wear out?</b>
-				</div>
-				<div class="leftAnswer closed" id="failure_1_a">
-					<p>Yes. Over time the heart shape, stiffness and ability to contract can change
-					due to factors such as high blood pressure. These long term changes are what we call heart failure.</p>
-				</div>
-				<div class="downArrow open" id="failure_1_d" onclick="showFailureAnswer(1, 1)">
-					Check your understanding
-				</div>
-				<div class="upArrow closed" id="failure_1_u" onclick="showFailureQuestions(1)">
-					Click to close
-				</div>
-			</div>
-			<div class="leftProgressBar">
-				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;">
-					</div>
-					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')">
-					</div>
-					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
-					</div>
-				</div>
-				<img src="images/heart_v7/heart_failure_hand.png" alt="information" height="60px">
-			</div>
-		</div>
-
-		<div id="leftCompensatedFailure" class="closed leftPanel">
-			<div class="leftTitle" >
-				<b>Heart Failure</b>
-			</div>
-			<div class="leftDescription">
-				<b>Coping with extra load</b>
-			</div>
-			<div class ="leftQuestionWidget open" id="compensated_1_block">
-				<div class="leftQuestionPic open" style="font-size:1.5em"; id="compensated_1_q">
-					<b>What changes can you observe in the heart of a person with long term high blood pressure?</b>
-				</div>
-				<div class="leftAnswer closed" id="compensated_1_a">
-					<p>The walls of the heart are thicker. If blood pressure is always high, the heart needs to
-					work harder to compensate and keep pumping blood around the body. This results in thicker muscle walls.</p>
-				</div>
-				<div class="downArrow open" id="compensated_1_d" onclick="showCompensatedAnswer(1, 1)">
-					Check your understanding
-				</div>
-				<div class="upArrow closed" id="compensated_1_u" onclick="showCompensatedQuestions(1)">
-					Click to close
-				</div>
-			</div>
-			<div class="leftProgressBar">
-				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure')">
-					</div>
-					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;">
-					</div>
-					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
-					</div>
-				</div>
-				<img src="images/heart_v7/compensated_failure_hand.png" alt="information" height="60px">
-			</div>
-		</div>
-
-		<div id="leftDecompensatedFailure" class="closed leftPanel">
-			<div class="leftTitle" >
-				<b>Heart Failure</b>
-			</div>
-			<div class ="leftQuestionWidget open" id="decompensated_1_block">
-				<div class="leftQuestionPic open" id="decompensated_1_q">
-					<b>What happens if high blood pressure is left untreated?</b>
-				</div>
-				<div class="leftAnswer closed" id="decompensated_1_a">
-					<p>The heart is larger and the walls are thinner.</p>
-				</div>
-				<div class="downArrow open" id="decompensated_1_d" onclick="showDecompensatedAnswer(1, 1)">
-					Check your understanding
-				</div>
-				<div class="upArrow closed" id="decompensated_1_u" onclick="showDecompensatedQuestions(1)">
-					Click to close
-				</div>
-			</div>
-			<div class="leftProgressBar">
-				<div style="max-width:100%;background-color: transparent;">
-					<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure')">
-					</div>
-					<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')">
-					</div>
-					<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;">
-					</div>
-				</div>
-				<img src="images/heart_v7/decompensated_failure_hand.png" alt="information" height="60px">
-			</div>
-		</div>
-
+		
 		<div id="more" class="closed" onclick="moreClicked()">
 			<img src="images/more.png" alt="more" style="height:40%;">
 		</div>
-
+		<div id="bottom_right_control" class="open"> 
+			<div id="halfHeart" class="halfHeart open" style="right:0%;bottom:0%;position:absolute;height:100%;z-index:12">
+				<img src="images/new_image/half_heart.png" alt="halfHeart" style="height:100%" onclick="halfHeartPressed()">
+			</div>
+			<div id="fullHeart" class="halfHeart closed" style="right:0%;bottom:0%;position:absolute;height:100%;z-index:12">
+				<img src="images/new_image/full_heart.png" alt="fullHeart" style="height:100% "onclick="halfHeartPressed()">
+			</div> 
+		</div>
 		<div id="myRenderer" class="open">
 		</div>
 
 		<div data-dojo-type="dijit/Dialog" data-dojo-id="videoDialog" id='videoDialog' onHide="pauseVideo()" style="background-color:#666;width:980px;height:760px">
     		<table class="dijitDialogPaneContentArea">
-				<video width="960" height="720" align="center" style = "left:10px;top:6px;position:relative" id="heart_video" autoplay controls>
+				<video width="960" height="720" align="center" style = "left:10px;top:6px;position:relative" id="heart_video" controls>
   					<source src="videos/1_healthy_heart.mp4" type="video/mp4">
 					Your browser does not support the video tag.
 				</video>
@@ -591,6 +583,8 @@ In a healthy heart, electrical waves pass smoothly through the muscle to provide
 
 		function homeClicked() {
 			if (document.getElementById('initialNormal').classList.contains('closed')) {
+				document.getElementById("healthy_heart_icon").className = 'closed';
+				document.getElementById("healthy_heart_selected_icon").className = 'open';
 				showIcons("fibrillation_icon", "attack_icon", "failure_icon");
 				leftPanelTrigger("initialNormal");
 				previousCamera = undefined;
@@ -603,8 +597,6 @@ In a healthy heart, electrical waves pass smoothly through the muscle to provide
 				loadModel("NoInfarct", 1.0);
 				//showFibres(false);
 				//displayFibresIcon(true);
-				document.getElementById("home_icon").className = 'closed';
-				document.getElementById("home_selected_icon").className = 'open';
 				showECGAndLVP("Normal", 0.0);
 				document.getElementById('rightPanel').className = 'closed';
 				document.getElementById('rightPanelBottom').className = 'closed'
@@ -634,8 +626,8 @@ In a healthy heart, electrical waves pass smoothly through the muscle to provide
 			document.getElementById('halfHeart').classList.add('open');
 			document.getElementById('fullHeart').classList.remove('open');
 			document.getElementById('fullHeart').classList.add('closed');
-			document.getElementById("home_icon").className = 'closed';
-			document.getElementById("home_selected_icon").className = 'open';
+			document.getElementById("healthy_heart_icon").className = 'closed';
+			document.getElementById("healthy_heart_selected_icon").className = 'open';
 			document.getElementById('rightPanel').className = 'closed';
 			document.getElementById('rightPanelBottom').className = 'closed';
 			//showFibres(false);
@@ -669,9 +661,9 @@ In a healthy heart, electrical waves pass smoothly through the muscle to provide
 		function heartElectricityClicked() {
 			leftPanelTrigger('leftHeartElectricity');
 			showIcons("fibrillation_selected_icon", "attack_icon", "failure_icon");
-			displayFibresIcon(false);
-			document.getElementById("home_icon").className = 'open';
-			document.getElementById("home_selected_icon").className = 'closed';
+			//displayFibresIcon(false);
+			document.getElementById("healthy_heart_icon").className = 'open';
+			document.getElementById("healthy_heart_selected_icon").className = 'closed';
 			previousCamera = undefined;
 			loadModel('NormalElectricity', 1.0);
 			showECGAndLVP('Normal', 0.0);
@@ -729,8 +721,8 @@ In a healthy heart, electrical waves pass smoothly through the muscle to provide
 		function heartAttackClicked() {
 			showIcons("fibrillation_icon", "attack_selected_icon", "failure_icon");
 			//displayFibresIcon(false);
-			document.getElementById("home_icon").className = 'open';
-			document.getElementById("home_selected_icon").className = 'closed';
+			document.getElementById("healthy_heart_icon").className = 'open';
+			document.getElementById("healthy_heart_selected_icon").className = 'closed';
 			leftPanelTrigger('leftHeartAttack');
 			previousCamera = undefined;
 			heartAttackStagePressed('NoInfarct','NoHeartAttack', 'leftHeartAttack');
@@ -945,8 +937,8 @@ In a healthy heart, electrical waves pass smoothly through the muscle to provide
 		function heartFailureClicked() {
 			showIcons("fibrillation_icon", "attack_icon", "failure_selected_icon");
 			//displayFibresIcon(false);
-			document.getElementById("home_icon").className = "open";
-			document.getElementById("home_selected_icon").className = "closed";
+			document.getElementById("healthy_heart_icon").className = "open";
+			document.getElementById("healthy_heart_selected_icon").className = "closed";
 			leftPanelTrigger('leftHeartFailure');
 			previousCamera = undefined;
 			heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure');
