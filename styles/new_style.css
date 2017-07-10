@@ -353,14 +353,22 @@ div#showFibresButton {
 	position: absolute;
 }
 
-div.leftPanel {
-  z-index:1;
-  background-color: transparent;
-  height:80%;
-  width:30%;
-  left:2%;
-  top:4%;
+div#leftPanel {
+  z-index:10;
+  background-color: rgba(175,175,175,0.4);
+  background: -webkit-linear-gradient(rgb(0,0,0,0.4),rgb(175,175,175,0.4)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(rgb(0,0,0,0.4),rgb(175,175,175,0.4)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(rgb(0,0,0,0.4),rgb(175,175,175,0.4) 50%); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(rgb(0,0,0,0.4),rgb(175,175,175,0.4)); /* Standard syntax */
+  padding-top: 3%;
+  padding-left: 2%;
+  padding-right: 2%;
+  height:95%;
+  width:25%;
+  left:0%;
+  top:0%;
   position: absolute;
+  z-index:1;
 }
 
 div.leftTitle {
@@ -478,7 +486,7 @@ div.leftProgressBar {
   text-align: left;
   vertical-align: middle;
   font-size: 1.3em;
-  top: 85%;
+  top: 70%;
   z-index:1;
   position: absolute;
 }
@@ -618,12 +626,22 @@ div.bottomButton:hover {
 }
 
 div#bottom_control {
- background-color: transparent;
- z-index:1;
- left: 2%;
- bottom: 2%;
- height:18%;
- width:80%;
+ background-color: rgb(0, 0,0);
+ z-index:10;
+ left: 0%;
+ right: 0%;
+ bottom:0%;
+ height:9%;
+ position: absolute;
+}
+
+div#bottom_right_control {
+ background-color: rgb(0,0,0,0);
+ z-index:11;
+ left:50%;
+ bottom:0%;
+ height:9%;
+ width:32%;
  position: absolute;
 }
 
@@ -639,7 +657,7 @@ div.progressClickable {
 }
 
 div.leftQuestionWidget {
-  padding-top: 1%;
+  padding-top: 5%;
   min-height: 10%;
 }
 
@@ -657,8 +675,8 @@ div.leftQuestionPic{
 
 div.leftAnswer{
   background-color: transparent;
-  padding-top: 40px;
-  padding-left: 2%;
+  padding-top: 0%;
+  padding-left: 0%;
   text-align: left;
   vertical-align: middle;
   font-size: 1.5em;
@@ -672,13 +690,13 @@ div.leftAnswer{
 div.downArrow{
   background-image: url(../images/heart_v7/heart_arrow_down.png);
   background-repeat: no-repeat;
-  background-size:55px 48px;
+  background-size: 50%;
   padding-left: 10%;
   padding-top: 1%;
   left:0%;
   vertical-align: middle;
   position: relative;
-  height:50px;
+  height:100px;
   width: 90%;
   font-size: 1.3em;
   z-index:1;
@@ -689,13 +707,13 @@ div.downArrow{
 div.upArrow{
   background-image: url(../images/heart_v7/heart_arrow_up.png);
   background-repeat: no-repeat;
-  background-size:55px 48px;
+  background-size:50%;
   left: 1%;
   padding-left: 10%;
   padding-top: 1%;
   vertical-align: middle;
   position: relative;
-  height:15%;
+  height:100px;
   width: 90%;
   font-size: 1.3em;
   z-index:1;
