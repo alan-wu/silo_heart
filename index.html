@@ -824,10 +824,15 @@
 		}
 
 		var halfHeartPressed = function() {
-			if (halfHeartFlag) {
-				halfHeartFlag = false;
-			} else {
-				halfHeartFlag = true;
+			if (!document.getElementById('hideFibres').classList.contains('open')) {
+				if (halfHeartFlag) {
+					halfHeartFlag = false;
+				} else {
+					halfHeartFlag = true;
+				}
+				displayHalfHeartIcon();
+
+				showHalf();
 			}
 			displayHalfHeartIcon();
 
