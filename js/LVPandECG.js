@@ -120,7 +120,7 @@ var showLVPInternal = function(chartName) {
 			colourName = "red";
 		LVPchart.addSeries(chartName, currentLVP, { stroke: {color: colourName, width: 2}});
 		if (chartName == "CompensatedFailure" || chartName == "DecompensatedFailure" ||  chartName == "SmallInfarct" || chartName == "LargeInfarct") {
-			LVPchart.addSeries("Normal", LVPs["Normal"], { stroke: {color: "#003000", width: 2}});
+			LVPchart.addSeries("Normal", LVPs["Normal"], { stroke: {color: "#004500", width: 2}});
 		}
 		LVPchart.render();
 		LVPchart.resize('100%','100%');
@@ -164,7 +164,7 @@ var showECGInternal = function(chartName) {
 			colourName = "red";
 		ECGchart.addSeries(chartName, currentECG, { stroke: {color: colourName, width: 2}});
 		if (chartName == "CompensatedFailure" || chartName == "DecompensatedFailure" ||  chartName == "SmallInfarct" || chartName == "LargeInfarct") {
-			ECGchart.addSeries("Normal", ECGs["Normal"], { stroke: {color: "#003000", width: 2}});
+			ECGchart.addSeries("Normal", ECGs["Normal"], { stroke: {color: "#004500", width: 2}});
 		}
 		ECGchart.render();
 		ECGchart.resize('100%','100%');
