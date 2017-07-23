@@ -212,13 +212,13 @@
 				</div>
 
 				<div class="leftProgressBar">
-					<div style="max-width:100%;background-color: transparent;">
-						<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;">
+					<div style="max-width:100%;">
+						<div class="progressClickable" style="left:0%;width:44%;background-color:transparent;">
 						</div>
-						<div class="progressClickable" style="left:45%;width:33%;background-color: transparent;" onclick="arrhythmiaClicked()">
+						<div class="progressClickable" style="left:45%;width:47%;background-color:transparent;" onclick="arrhythmiaClicked()">
 						</div>
 					</div>
-					<img src="images/heart_v7/health_electricity_hand.png" alt="information" height="60px">
+					<img src="images/heart_v7/health_electricity_hand.png" alt="information" height="45px">
 				</div>
 			</div>
 
@@ -247,13 +247,13 @@
 					<b><br>Defibrillate</b>
 				</div>
 				<div class="leftProgressBar">
-					<div style="max-width:100%;background-color: transparent;">
-						<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartElectricityClicked()">
+					<div style="max-width:100%;">
+						<div class="progressClickable" style="left:0%;width:44%;background-color:transparent;" onclick="heartElectricityClicked()">
 						</div>
-						<div class="progressClickable" style="left:45%;width:33%;background-color: transparent;">
+						<div class="progressClickable" style="left:45%;width:47%;background-color:transparent;">
 						</div>
 					</div>
-					<img src="images/heart_v7/fibrillation_electricity_hand.png" alt="information" height="60px">
+					<img src="images/heart_v7/fibrillation_electricity_hand.png" alt="information" height="45px">
 				</div>
 			</div>
 
@@ -271,6 +271,7 @@
 					<div class="leftAnswer closed" id="attack_1_a">
 						<p>The heart pumps blood, but it is also an organ which needs oxygen and nutrients from the blood to survive.
 						The heart pumps blood to itself through vessels called the coronary arteries.</p>
+						<img src="images/heart_v7/coronary_heart.png" alt="coronary" style="width:45%;">
 					</div>
 					<div class="downArrow open" id="attack_1_d" onclick="showAttackAnswer(1, 2)">
 					</div>
@@ -284,6 +285,7 @@
 					<div class="leftAnswer closed" id="attack_2_a">
 						<p>If a coronary artery gets blockages, blood flow is impeded, which means less oxygen and nutrients.
 						Without oxygen and nutrients the heart muscle is damaged (the shaded part).</p>
+						<img src="images/heart_v7/coronary_block_moderate_no_vid.png" alt="moderate" style="width:45%;">
 					</div>
 					<div class="downArrow open" id="attack_2_d" onclick="showAttackAnswer(2, 2)">
 					</div>
@@ -293,14 +295,14 @@
 
 				<div class="leftProgressBar">
 					<div style="max-width:100%;background-color: transparent;">
-						<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;">
+						<div class="progressClickable" style="left:0%;width:32%;background-color:transparent;">
 						</div>
-						<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
+						<div class="progressClickable" style="left:33%;width:32%;background-color:transparent;"  onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
 						</div>
-						<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
+						<div class="progressClickable" style="left:66%;width:30%;background-color:transparent;"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
 						</div>
 					</div>
-					<img src="images/heart_v7/health_attack_hand.png" alt="information" height="60px">
+					<img src="images/heart_v7/health_attack_hand.png" alt="information" height="45px">
 				</div>
 			</div>
 
@@ -333,6 +335,7 @@
 					<div class="leftAnswer closed" id="moderate_2_a">
 						<p>If it gets worse even less blood can get through which results in even more muscle damage.
 						 The movement and pumping ability of the heart is severely affected.</p>
+						 <img src="images/heart_v7/coronary_block_severe.png" alt="severe" style="width:45%;">
 					</div>
 					<div class="downArrow open" id="moderate_2_d" onclick="showModerateAnswer(2, 2)">
 					</div>
@@ -341,14 +344,14 @@
 				</div>
 				<div class="leftProgressBar">
 					<div style="max-width:100%;background-color: transparent;">
-						<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
+						<div class="progressClickable" style="left:0%;width:32%;background-color:transparent;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
 						</div>
-						<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;">
+						<div class="progressClickable" style="left:33%;width:32%;background-color:transparent;">
 						</div>
-						<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
+						<div class="progressClickable" style="left:66%;width:32%;background-color:transparent;"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
 						</div>
 					</div>
-					<img src="images/heart_v7/moderate_attack_hand.png" alt="information" height="60px">
+					<img src="images/heart_v7/moderate_attack_hand.png" alt="information" height="45px">
 				</div>
 			</div>
 
@@ -358,14 +361,14 @@
 				</div>
 				<div class="leftProgressBar">
 					<div style="max-width:100%;background-color: transparent;">
-						<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
+						<div class="progressClickable" style="left:0%;width:32%;background-color:transparent;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
 						</div>
-						<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;" onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
+						<div class="progressClickable" style="left:33%;width:32%;background-color:transparent;" onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
 						</div>
-						<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;">
+						<div class="progressClickable" style="left:66%;width:32%;background-color:transparent;">
 						</div>
 					</div>
-					<img src="images/heart_v7/severe_attack_hand.png" alt="information" height="60px">
+					<img src="images/heart_v7/severe_attack_hand.png" alt="information" height="45px">
 				</div>
 			</div>
 
@@ -391,14 +394,14 @@
 				</div>
 				<div class="leftProgressBar">
 					<div style="max-width:100%;background-color: transparent;">
-						<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;">
+						<div class="progressClickable" style="left:0%;width:28%;background-color: transparent;">
 						</div>
-						<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')">
+						<div class="progressClickable" style="left:30%;width:30%;background-color: transparent;"  onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')">
 						</div>
-						<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
+						<div class="progressClickable" style="left:62%;width:34%;background-color: transparent;"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
 						</div>
 					</div>
-					<img src="images/heart_v7/heart_failure_hand.png" alt="information" height="60px">
+					<img src="images/heart_v7/heart_failure_hand.png" alt="information" height="45px">
 				</div>
 			</div>
 
@@ -424,14 +427,14 @@
 				</div>
 				<div class="leftProgressBar">
 					<div style="max-width:100%;background-color: transparent;">
-						<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure')">
+						<div class="progressClickable" style="left:0%;width:28%;background-color: transparent;" onclick="heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure')">
 						</div>
-						<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;">
+						<div class="progressClickable" style="left:30%;width:30%;;background-color: transparent;">
 						</div>
-						<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
+						<div class="progressClickable" style="left:62%;width:34%;background-color: transparent;"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
 						</div>
 					</div>
-					<img src="images/heart_v7/compensated_failure_hand.png" alt="information" height="60px">
+					<img src="images/heart_v7/compensated_failure_hand.png" alt="information" height="45px">
 				</div>
 			</div>
 
@@ -453,14 +456,14 @@
 				</div>
 				<div class="leftProgressBar">
 					<div style="max-width:100%;background-color: transparent;">
-						<div class="progressClickable" style="left:0%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure')">
+						<div class="progressClickable" style="left:0%;width:28%;background-color: transparent;" onclick="heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure')">
 						</div>
-						<div class="progressClickable" style="left:33%;width:33%;background-color: transparent;" onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')">
+						<div class="progressClickable" style="left:30%;width:30%;background-color: transparent;" onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')">
 						</div>
-						<div class="progressClickable" style="left:66%;width:33%;background-color: transparent;">
+						<div class="progressClickable" style="left:62%;width:34%;background-color: transparent;">
 						</div>
 					</div>
-					<img src="images/heart_v7/decompensated_failure_hand.png" alt="information" height="60px">
+					<img src="images/heart_v7/decompensated_failure_hand.png" alt="information" height="45px">
 				</div>
 			</div>
 		</div>
@@ -481,7 +484,6 @@
 		</div>
 		<div id="myRenderer" class="open">
 		</div>
-
 		<div data-dojo-type="dijit/Dialog" data-dojo-id="videoDialog" id='videoDialog' onHide="pauseVideo()" style="background-color:#666;width:980px;height:760px">
     		<table class="dijitDialogPaneContentArea">
 				<video width="960" height="720" align="center" style = "left:10px;top:6px;position:relative" id="heart_video" controls>
@@ -490,7 +492,6 @@
 				</video>
     		</table>
 		</div>
-
 	</div>
 
 	<script>
