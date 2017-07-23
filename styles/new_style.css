@@ -447,7 +447,7 @@ div.leftClickableAED{
   vertical-align: middle;
   display: block;
   position: absolute;
-  top: 75%;
+  top: 70%;
   height:20%;
   width: 100%;
   font-size: 1.7em;
@@ -486,7 +486,7 @@ div.leftProgressBar {
   text-align: left;
   vertical-align: middle;
   font-size: 1.3em;
-  top: 70%;
+  top: 80%;
   z-index:1;
   position: absolute;
 }
@@ -664,7 +664,6 @@ div.progressClickable:hover {
 }
 
 div.progressClickable {
-	background-color: transparent;
  	height:100%;
  	position: absolute;
 }
