@@ -1,7 +1,7 @@
 var showQuestions = function(totalNumber, name) {
-	var prefix = name + String(i) + "_"; 
+	var prefix = name + String(i) + "_";
 	for (var i = 1; i < totalNumber+1; i++) {
-		var prefix = name + String(i) + "_"; 
+		var prefix = name + String(i) + "_";
 		var targetId = prefix + "q";
 		document.getElementById(targetId).classList.remove('closed');
 		document.getElementById(targetId).classList.add('open');
@@ -13,7 +13,7 @@ var showQuestions = function(totalNumber, name) {
 		document.getElementById(targetId).classList.add('open');
 		targetId = prefix + "u";
 		document.getElementById(targetId).classList.remove('open');
-		document.getElementById(targetId).classList.add('closed');	
+		document.getElementById(targetId).classList.add('closed');
 		targetId = prefix + "block";
 		document.getElementById(targetId).classList.remove('closed');
 		document.getElementById(targetId).classList.add('show');
@@ -23,10 +23,11 @@ var showQuestions = function(totalNumber, name) {
 
 var showAnswer = function(currentIndex, totalNumber, name) {
 	for (var i = 1; i < totalNumber+1; i++) {
-		var prefix = name + String(i) + "_"; 
-		var targetId = prefix + "q";
-		document.getElementById(targetId).classList.remove('open');
-		document.getElementById(targetId).classList.add('closed');
+		var prefix = name + String(i) + "_";
+		// var targetId = prefix + "q";
+		// console.log(targetId)
+		// document.getElementById(targetId).classList.remove('open');
+		// document.getElementById(targetId).classList.add('closed');
 		targetId = prefix + "a";
 		document.getElementById(targetId).classList.remove('open');
 		document.getElementById(targetId).classList.add('closed');
@@ -36,11 +37,12 @@ var showAnswer = function(currentIndex, totalNumber, name) {
 		targetId = prefix + "u";
 		document.getElementById(targetId).classList.remove('open');
 		document.getElementById(targetId).classList.add('closed');
-		targetId = prefix + "block";
-		document.getElementById(targetId).classList.remove('open');
-		document.getElementById(targetId).classList.add('closed');
+		// targetId = prefix + "block";
+		// console.log(targetId)
+		// document.getElementById(targetId).classList.remove('open');
+		// document.getElementById(targetId).classList.add('closed');
 	}
-	var prefix = name + String(currentIndex) + "_"; 
+	var prefix = name + String(currentIndex) + "_";
 	var targetId = prefix + "q";
 	document.getElementById(targetId).classList.remove('closed');
 	document.getElementById(targetId).classList.add('open');
@@ -62,7 +64,7 @@ var showNormalQuestions = function(totalNumber) {
 
 var showNormalAnswer = function(currentIndex, totalNumber) {
 	var name = "normal_";
-	showAnswer(currentIndex, totalNumber, name); 
+	showAnswer(currentIndex, totalNumber, name);
 }
 
 var showElectricityQuestions = function(totalNumber) {
@@ -72,7 +74,7 @@ var showElectricityQuestions = function(totalNumber) {
 
 var showElectricityAnswer = function(currentIndex, totalNumber) {
 	var name = "electricity_";
-	showAnswer(currentIndex, totalNumber, name); 
+	showAnswer(currentIndex, totalNumber, name);
 }
 
 var showArrhythmiaQuestions = function(totalNumber) {
@@ -134,4 +136,3 @@ var showDecompensatedAnswer = function(currentIndex, totalNumber) {
 	var name = "decompensated_";
 	showAnswer(currentIndex, totalNumber, name);
 }
-

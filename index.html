@@ -20,7 +20,7 @@
 		<script src="js/zinc_3js_renderer.js"></script>
 		<script src="js/show_hide_answer.js" ></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script>
-		<!script src="../../dojo-release-1.11.2/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script>
+		<!-- <script src="../../dojo-release-1.11.2/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script> -->
 		<script src="js/LVPandECG.js" ></script>
 		<script>
 			var dojoConfig = {
@@ -30,14 +30,15 @@
 		        // load local modules
 		        packages: [{
 		            name: "js",
-		            location: location.pathname.replace(/\/[^/]+$/, '')  + '/js'
+		            location: location.pathname.replace(/\/[^/]+$/, "")  + "/js"
 		        }]
 			};
 		</script>
 		<script>require(["dijit/Dialog"]);</script>
 	</head>
-	<body style='height:100%;font-family="Helvetica"'>
+	<body style="height:100%;font-family='Helvetica'">
 	<div id="main_page" class="heartpage">
+
 		<div id="rightInformation" class="open">
 			<div class="rightChartTitle" style = "width:75%;float:right;padding:10px;">
 				<b>ECG</b>
@@ -65,73 +66,131 @@
 				beats per minute
 			</div>
 			<div id="rightLogo" class="rightLogo">
-				<img src="images/heart_v7/medtech_logo_quiz_qr.png" height="100px">
+				<img src="images/heart_v7/medtech_logo_quiz_qr.png" alt="logoquiz_qr" style="height:100px">
 			</div>
 
 		</div>
+
 		<div id="rightPanel" class="closed">
 			<div id="exercise_icon" class = "medicationLifestyle" >
-				<img src="images/heart_v7/exercise.png" alt="home"  onclick="showVideo('5_exercise_v2.mp4')" style="top:10%;height:83%;position:relative">
+				<img src="images/heart_v7/exercise.png" alt="home"  onclick="showVideo("5_exercise_v2.mp4")" style="top:10%;height:83%;position:relative">
 			</div>
 			<div id="diet_icon" class = "medicationLifestyle" style = "top:1%;position:relative">
-				<img src="images/heart_v7/diet.png" alt="home"  onclick="showVideo('6_diet_v2.mp4')" style="top:10%;height:83%;position:relative">
+				<img src="images/heart_v7/diet.png" alt="home"  onclick="showVideo("6_diet_v2.mp4")" style="top:10%;height:83%;position:relative">
 			</div>
 			<div id="smoking_icon" class = "medicationLifestyle" style = "top:2%;position:relative" >
-				<img src="images/heart_v7/smoking.png" alt="home"  onclick="showVideo('7_smoking_v2.mp4')" style="top:10%;height:83%;position:relative">
+				<img src="images/heart_v7/smoking.png" alt="home"  onclick="showVideo("7_smoking_v2.mp4")" style="top:10%;height:83%;position:relative">
 			</div>
 		</div>
+
 		<div id="rightPanelBottom" class = "closed">
 			<div id="statin_icon" class = "medicationLifestyle" style="top:1%;position:relative">
-				<img src="images/heart_v7/statin.png" alt="home"  onclick="showVideo('3_Statins.mp4')" style="height:83%;position:relative">
+				<img src="images/heart_v7/statin.png" alt="home"  onclick="showVideo("3_Statins.mp4")" style="height:83%;position:relative">
 			</div>
 			<div id="aspirin_icon" class = "medicationLifestyle" style="top:2%;position:relative">
-				<img src="images/heart_v7/aspirin.png" alt="home"  onclick="showVideo('4_aspirin.mp4')" style="top:10%;height:83%;position:relative">
+				<img src="images/heart_v7/aspirin.png" alt="home"  onclick="showVideo("4_aspirin.mp4")" style="top:10%;height:83%;position:relative">
 			</div>
 		</div>
-		<div id="leftPanel" class="open">
+
+		<div id="leftPanelGreen" class="open">
 			<div id="bottom_control" class="closed">
-				<div id="home_icon" class="open" style="left:1%;position:absolute;bottom:0%;z-index:10;height:100%;">
-					<img src="images/new_image/home.png" alt="home"  onclick="homeClicked()" style="height:100%">
+				<div id="home_icon" class="open" style="left:0%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/new_image/home.png" alt="home"  onclick="homeClicked()" style="height:100%;width:100%">
 				</div>
-				<div id="home_selected_icon" class="closed" style="left:1%;position:absolute;bottom:0%;z-index:10;height:100%;">
-					<img src="images/new_image/home_selected.png" alt="home"  onclick="homeClicked()" style="height:100%">
+				<div id="home_selected_icon" class="closed" style="left:0%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/new_image/home_selected.png" alt="home"  onclick="homeClicked()" style="height:100%;width:100%">
 				</div>
-
-				<div id="healthy_heart_icon" class="closed" style="left:20%;position:absolute;bottom:0%;z-index:10;height:100%;">
-					<img src="images/heart_v7/healthy_heart_icon.png" alt="home"  onclick="homeClicked()" style="height:100%">
+				<div id="healthy_heart_icon" class="closed" style="left:16.6%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/healthy_heart_icon.png" alt="home"  onclick="homeClicked()" style="height:100%;width:100%">
 				</div>
-				<div id="healthy_heart_selected_icon" class="open" style="left:20%;position:absolute;bottom:0%;z-index:10;height:100%;">
-					<img src="images/heart_v7/healthy_heart_selected_icon.png" alt="home"  onclick="homeClicked()" style="height:100%">
+				<div id="healthy_heart_selected_icon" class="open" style="left:16.6%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/healthy_heart_selected_icon.png" alt="home" style="height:100%;width:100%">
 				</div>
-				<div id="fibrillation_icon" class="bottomButton open" style="left:40%;position:absolute;bottom:0%;z-index:10;height:100%;">
-					<img src="images/heart_v7/fibrillation_icon.png" alt="information" style="height:100%" onclick="heartElectricityClicked()">
+				<div id="electricity_icon" class="bottomButton open" style="left:33.2%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/electricity_icon.png" alt="information" style="height:100%;width:100%" onclick="heartElectricityClicked()">
 				</div>
-				<div id="fibrillation_selected_icon" class="bottomButton closed" style="left:40%;position:absolute;;bottom:0%;z-index:10;height:100%;">
-					<img src="images/heart_v7/fibrillation_selected_icon.png" alt="information" style="height:100%">
+				<div id="electricity_healthy_selected_icon" class="bottomButton closed" style="left:33.2%;position:absolute;;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/electricity_healthy_selected_icon.png" alt="information" style="height:100%;width:100%">
 				</div>
-				<div id="attack_icon" class="bottomButton open" style="left:60%;position:absolute;bottom:0%;z-index:10;height:100%;">
-					<img src="images/heart_v7/attack_icon.png" alt="information" style="height:100%" onclick="heartAttackClicked()">
+				<div id="electricity_healthy_icon" class="bottomButton closed" style="left:33.2%;position:absolute;;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/electricity_healthy_icon.png" alt="information" style="height:100%;width:100%">
 				</div>
-				<div id="attack_selected_icon" class="bottomButton closed" style="left:60%;position:absolute;bottom:0%;z-index:10;height:100%;">
-					<img src="images/heart_v7/attack_selected_icon.png" alt="information" style="height:100%">
+				<div id="electricity_fibrillation_icon" class="bottomButton closed" style="left:33.2%;position:absolute;;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/electricity_fibrillation_icon.png" alt="information" style="height:100%;width:100%">
 				</div>
-				<div id="failure_icon" class="bottomButton open" style="left:80%;position:absolute;bottom:0%;z-index:10;height:100%;">
-					<img src="images/heart_v7/failure_icon.png" alt="information" style="height:100%" onclick="heartFailureClicked()">
+				<!-- <div id="electricity_fibrillation_selected_icon" class="bottomButton closed" style="left:33.2%;position:absolute;;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/electricity_fibrillation_selected_icon.png" alt="information" style="height:100%;width:100%">
+				</div> -->
+				<div id="attack_icon" class="bottomButton open" style="left:49.8%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/attack_icon.png" alt="information" style="height:100%;width:100%" onclick="heartAttackClicked()">
 				</div>
-				<div id="failure_selected_icon" class="bottomButton closed" style="left:80%;position:absolute;bottom:0%;z-index:10;height:100%;">
-					<img src="images/heart_v7/failure_selected_icon.png" alt="information" style="height:100%">
+				<div id="attack_healthy_selected_icon" class="bottomButton closed" style="left:49.8%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/attack_healthy_selected_icon.png" alt="information" style="height:100%;width:100%">
 				</div>
-
-
-
-				<!--
-				<div id="showFibres" class="showFibres closed" style="right:13%;bottom:0%;position:absolute;z-index:10;height:85%;">
-					<img src="images/new_image/muscle_fibres.png" alt="halfHeart" style="height:83%" onclick="showFibres(true)">
+				<div id="failure_icon" class="bottomButton open" style="left:66.4%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/failure_icon.png" alt="information" style="height:100%;width:100%" onclick="heartFailureClicked()">
 				</div>
-				<div id="hideFibres" class="showFibres closed" style="right:13%;bottom:0%;position:absolute;z-index:10;height:85%;">
-					<img src="images/new_image/heart_surface.png" alt="halfHeart" style="height:83%" onclick="showFibres(false)">
+				<div id="failure_healthy_selected_icon" class="bottomButton closed" style="left:66.4%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/failure_healthy_selected_icon.png" alt="information" style="height:100%;width:100%">
 				</div>
-				-->
+				<div id="about_us_icon" class="bottomButton open" style="left:83%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/about_us_icon.png" alt="information" style="height:100%;width:100%" onclick="aboutUsClicked()">
+				</div>
+				<div id="about_us_selected_icon" class="bottomButton closed" style="left:83%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/about_us_selected_icon.png" alt="information" style="height:100%;width:100%">
+				</div>
+			</div>
+			<div id="bottom_control_green_sub" class="closed">
+				<div id="electricity_sub_healthy_icon" class="bottomButton closed" style="left:24.9%;position:absolute;z-index:11;height:100%;width:16.6%">
+					<img src="images/heart_v7/electricity_sub_healthy_icon.png" alt="electricity" style="height:100%;width:100%">
+				</div>
+				<div id="electricity_sub_healthy_selected_icon" class="bottomButton closed" style="left:24.9%;position:absolute;z-index:11;height:100%;width:16.6%">
+					<img src="images/heart_v7/electricity_sub_healthy_icon.png" alt="electricity" style="height:100%;width:100%">
+				</div>
+				<div id="electricity_line" class="bottom_control_green_graphics closed" style="bottom:0%;left:24.9%;height:10%;width:33.2%;">
+				</div>
+				<div id="electricity_box" class="bottom_control_green_graphics closed" style="bottom:10%;left:24.9%;height:90%;width:16.6%;">
+				</div>
+				<div id="electricity_sub_fibrillation_icon" class="bottomButton closed" style="left:41.2%;position:absolute;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/electricity_sub_fibrillation_icon.png" alt="fibrillation" style="height:100%;width:100%"
+					onclick="arrhythmiaClicked()">
+				</div>
+				<div id="attack_sub_healthy_icon" class="bottomButton closed" style="left:33.2%;position:absolute;z-index:11;height:100%;width:16.6%">
+					<img src="images/heart_v7/attack_sub_healthy_icon.png" alt="vessel" style="height:100%;width:100%">
+				</div>
+				<div id="attack_sub_healthy_selected_icon" class="bottomButton closed" style="left:33.2%;position:absolute;z-index:11;height:100%;width:16.6%">
+					<img src="images/heart_v7/attack_sub_healthy_icon.png" alt="vessel" style="height:100%;width:100%">
+				</div>
+				<div id="attack_sub_moderate_icon" class="bottomButton closed" style="left:49.8%;position:absolute;z-index:11;height:100%;width:16.6%" >
+					<img src="images/heart_v7/attack_sub_moderate_icon.png" alt="moderate_attack" style="height:100%;width:100%"
+						onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
+				</div>
+				<div id="attack_sub_severe_icon" class="bottomButton closed" style="left:66.4%;position:absolute;z-index:11;height:100%;width:16.6%" >
+					<img src="images/heart_v7/attack_sub_severe_icon.png" alt="severe_attack" style="height:100%;width:100%"
+						onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
+				</div>
+				<div id="attack_line" class="bottom_control_green_graphics closed" style="bottom:0%;left:33.2%;height:10%;width:49.8%;">
+				</div>
+				<div id="attack_box" class="bottom_control_green_graphics closed" style="bottom:10%;left:33.2%;height:90%;width:16.6%;">
+				</div>
+				<div id="failure_sub_healthy_icon" class="bottomButton closed" style="left:49.8%;;position:absolute;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/failure_sub_healthy_icon.png" alt="vessel" style="height:100%;width:100%">
+				</div>
+				<div id="failure_sub_healthy_selected_icon" class="bottomButton closed" style="left:49.8%;;position:absolute;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/failure_sub_healthy_icon.png" alt="vessel" style="height:100%;width:100%">
+				</div>
+				<div id="failure_sub_compensated_icon" class="bottomButton closed" style="left:66.4%;position:absolute;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/failure_sub_compensated_icon.png" alt="vessel" style="height:100%;width:100%"
+						onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')">
+				</div>
+				<div id="failure_sub_decompensated_icon" class="bottomButton closed" style="left:83%;;position:absolute;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/failure_sub_decompensated_icon.png" alt="vessel" style="height:100%;width:100%"
+						onclick="heartFailureStagePressed('DecompensatedFailure','DecompensatedFailure', 'leftDecompensatedFailure')">
+				</div>
+				<div id="failure_line" class="bottom_control_green_graphics closed" style="bottom:0%;left:49.8%;height:10%;width:50.2%;">
+				</div>
+				<div id="failure_box" class="bottom_control_green_graphics closed" style="bottom:10%;left:49.8%;height:90%;width:17%;">
+				</div>
 			</div>
 			<div id="initialNormal" class="closed">
 				<div class="leftTitle" >
@@ -184,89 +243,46 @@
 					</div>
 				</div>
 			</div>
-
 			<div id="leftHeartElectricity" class="closed">
-				<div class="leftTitle"  >
+				<div class="leftTitle">
 					<b>Heart Electricity</b>
-				</div>
-				<div class="leftDescription">
-					<b>Coordinated contraction</b>
-				</div>
-				<div class="leftDetail" style="color:rgb(175, 175, 175);">
-					If you have ever had an electric shock you may have noticed it made you tense up (your muscles contracted).
-	In a healthy heart, electrical waves pass smoothly through the muscle to provide coordinated contraction (each part of the muscles contracts at just the right time) and efficient pumping.
 				</div>
 				<div class ="leftQuestionWidget open" id="electricity_1_block">
 					<div class="leftQuestionPic open" id="electricity_1_q">
-						<b>What happens when the smooth electrical waves are disrupted?</b>
+						<b>What makes the heart beat?</b>
 					</div>
 					<div class="leftAnswer closed" id="electricity_1_a">
-						<p>The electrical waves are randomly going all the time and the heart muscle just wobbles.
-						 Electrical disruption leads to fibrillation which is chaotic contracting of the heart. This means the heart cannot generate enough pressure to pump the blood.
+						<p>If you have ever had an electric shock you may have noticed it made you tense up (your muscles contracted).
+							In a healthy heart, electrical waves pass smoothly through the muscle to provide coordinated contraction (each part of the muscles contracts at just the right time) and efficient pumping.
 						</p>
 					</div>
-					<div class="downArrow open" id="electricity_1_d" onclick="showElectricityAnswer(1, 1)">
+					<div class="downArrow open" id="electricity_1_d" onclick="showElectricityAnswer(1, 2)">
 					</div>
-					<div class="upArrow closed"  id="electricity_1_u" onclick="showElectricityQuestions(1)">
+					<div class="upArrow closed"  id="electricity_1_u" onclick="showElectricityQuestions(2)">
 					</div>
 				</div>
-
-				<div class="leftProgressBar">
-					<div style="max-width:100%;">
-						<div class="progressClickable" style="left:0%;width:44%;background-color:transparent;">
-						</div>
-						<div class="progressClickable" style="left:45%;width:47%;background-color:transparent;" onclick="arrhythmiaClicked()">
-						</div>
+				<div class ="leftQuestionWidget open" id="electricity_2_block">
+					<div class="leftQuestionPic open" id="electricity_2_q">
+						<b>What happens when the smooth electrical waves are disrupted?</b>
 					</div>
-					<img src="images/heart_v7/health_electricity_hand.png" alt="information" height="45px">
-				</div>
-			</div>
-
-			<div id="leftHeartArrhythmia" class="closed">
-				<div class="leftTitle" >
-					<b>Fibrillation</b>
-				</div>
-				<div class="leftDescription">
-					<b>Chaotic contraction</b>
-				</div>
-				<div class ="leftQuestionWidget open" id="arrhythmia_1_block">
-					<div class="leftQuestionPic open" id="arrhythmia_1_q">
-						<b>What can we do to fix a fibrillating heart?</b>
-					</div>
-					<div class="leftAnswer closed" id="arrhythmia_1_a">
-						<p>CLEAR! We need to apply a large electrical shock to reset the electrical waves. We need an Automated External Defibrillator (AED).
+					<div class="leftAnswer closed" id="electricity_2_a">
+						<p>The electrical waves become random and the heart muscle just wobbles.
 						</p>
+						<p>Click "Fibrillation" below to see what this looks like.</p>
 					</div>
-					<div class="downArrow open" id="arrhythmia_1_d" onclick="showArrhythmiaAnswer(1, 1)">
-
+					<div class="downArrow open" id="electricity_2_d" onclick="showElectricityAnswer(2, 2)">
 					</div>
-					<div class="upArrow closed" id="arrhythmia_1_u" onclick="showArrhythmiaQuestions(1)">
+					<div class="upArrow closed"  id="electricity_2_u" onclick="showElectricityQuestions(2)">
 					</div>
-				</div>
-				<div class="leftClickableAED" onclick="AEDClicked()">
-					<b><br>Defibrillate</b>
-				</div>
-				<div class="leftProgressBar">
-					<div style="max-width:100%;">
-						<div class="progressClickable" style="left:0%;width:44%;background-color:transparent;" onclick="heartElectricityClicked()">
-						</div>
-						<div class="progressClickable" style="left:45%;width:47%;background-color:transparent;">
-						</div>
-					</div>
-					<img src="images/heart_v7/fibrillation_electricity_hand.png" alt="information" height="45px">
 				</div>
 			</div>
-
 			<div id="leftHeartAttack" class="closed">
 				<div class="leftTitle" >
-					<b>Healthy Heart</b>
-				</div>
-				<div class="leftDescription">
-					<b>Healthy muscle</b>
+					<b>Heart Attack</b>
 				</div>
 				<div class ="leftQuestionWidget open" id="attack_1_block">
 					<div class="leftQuestionPic open" id="attack_1_q">
-						<b> Does the heart need blood?</b>
+						<b> Does the heart muscle need blood?</b>
 					</div>
 					<div class="leftAnswer closed" id="attack_1_a">
 						<p>The heart pumps blood, but it is also an organ which needs oxygen and nutrients from the blood to survive.
@@ -280,11 +296,13 @@
 				</div>
 				<div class ="leftQuestionWidget open" id="attack_2_block">
 					<div class="leftQuestionPic open" id="attack_2_q">
-						<b>What would happen if one of these coronary arteries became narrowed? </b>
+						<b>What would happen if one of these coronary arteries became partly blocked? </b>
 					</div>
 					<div class="leftAnswer closed" id="attack_2_a">
-						<p>If a coronary artery gets blockages, blood flow is impeded, which means less oxygen and nutrients.
-						Without oxygen and nutrients the heart muscle is damaged (the shaded part).</p>
+						<p>If a coronary artery gets blocked then less oxygen and nutrients
+							can reach the muscle. Without oxygen and nutrients, the heart muscle
+							becomes damaged.</p>
+							<p>Click "Moderate" below to see what this looks like. </p>
 						<img src="images/heart_v7/coronary_block_moderate_no_vid.png" alt="moderate" style="width:45%;">
 					</div>
 					<div class="downArrow open" id="attack_2_d" onclick="showAttackAnswer(2, 2)">
@@ -292,21 +310,90 @@
 					<div class="upArrow closed" id="attack_2_u" onclick="showAttackQuestions(2)">
 					</div>
 				</div>
-
-				<div class="leftProgressBar">
-					<div style="max-width:100%;background-color: transparent;">
-						<div class="progressClickable" style="left:0%;width:32%;background-color:transparent;">
-						</div>
-						<div class="progressClickable" style="left:33%;width:32%;background-color:transparent;"  onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
-						</div>
-						<div class="progressClickable" style="left:66%;width:30%;background-color:transparent;"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
-						</div>
+			</div>
+			<div id="leftHeartFailure" class="closed">
+				<div class="leftTitle" >
+					<b>Heart Failure</b>
+				</div>
+				<div class="leftDescription">
+					<b>Healthy heart</b>
+				</div>
+				<div class ="leftQuestionWidget open" id="failure_1_block">
+					<div class="leftQuestionPic open" id="failure_1_q">
+						<b>Can our heart wear out?</b>
 					</div>
-					<img src="images/heart_v7/health_attack_hand.png" alt="information" height="45px">
+					<div class="leftAnswer closed" id="failure_1_a">
+						<p>Yes. Over time the heart shape, stiffness and ability to contract can change
+						due to factors such as high blood pressure. These long term changes are what we call heart failure.</p>
+					</div>
+					<div class="downArrow open" id="failure_1_d" onclick="showFailureAnswer(1, 1)">
+					</div>
+					<div class="upArrow closed" id="failure_1_u" onclick="showFailureQuestions(1)">
+					</div>
 				</div>
 			</div>
+		</div>
 
-
+		<div id="leftPanelYellow" class="closed">
+			<div id="bottom_control_yellow" class="open">
+				<div id="home_icon_yp" class="open" style="left:0%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/new_image/home.png" alt="home"  onclick="homeClicked()" style="height:100%;width:100%">
+				</div>
+				<div id="healthy_heart_icon_yp" class="open" style="left:16.6%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/healthy_heart_icon.png" alt="home"  onclick="homeClicked()" style="height:100%;width:100%">
+				</div>
+				<div id="electricity_icon_yp" class="bottomButton open" style="left:33.2%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/electricity_icon.png" alt="information" style="height:100%;width:100%" onclick="heartElectricityClicked()">
+				</div>
+				<div id="attack_icon_yp" class="bottomButton open" style="left:49.8%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/attack_icon.png" alt="information" style="height:100%;width:100%" onclick="heartAttackClicked()">
+				</div>
+				<div id="failure_icon_yp" class="bottomButton open" style="left:66.4%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/failure_icon.png" alt="information" style="height:100%;width:100%" onclick="heartFailureClicked()">
+				</div>
+				<div id="about_us_icon_yp" class="bottomButton open" style="left:83%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/about_us_icon.png" alt="information" style="height:100%;width:100%" onclick="aboutUsClicked()">
+				</div>
+				<div id="attack_moderate_selected_icon" class="bottomButton closed" style="left:49.8%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/attack_moderate_selected_icon.png" alt="information" style="height:100%;width:100%">
+				</div>
+				<div id="failure_compensated_selected_icon" class="bottomButton closed" style="left:66.4%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/failure_compensated_selected_icon.png" alt="information" style="height:100%;width:100%">
+				</div>
+			</div>
+			<div id="bottom_control_yellow_sub" class="open">
+				<div id="attack_sub_healthy_icon_yp" class="bottomButton closed" style="left:33.2%;position:absolute;z-index:11;height:100%;width:16.6%">
+					<img src="images/heart_v7/attack_sub_healthy_icon.png" alt="vessel" style="height:100%;width:100%"
+						onclick="heartAttackStagePressed('NoInfarct','NoHeartAttack', 'leftHeartAttack')">
+				</div>
+				<div id="attack_sub_moderate_selected_icon" class="bottomButton closed" style="left:49.8%;position:absolute;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/attack_sub_moderate_icon.png" alt="moderate_attack" style="height:100%;width:100%"
+					onclick="heartAttackStagePressed("SmallInfarct", "MildHeartAttack", "leftModerateAttack")">
+				</div>
+				<div id="attack_sub_severe_icon_yp" class="bottomButton closed" style="left:66.4%;position:absolute;z-index:10;height:100%;width:16.6%" >
+					<img src="images/heart_v7/attack_sub_severe_icon.png" alt="severe_attack" style="height:100%;width:100%"
+						onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
+				</div>
+				<div id="attack_moderate_line" class="bottom_control_yellow_graphics closed" style="bottom:0%;left:33.2%;height:10%;width:49.8%;">
+				</div>
+				<div id="attack_moderate_box" class="bottom_control_yellow_graphics closed" style="bottom:10%;left:49.8%;height:90%;width:16.6%;">
+				</div>
+				<div id="failure_sub_healthy_icon_yp" class="bottomButton closed" style="left:49.8%;position:absolute;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/failure_sub_healthy_icon.png" alt="healthy" style="height:100%;width:100%"
+						onclick="heartFailureStagePressed('NoFailure','NoFailure', 'leftHeartFailure')">
+				</div>
+				<div id="failure_sub_compensated_selected_icon" class="bottomButton closed" style="left:66.4%;position:absolute;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/failure_sub_compensated_icon.png" alt="compensated" style="height:100%;width:100%">
+				</div>
+				<div id="failure_sub_decompensated_icon_yp" class="bottomButton closed" style="left:83%;position:absolute;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/failure_sub_decompensated_icon.png" alt="decompensated" style="height:100%;width:100%"
+					onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
+				</div>
+				<div id="failure_compensated_line" class="bottom_control_yellow_graphics closed" style="bottom:0%;left:49.8%;height:10%;width:50.2%;">
+				</div>
+				<div id="failure_compensated_box" class="bottom_control_yellow_graphics closed" style="bottom:10%;left:66.4%;height:90%;width:17%;">
+				</div>
+			</div>
 			<div id="leftModerateAttack" class="closed">
 				<div class="leftTitle" >
 					<b>Heart Attack</b>
@@ -342,70 +429,8 @@
 					<div class="upArrow closed" id="moderate_2_u" onclick="showModerateQuestions(2)">
 					</div>
 				</div>
-				<div class="leftProgressBar">
-					<div style="max-width:100%;background-color: transparent;">
-						<div class="progressClickable" style="left:0%;width:32%;background-color:transparent;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
-						</div>
-						<div class="progressClickable" style="left:33%;width:32%;background-color:transparent;">
-						</div>
-						<div class="progressClickable" style="left:66%;width:32%;background-color:transparent;"  onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
-						</div>
-					</div>
-					<img src="images/heart_v7/moderate_attack_hand.png" alt="information" height="45px">
-				</div>
 			</div>
-
-			<div id="leftSevereAttack" class="closed">
-				<div class="leftTitle" >
-					<b>Heart Attack</b>
-				</div>
-				<div class="leftProgressBar">
-					<div style="max-width:100%;background-color: transparent;">
-						<div class="progressClickable" style="left:0%;width:32%;background-color:transparent;" onclick="heartAttackStagePressed('NoInfarct', 'NoHeartAttack', 'leftHeartAttack')">
-						</div>
-						<div class="progressClickable" style="left:33%;width:32%;background-color:transparent;" onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
-						</div>
-						<div class="progressClickable" style="left:66%;width:32%;background-color:transparent;">
-						</div>
-					</div>
-					<img src="images/heart_v7/severe_attack_hand.png" alt="information" height="45px">
-				</div>
-			</div>
-
-			<div id="leftHeartFailure" class="closed">
-				<div class="leftTitle" >
-					<b>Heart Failure</b>
-				</div>
-				<div class="leftDescription">
-					<b>Healthy heart</b>
-				</div>
-				<div class ="leftQuestionWidget open" id="failure_1_block">
-					<div class="leftQuestionPic open" id="failure_1_q">
-						<b>Can our heart wear out?</b>
-					</div>
-					<div class="leftAnswer closed" id="failure_1_a">
-						<p>Yes. Over time the heart shape, stiffness and ability to contract can change
-						due to factors such as high blood pressure. These long term changes are what we call heart failure.</p>
-					</div>
-					<div class="downArrow open" id="failure_1_d" onclick="showFailureAnswer(1, 1)">
-					</div>
-					<div class="upArrow closed" id="failure_1_u" onclick="showFailureQuestions(1)">
-					</div>
-				</div>
-				<div class="leftProgressBar">
-					<div style="max-width:100%;background-color: transparent;">
-						<div class="progressClickable" style="left:0%;width:28%;background-color: transparent;">
-						</div>
-						<div class="progressClickable" style="left:30%;width:30%;background-color: transparent;"  onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')">
-						</div>
-						<div class="progressClickable" style="left:62%;width:34%;background-color: transparent;"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
-						</div>
-					</div>
-					<img src="images/heart_v7/heart_failure_hand.png" alt="information" height="45px">
-				</div>
-			</div>
-
-			<div id="leftCompensatedFailure" class="closed">
+		  <div id="leftCompensatedFailure" class="closed">
 				<div class="leftTitle" >
 					<b>Heart Failure</b>
 				</div>
@@ -413,7 +438,7 @@
 					<b>Coping with extra load</b>
 				</div>
 				<div class ="leftQuestionWidget open" id="compensated_1_block">
-					<div class="leftQuestionPic open" style="font-size:1.5em"; id="compensated_1_q">
+					<div class="leftQuestionPic open" style="font-size:1.5em;" id="compensated_1_q">
 						<b>What changes can you observe in the heart of a person with long term high blood pressure?</b>
 					</div>
 					<div class="leftAnswer closed" id="compensated_1_a">
@@ -425,19 +450,118 @@
 					<div class="upArrow closed" id="compensated_1_u" onclick="showCompensatedQuestions(1)">
 					</div>
 				</div>
-				<div class="leftProgressBar">
-					<div style="max-width:100%;background-color: transparent;">
-						<div class="progressClickable" style="left:0%;width:28%;background-color: transparent;" onclick="heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure')">
-						</div>
-						<div class="progressClickable" style="left:30%;width:30%;;background-color: transparent;">
-						</div>
-						<div class="progressClickable" style="left:62%;width:34%;background-color: transparent;"  onclick="heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure')">
-						</div>
-					</div>
-					<img src="images/heart_v7/compensated_failure_hand.png" alt="information" height="45px">
+			</div>
+		</div>
+
+		<div id="leftPanelRed" class="closed">
+			<div id="bottom_control_red" class="open">
+				<div id="home_icon_rp" class="open" style="left:0%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/new_image/home.png" alt="home"  onclick="homeClicked()" style="height:100%;width:100%">
+				</div>
+				<div id="healthy_heart_icon_rp" class="open" style="left:16.6%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/healthy_heart_icon.png" alt="home"  onclick="homeClicked()" style="height:100%;width:100%">
+				</div>
+				<div id="electricity_icon_rp" class="bottomButton open" style="left:33.2%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/electricity_icon.png" alt="information" style="height:100%;width:100%" onclick="heartElectricityClicked()">
+				</div>
+				<div id="electricity_fibrillation_selected_icon" class="bottomButton open" style="left:33.2%;position:absolute;;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/electricity_fibrillation_selected_icon.png" alt="information" style="height:100%;width:100%">
+				</div>
+				<div id="attack_icon_rp" class="bottomButton open" style="left:49.8%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/attack_icon.png" alt="information" style="height:100%;width:100%" onclick="heartAttackClicked()">
+				</div>
+				<div id="attack_moderate_icon_rp" class="bottomButton closed" style="left:49.8%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/attack_attack_moderate_icon.png" alt="information" style="height:100%;width:100%">
+				</div>
+				<div id="attack_severe_selected_icon" class="bottomButton closed" style="left:49.8%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/attack_severe_selected_icon.png" alt="information" style="height:100%;width:100%">
+				</div>
+				<div id="failure_icon_rp" class="bottomButton open" style="left:66.4%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/failure_icon.png" alt="information" style="height:100%;width:100%" onclick="heartFailureClicked()">
+				</div>
+				<div id="failure_decompensated_selected_icon" class="bottomButton closed" style="left:66.4%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/failure_decompensated_selected_icon.png" alt="information" style="height:100%;width:100%">
+				</div>
+				<div id="about_us_icon_rp" class="bottomButton open" style="left:83%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/about_us_icon.png" alt="information" style="height:100%;width:100%" onclick="aboutUsClicked()">
 				</div>
 			</div>
-
+			<div id="bottom_control_red_sub" class="open">
+				<div id="electricity_sub_healthy_icon_rp" class="bottomButton closed" style="left:24.9%;position:absolute;z-index:11;height:100%;width:16.6%">
+					<img src="images/heart_v7/electricity_sub_healthy_icon.png" alt="electricity" style="height:100%;width:100%" onclick=heartElectricityClicked()>
+				</div>
+				<div id="electricity_sub_fibrillation_selected_icon" class="bottomButton closed" style="left:41.5%;position:absolute;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/electricity_sub_fibrillation_icon.png" alt="fibrillation" style="height:100%;width:100%">
+				</div>
+				<div id="fibrillation_line" class="bottom_control_red_graphics closed" style="bottom:0%;left:24.9%;height:10%;width:33.2%;"></div>
+				<div id="fibrillation_box" class="bottom_control_red_graphics closed" style="bottom:10%;left:41.5%;height:90%;width:16.6%;"></div>
+				<div id="attack_sub_healthy_icon_rp" class="bottomButton closed" style="left:33.2%;position:absolute;z-index:11;height:100%;width:16.6%">
+					<img src="images/heart_v7/attack_sub_healthy_icon.png" alt="vessel" style="height:100%;width:100%"
+						onclick="heartAttackStagePressed('NoInfarct','NoHeartAttack', 'leftHeartAttack')">
+				</div>
+				<div id="attack_sub_moderate_icon_rp" class="bottomButton closed" style="left:49.8%;position:absolute;z-index:10;height:100%;width:16.6%" >
+					<img src="images/heart_v7/attack_sub_moderate_icon.png" alt="moderate_attack" style="height:100%;width:100%"
+						onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
+				</div>
+				<div id="attack_sub_severe_selected_icon" class="bottomButton closed" style="left:66.4%;position:absolute;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/attack_sub_severe_icon.png" alt="severe_attack" style="height:100%;width:100%">
+				</div>
+				<div id="attack_severe_line" class="bottom_control_red_graphics closed" style="bottom:0%;left:33.2%;height:10%;width:49.8%;"></div>
+				<div id="attack_severe_box" class="bottom_control_red_graphics closed" style="bottom:10%;left:66.4%;height:90%;width:16.6%;"></div>
+				<div id="failure_sub_healthy_icon_rp" class="bottomButton closed" style="left:49.8%;position:absolute;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/failure_sub_healthy_icon.png" alt="vessel" style="height:100%;width:100%"
+					onclick="heartFailureStagePressed('NoFailure','NoFailure', 'leftHeartFailure')">
+				</div>
+				<div id="failure_sub_compensated_icon_rp" class="bottomButton closed" style="left:66.4%;position:absolute;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/failure_sub_compensated_icon.png" alt="vessel" style="height:100%;width:100%"
+					onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')">
+				</div>
+				<div id="failure_sub_decompensated_selected_icon" class="bottomButton closed" style="left:83%;position:absolute;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/failure_sub_decompensated_icon.png" alt="vessel" style="height:100%;width:100%">
+				</div>
+				<div id="failure_decompensated_line" class="bottom_control_red_graphics closed" style="bottom:0%;left:49.8%;height:10%;width:50.2%;">
+				</div>
+				<div id="failure_decompensated_box" class="bottom_control_red_graphics closed" style="bottom:10%;left:83%;height:90%;width:17%;">
+				</div>
+			</div>
+			<div id="leftHeartArrhythmia" class="closed">
+				<div class="leftTitle" >
+					<b>Fibrillation</b>
+				</div>
+				<div class ="leftQuestion  Widget open" id="arrhythmia_1_block">
+					<div class="leftQuestionPic open" id="arrhythmia_1_q">
+						<b>What happens during heart fibrillation?</b>
+					</div>
+					<div class="leftAnswer closed" id="arrhythmia_1_a">
+						<p>The electrical waves in the heart become chaotic, which means that the heart does not contract smoothly and
+						cannot generate enough pressure to pump the blood. </p>
+					</div>
+					<div class="downArrow open" id="arrhythmia_1_d" onclick="showArrhythmiaAnswer(1, 2)">
+					</div>
+					<div class="upArrow closed" id="arrhythmia_1_u" onclick="showArrhythmiaQuestions(2)">
+					</div>
+				</div>
+				<div class ="leftQuestionWidget open" id="arrhythmia_2_block">
+					<div class="leftQuestionPic open" id="arrhythmia_2_q">
+						<b>What can we do to fix a fibrillating heart?</b>
+					</div>
+					<div class="leftAnswer closed" id="arrhythmia_2_a">
+						<p>CLEAR! We need to apply a large electrical shock to reset the electrical waves. We need an Automated External Defibrillator (AED).
+						</p>
+						<p> Click on the AED below to save this heart!</p>
+						<img src="images/heart_v7/defibrillation.png" alt="aed" style="left:20%" onclick="AEDClicked()">
+					</div>
+					<div class="downArrow open" id="arrhythmia_2_d" onclick="showArrhythmiaAnswer(2, 2)">
+					</div>
+					<div class="upArrow closed" id="arrhythmia_2_u" onclick="showArrhythmiaQuestions(2)">
+					</div>
+				</div>
+			</div>
+			<div id="leftSevereAttack" class="closed">
+				<div class="leftTitle" >
+					<b>Heart Attack</b>
+				</div>
+			</div>
 			<div id="leftDecompensatedFailure" class="closed">
 				<div class="leftTitle" >
 					<b>Heart Failure</b>
@@ -454,17 +578,6 @@
 					<div class="upArrow closed" id="decompensated_1_u" onclick="showDecompensatedQuestions(1)">
 					</div>
 				</div>
-				<div class="leftProgressBar">
-					<div style="max-width:100%;background-color: transparent;">
-						<div class="progressClickable" style="left:0%;width:28%;background-color: transparent;" onclick="heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure')">
-						</div>
-						<div class="progressClickable" style="left:30%;width:30%;background-color: transparent;" onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')">
-						</div>
-						<div class="progressClickable" style="left:62%;width:34%;background-color: transparent;">
-						</div>
-					</div>
-					<img src="images/heart_v7/decompensated_failure_hand.png" alt="information" height="45px">
-				</div>
 			</div>
 		</div>
 
@@ -476,7 +589,7 @@
 				<img src="images/new_image/half_heart.png" alt="halfHeart" style="height:100%" onclick="halfHeartPressed()">
 			</div>
 			<div id="fullHeart" class="halfHeart closed" style="right:0%;bottom:0%;position:absolute;height:100%;z-index:12">
-				<img src="images/new_image/full_heart.png" alt="fullHeart" style="height:100% "onclick="halfHeartPressed()">
+				<img src="images/new_image/full_heart.png" alt="fullHeart" style="height:100% " onclick="halfHeartPressed()">
 			</div>
 		</div>
 		<div id="gestures" class="open">
@@ -484,252 +597,367 @@
 		</div>
 		<div id="myRenderer" class="open">
 		</div>
-		<div data-dojo-type="dijit/Dialog" data-dojo-id="videoDialog" id='videoDialog' onHide="pauseVideo()" style="background-color:#666;width:980px;height:760px">
+		<!-- <div data-dojo-type="dijit/Dialog" data-dojo-id="videoDialog" id="videoDialog" onHide="pauseVideo()" style="background-color:#666;width:980px;height:760px">
     		<table class="dijitDialogPaneContentArea">
 				<video width="960" height="720" align="center" style = "left:10px;top:6px;position:relative" id="heart_video" controls>
   					<source src="videos/1_healthy_heart.mp4" type="video/mp4">
 					Your browser does not support the video tag.
 				</video>
     		</table>
-		</div>
+		</div> -->
 	</div>
 
 	<script>
 		var modelURLsArray = [];
 		setUpArrays();
-		var container = document.getElementById('myRenderer')
+		var container = document.getElementById("myRenderer")
 		var zincRenderer = new Zinc.Renderer(container, window);
 		Zinc.defaultMaterialColor = 0xFFFF9C;
 		zincRenderer.initialiseVisualisation();
 		zincRenderer.getThreeJSRenderer().setClearColor( 0xffffff, 0);
 		var halfHeartFlag = false;
-		var leftPanelIDs = ["initialNormal", "leftHeartElectricity", "leftHeartArrhythmia", "leftHeartAttack",
-			"leftModerateAttack", "leftSevereAttack", "leftHeartFailure", "leftCompensatedFailure", "leftDecompensatedFailure"];
+		var leftPanelGreenIDs = ["initialNormal", "leftHeartElectricity",  "leftHeartAttack",
+			 "leftHeartFailure"];
+		var leftPanelYellowIDs = ["leftModerateAttack","leftCompensatedFailure"];
+		var leftPanelRedIDs = ["leftHeartArrhythmia","leftSevereAttack", "leftDecompensatedFailure"];
 		var idleTime = 0;
 		var idleTimeLimit = 300000;
 		var oldTime = new Date();
-		var iconIds = ["fibrillation_icon", "attack_icon", "failure_icon", "fibrillation_selected_icon",
-			"attack_selected_icon", "failure_selected_icon"];
+		var iconIds = ["electricity_icon","electricity_icon_yp", "electricity_icon_rp",
+		  "electricity_healthy_icon","electricity_healthy_selected_icon",
+		  "electricity_fibrillation_icon","electricity_fibrillation_selected_icon",
+			"attack_icon", "attack_icon_yp", "attack_icon_rp",
+			"attack_healthy_selected_icon","attack_moderate_selected_icon","attack_severe_selected_icon",
+			"failure_icon", "failure_icon_yp","failure_icon_rp",
+			"failure_healthy_selected_icon","failure_compensated_selected_icon","failure_decompensated_selected_icon"];
+		var subIconIds = ["electricity_sub_healthy_icon",
+			"electricity_sub_healthy_selected_icon","electricity_sub_healthy_icon_rp",
+			"electricity_sub_fibrillation_icon","electricity_sub_fibrillation_selected_icon",
+			"attack_sub_healthy_icon","attack_sub_healthy_icon_yp","attack_sub_healthy_icon_rp",
+			"attack_sub_healthy_selected_icon",
+			"attack_sub_moderate_icon","attack_sub_moderate_icon_rp",
+			"attack_sub_moderate_selected_icon",
+			"attack_sub_severe_icon","attack_sub_severe_icon_yp",
+			"attack_sub_severe_selected_icon",
+			"failure_sub_healthy_icon","failure_sub_healthy_icon_yp","failure_sub_healthy_icon_rp",
+			"failure_sub_healthy_selected_icon",
+			"failure_sub_compensated_icon","failure_sub_compensated_icon_rp",
+			"failure_sub_compensated_selected_icon",
+			"failure_sub_decompensated_icon","failure_sub_decompensated_icon_yp",
+			"failure_sub_decompensated_selected_icon"];
+		var subGraphicIds = ["electricity_line","electricity_box",
+			"fibrillation_line","fibrillation_box","attack_line","attack_box",
+			"failure_line","failure_box", "attack_moderate_line", "attack_moderate_box",
+			"failure_compensated_line","failure_compensated_box","attack_severe_line",
+			"attack_severe_box","failure_decompensated_line","failure_decompensated_box"];
 		var modelToSceneArray = [];
 		var previousCamera = undefined;
 
-		function showVideo(videoName) {
-			var videoURL = "videos/" + videoName;
-			document.getElementById("heart_video").src=videoURL;
-			videoDialog.show();
-			require(["dijit/registry"], function(registry){
-				registry.byId("dialogColor").show();
-			});
-		}
-
-		function displayHalfHeartIcon() {
-			if (halfHeartFlag) {
-				document.getElementById('halfHeart').classList.remove('open');
-				document.getElementById('halfHeart').classList.add('closed');
-				document.getElementById('fullHeart').classList.remove('closed');
-				document.getElementById('fullHeart').classList.add('open');
-			} else {
-				document.getElementById('halfHeart').classList.remove('closed');
-				document.getElementById('halfHeart').classList.add('open');
-				document.getElementById('fullHeart').classList.remove('open');
-				document.getElementById('fullHeart').classList.add('closed');
-			}
-		}
-
-		function displayFibresIcon(flag) {
-			if (flag) {
-				document.getElementById('showFibres').classList.remove('closed');
-				document.getElementById('showFibres').classList.add('open');
-				document.getElementById('hideFibres').classList.remove('open');
-				document.getElementById('hideFibres').classList.add('closed');
-			} else {
-				document.getElementById('showFibres').classList.remove('open');
-				document.getElementById('showFibres').classList.add('closed');
-				document.getElementById('hideFibres').classList.remove('open');
-				document.getElementById('hideFibres').classList.add('closed');
-			}
-		}
-
-		function idleTimerReached() {
-			var openedPage = "";
-			for (var i = 0; i < leftPanelIDs.length; i++) {
-				if (document.getElementById(leftPanelIDs[i]).classList.contains('open')) {
-					openedPage = leftPanelIDs[i];
-				}
-			}
-			zincRenderer.getCurrentScene().getZincCameraControls().stopAutoTumble();
-			if (openedPage == "initialNormal"){
-				heartElectricityClicked();
-			} else if (openedPage == "leftHeartElectricity") {
-				arrhythmiaClicked();
-			} else if (openedPage == "leftHeartArrhythmia") {
-				heartAttackClicked();
-			} else if (openedPage == "leftHeartAttack") {
-				heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack');
-			} else if (openedPage == "leftModerateAttack") {
-				heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack');
-			} else if (openedPage == "leftSevereAttack") {
-				heartFailureClicked();
-			} else if (openedPage == "leftHeartFailure") {
-				heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure');
-			} else if (openedPage == "leftCompensatedFailure") {
-				heartFailureStagePressed('DecompensatedFailure', 'DecompensatedFailure', 'leftDecompensatedFailure');
-			} else if (openedPage == "leftDecompensatedFailure") {
-				homeClicked();
-			}
-			zincRenderer.getCurrentScene().resetView();
-			zincRenderer.getCurrentScene().getZincCameraControls().autoTumble(
-				[1.0, 0.0], 0.01, true);
-			zincRenderer.getCurrentScene().getZincCameraControls().enableAutoTumble();
-			idleTime = 0;
-			oldTime = new Date();
-		}
-
-		function homeClicked() {
-			if (document.getElementById('initialNormal').classList.contains('closed')) {
-				document.getElementById("healthy_heart_icon").className = 'closed';
-				document.getElementById("healthy_heart_selected_icon").className = 'open';
-				showIcons("fibrillation_icon", "attack_icon", "failure_icon");
-				leftPanelTrigger("initialNormal");
-				previousCamera = undefined;
-				resetAllModelsView();
-				halfHeartFlag = false;
-				document.getElementById('halfHeart').classList.remove('closed');
-				document.getElementById('halfHeart').classList.add('open');
-				document.getElementById('fullHeart').classList.remove('open');
-				document.getElementById('fullHeart').classList.add('closed');
-				loadModel("NoInfarct", 1.0);
-				//showFibres(false);
-				//displayFibresIcon(true);
-				showECGAndLVP("Normal", 0.0);
-				document.getElementById('rightPanel').className = 'closed';
-				document.getElementById('rightPanelBottom').className = 'closed'
-			}
-		}
-
-		function leftPanelTrigger(elementIdToDisplay) {
-			for(var i = 0; i < leftPanelIDs.length; i++){
-    			var id = leftPanelIDs[i];
-				document.getElementById(id).classList.remove('open');
-				document.getElementById(id).classList.add('closed');
-			}
-			if (elementIdToDisplay) {
-				document.getElementById(elementIdToDisplay).classList.remove('closed');
-				document.getElementById(elementIdToDisplay).classList.add('open');
-			}
-			document.getElementById('rightPanel').className = 'closed';
-			document.getElementById('rightPanelBottom').className = 'closed';
-		}
-
 		function loadFirstPage() {
-			showIcons("fibrillation_icon", "attack_icon", "failure_icon");
-			leftPanelTrigger('initialNormal');
-			document.getElementById('rightInformation').className = 'open';
-			document.getElementById('bottom_control').className = 'open';
-			document.getElementById('halfHeart').classList.remove('closed');
-			document.getElementById('halfHeart').classList.add('open');
-			document.getElementById('fullHeart').classList.remove('open');
-			document.getElementById('fullHeart').classList.add('closed');
-			document.getElementById("healthy_heart_icon").className = 'closed';
-			document.getElementById("healthy_heart_selected_icon").className = 'open';
-			document.getElementById('rightPanel').className = 'closed';
-			document.getElementById('rightPanelBottom').className = 'closed';
+			leftPanelGreenTrigger("initialNormal");
+			document.getElementById("rightInformation").className = "open";
+			document.getElementById("bottom_control").className = "open";
+			document.getElementById("halfHeart").classList.remove("closed");
+			document.getElementById("halfHeart").classList.add("open");
+			document.getElementById("fullHeart").classList.remove("open");
+			document.getElementById("fullHeart").classList.add("closed");
+			document.getElementById("healthy_heart_icon").className = "closed";
+			document.getElementById("healthy_heart_selected_icon").className = "open";
+			document.getElementById("rightPanel").className = "closed";
+			document.getElementById("rightPanelBottom").className = "closed";
 			//showFibres(false);
 			//displayFibresIcon(true);
 			showECGAndLVP("Normal", 0.0);
 		}
 
+		function homeClicked() {
+			if (document.getElementById("initialNormal").classList.contains("closed")) {
+				document.getElementById("healthy_heart_icon").className = "closed";
+				document.getElementById("healthy_heart_selected_icon").className = "open";
+				showIcons("electricity_icon", "attack_icon", "failure_icon");
+				leftPanelGreenTrigger("initialNormal");
+				document.getElementById("bottom_control_green_sub").className = "closed";
+				document.getElementById("bottom_control_yellow_sub").className = "closed";
+				document.getElementById("bottom_control_red_sub").className = "closed";
+				previousCamera = undefined;
+				resetAllModelsView();
+				halfHeartFlag = false;
+				document.getElementById("halfHeart").classList.remove("closed");
+				document.getElementById("halfHeart").classList.add("open");
+				document.getElementById("fullHeart").classList.remove("open");
+				document.getElementById("fullHeart").classList.add("closed");
+				loadModel("NoInfarct", 1.0);
+				//showFibres(false);
+				//displayFibresIcon(true);
+				showECGAndLVP("Normal", 0.0);
+				document.getElementById("rightPanel").className = "closed";
+				document.getElementById("rightPanelBottom").className = "closed"
+			}
+		}
+
+		function leftPanelGreenTrigger(elementIdToDisplay) {
+			document.getElementById("leftPanelGreen").className="open";
+			for(var i = 0; i < leftPanelGreenIDs.length; i++){
+    			var id = leftPanelGreenIDs[i];
+				document.getElementById(id).classList.remove("open");
+				document.getElementById(id).classList.add("closed");
+			}
+			document.getElementById("leftPanelYellow").className="closed";
+			document.getElementById("leftPanelRed").className="closed";
+			if (elementIdToDisplay) {
+				document.getElementById(elementIdToDisplay).className = "open";
+			}
+			document.getElementById("rightPanel").className = "closed";
+			document.getElementById("rightPanelBottom").className = "closed";
+		}
+
+		function leftPanelYellowTrigger(elementIdToDisplay) {
+			document.getElementById("leftPanelRed").className="closed";
+			document.getElementById("leftPanelGreen").className="closed";
+			document.getElementById("leftPanelYellow").className="open";
+			for(var i = 0; i < leftPanelYellowIDs.length; i++){
+    		var id = leftPanelYellowIDs[i];
+				document.getElementById(id).classList.remove("open");
+				document.getElementById(id).classList.add("closed");
+			}
+			if (elementIdToDisplay) {
+				document.getElementById(elementIdToDisplay).className = "open";
+			}
+			document.getElementById("rightPanel").className = "closed";
+			document.getElementById("rightPanelBottom").className = "closed";
+		}
+
+		function leftPanelRedTrigger(elementIdToDisplay) {
+			document.getElementById("leftPanelGreen").className="closed";
+			document.getElementById("leftPanelYellow").className="closed";
+			document.getElementById("leftPanelRed").className="open";
+			for(var i = 0; i < leftPanelRedIDs.length; i++){
+    			var id = leftPanelRedIDs[i];
+				document.getElementById(id).classList.remove("open");
+				document.getElementById(id).classList.add("closed");
+			}
+			if (elementIdToDisplay) {
+				document.getElementById(elementIdToDisplay).className = "open";
+			}
+			document.getElementById("rightPanel").className = "closed";
+			document.getElementById("rightPanelBottom").className = "closed";
+		}
+
 		function showIcons(showIcon1, showIcon2, showIcon3) {
 			for(var i = 0; i < iconIds.length; i++){
-	    			var id = iconIds[i];
-	    			if ((id != showIcon1) && (id != showIcon2) && (id != showIcon3)) {
-					document.getElementById(id).classList.remove('open');
-					document.getElementById(id).classList.add('closed');
+	    		var id = iconIds[i];
+	    		if ((id !=   showIcon1) && (id != showIcon2) && (id != showIcon3)) {
+						document.getElementById(id).classList.remove("open");
+						document.getElementById(id).classList.add("closed");
 				}
 			}
-			if (document.getElementById(showIcon1).classList.contains('closed')) {
-				document.getElementById(showIcon1).classList.remove('closed');
-				document.getElementById(showIcon1).classList.add('open');
+			if (document.getElementById(showIcon1).classList.contains("closed")) {
+				document.getElementById(showIcon1).classList.remove("closed");
+				document.getElementById(showIcon1).classList.add("open");
 			}
-			if (document.getElementById(showIcon2).classList.contains('closed')) {
-				document.getElementById(showIcon2).classList.remove('closed');
-				document.getElementById(showIcon2).classList.add('open');
+			if (document.getElementById(showIcon2).classList.contains("closed")) {
+				document.getElementById(showIcon2).classList.remove("closed");
+				document.getElementById(showIcon2).classList.add("open");
 			}
-			if (document.getElementById(showIcon3).classList.contains('closed')) {
-				document.getElementById(showIcon3).classList.remove('closed');
-				document.getElementById(showIcon3).classList.add('open');
-			}
+			if (document.getElementById(showIcon3).classList.contains("closed")) {
 
+				document.getElementById(showIcon3).classList.remove("closed");
+				document.getElementById(showIcon3).classList.add("open");
+			}
+		}
+
+		function showSubIcons(showSubIcon1, showSubIcon2, showSubIcon3) {
+			for(var i = 0; i < subIconIds.length; i++){
+	    	var id = subIconIds[i];
+	    	if ((id != showSubIcon1) && (id != showSubIcon2) && (id != showSubIcon3)) {
+					document.getElementById(id).classList.remove("open");
+					document.getElementById(id).classList.add("closed");
+				}
+			}
+			if (document.getElementById(showSubIcon1).classList.contains("closed")) {
+				document.getElementById(showSubIcon1).classList.remove("closed");
+				document.getElementById(showSubIcon1).classList.add("open");
+			}
+			if (document.getElementById(showSubIcon2).classList.contains("closed")) {
+				document.getElementById(showSubIcon2).classList.remove("closed");
+				document.getElementById(showSubIcon2).classList.add("open");
+			}
+			if (document.getElementById(showSubIcon3).classList.contains("closed")) {
+				document.getElementById(showSubIcon3).classList.remove("closed");
+				document.getElementById(showSubIcon3).classList.add("open");
+			}
+		}
+
+		function showSubGraphics(showGraphicsLine, showGraphicsBox){
+			for(var i = 0; i < subGraphicIds.length; i++){
+				var id = subGraphicIds[i];
+				if ((id != showGraphicsLine) && (id != showGraphicsBox)) {
+					document.getElementById(id).classList.remove("open");
+					document.getElementById(id).classList.add("closed");
+				}
+			}
+			if (document.getElementById(showGraphicsLine).classList.contains("closed")) {
+				document.getElementById(showGraphicsLine).classList.remove("closed");
+				document.getElementById(showGraphicsLine).classList.add("open");
+			}
+			if (document.getElementById(showGraphicsBox).classList.contains("closed")) {
+				document.getElementById(showGraphicsBox).classList.remove("closed");
+				document.getElementById(showGraphicsBox).classList.add("open");
+			}
 		}
 
 		function heartElectricityClicked() {
-			leftPanelTrigger('leftHeartElectricity');
-			showIcons("fibrillation_selected_icon", "attack_icon", "failure_icon");
-			//displayFibresIcon(false);
-			document.getElementById("healthy_heart_icon").className = 'open';
-			document.getElementById("healthy_heart_selected_icon").className = 'closed';
+			leftPanelGreenTrigger("leftHeartElectricity");
+			document.getElementById("bottom_control_green_sub").className = "open";
+			showSubIcons("electricity_sub_healthy_selected_icon","electricity_sub_fibrillation_icon","electricity_sub_fibrillation_icon");
+			showSubGraphics("electricity_line","electricity_box");
+			showIcons("electricity_healthy_selected_icon", "attack_icon", "failure_icon");
+			document.getElementById("healthy_heart_icon").className = "open";
+			document.getElementById("healthy_heart_selected_icon").className = "closed";
 			previousCamera = undefined;
-			loadModel('NormalElectricity', 1.0);
-			showECGAndLVP('Normal', 0.0);
+			loadModel("NormalElectricity", 1.0);
+			showECGAndLVP("Normal", 0.0);
 		}
 
 		function arrhythmiaClicked() {
-			leftPanelTrigger('leftHeartArrhythmia');
-			loadModel('ArrythmiaElectricity', 0.25);
-			showECGAndLVP('Arrhythmia', 0.0);
+			//document.getElementById("leftPanelRed").className = "open";
+			//document.getElementById("bottom_control_red_sub").className = "open";
+			leftPanelRedTrigger("leftHeartArrhythmia");
+			document.getElementById("bottom_control_red_sub").className="open";
+			showSubIcons( "electricity_sub_healthy_icon_rp","electricity_sub_fibrillation_selected_icon","electricity_sub_fibrillation_selected_icon")
+			showIcons("electricity_fibrillation_selected_icon","attack_icon_rp","failure_icon_rp");
+			showSubGraphics("fibrillation_line","fibrillation_box")
+			loadModel("ArrythmiaElectricity", 0.25);
+			showECGAndLVP("Arrhythmia", 0.0);
 		}
 
 		function AEDClicked() {
-			leftPanelTrigger('leftHeartElectricity');
-			loadModel('NormalElectricity', 1.0);
-			showECGAndLVP('Normal', 0.0);
+			document.getElementById("bottom_control_green_sub").className = "open";
+			showSubIcons("electricity_sub_healthy_selected_icon","electricity_sub_fibrillation_icon","electricity_sub_fibrillation_icon")
+			showIcons("electricity_healthy_selected_icon", "attack_icon", "failure_icon");
+			showSubGraphics("electricity_line","electricity_box");
+			leftPanelGreenTrigger("leftHeartElectricity");
+			document.getElementById("healthy_heart_icon").className = "open";
+			document.getElementById("healthy_heart_selected_icon").className = "closed";
+			previousCamera = undefined;
+			loadModel("NormalElectricity", 1.0);
+			showECGAndLVP("Normal", 0.0);
 		}
 
-		function shareCameraSettings(oldCam) {
-			if (oldCam) {
-				var newCam = zincRenderer.getCurrentScene().camera;
-				newCam.near = oldCam.near;
-				newCam.far = oldCam.far;
-				newCam.position.copy(oldCam.position);
-				newCam.target = new THREE.Vector3( oldCam.target.x, oldCam.target.y, oldCam.target.z );
-				newCam.up.copy(oldCam.up);
-				zincRenderer.getCurrentScene().updateDirectionalLight();
-			}
+		function heartAttackClicked() {
+			showIcons("electricity_icon", "attack_healthy_selected_icon", "failure_icon");
+			showSubGraphics("attack_line","attack_box");
+			document.getElementById("bottom_control_green_sub").className = "open";
+			showSubIcons("attack_sub_healthy_selected_icon","attack_sub_moderate_icon","attack_sub_severe_icon")
+			//displayFibresIcon(false);
+			document.getElementById("healthy_heart_icon").className = "open";
+			document.getElementById("healthy_heart_selected_icon").className = "closed";
+			leftPanelGreenTrigger("leftHeartAttack");
+			previousCamera = undefined;
+			heartAttackStagePressed("NoInfarct","NoHeartAttack", "leftHeartAttack");
 		}
 
 		var heartAttackStagePressed = function(StageName, pressedElement, descriptionId) {
 			loadModel(StageName, 1.0);
 			previousCamera = zincRenderer.getCurrentScene().camera;
 			showECGAndLVP(StageName, 0.0);
-			document.getElementById('leftHeartAttack').classList.remove('open');
-			document.getElementById('leftHeartAttack').classList.add('closed');
-			document.getElementById('leftModerateAttack').classList.remove('open');
-			document.getElementById('leftModerateAttack').classList.add('closed');
-			document.getElementById('leftSevereAttack').classList.remove('open');
-			document.getElementById('leftSevereAttack').classList.add('closed');
+			document.getElementById("leftHeartAttack").classList.remove("open");
+			document.getElementById("leftHeartAttack").classList.add("closed");
+			document.getElementById("leftModerateAttack").classList.remove("open");
+			document.getElementById("leftModerateAttack").classList.add("closed");
+			//document.getElementById("leftSevereAttack").classList.remove("open");
+			//document.getElementById("leftSevereAttack").classList.add("closed");
 			document.getElementById("rightPanel").className = "closed";
-			document.getElementById('rightPanelBottom').className = 'closed';
-			document.getElementById(descriptionId).classList.remove('closed');
-			document.getElementById(descriptionId).classList.add('open');
-			if (descriptionId== 'leftSevereAttack'){
-				document.getElementById("rightPanel").className = "open";
-				document.getElementById('rightPanelBottom').className = 'open';
+			document.getElementById("rightPanelBottom").className = "closed";
+			document.getElementById(descriptionId).classList.remove("closed");
+			document.getElementById(descriptionId).classList.add("open");
+			if (descriptionId== "leftHeartAttack"){
+				document.getElementById('bottom_control_green_sub').className='open'
+				showIcons("electricity_icon","attack_healthy_selected_icon","failure_icon")
+				showSubIcons("attack_sub_healthy_selected_icon","attack_sub_moderate_icon",
+					"attack_sub_severe_icon")
+				showSubGraphics("attack_line","attack_box")
+				leftPanelGreenTrigger("leftHeartAttack")
+				document.getElementById("rightPanel").className = "closed";
+				document.getElementById("rightPanelBottom").className = "closed";
 			}
-			if (descriptionId== 'leftModerateAttack'){
-				document.getElementById("rightPanel").className = "open";
-				document.getElementById('rightPanelBottom').className = 'closed';
+			if (descriptionId== "leftModerateAttack"){
+				document.getElementById('bottom_control_yellow_sub').className='open'
+				showIcons("electricity_icon_yp","attack_moderate_selected_icon","failure_icon_yp")
+				showSubIcons("attack_sub_healthy_icon_yp","attack_sub_moderate_selected_icon",
+					"attack_sub_severe_icon_yp")
+				showSubGraphics("attack_moderate_line","attack_moderate_box")
+				leftPanelYellowTrigger("leftModerateAttack")
+				document.getElementById("rightPanel").className = "closed";
+				document.getElementById("rightPanelBottom").className = "closed";
 			}
-
+			if (descriptionId== "leftSevereAttack"){
+				document.getElementById('bottom_control_red_sub').className='open'
+				showIcons("electricity_icon_rp","attack_severe_selected_icon","failure_icon_rp")
+				showSubIcons("attack_sub_healthy_icon_rp","attack_sub_moderate_icon_rp",
+					"attack_sub_severe_selected_icon")
+				showSubGraphics("attack_severe_line","attack_severe_box")
+				leftPanelRedTrigger("leftSevereAttack")
+				document.getElementById("rightPanel").className = "closed";
+				document.getElementById("rightPanelBottom").className = "closed";
+			}
 		}
 
-		function heartAttackClicked() {
-			showIcons("fibrillation_icon", "attack_selected_icon", "failure_icon");
+		function heartFailureClicked() {
+			showIcons("electricity_icon", "attack_icon", "failure_healthy_selected_icon");
+			showSubGraphics("failure_line","failure_box");
+			document.getElementById("bottom_control_green_sub").className = "open";
+			showSubIcons("failure_sub_healthy_selected_icon","failure_sub_compensated_icon","failure_sub_decompensated_icon")
 			//displayFibresIcon(false);
-			document.getElementById("healthy_heart_icon").className = 'open';
-			document.getElementById("healthy_heart_selected_icon").className = 'closed';
-			leftPanelTrigger('leftHeartAttack');
+			document.getElementById("healthy_heart_icon").className = "open";
+			document.getElementById("healthy_heart_selected_icon").className = "closed";
+			leftPanelGreenTrigger("leftHeartFailure");
 			previousCamera = undefined;
-			heartAttackStagePressed('NoInfarct','NoHeartAttack', 'leftHeartAttack');
+			heartFailureStagePressed("NoFailure", "NoFailure", "leftHeartFailure");
+		}
+
+		var heartFailureStagePressed = function(StageName, pressedElement, descriptionId){
+			loadModel(StageName, 1.0);
+			previousCamera = zincRenderer.getCurrentScene().camera;
+			showECGAndLVP(StageName, 0.0);
+			document.getElementById("leftHeartFailure").classList.remove("open");
+			document.getElementById("leftHeartFailure").classList.add("closed");
+			document.getElementById("leftCompensatedFailure").classList.remove("open");
+			document.getElementById("leftCompensatedFailure").classList.add("closed");
+			document.getElementById("leftDecompensatedFailure").classList.remove("open");
+			document.getElementById("leftDecompensatedFailure").classList.add("closed");
+			document.getElementById(descriptionId).classList.remove("closed");
+			document.getElementById(descriptionId).classList.add("open");
+			if (descriptionId== "leftHeartFailure"){
+				document.getElementById('bottom_control_green_sub').className='open'
+				showIcons("electricity_icon","attack_icon","failure_healthy_selected_icon")
+				showSubIcons("failure_sub_healthy_selected_icon","failure_sub_compensated_icon",
+					"failure_sub_decompensated_icon")
+				showSubGraphics("failure_line","failure_box")
+				leftPanelGreenTrigger("leftHeartFailure")
+				document.getElementById("rightPanel").className = "closed";
+				document.getElementById("rightPanelBottom").className = "closed";
+			}
+			if (descriptionId== "leftCompensatedFailure"){
+				document.getElementById("bottom_control_yellow_sub").className="open";
+				showIcons("electricity_icon_yp","attack_icon_yp","failure_compensated_selected_icon")
+				showSubIcons("failure_sub_healthy_icon_yp","failure_sub_compensated_selected_icon",
+					"failure_sub_decompensated_icon_yp")
+				showSubGraphics("failure_compensated_line","failure_compensated_box")
+				leftPanelYellowTrigger("leftCompensatedFailure")
+				document.getElementById("rightPanel").className = "closed";
+				document.getElementById("rightPanelBottom").className = "closed";
+			}
+			if (descriptionId== "leftDecompensatedFailure"){
+				document.getElementById('bottom_control_red_sub').className='open'
+				showIcons("electricity_icon_rp","attack_icon_rp","failure_decompensated_selected_icon")
+				showSubIcons("failure_sub_healthy_icon_rp","failure_sub_compensated_icon_rp",
+					"failure_sub_decompensated_selected_icon")
+				showSubGraphics("failure_decompensated_line","failure_decompensated_box")
+				leftPanelRedTrigger("leftDecompensatedFailure")
+				document.getElementById("rightPanel").className = "closed";
+				document.getElementById("rightPanelBottom").className = "closed";
+			}
 		}
 
 		window.addEventListener("mousedown", function() {idleTime = 0;oldTime = new Date(); }, false);
@@ -758,6 +986,34 @@
 
 		zincRenderer.addPreRenderCallbackFunction(updateIndicatorsAndTimer);
 
+		function displayHalfHeartIcon() {
+			if (halfHeartFlag) {
+				document.getElementById("halfHeart").classList.remove("open");
+				document.getElementById("halfHeart").classList.add("closed");
+				document.getElementById("fullHeart").classList.remove("closed");
+				document.getElementById("fullHeart").classList.add("open");
+			} else {
+				document.getElementById("halfHeart").classList.remove("closed");
+				document.getElementById("halfHeart").classList.add("open");
+				document.getElementById("fullHeart").classList.remove("open");
+				document.getElementById("fullHeart").classList.add("closed");
+			}
+		}
+
+		function displayFibresIcon(flag) {
+			if (flag) {
+				document.getElementById("showFibres").classList.remove("closed");
+				document.getElementById("showFibres").classList.add("open");
+				document.getElementById("hideFibres").classList.remove("open");
+				document.getElementById("hideFibres").classList.add("closed");
+			} else {
+				document.getElementById("showFibres").classList.remove("open");
+				document.getElementById("showFibres").classList.add("closed");
+				document.getElementById("hideFibres").classList.remove("open");
+				document.getElementById("hideFibres").classList.add("closed");
+			}
+		}
+
 		function geometryShowFibres(flag, currentTime) {
 			return function(zincGeometry) {
 				if (zincGeometry.groupName && zincGeometry.groupName.includes("Fibres")) {
@@ -776,8 +1032,64 @@
 			}
 		}
 
+		function idleTimerReached() {
+			var openedPage = "";
+			for (var i = 0; i < leftPanelGreenIDs.length; i++) {
+				if (document.getElementById(leftPanelGreenIDs[i]).classList.contains("open")) {
+					openedPage = leftPanelGreenIDs[i];
+				}
+			}
+			zincRenderer.getCurrentScene().getZincCameraControls().stopAutoTumble();
+			if (openedPage == "initialNormal"){
+				heartElectricityClicked();
+			} else if (openedPage == "leftHeartElectricity") {
+				arrhythmiaClicked();
+			} else if (openedPage == "leftHeartArrhythmia") {
+				heartAttackClicked();
+			} else if (openedPage == "leftHeartAttack") {
+				heartAttackStagePressed("SmallInfarct", "MildHeartAttack", "leftModerateAttack");
+			} else if (openedPage == "leftModerateAttack") {
+				heartAttackStagePressed("LargeInfarct", "SevereHeartAttack", "leftSevereAttack");
+			} else if (openedPage == "leftSevereAttack") {
+				heartFailureClicked();
+			} else if (openedPage == "leftHeartFailure") {
+				heartFailureStagePressed("CompensatedFailure", "CompensatedFailure", "leftCompensatedFailure");
+			} else if (openedPage == "leftCompensatedFailure") {
+				heartFailureStagePressed("DecompensatedFailure", "DecompensatedFailure", "leftDecompensatedFailure");
+			} else if (openedPage == "leftDecompensatedFailure") {
+				homeClicked();
+			}
+			zincRenderer.getCurrentScene().resetView();
+			zincRenderer.getCurrentScene().getZincCameraControls().autoTumble(
+				[1.0, 0.0], 0.01, true);
+			zincRenderer.getCurrentScene().getZincCameraControls().enableAutoTumble();
+			idleTime = 0;
+			oldTime = new Date();
+		}
+
+		function showVideo(videoName) {
+			var videoURL = "videos/" + videoName;
+			document.getElementById("heart_video").src=videoURL;
+			videoDialog.show();
+			require(["dijit/registry"], function(registry){
+				registry.byId("dialogColor").show();
+			});
+		}
+
+		function shareCameraSettings(oldCam) {
+			if (oldCam) {
+				var newCam = zincRenderer.getCurrentScene().camera;
+				newCam.near = oldCam.near;
+				newCam.far = oldCam.far;
+				newCam.position.copy(oldCam.position);
+				newCam.target = new THREE.Vector3( oldCam.target.x, oldCam.target.y, oldCam.target.z );
+				newCam.up.copy(oldCam.up);
+				zincRenderer.getCurrentScene().updateDirectionalLight();
+			}
+		}
+
 		function pauseVideo() {
-    		document.getElementById('heart_video').pause();
+    		document.getElementById("heart_video").pause();
 		}
 
 		function showFibres(flag) {
@@ -786,15 +1098,15 @@
 			currentScene.forEachGeometry(geometryShowFibres(flag, currentTime));
 			currentScene.forEachGlyphset(glyphsetShowFibres(flag, currentTime));
 			if (flag) {
-				document.getElementById('showFibres').classList.remove('open');
-				document.getElementById('showFibres').classList.add('closed');
-				document.getElementById('hideFibres').classList.remove('closed');
-				document.getElementById('hideFibres').classList.add('open');
+				document.getElementById("showFibres").classList.remove("open");
+				document.getElementById("showFibres").classList.add("closed");
+				document.getElementById("hideFibres").classList.remove("closed");
+				document.getElementById("hideFibres").classList.add("open");
 			} else {
-				document.getElementById('showFibres').classList.remove('closed');
-				document.getElementById('showFibres').classList.add('open');
-				document.getElementById('hideFibres').classList.remove('open');
-				document.getElementById('hideFibres').classList.add('closed');
+				document.getElementById("showFibres").classList.remove("closed");
+				document.getElementById("showFibres").classList.add("open");
+				document.getElementById("hideFibres").classList.remove("open");
+				document.getElementById("hideFibres").classList.add("closed");
 				showHalf();
 			}
 
@@ -839,60 +1151,60 @@
 		}
 
 		function setUpArrays() {
-			ECGurls['Normal'] = 'ECG/NormalECG.json';
-			ECGurls['Diastolic'] = 'ECG/DiastolicECG.json';
-			ECGurls['Systolic'] = 'ECG/SystolicECG.json';
-			LVPurls['Normal'] = 'LVP/NormalLVP.json';
-			LVPurls['Diastolic'] = 'LVP/DiastolicLVP.json';
-			LVPurls['Systolic'] = 'LVP/SystolicLVP.json';
-			ECGurls['NoInfarct'] = 'ECG/NormalECG.json';
-			ECGurls['SmallInfarct'] = 'ECG/MildInfarctECG.json';
-			ECGurls['LargeInfarct'] = 'ECG/LargeInfarctECG.json';
-			LVPurls['NoInfarct'] = 'LVP/NormalLVP.json';
-			LVPurls['SmallInfarct'] = 'LVP/smallInfarctLVP.json';
-			LVPurls['LargeInfarct'] = 'LVP/largeInfarctLVP.json';
-			ECGurls['Arrhythmia'] = 'ECG/ArrhythmiaECG.json';
-			LVPurls['Arrhythmia'] = 'LVP/ArrhythmiaLVP.json';
-			ECGurls['NoFailure'] = 'ECG/NormalECG.json';
-			LVPurls['NoFailure'] = 'LVP/NormalLVP.json';
-			ECGurls['CompensatedFailure'] = 'ECG/DiastolicECG.json';
-			LVPurls['CompensatedFailure'] = 'LVP/DiastolicLVP.json';
-			ECGurls['DecompensatedFailure'] = 'ECG/SystolicECG.json';
-			LVPurls['DecompensatedFailure'] = 'LVP/SystolicLVP.json';
+			ECGurls["Normal"] = "ECG/NormalECG.json";
+			ECGurls["Diastolic"] = "ECG/DiastolicECG.json";
+			ECGurls["Systolic"] = "ECG/SystolicECG.json";
+			LVPurls["Normal"] = "LVP/NormalLVP.json";
+			LVPurls["Diastolic"] = "LVP/DiastolicLVP.json";
+			LVPurls["Systolic"] = "LVP/SystolicLVP.json";
+			ECGurls["NoInfarct"] = "ECG/NormalECG.json";
+			ECGurls["SmallInfarct"] = "ECG/MildInfarctECG.json";
+			ECGurls["LargeInfarct"] = "ECG/LargeInfarctECG.json";
+			LVPurls["NoInfarct"] = "LVP/NormalLVP.json";
+			LVPurls["SmallInfarct"] = "LVP/smallInfarctLVP.json";
+			LVPurls["LargeInfarct"] = "LVP/largeInfarctLVP.json";
+			ECGurls["Arrhythmia"] = "ECG/ArrhythmiaECG.json";
+			LVPurls["Arrhythmia"] = "LVP/ArrhythmiaLVP.json";
+			ECGurls["NoFailure"] = "ECG/NormalECG.json";
+			LVPurls["NoFailure"] = "LVP/NormalLVP.json";
+			ECGurls["CompensatedFailure"] = "ECG/DiastolicECG.json";
+			LVPurls["CompensatedFailure"] = "LVP/DiastolicLVP.json";
+			ECGurls["DecompensatedFailure"] = "ECG/SystolicECG.json";
+			LVPurls["DecompensatedFailure"] = "LVP/SystolicLVP.json";
 
-			modelURLsArray['DeformingHeart'] = ['models/deforming_heart_metadata.json',
-				'models/deforming_heart_view.json'];
-			modelURLsArray['NormalElectricity'] = ['heartElectricity/normalActivity_metadata.json',
-				'heartElectricity/normalActivity_view.json'];
-			modelURLsArray['ArrythmiaElectricity'] = ['heartElectricity/arrythmiaActivity_metadata.json',
-				'heartElectricity/arrythmiaActivity_view.json'];
-			modelURLsArray['LargeInfarct'] = ['heartInfarct/largeInfarct_metadata.json',
-				'heartInfarct/largeInfarct_view.json'];
-			modelURLsArray['SmallInfarct'] = ['heartInfarct/smallInfarct_metadata.json',
-				'heartInfarct/smallInfarct_view.json'];
-			modelURLsArray['NoInfarct'] = ['heartInfarct/noInfarct_metadata.json',
-				'heartInfarct/noInfarct_view.json'];
-			modelURLsArray['NoFailure'] = ['heartInfarct/noInfarct_metadata.json',
-				'heartInfarct/noInfarct_view.json'];
-			modelURLsArray['CompensatedFailure'] = ['heartFailure/compensated_metadata.json', 'heartFailure/compensated_view.json'];
-			modelURLsArray['DecompensatedFailure'] = ['heartFailure/decompensated_metadata.json', 'heartFailure/decompensated_view.json'];
+			modelURLsArray["DeformingHeart"] = ["models/deforming_heart_metadata.json",
+				"models/deforming_heart_view.json"];
+			modelURLsArray["NormalElectricity"] = ["heartElectricity/normalActivity_metadata.json",
+				"heartElectricity/normalActivity_view.json"];
+			modelURLsArray["ArrythmiaElectricity"] = ["heartElectricity/arrythmiaActivity_metadata.json",
+				"heartElectricity/arrythmiaActivity_view.json"];
+			modelURLsArray["LargeInfarct"] = ["heartInfarct/largeInfarct_metadata.json",
+				"heartInfarct/largeInfarct_view.json"];
+			modelURLsArray["SmallInfarct"] = ["heartInfarct/smallInfarct_metadata.json",
+				"heartInfarct/smallInfarct_view.json"];
+			modelURLsArray["NoInfarct"] = ["heartInfarct/noInfarct_metadata.json",
+				"heartInfarct/noInfarct_view.json"];
+			modelURLsArray["NoFailure"] = ["heartInfarct/noInfarct_metadata.json",
+				"heartInfarct/noInfarct_view.json"];
+			modelURLsArray["CompensatedFailure"] = ["heartFailure/compensated_metadata.json", "heartFailure/compensated_view.json"];
+			modelURLsArray["DecompensatedFailure"] = ["heartFailure/decompensated_metadata.json", "heartFailure/decompensated_view.json"];
 
-			ECGTexts['Normal'] = "electrical pulses make the heart muscle contract";
-			LVPTexts['Normal'] = "muscle contraction generates pump pressure";
-			ECGTexts['Arrhythmia'] = "abnormal electricity";
-			LVPTexts['Arrhythmia'] = "poor pump pressure";
-			ECGTexts['NoInfarct'] = "electrical pulses make the heart muscle contract";
-			LVPTexts['NoInfarct'] = "muscle contraction generates pump pressure";
-			ECGTexts['SmallInfarct'] = "electrical pulses make the heart muscle contract";
-			LVPTexts['SmallInfarct'] = "damaged muscle leads to less contraction force and less pressure generated";
-			ECGTexts['LargeInfarct'] = "electrical pulses make the heart muscle contract";
-			LVPTexts['LargeInfarct'] = "damaged muscle leads to less contraction force and less pressure generated";
-			ECGTexts['NoFailure'] = "electrical pulses make the heart muscle contract";
-			LVPTexts['NoFailure'] = "muscle contraction generates pump pressure";
-			ECGTexts['CompensatedFailure'] = "electrical pulses make the heart muscle contract";
-			LVPTexts['CompensatedFailure'] = "muscle contraction generates pump pressure";
-			ECGTexts['DecompensatedFailure'] = "electrical pulses make the heart muscle contract";
-			LVPTexts['DecompensatedFailure'] = "thin-walled hearts struggle to maintain pump pressure";
+			ECGTexts["Normal"] = "electrical pulses make the heart muscle contract";
+			LVPTexts["Normal"] = "muscle contraction generates pump pressure";
+			ECGTexts["Arrhythmia"] = "abnormal electricity";
+			LVPTexts["Arrhythmia"] = "poor pump pressure";
+			ECGTexts["NoInfarct"] = "electrical pulses make the heart muscle contract";
+			LVPTexts["NoInfarct"] = "muscle contraction generates pump pressure";
+			ECGTexts["SmallInfarct"] = "electrical pulses make the heart muscle contract";
+			LVPTexts["SmallInfarct"] = "damaged muscle leads to less contraction force and less pressure generated";
+			ECGTexts["LargeInfarct"] = "electrical pulses make the heart muscle contract";
+			LVPTexts["LargeInfarct"] = "damaged muscle leads to less contraction force and less pressure generated";
+			ECGTexts["NoFailure"] = "electrical pulses make the heart muscle contract";
+			LVPTexts["NoFailure"] = "muscle contraction generates pump pressure";
+			ECGTexts["CompensatedFailure"] = "electrical pulses make the heart muscle contract";
+			LVPTexts["CompensatedFailure"] = "muscle contraction generates pump pressure";
+			ECGTexts["DecompensatedFailure"] = "electrical pulses make the heart muscle contract";
+			LVPTexts["DecompensatedFailure"] = "thin-walled hearts struggle to maintain pump pressure";
 		}
 
 		function resetAllModelsView() {
@@ -938,36 +1250,11 @@
 			zincRenderer.viewAll()
 		}
 
-		function heartFailureClicked() {
-			showIcons("fibrillation_icon", "attack_icon", "failure_selected_icon");
-			//displayFibresIcon(false);
-			document.getElementById("healthy_heart_icon").className = "open";
-			document.getElementById("healthy_heart_selected_icon").className = "closed";
-			leftPanelTrigger('leftHeartFailure');
-			previousCamera = undefined;
-			heartFailureStagePressed('NoFailure', 'NoFailure', 'leftHeartFailure');
-		}
-
-		var heartFailureStagePressed = function(StageName, pressedElement, descriptionId){
-			loadModel(StageName, 1.0);
-			previousCamera = zincRenderer.getCurrentScene().camera;
-			showECGAndLVP(StageName, 0.0);
-			document.getElementById('leftHeartFailure').classList.remove('open');
-			document.getElementById('leftHeartFailure').classList.add('closed');
-			document.getElementById('leftCompensatedFailure').classList.remove('open');
-			document.getElementById('leftCompensatedFailure').classList.add('closed');
-			document.getElementById('leftDecompensatedFailure').classList.remove('open');
-			document.getElementById('leftDecompensatedFailure').classList.add('closed');
-			document.getElementById(descriptionId).classList.remove('closed');
-			document.getElementById(descriptionId).classList.add('open');
-		}
-
 		function updateSlider(newValue)	{
 			zincRenderer.setPlayRate(newValue);
 		}
 
 	</script>
-
 
 	</body>
 </html>
