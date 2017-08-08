@@ -18,7 +18,7 @@ var timeLineOffset = 0.0;
 require(["dojo/ready"], function(ready){
 	ready(function(){
 		require([ "dojo/_base/declare", "dojo/dom-construct","dojox/charting/Chart", "dojox/charting/plot2d/StackedLines", "dojox/charting/plot2d/Grid", "dojox/charting/themes/Claro", "dojox/charting/axis2d/Default", "dojox/charting/plot2d/Indicator",
-		"dojox/charting/themes/Tom"], 
+		"dojox/charting/themes/Tom"],
 			function(declare, domConstruct, Chart, StackedLines, Grid, Claro, axis2dDefault, plot2dIndicator, tomTheme){
 				ready(function(){
 						tomTheme.chart.fill="transparent";
@@ -33,7 +33,7 @@ require(["dojo/ready"], function(ready){
 						ECGchart.addAxis("x", {type: "Invisible", majorLabels: false,
 							minorTicks: false,
 							minorLabels: false,
-							microTicks: false});		
+							microTicks: false});
 						/* add the y-axis */
 						ECGchart.addAxis("y", {type: "Invisible", vertical: true,
 							majorLabels: false,
@@ -43,7 +43,7 @@ require(["dojo/ready"], function(ready){
 						/* optional add the grid */
 						ECGchart.addPlot("grid", { type: Grid,
 							hMajorLines: false,
-							hMinorLines: false, 
+							hMinorLines: false,
 							vMajorLines: false,
 							vMinorLines: false,
 							majorHLine: { color: "green", width: 0.2 },
@@ -84,7 +84,7 @@ require(["dojo/ready"], function(ready){
 						/* optional add the grid */
 						LVPchart.addPlot("grid", { type: Grid,
 							hMajorLines: false,
-							hMinorLines: false, 
+							hMinorLines: false,
 							vMajorLines: false,
 							vMinorLines: false,
 							majorHLine: { color: "green", width: 0.2 },
@@ -116,11 +116,11 @@ var showLVPInternal = function(chartName) {
 		var colourName = "lime";
 		if (chartName == "CompensatedFailure" || chartName == "SmallInfarct")
 			colourName = "orange";
-		else if (chartName == "DecompensatedFailure" || chartName == "LargeInfarct")
+		else if (chartName == "DecompensatedFailure" || chartName == "LargeInfarct" || chartName == "Arrhythmia")
 			colourName = "red";
 		LVPchart.addSeries(chartName, currentLVP, { stroke: {color: colourName, width: 2}});
-		if (chartName == "CompensatedFailure" || chartName == "DecompensatedFailure" ||  chartName == "SmallInfarct" || chartName == "LargeInfarct") {
-			LVPchart.addSeries("Normal", LVPs["Normal"], { stroke: {color: "#004500", width: 2}});
+		if (chartName == "CompensatedFailure" || chartName == "DecompensatedFailure" ||  chartName == "SmallInfarct" || chartName == "LargeInfarct" || chartName == "Arrhythmia") {
+			LVPchart.addSeries("Normal", LVPs["Normal"], { stroke: {color: "lime", width: 2}});
 		}
 		LVPchart.render();
 		LVPchart.resize('100%','100%');
@@ -133,7 +133,7 @@ var rescaleXAxis = function(viewData) {
 	for (var i = 0; i < len; i++) {
 		viewData[i].x = viewData[i].x / max_x * 100.0;
 	}
-	
+
 	return viewData;
 }
 
@@ -160,11 +160,11 @@ var showECGInternal = function(chartName) {
 
 		if (chartName == "CompensatedFailure" || chartName == "SmallInfarct")
 			colourName = "orange";
-		else if (chartName == "DecompensatedFailure" || chartName == "LargeInfarct")
+		else if (chartName == "DecompensatedFailure" || chartName == "LargeInfarct" || chartName == "Arrhythmia")
 			colourName = "red";
 		ECGchart.addSeries(chartName, currentECG, { stroke: {color: colourName, width: 2}});
-		if (chartName == "CompensatedFailure" || chartName == "DecompensatedFailure" ||  chartName == "SmallInfarct" || chartName == "LargeInfarct") {
-			ECGchart.addSeries("Normal", ECGs["Normal"], { stroke: {color: "#004500", width: 2}});
+		if (chartName == "CompensatedFailure" || chartName == "DecompensatedFailure" ||  chartName == "SmallInfarct" || chartName == "LargeInfarct" || chartName == "Arrhythmia") {
+			ECGchart.addSeries("Normal", ECGs["Normal"], { stroke: {color: "lime", width: 2}});
 		}
 		ECGchart.render();
 		ECGchart.resize('100%','100%');
@@ -187,17 +187,17 @@ function showECGAndLVP(chartName, timeOffset) {
 	if (ECGs[chartName]) {
 		showECGInternal(chartName);
 	} else {
-		var xmlhttp = new XMLHttpRequest();	
+		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.onreadystatechange = onECGLoaded(xmlhttp, chartName);
 		requestURL = ECGurls[chartName];
 		xmlhttp.open("GET", requestURL, true);
 		xmlhttp.send();
 	}
-	
+
 	if (LVPs[chartName]) {
 		showLVPInternal(chartName);
 	} else {
-		var xmlhttp = new XMLHttpRequest();	
+		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.onreadystatechange = onLVPLoaded(xmlhttp, chartName);
 		requestURL = LVPurls[chartName];
 		xmlhttp.open("GET", requestURL, true);
@@ -212,7 +212,7 @@ function showECGAndLVP(chartName, timeOffset) {
 function updateIndicator(normaliseTime) {
 	if (lvpIndicator && (currentLVPName != ' None') &&
 		ecgIndicator && (currentECGName != ' None') &&
-		document.getElementById('rightInformation').className == "open") 
+		document.getElementById('rightInformation').className == "open")
 	{
 		var lvpTime = normaliseTime * (maxLVPTime - minLVPTime) + minLVPTime;
 		var ecgTime = normaliseTime * (maxECGTime - minECGTime) + minECGTime;
