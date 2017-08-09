@@ -20,7 +20,7 @@
 		<script src="js/zinc_3js_renderer.js"></script>
 		<script src="js/show_hide_answer.js" ></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script>
-		<!-- <script src="../../dojo-release-1.11.2/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script> -->
+		<script src="../../dojo-release-1.11.2/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script>
 		<script src="js/LVPandECG.js" ></script>
 		<script>
 			var dojoConfig = {
@@ -290,7 +290,11 @@
 					<div class="leftAnswer closed" id="attack_3_a">
 						<p>If a coronary artery gets blocked then less oxygen and nutrients
 							can reach the muscle. Without oxygen and nutrients, the heart muscle
-							becomes damaged, which can lead to a moderate or severe heart attack.</p>
+							becomes damaged, which can lead to a
+							<span onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')"
+								style="color:rgb(255,255,0)"><i>moderate</i></span> or
+							<span onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')"
+								style="color:rgb(255,50,0)"><i>severe</i></span> heart attack.</p>
 							<!-- <p>Click "Moderate" below to see what this looks like. </p> -->
 					</div>
 					<div class="downArrow open" id="attack_3_d" onclick="showAttackAnswer(3, 3)">
@@ -344,9 +348,12 @@
 					<div class="leftAnswer closed" id="failure_1_a">
 						<p>Yes. Over time the heart shape, stiffness and ability to contract can change
 						due to factors such as high blood pressure. These long term changes are what we call heart failure.</p>
-						<p>In early stages of heart failure, the heart can <span style="color:rgb(255,255,0)">compensate</span> for the
+						<p>In early stages of heart failure, the heart can
+							<span onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')"
+								style="color:rgb(255,255,0)"><i>compensate</i></span> for the
 							extra load. If this goes untreated, the heart can no longer pump enough blood
-							(<span style="color:rgb(255,50,0)">decompensated</span> heart failure).</p>
+							(<span onclick="heartFailureStagePressed('DecompensatedFailure','DecompensatedFailure', 'leftDecompensatedFailure')"
+								style="color:rgb(255,50,0)"><i>decompensated</i></span> heart failure).</p>
 					</div>
 					<div class="downArrow open" id="failure_1_d" onclick="showFailureAnswer(1, 1)">
 					</div>
@@ -429,7 +436,9 @@
 						<p>Did you see that the dark part can’t contract as much? (Look inside)</p>
 						<p>Did you notice the pressure drop? </p>
 						<p>If the heart cannot contract very well then it’s ability to pump blood is reduced.</p>
-						<p>If left untreated, this can result in a <span onclick="aboutUsClicked()" style="color:rgb(255,50,0)"><i>severe</i></span> heart attack.</p>
+						<p>If left untreated, this can result in a
+							<span onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')"
+								style="color:rgb(255,50,0)"><i>severe</i></span> heart attack.</p>
 						<img src="images/heart_v7/coronary_block_moderate_no_vid.png" alt="moderate" style="width:45%;">
 
 					</div>
@@ -450,7 +459,11 @@
 					<div class="leftAnswer closed" id="compensated_1_a">
 						<p>If blood pressure is always high, the heart needs to work harder
 							to compensate and keep pumping blood around the body. This results
-							 in thicker muscle walls.</p>
+							in thicker muscle walls.</p>
+						<p>If high blood pressure is left untreated, the heart muscle can weaken
+							over time and enter a
+							<span onclick="heartFailureStagePressed('DecompensatedFailure','DecompensatedFailure', 'leftDecompensatedFailure')"
+								style="color:rgb(255,50,0)"><i>decompensated</i></span> phase of heart failure.</p>
 					</div>
 					<div class="downArrow open" id="compensated_1_d" onclick="showCompensatedAnswer(1, 1)">
 					</div>
@@ -648,18 +661,58 @@
 				<div class="leftTitle">
 					<b>About Us</b>
 				</div>
-				<p>Who we are</p>
-				<p>What we do</p>
-				<p>How to join us</p>
-				<p>Feedback</p>
+				<div id="our_research_icon" style="top:20%;" class="aboutUsButtons closed" onclick="ourResearchClicked()">
+					Our Research
+				</div>
+				<div id="our_research_selected_icon"
+					style="top:20%;background-color:rgba(150,30,150,0.4);color:rgb(255,255,255)"
+					class="aboutUsButtons open" onclick="ourResearchClicked()">
+					Our Research
+				</div>
+				<div id="our_team_icon" style="top:40%;" class="aboutUsButtons open" onclick="ourTeamClicked()">
+					Our Team
+				</div>
+				<div id="our_team_selected_icon"
+					style="top:40%;background-color:rgba(150,30,150,0.4);color:rgb(255,255,255)"
+					class="aboutUsButtons closed">
+					Our Team
+				</div>
+				<div id="feedback_icon" style="top:60%;" class="aboutUsButtons open" onclick="feedbackClicked()">
+					Feedback
+				</div>
+				<div id="feedback_selected_icon"
+					style="top:60%;background-color:rgba(150,30,150,0.4);color:rgb(255,255,255)"
+					class="aboutUsButtons closed">
+					Feedback
+				</div>
 			</div>
-			<div id="whoWeAre" class="closed">
+		</div>
+		<div id="aboutUsInfoPanel" class="closed">
+			<div id="ourResearch" class="closed">
+				<img src="images/heart_v7/abi_banner.png" style="bottom:2%;left:2%;height:40%;position:absolute;" alt="abi_banner">
 			</div>
-			<div id="whatWeDo" class="closed">
-			</div>
-			<div id="howToJoin" class="closed">
+			<div id="ourTeam" class="closed">
+				<div id="ourMission" class="mission open" style="left:10%;">
+					<span style="color:white;font-size:2em;"><b>Our Mission</b></span>
+					<p>Cross-disciplinary research in image-driven personalized mechanical
+					analysis of the heart.</p>
+				</div>
+				<div id="ourVision" class="mission open" style="left:55%;">
+					<span style="color:white;font-size:2em;"><b>Our Vision</b></span>
+					<p>Computational modelling will aid clinical diagnosis and management
+					of cardiac diseases.</p>
+				</div>
+				<div id="headshots" style="position:absolute;top:30%;left:12%;height:40%">
+					<img src="images/heart_v7/headshots.png" style="height:100%" alt="headshots">
+				</div>
+				<div id="funding" style="position:absolute;left:16%;top:73%;width:65%">
+					<img src="images/heart_v7/funding.png" style="width:100%" alt="funding">
+				</div>
 			</div>
 			<div id="feedback" class="closed">
+				<div id="funding" style="position:absolute;left:16%;top:10%;width:60%">
+					<img src="images/heart_v7/feedback.jpg" style="width:100%" alt="feedback">
+				</div>
 			</div>
 		</div>
 
@@ -704,7 +757,7 @@
 			 "leftHeartFailure"];
 		var leftPanelYellowIDs = ["leftModerateAttack","leftCompensatedFailure"];
 		var leftPanelRedIDs = ["leftHeartArrhythmia","leftSevereAttack", "leftDecompensatedFailure"];
-		var leftPanelPurpleIDs = ["aboutUs","whoWeAre", "whatWeDo","howToJoin","feedback"];
+		var leftPanelPurpleIDs = ["ourResearch","ourTeam","feedback"];
 		var idleTime = 0;
 		var idleTimeLimit = 300000;
 		var oldTime = new Date();
@@ -848,8 +901,9 @@
 			document.getElementById("rightInformation").className="closed";
 			document.getElementById("bottom_right_control").className="closed";
 			document.getElementById("leftPanelPurple").className="open";
+			document.getElementById("aboutUsInfoPanel").className="open";
 			for(var i = 0; i < leftPanelPurpleIDs.length; i++){
-    			var id = leftPanelPurpleIDs[i];
+    		var id = leftPanelPurpleIDs[i];
 				document.getElementById(id).classList.remove("open");
 				document.getElementById(id).classList.add("closed");
 			}
@@ -1087,10 +1141,39 @@
 		}
 
 		function aboutUsClicked(){
-			leftPanelPurpleTrigger("aboutUs");
-			//showIcons("electricity_icon_pp","attack_icon_pp","failure_icon_pp")
-			//document.getElementById("about_us_selected_icon").className = "open"
+			leftPanelPurpleTrigger("ourResearch");
 		}
+
+		function ourResearchClicked(){
+			document.getElementById("our_research_icon").className="aboutUsButtons closed";
+			document.getElementById("our_research_selected_icon").className="aboutUsButtons open";
+			document.getElementById("our_team_icon").className="aboutUsButtons open";
+			document.getElementById("our_team_selected_icon").className="aboutUsButtons closed";
+			document.getElementById("feedback_icon").className="aboutUsButtons open";
+			document.getElementById("feedback_selected_icon").className="aboutUsButtons closed";
+			leftPanelPurpleTrigger("ourResearch");
+		}
+
+		function ourTeamClicked(){
+			document.getElementById("our_research_icon").className="aboutUsButtons open";
+			document.getElementById("our_research_selected_icon").className="aboutUsButtons closed";
+			document.getElementById("our_team_icon").className="aboutUsButtons closed";
+			document.getElementById("our_team_selected_icon").className="aboutUsButtons open";
+			document.getElementById("feedback_icon").className="aboutUsButtons open";
+			document.getElementById("feedback_selected_icon").className="aboutUsButtons closed";
+			leftPanelPurpleTrigger("ourTeam")
+		}
+
+		function feedbackClicked(){
+			document.getElementById("our_research_icon").className="aboutUsButtons open";
+			document.getElementById("our_research_selected_icon").className="aboutUsButtons closed";
+			document.getElementById("our_team_icon").className="aboutUsButtons open";
+			document.getElementById("our_team_selected_icon").className="aboutUsButtons closed";
+			document.getElementById("feedback_icon").className="aboutUsButtons closed";
+			document.getElementById("feedback_selected_icon").className="aboutUsButtons open";
+			leftPanelPurpleTrigger("feedback")
+		}
+
 		window.addEventListener("mousedown", function() {idleTime = 0;oldTime = new Date(); }, false);
 		window.addEventListener("mousemove", function() {idleTime = 0;oldTime = new Date();}, false);
 		window.addEventListener("mouseup", function(){idleTime = 0;oldTime = new Date();}, false);
