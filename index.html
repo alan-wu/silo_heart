@@ -71,27 +71,6 @@
 
 		</div>
 
-		<!-- <div id="rightPanel" class="closed">
-			<div id="exercise_icon" class = "medicationLifestyle" >
-				<img src="images/heart_v7/exercise.png" alt="home"  onclick="showVideo("5_exercise_v2.mp4")" style="top:10%;height:83%;position:relative">
-			</div>
-			<div id="diet_icon" class = "medicationLifestyle" style = "top:1%;position:relative">
-				<img src="images/heart_v7/diet.png" alt="home"  onclick="showVideo("6_diet_v2.mp4")" style="top:10%;height:83%;position:relative">
-			</div>
-			<div id="smoking_icon" class = "medicationLifestyle" style = "top:2%;position:relative" >
-				<img src="images/heart_v7/smoking.png" alt="home"  onclick="showVideo("7_smoking_v2.mp4")" style="top:10%;height:83%;position:relative">
-			</div>
-		</div>
-
-		<div id="rightPanelBottom" class = "closed">
-			<div id="statin_icon" class = "medicationLifestyle" style="top:1%;position:relative">
-				<img src="images/heart_v7/statin.png" alt="home"  onclick="showVideo("3_Statins.mp4")" style="height:83%;position:relative">
-			</div>
-			<div id="aspirin_icon" class = "medicationLifestyle" style="top:2%;position:relative">
-				<img src="images/heart_v7/aspirin.png" alt="home"  onclick="showVideo("4_aspirin.mp4")" style="top:10%;height:83%;position:relative">
-			</div>
-		</div> -->
-
 		<div id="leftPanelGreen" class="open">
 			<div id="bottom_control" class="closed">
 				<div id="home_icon" class="open" style="left:0%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
@@ -106,27 +85,27 @@
 				<div id="healthy_heart_selected_icon" class="open" style="left:16.6%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/healthy_heart_selected_icon.png" alt="home" style="height:100%;width:100%">
 				</div>
-				<div id="electricity_icon" class="bottomButton open" style="left:33.2%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+				<div id="attack_icon" class="bottomButton open" style="left:33.2%;;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/attack_icon.png" alt="information" style="height:100%;width:100%" onclick="heartAttackClicked()">
+				</div>
+				<div id="attack_healthy_selected_icon" class="bottomButton closed" style="left:33.2%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/attack_healthy_selected_icon.png" alt="information" style="height:100%;width:100%">
+				</div>
+				<div id="electricity_icon" class="bottomButton open" style="left:49.8%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/electricity_icon.png" alt="information" style="height:100%;width:100%" onclick="heartElectricityClicked()">
 				</div>
-				<div id="electricity_healthy_selected_icon" class="bottomButton closed" style="left:33.2%;position:absolute;;bottom:0%;z-index:10;height:100%;width:16.6%">
+				<div id="electricity_healthy_selected_icon" class="bottomButton closed" style="left:49.8%;position:absolute;;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/electricity_healthy_selected_icon.png" alt="information" style="height:100%;width:100%">
 				</div>
-				<div id="electricity_healthy_icon" class="bottomButton closed" style="left:33.2%;position:absolute;;bottom:0%;z-index:10;height:100%;width:16.6%">
+				<div id="electricity_healthy_icon" class="bottomButton closed" style="left:49.8%;position:absolute;;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/electricity_healthy_icon.png" alt="information" style="height:100%;width:100%">
 				</div>
-				<div id="electricity_fibrillation_icon" class="bottomButton closed" style="left:33.2%;position:absolute;;bottom:0%;z-index:10;height:100%;width:16.6%">
+				<div id="electricity_fibrillation_icon" class="bottomButton closed" style="left:49.8%;position:absolute;;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/electricity_fibrillation_icon.png" alt="information" style="height:100%;width:100%">
 				</div>
 				<!-- <div id="electricity_fibrillation_selected_icon" class="bottomButton closed" style="left:33.2%;position:absolute;;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/electricity_fibrillation_selected_icon.png" alt="information" style="height:100%;width:100%">
 				</div> -->
-				<div id="attack_icon" class="bottomButton open" style="left:49.8%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
-					<img src="images/heart_v7/attack_icon.png" alt="information" style="height:100%;width:100%" onclick="heartAttackClicked()">
-				</div>
-				<div id="attack_healthy_selected_icon" class="bottomButton closed" style="left:49.8%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
-					<img src="images/heart_v7/attack_healthy_selected_icon.png" alt="information" style="height:100%;width:100%">
-				</div>
 				<div id="failure_icon" class="bottomButton open" style="left:66.4%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/failure_icon.png" alt="information" style="height:100%;width:100%" onclick="heartFailureClicked()">
 				</div>
@@ -141,37 +120,37 @@
 				</div>
 			</div>
 			<div id="bottom_control_green_sub" class="closed">
-				<div id="electricity_sub_healthy_icon" class="bottomButton closed" style="left:24.9%;position:absolute;z-index:11;height:100%;width:16.6%">
-					<img src="images/heart_v7/electricity_sub_healthy_icon.png" alt="electricity" style="height:100%;width:100%">
-				</div>
-				<div id="electricity_sub_healthy_selected_icon" class="bottomButton closed" style="left:24.9%;position:absolute;z-index:11;height:100%;width:16.6%">
-					<img src="images/heart_v7/electricity_sub_healthy_icon.png" alt="electricity" style="height:100%;width:100%">
-				</div>
-				<div id="electricity_line" class="bottom_control_green_graphics closed" style="bottom:0%;left:24.9%;height:10%;width:33.2%;">
-				</div>
-				<div id="electricity_box" class="bottom_control_green_graphics closed" style="bottom:10%;left:24.9%;height:90%;width:16.6%;">
-				</div>
-				<div id="electricity_sub_fibrillation_icon" class="bottomButton closed" style="left:41.2%;position:absolute;z-index:10;height:100%;width:16.6%">
-					<img src="images/heart_v7/electricity_sub_fibrillation_icon.png" alt="fibrillation" style="height:100%;width:100%"
-					onclick="arrhythmiaClicked()">
-				</div>
-				<div id="attack_sub_healthy_icon" class="bottomButton closed" style="left:33.2%;position:absolute;z-index:11;height:100%;width:16.6%">
+				<div id="attack_sub_healthy_icon" class="bottomButton closed" style="left:16.6%position:absolute;z-index:11;height:100%;width:16.6%">
 					<img src="images/heart_v7/attack_sub_healthy_icon.png" alt="vessel" style="height:100%;width:100%">
 				</div>
-				<div id="attack_sub_healthy_selected_icon" class="bottomButton closed" style="left:33.2%;position:absolute;z-index:11;height:100%;width:16.6%">
+				<div id="attack_sub_healthy_selected_icon" class="bottomButton closed" style="left:16.6%;position:absolute;z-index:11;height:100%;width:16.6%">
 					<img src="images/heart_v7/attack_sub_healthy_icon.png" alt="vessel" style="height:100%;width:100%">
 				</div>
-				<div id="attack_sub_moderate_icon" class="bottomButton closed" style="left:49.8%;position:absolute;z-index:11;height:100%;width:16.6%" >
+				<div id="attack_sub_moderate_icon" class="bottomButton closed" style="left:33.2%;position:absolute;z-index:11;height:100%;width:16.6%" >
 					<img src="images/heart_v7/attack_sub_moderate_icon.png" alt="moderate_attack" style="height:100%;width:100%"
 						onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
 				</div>
-				<div id="attack_sub_severe_icon" class="bottomButton closed" style="left:66.4%;position:absolute;z-index:11;height:100%;width:16.6%" >
+				<div id="attack_sub_severe_icon" class="bottomButton closed" style="left:49.8%;position:absolute;z-index:11;height:100%;width:16.6%" >
 					<img src="images/heart_v7/attack_sub_severe_icon.png" alt="severe_attack" style="height:100%;width:100%"
 						onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
 				</div>
-				<div id="attack_line" class="bottom_control_green_graphics closed" style="bottom:0%;left:33.2%;height:10%;width:49.8%;">
+				<div id="attack_line" class="bottom_control_green_graphics closed" style="bottom:0%;left:16.6%;height:10%;width:49.8%;">
 				</div>
-				<div id="attack_box" class="bottom_control_green_graphics closed" style="bottom:10%;left:33.2%;height:90%;width:16.6%;">
+				<div id="attack_box" class="bottom_control_green_graphics closed" style="bottom:10%;left:16.6%;height:90%;width:16.6%;">
+				</div>
+				<div id="electricity_sub_healthy_icon" class="bottomButton closed" style="left:41.5%;position:absolute;z-index:11;height:100%;width:16.6%">
+					<img src="images/heart_v7/electricity_sub_healthy_icon.png" alt="electricity" style="height:100%;width:100%">
+				</div>
+				<div id="electricity_sub_healthy_selected_icon" class="bottomButton closed" style="left:41.5%;position:absolute;z-index:11;height:100%;width:16.6%">
+					<img src="images/heart_v7/electricity_sub_healthy_icon.png" alt="electricity" style="height:100%;width:100%">
+				</div>
+				<div id="electricity_line" class="bottom_control_green_graphics closed" style="bottom:0%;left:41.5%;height:10%;width:33.2%;">
+				</div>
+				<div id="electricity_box" class="bottom_control_green_graphics closed" style="bottom:10%;left:41.5%;height:90%;width:16.6%;">
+				</div>
+				<div id="electricity_sub_fibrillation_icon" class="bottomButton closed" style="left:58.1%;position:absolute;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/electricity_sub_fibrillation_icon.png" alt="fibrillation" style="height:100%;width:100%"
+					onclick="arrhythmiaClicked()">
 				</div>
 				<div id="failure_sub_healthy_icon" class="bottomButton closed" style="left:49.8%;;position:absolute;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/failure_sub_healthy_icon.png" alt="vessel" style="height:100%;width:100%">
@@ -194,10 +173,10 @@
 			</div>
 			<div id="initialNormal" class="closed">
 				<div class="leftTitle" >
-					<b>The Heart</b>
+					<b>Te Manawa</b>
 				</div>
 				<div class="leftDescription">
-					<b>Te Manawa</b>
+					<b>The Heart</b>
 				</div>
 				<div class ="leftQuestionWidget open" id="normal_1_block">
 					<div class="leftQuestionPic open" id="normal_1_q">
@@ -209,9 +188,9 @@
 							on top of these called the left and right atria, and they receive
 							blood from the body and push it to the ventricles for pumping.</p>
 					</div>
-					<div class="downArrow open" id="normal_1_d" onclick="showNormalAnswer(1, 4)">
+					<div class="downArrow open" id="normal_1_d" onclick="showNormalAnswer(1, 3)">
 					</div>
-					<div class="upArrow closed" id="normal_1_u" onclick="showNormalQuestions(4)">
+					<div class="upArrow closed" id="normal_1_u" onclick="showNormalQuestions(3)">
 					</div>
 				</div>
 				<div class ="leftQuestionWidget open" id="normal_2_block">
@@ -223,9 +202,9 @@
 						systems get the oxygen and nutrients (food) they need, as well as having their
 						wastes taken away.</p>
 					</div>
-					<div class="downArrow open" id="normal_2_d" onclick="showNormalAnswer(2, 4)">
+					<div class="downArrow open" id="normal_2_d" onclick="showNormalAnswer(2, 3)">
 					</div>
-					<div class="upArrow closed"  id="normal_2_u" onclick="showNormalQuestions(4)">
+					<div class="upArrow closed"  id="normal_2_u" onclick="showNormalQuestions(3)">
 					</div>
 				</div>
 				<div class ="leftQuestionWidget open" id="normal_3_block">
@@ -237,12 +216,12 @@
 						heart muscle squeezes the blood inside the ventricles increasing the pressure allowing
 						the blood to be pumped around the body. When the heart relaxes it fills with blood again.</p>
 					</div>
-					<div class="downArrow open" id="normal_3_d" onclick="showNormalAnswer(3, 4)">
+					<div class="downArrow open" id="normal_3_d" onclick="showNormalAnswer(3, 3)">
 					</div>
-					<div class="upArrow closed" id="normal_3_u" onclick="showNormalQuestions(4)">
+					<div class="upArrow closed" id="normal_3_u" onclick="showNormalQuestions(3)">
 					</div>
 				</div>
-				<div class="leftQuestionWidget open" id="normal_4_block">
+				<!-- <div class="leftQuestionWidget open" id="normal_4_block">
 					<div class="leftQuestionPic open" id="normal_4_q">
 						<b>How do you keep you heart healthy?</b>
 					</div>
@@ -257,12 +236,69 @@
 						<div id="smoking_icon" class = "medicationLifestyle" style = "top:2%;position:relative" >
 							<img src="images/heart_v7/smoking.png" alt="home"  onclick="showVideo('7_smoking_v2.mp4')" style="top:10%;height:83%;position:relative">
 						</div>
-					</div>
-					<div class="downArrow open" id="normal_4_d" onclick="showNormalAnswer(4, 4)">
+					</div> -->
+					<!-- <div class="downArrow open" id="normal_4_d" onclick="showNormalAnswer(4, 4)">
 					</div>
 					<div class="upArrow closed" id="normal_4_u" onclick="showNormalQuestions(4)">
 					</div>
+				</div> -->
+			</div>
+			<div id="leftHeartAttack" class="closed">
+				<div class="leftTitle" >
+					<b>Heart Attack</b>
 				</div>
+				<div class ="leftQuestionWidget open" id="attack_1_block">
+					<div class="leftQuestionPic open" id="attack_1_q">
+						<b> Does the heart muscle need blood?</b>
+					</div>
+					<div class="leftAnswer closed" id="attack_1_a">
+						<p>The heart pumps blood, but it is also an organ which needs oxygen and nutrients from the blood to survive.
+						The heart pumps blood to itself through vessels called the coronary
+						arteries.Unhealthy lifestyle choices can cause fatty deposits to block these vessels in what is called a heart attack.</p>
+						<img src="images/heart_v7/coronary_heart.png" alt="coronary" style="width:45%;">
+					</div>
+					<div class="downArrow open" id="attack_1_d" onclick="showAttackAnswer(1, 3)">
+					</div>
+					<div class="upArrow closed" id="attack_1_u" onclick="showAttackQuestions(3)">
+					</div>
+				</div>
+				<div class="leftQuestionWidget open" id="attack_2_block">
+					<div class="leftQuestionPic open" id="attack_2_q">
+						<b>How do you keep you heart healthy?</b>
+					</div>
+					<div class="leftAnswer closed" id="attack_2_a">
+						<p>Our life style choices can affect the health of our heart:</p>
+						<div id="exercise_icon" class = "medicationLifestyle" >
+							<img src="images/heart_v7/exercise.png" alt="home"  onclick="showVideo('5_exercise_v2.mp4')" style="top:10%;height:83%;position:relative">
+						</div>
+						<div id="diet_icon" class = "medicationLifestyle" style = "top:1%;position:relative">
+							<img src="images/heart_v7/diet.png" alt="home"  onclick="showVideo('6_diet_v2.mp4')" style="top:10%;height:83%;position:relative">
+						</div>
+						<div id="smoking_icon" class = "medicationLifestyle" style = "top:2%;position:relative" >
+							<img src="images/heart_v7/smoking.png" alt="home"  onclick="showVideo('7_smoking_v2.mp4')" style="top:10%;height:83%;position:relative">
+						</div>
+					</div>
+					<div class="downArrow open" id="attack_2_d" onclick="showAttackAnswer(2, 3)">
+					</div>
+					<div class="upArrow closed" id="attack_2_u" onclick="showAttackQuestions(3)">
+					</div>
+				</div>
+				<div class ="leftQuestionWidget open" id="attack_3_block">
+					<div class="leftQuestionPic open" id="attack_3_q">
+						<b>What could happen if a coronary artery was blocked? </b>
+					</div>
+					<div class="leftAnswer closed" id="attack_3_a">
+						<p>If a coronary artery gets blocked then less oxygen and nutrients
+							can reach the muscle. Without oxygen and nutrients, the heart muscle
+							becomes damaged, which can lead to a moderate or severe heart attack.</p>
+							<!-- <p>Click "Moderate" below to see what this looks like. </p> -->
+					</div>
+					<div class="downArrow open" id="attack_3_d" onclick="showAttackAnswer(3, 3)">
+					</div>
+					<div class="upArrow closed" id="attack_3_u" onclick="showAttackQuestions(3)">
+					</div>
+				</div>
+
 			</div>
 			<div id="leftHeartElectricity" class="closed">
 				<div class="leftTitle">
@@ -297,61 +333,6 @@
 					</div>
 				</div>
 			</div>
-			<div id="leftHeartAttack" class="closed">
-				<div class="leftTitle" >
-					<b>Heart Attack</b>
-				</div>
-				<div class ="leftQuestionWidget open" id="attack_1_block">
-					<div class="leftQuestionPic open" id="attack_1_q">
-						<b> Does the heart muscle need blood?</b>
-					</div>
-					<div class="leftAnswer closed" id="attack_1_a">
-						<p>The heart pumps blood, but it is also an organ which needs oxygen and nutrients from the blood to survive.
-						The heart pumps blood to itself through vessels called the coronary arteries.</p>
-						<img src="images/heart_v7/coronary_heart.png" alt="coronary" style="width:45%;">
-					</div>
-					<div class="downArrow open" id="attack_1_d" onclick="showAttackAnswer(1, 3)">
-					</div>
-					<div class="upArrow closed" id="attack_1_u" onclick="showAttackQuestions(3)">
-					</div>
-				</div>
-				<div class ="leftQuestionWidget open" id="attack_2_block">
-					<div class="leftQuestionPic open" id="attack_2_q">
-						<b>What would happen if one of these coronary arteries became partly blocked? </b>
-					</div>
-					<div class="leftAnswer closed" id="attack_2_a">
-						<p>If a coronary artery gets blocked then less oxygen and nutrients
-							can reach the muscle. Without oxygen and nutrients, the heart muscle
-							becomes damaged.</p>
-							<p>Click "Moderate" below to see what this looks like. </p>
-					</div>
-					<div class="downArrow open" id="attack_2_d" onclick="showAttackAnswer(2, 3)">
-					</div>
-					<div class="upArrow closed" id="attack_2_u" onclick="showAttackQuestions(3)">
-					</div>
-				</div>
-				<div class="leftQuestionWidget open" id="attack_3_block">
-					<div class="leftQuestionPic open" id="attack_3_q">
-						<b>How do you keep you heart healthy?</b>
-					</div>
-					<div class="leftAnswer closed" id="attack_3_a">
-						<p>Our life style choices can affect the health of our heart:</p>
-						<div id="exercise_icon" class = "medicationLifestyle" >
-							<img src="images/heart_v7/exercise.png" alt="home"  onclick="showVideo('5_exercise_v2.mp4')" style="top:10%;height:83%;position:relative">
-						</div>
-						<div id="diet_icon" class = "medicationLifestyle" style = "top:1%;position:relative">
-							<img src="images/heart_v7/diet.png" alt="home"  onclick="showVideo('6_diet_v2.mp4')" style="top:10%;height:83%;position:relative">
-						</div>
-						<div id="smoking_icon" class = "medicationLifestyle" style = "top:2%;position:relative" >
-							<img src="images/heart_v7/smoking.png" alt="home"  onclick="showVideo('7_smoking_v2.mp4')" style="top:10%;height:83%;position:relative">
-						</div>
-					</div>
-					<div class="downArrow open" id="attack_3_d" onclick="showAttackAnswer(3, 3)">
-					</div>
-					<div class="upArrow closed" id="attack_3_u" onclick="showAttackQuestions(3)">
-					</div>
-				</div>
-			</div>
 			<div id="leftHeartFailure" class="closed">
 				<div class="leftTitle" >
 					<b>Heart Failure</b>
@@ -383,11 +364,14 @@
 				<div id="healthy_heart_icon_yp" class="open" style="left:16.6%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/healthy_heart_icon.png" alt="home"  onclick="homeClicked()" style="height:100%;width:100%">
 				</div>
-				<div id="electricity_icon_yp" class="bottomButton open" style="left:33.2%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
-					<img src="images/heart_v7/electricity_icon.png" alt="information" style="height:100%;width:100%" onclick="heartElectricityClicked()">
-				</div>
-				<div id="attack_icon_yp" class="bottomButton open" style="left:49.8%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+				<div id="attack_icon_yp" class="bottomButton open" style="left:33.2%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/attack_icon.png" alt="information" style="height:100%;width:100%" onclick="heartAttackClicked()">
+				</div>
+				<div id="attack_moderate_selected_icon" class="bottomButton closed" style="left:33.2%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/attack_moderate_selected_icon.png" alt="information" style="height:100%;width:100%">
+				</div>
+				<div id="electricity_icon_yp" class="bottomButton open" style="left:49.8%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/electricity_icon.png" alt="information" style="height:100%;width:100%" onclick="heartElectricityClicked()">
 				</div>
 				<div id="failure_icon_yp" class="bottomButton open" style="left:66.4%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/failure_icon.png" alt="information" style="height:100%;width:100%" onclick="heartFailureClicked()">
@@ -395,29 +379,27 @@
 				<div id="about_us_icon_yp" class="bottomButton open" style="left:83%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/about_us_icon.png" alt="information" style="height:100%;width:100%" onclick="aboutUsClicked()">
 				</div>
-				<div id="attack_moderate_selected_icon" class="bottomButton closed" style="left:49.8%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
-					<img src="images/heart_v7/attack_moderate_selected_icon.png" alt="information" style="height:100%;width:100%">
-				</div>
+
 				<div id="failure_compensated_selected_icon" class="bottomButton closed" style="left:66.4%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/failure_compensated_selected_icon.png" alt="information" style="height:100%;width:100%">
 				</div>
 			</div>
 			<div id="bottom_control_yellow_sub" class="open">
-				<div id="attack_sub_healthy_icon_yp" class="bottomButton closed" style="left:33.2%;position:absolute;z-index:11;height:100%;width:16.6%">
+				<div id="attack_sub_healthy_icon_yp" class="bottomButton closed" style="left:16.6%;position:absolute;z-index:11;height:100%;width:16.6%">
 					<img src="images/heart_v7/attack_sub_healthy_icon.png" alt="vessel" style="height:100%;width:100%"
 						onclick="heartAttackStagePressed('NoInfarct','NoHeartAttack', 'leftHeartAttack')">
 				</div>
-				<div id="attack_sub_moderate_selected_icon" class="bottomButton closed" style="left:49.8%;position:absolute;z-index:10;height:100%;width:16.6%">
+				<div id="attack_sub_moderate_selected_icon" class="bottomButton closed" style="left:33.2%;position:absolute;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/attack_sub_moderate_icon.png" alt="moderate_attack" style="height:100%;width:100%"
 					onclick="heartAttackStagePressed("SmallInfarct", "MildHeartAttack", "leftModerateAttack")">
 				</div>
-				<div id="attack_sub_severe_icon_yp" class="bottomButton closed" style="left:66.4%;position:absolute;z-index:10;height:100%;width:16.6%" >
+				<div id="attack_sub_severe_icon_yp" class="bottomButton closed" style="left:49.8%;position:absolute;z-index:10;height:100%;width:16.6%" >
 					<img src="images/heart_v7/attack_sub_severe_icon.png" alt="severe_attack" style="height:100%;width:100%"
 						onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')">
 				</div>
-				<div id="attack_moderate_line" class="bottom_control_yellow_graphics closed" style="bottom:0%;left:33.2%;height:10%;width:49.8%;">
+				<div id="attack_moderate_line" class="bottom_control_yellow_graphics closed" style="bottom:0%;left:16.6%;height:10%;width:49.8%;">
 				</div>
-				<div id="attack_moderate_box" class="bottom_control_yellow_graphics closed" style="bottom:10%;left:49.8%;height:90%;width:16.6%;">
+				<div id="attack_moderate_box" class="bottom_control_yellow_graphics closed" style="bottom:10%;left:33.2%;height:90%;width:16.6%;">
 				</div>
 				<div id="failure_sub_healthy_icon_yp" class="bottomButton closed" style="left:49.8%;position:absolute;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/failure_sub_healthy_icon.png" alt="healthy" style="height:100%;width:100%"
@@ -444,11 +426,12 @@
 						<b>What changes can you observe in the heart after a heart attack?</b>
 					</div>
 					<div class="leftAnswer closed" id="moderate_1_a">
-						<p>Did you see the black part can’t contract as much? Did you notice the Pressure
-						trace doesn’t go as high anymore? If the heart cannot contract
-						very well then it’s ability to pump blood is reduced.</p>
+						<p>Did you see that the dark part can’t contract as much? (Look inside)</p>
+						<p>Did you notice the pressure drop? </p>
+						<p>If the heart cannot contract very well then it’s ability to pump blood is reduced.</p>
+						<p>If left untreated, this can result in a <span onclick="aboutUsClicked()" style="color:rgb(255,50,0)"><i>severe</i></span> heart attack.</p>
 						<img src="images/heart_v7/coronary_block_moderate_no_vid.png" alt="moderate" style="width:45%;">
-						<p>If left untreated, this can result in a <i>severe</i> heart attack.</p>
+
 					</div>
 					<div class="downArrow open" id="moderate_1_d" onclick="showModerateAnswer(1, 1)">
 					</div>
@@ -485,20 +468,20 @@
 				<div id="healthy_heart_icon_rp" class="open" style="left:16.6%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/healthy_heart_icon.png" alt="home"  onclick="homeClicked()" style="height:100%;width:100%">
 				</div>
-				<div id="electricity_icon_rp" class="bottomButton open" style="left:33.2%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
-					<img src="images/heart_v7/electricity_icon.png" alt="information" style="height:100%;width:100%" onclick="heartElectricityClicked()">
-				</div>
-				<div id="electricity_fibrillation_selected_icon" class="bottomButton open" style="left:33.2%;position:absolute;;bottom:0%;z-index:10;height:100%;width:16.6%">
-					<img src="images/heart_v7/electricity_fibrillation_selected_icon.png" alt="information" style="height:100%;width:100%">
-				</div>
-				<div id="attack_icon_rp" class="bottomButton open" style="left:49.8%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+				<div id="attack_icon_rp" class="bottomButton open" style="left:33.2%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/attack_icon.png" alt="information" style="height:100%;width:100%" onclick="heartAttackClicked()">
 				</div>
-				<div id="attack_moderate_icon_rp" class="bottomButton closed" style="left:49.8%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+				<div id="attack_moderate_icon_rp" class="bottomButton closed" style="left:33.2%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/attack_attack_moderate_icon.png" alt="information" style="height:100%;width:100%">
 				</div>
-				<div id="attack_severe_selected_icon" class="bottomButton closed" style="left:49.8%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+				<div id="attack_severe_selected_icon" class="bottomButton closed" style="left:33.2%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/attack_severe_selected_icon.png" alt="information" style="height:100%;width:100%">
+				</div>
+				<div id="electricity_icon_rp" class="bottomButton open" style="left:49.8%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/electricity_icon.png" alt="information" style="height:100%;width:100%" onclick="heartElectricityClicked()">
+				</div>
+				<div id="electricity_fibrillation_selected_icon" class="bottomButton open" style="left:49.8%;position:absolute;;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/electricity_fibrillation_selected_icon.png" alt="information" style="height:100%;width:100%">
 				</div>
 				<div id="failure_icon_rp" class="bottomButton open" style="left:66.4%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/failure_icon.png" alt="information" style="height:100%;width:100%" onclick="heartFailureClicked()">
@@ -511,27 +494,28 @@
 				</div>
 			</div>
 			<div id="bottom_control_red_sub" class="open">
-				<div id="electricity_sub_healthy_icon_rp" class="bottomButton closed" style="left:24.9%;position:absolute;z-index:11;height:100%;width:16.6%">
-					<img src="images/heart_v7/electricity_sub_healthy_icon.png" alt="electricity" style="height:100%;width:100%" onclick=heartElectricityClicked()>
-				</div>
-				<div id="electricity_sub_fibrillation_selected_icon" class="bottomButton closed" style="left:41.5%;position:absolute;z-index:10;height:100%;width:16.6%">
-					<img src="images/heart_v7/electricity_sub_fibrillation_icon.png" alt="fibrillation" style="height:100%;width:100%">
-				</div>
-				<div id="fibrillation_line" class="bottom_control_red_graphics closed" style="bottom:0%;left:24.9%;height:10%;width:33.2%;"></div>
-				<div id="fibrillation_box" class="bottom_control_red_graphics closed" style="bottom:10%;left:41.5%;height:90%;width:16.6%;"></div>
-				<div id="attack_sub_healthy_icon_rp" class="bottomButton closed" style="left:33.2%;position:absolute;z-index:11;height:100%;width:16.6%">
+
+				<div id="attack_sub_healthy_icon_rp" class="bottomButton closed" style="left:16.6%;position:absolute;z-index:11;height:100%;width:16.6%">
 					<img src="images/heart_v7/attack_sub_healthy_icon.png" alt="vessel" style="height:100%;width:100%"
 						onclick="heartAttackStagePressed('NoInfarct','NoHeartAttack', 'leftHeartAttack')">
 				</div>
-				<div id="attack_sub_moderate_icon_rp" class="bottomButton closed" style="left:49.8%;position:absolute;z-index:10;height:100%;width:16.6%" >
+				<div id="attack_sub_moderate_icon_rp" class="bottomButton closed" style="left:33.2%;position:absolute;z-index:10;height:100%;width:16.6%" >
 					<img src="images/heart_v7/attack_sub_moderate_icon.png" alt="moderate_attack" style="height:100%;width:100%"
 						onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
 				</div>
-				<div id="attack_sub_severe_selected_icon" class="bottomButton closed" style="left:66.4%;position:absolute;z-index:10;height:100%;width:16.6%">
+				<div id="attack_sub_severe_selected_icon" class="bottomButton closed" style="left:49.8%;position:absolute;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/attack_sub_severe_icon.png" alt="severe_attack" style="height:100%;width:100%">
 				</div>
-				<div id="attack_severe_line" class="bottom_control_red_graphics closed" style="bottom:0%;left:33.2%;height:10%;width:49.8%;"></div>
-				<div id="attack_severe_box" class="bottom_control_red_graphics closed" style="bottom:10%;left:66.4%;height:90%;width:16.6%;"></div>
+				<div id="attack_severe_line" class="bottom_control_red_graphics closed" style="bottom:0%;left:16.6%;height:10%;width:49.8%;"></div>
+				<div id="attack_severe_box" class="bottom_control_red_graphics closed" style="bottom:10%;left:49.8%;height:90%;width:16.6%;"></div>
+				<div id="electricity_sub_healthy_icon_rp" class="bottomButton closed" style="left:41.5%;position:absolute;z-index:11;height:100%;width:16.6%">
+					<img src="images/heart_v7/electricity_sub_healthy_icon.png" alt="electricity" style="height:100%;width:100%" onclick=heartElectricityClicked()>
+				</div>
+				<div id="electricity_sub_fibrillation_selected_icon" class="bottomButton closed" style="left:58.1%;position:absolute;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/electricity_sub_fibrillation_icon.png" alt="fibrillation" style="height:100%;width:100%">
+				</div>
+				<div id="fibrillation_line" class="bottom_control_red_graphics closed" style="bottom:0%;left:41.5%;height:10%;width:33.2%;"></div>
+				<div id="fibrillation_box" class="bottom_control_red_graphics closed" style="bottom:10%;left:58.1%;height:90%;width:16.6%;"></div>
 				<div id="failure_sub_healthy_icon_rp" class="bottomButton closed" style="left:49.8%;position:absolute;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/failure_sub_healthy_icon.png" alt="vessel" style="height:100%;width:100%"
 					onclick="heartFailureStagePressed('NoFailure','NoFailure', 'leftHeartFailure')">
@@ -546,6 +530,44 @@
 				<div id="failure_decompensated_line" class="bottom_control_red_graphics closed" style="bottom:0%;left:49.8%;height:10%;width:50.2%;">
 				</div>
 				<div id="failure_decompensated_box" class="bottom_control_red_graphics closed" style="bottom:10%;left:83%;height:90%;width:17%;">
+				</div>
+			</div>
+			<div id="leftSevereAttack" class="closed">
+				<div class="leftTitle" >
+					<b>Heart Attack</b>
+				</div>
+				<div class ="leftQuestionWidget open" id="severe_1_block">
+					<div class="leftQuestionPic open" id="severe_1_q">
+						<b>What would happen if the blockage in the artery got worse?</b>
+					</div>
+					<div class="leftAnswer closed" id="severe_1_a">
+						<p>If the blockage gets worse even less blood can get through which results in even more muscle damage.
+						 The movement and pumping of the heart is severely affected.</p>
+						 <img src="images/heart_v7/coronary_block_severe.png" alt="severe" style="width:45%;">
+					</div>
+					<div class="downArrow open" id="severe_1_d" onclick="showSevereAnswer(1, 2)">
+					</div>
+					<div class="upArrow closed" id="severe_1_u" onclick="showSevereQuestions(2)">
+					</div>
+				</div>
+				<div class ="leftQuestionWidget open" id="severe_2_block">
+					<div class="leftQuestionPic open" id="severe_2_q">
+						<b>How do doctors treat heart attacks?</b>
+					</div>
+					<div class="leftAnswer closed" id="severe_2_a">
+						<p></p>
+						<div id="statin_icon" class = "medicationLifestyle" style="top:1%;position:relative">
+							<img src="images/heart_v7/statin.png" alt="home"  onclick="showVideo('3_Statins.mp4')" style="height:83%;position:relative">
+						</div>
+						<div id="aspirin_icon" class = "medicationLifestyle" style="top:2%;position:relative">
+							<img src="images/heart_v7/aspirin.png" alt="home"  onclick="showVideo('4_aspirin.mp4')" style="top:10%;height:83%;position:relative">
+						</div>
+						<p>These therapies must be combined with improving lifestyle choices (more exercise, better diet, and avoid smoking).</p>
+					</div>
+					<div class="downArrow open" id="severe_2_d" onclick="showSevereAnswer(2, 2)">
+					</div>
+					<div class="upArrow closed" id="severe_2_u" onclick="showSevereQuestions(2)">
+					</div>
 				</div>
 			</div>
 			<div id="leftHeartArrhythmia" class="closed">
@@ -578,44 +600,6 @@
 					<div class="downArrow open" id="arrhythmia_2_d" onclick="showArrhythmiaAnswer(2, 2)">
 					</div>
 					<div class="upArrow closed" id="arrhythmia_2_u" onclick="showArrhythmiaQuestions(2)">
-					</div>
-				</div>
-			</div>
-			<div id="leftSevereAttack" class="closed">
-				<div class="leftTitle" >
-					<b>Heart Attack</b>
-				</div>
-				<div class ="leftQuestionWidget open" id="severe_1_block">
-					<div class="leftQuestionPic open" id="severe_1_q">
-						<b>What would happen if the vessel blockage got worse?</b>
-					</div>
-					<div class="leftAnswer closed" id="severe_1_a">
-						<p>If it gets worse even less blood can get through which results in even more muscle damage.
-						 The movement and pumping ability of the heart is severely affected.</p>
-						 <img src="images/heart_v7/coronary_block_severe.png" alt="severe" style="width:45%;">
-					</div>
-					<div class="downArrow open" id="severe_1_d" onclick="showSevereAnswer(1, 2)">
-					</div>
-					<div class="upArrow closed" id="severe_1_u" onclick="showSevereQuestions(2)">
-					</div>
-				</div>
-				<div class ="leftQuestionWidget open" id="severe_2_block">
-					<div class="leftQuestionPic open" id="severe_2_q">
-						<b>How can you treat heart attacks?</b>
-					</div>
-					<div class="leftAnswer closed" id="severe_2_a">
-						<p></p>
-						<div id="statin_icon" class = "medicationLifestyle" style="top:1%;position:relative">
-							<img src="images/heart_v7/statin.png" alt="home"  onclick="showVideo('3_Statins.mp4')" style="height:83%;position:relative">
-						</div>
-						<div id="aspirin_icon" class = "medicationLifestyle" style="top:2%;position:relative">
-							<img src="images/heart_v7/aspirin.png" alt="home"  onclick="showVideo('4_aspirin.mp4')" style="top:10%;height:83%;position:relative">
-						</div>
-						<p>These therapies must be combined with improving lifestyle choices (more exercise, better diet, and quit smoking).</p>
-					</div>
-					<div class="downArrow open" id="severe_2_d" onclick="showSevereAnswer(2, 2)">
-					</div>
-					<div class="upArrow closed" id="severe_2_u" onclick="showSevereQuestions(2)">
 					</div>
 				</div>
 			</div>
