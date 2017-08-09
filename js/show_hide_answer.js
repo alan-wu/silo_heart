@@ -107,6 +107,16 @@ var showModerateAnswer = function(currentIndex, totalNumber) {
 	showAnswer(currentIndex, totalNumber, name);
 }
 
+var showSevereQuestions = function(totalNumber) {
+	var name = "severe_";
+	showQuestions(totalNumber, name);
+}
+
+var showSevereAnswer = function(currentIndex, totalNumber) {
+	var name = "severe_";
+	showAnswer(currentIndex, totalNumber, name);
+}
+
 var showFailureQuestions = function(totalNumber) {
 	var name = "failure_";
 	showQuestions(totalNumber, name);
