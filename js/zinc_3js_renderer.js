@@ -687,7 +687,7 @@ Zinc.Scene = function ( containerIn, rendererIn) {
 	};
 	
 	this.onWindowResize = function() {
-		console.log("temp")
+//		console.log("temp")
 		zincCameraControls.onResize();
 		_this.camera.aspect = container.clientWidth / container.clientHeight;
 		_this.camera.updateProjectionMatrix();
