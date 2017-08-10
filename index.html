@@ -73,7 +73,7 @@
 
 		<div id="leftPanelGreen" class="open">
 			<div id="bottom_control" class="closed">
-				<div id="home_icon" class="open" style="left:0%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+				<div id="home_icon" class="bottomButton open" style="left:0%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/new_image/home.png" alt="home"  onclick="homeClicked()" style="height:100%;width:100%">
 				</div>
 				<div id="home_selected_icon" class="closed" style="left:0%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
@@ -365,10 +365,10 @@
 
 		<div id="leftPanelYellow" class="closed">
 			<div id="bottom_control_yellow" class="open">
-				<div id="home_icon_yp" class="open" style="left:0%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+				<div id="home_icon_yp" class="bottomButton open" style="left:0%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/new_image/home.png" alt="home"  onclick="homeClicked()" style="height:100%;width:100%">
 				</div>
-				<div id="healthy_heart_icon_yp" class="open" style="left:16.6%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+				<div id="healthy_heart_icon_yp" class="bottomButton open" style="left:16.6%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/healthy_heart_icon.png" alt="home"  onclick="homeClicked()" style="height:100%;width:100%">
 				</div>
 				<div id="attack_icon_yp" class="bottomButton open" style="left:33.2%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
@@ -638,17 +638,18 @@
 
 		<div id="leftPanelPurple" class="closed">
 			<div id="bottom_control_purple" class="open">
-				<div id="home_icon_pp" class="open" style="left:0%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+				<div id="home_icon_pp" class="bottomButton open" style="left:0%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/new_image/home.png" alt="home"  onclick="homeClicked()" style="height:100%;width:100%">
 				</div>
-				<div id="healthy_heart_icon_pp" class="open" style="left:16.6%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+				<div id="healthy_heart_icon_pp" class="bottomButton open" style="left:16.6%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/healthy_heart_icon.png" alt="home"  onclick="homeClicked()" style="height:100%;width:100%">
 				</div>
-				<div id="electricity_icon_pp" class="bottomButton open" style="left:33.2%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
-					<img src="images/heart_v7/electricity_icon.png" alt="information" style="height:100%;width:100%" onclick="heartElectricityClicked()">
-				</div>
-				<div id="attack_icon_pp" class="bottomButton open" style="left:49.8%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+
+				<div id="attack_icon_pp" class="bottomButton open" style="left:33.2%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/attack_icon.png" alt="information" style="height:100%;width:100%" onclick="heartAttackClicked()">
+				</div>
+				<div id="electricity_icon_pp" class="bottomButton open" style="left:49.8%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/electricity_icon.png" alt="information" style="height:100%;width:100%" onclick="heartElectricityClicked()">
 				</div>
 				<div id="failure_icon_pp" class="bottomButton open" style="left:66.4%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/failure_icon.png" alt="information" style="height:100%;width:100%" onclick="heartFailureClicked()">
@@ -843,6 +844,7 @@
 			}
 			document.getElementById("leftPanelYellow").className="closed";
 			document.getElementById("leftPanelRed").className="closed";
+			document.getElementById("aboutUsInfoPanel").className="closed";
 			document.getElementById("rightInformation").className="open";
 			document.getElementById("bottom_right_control").className="open";
 			document.getElementById("gestures_icon").className="open";
@@ -857,6 +859,7 @@
 			document.getElementById("leftPanelRed").className="closed";
 			document.getElementById("leftPanelGreen").className="closed";
 			document.getElementById("leftPanelPurple").className="closed";
+			document.getElementById("aboutUsInfoPanel").className="closed";
 			document.getElementById("leftPanelYellow").className="open";
 			document.getElementById("rightInformation").className="open";
 			document.getElementById("bottom_right_control").className="open";
@@ -877,6 +880,7 @@
 			document.getElementById("leftPanelGreen").className="closed";
 			document.getElementById("leftPanelYellow").className="closed";
 			document.getElementById("leftPanelPurple").className="closed";
+			document.getElementById("aboutUsInfoPanel").className="closed";
 			document.getElementById("rightInformation").className="open";
 			document.getElementById("bottom_right_control").className="open";
 			document.getElementById("gestures_icon").className="open";
@@ -902,6 +906,8 @@
 			document.getElementById("bottom_right_control").className="closed";
 			document.getElementById("leftPanelPurple").className="open";
 			document.getElementById("aboutUsInfoPanel").className="open";
+			var defaultScene = zincRenderer.getSceneByName("default");
+			zincRenderer.setCurrentScene(defaultScene);
 			for(var i = 0; i < leftPanelPurpleIDs.length; i++){
     		var id = leftPanelPurpleIDs[i];
 				document.getElementById(id).classList.remove("open");
@@ -1142,6 +1148,7 @@
 
 		function aboutUsClicked(){
 			leftPanelPurpleTrigger("ourResearch");
+			ourResearchClicked();
 		}
 
 		function ourResearchClicked(){
