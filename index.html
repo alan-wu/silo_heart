@@ -19,6 +19,7 @@
 		<script src="js/zinc_threejs_control.js"></script>
 		<script src="js/zinc_3js_renderer.js"></script>
 		<script src="js/show_hide_answer.js" ></script>
+		<script src="js/Add3DLabel.js" ></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script>
 		<script src="../../dojo-release-1.11.2/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script>
 		<script src="js/LVPandECG.js" ></script>
@@ -751,7 +752,7 @@
 		var zincRenderer = new Zinc.Renderer(container, window);
 		Zinc.defaultMaterialColor = 0xFFFF9C;
 		zincRenderer.initialiseVisualisation();
-		zincRenderer.getThreeJSRenderer().setClearColor( 0xffffff, 0);
+		zincRenderer.getThreeJSRenderer().setClearColor( 0x000000, 1);
 		var halfHeartFlag = false;
 		var leftPanelGreenIDs = ["initialNormal", "leftHeartElectricity",  "leftHeartAttack",
 			 "leftHeartFailure"];
@@ -1464,6 +1465,15 @@
 				scene.setDuration(scene.getDuration() / rateScaling);
 				scene.loadViewURL(viewURL);
 				scene.loadMetadataURL(metaURL, meshReady(previousCamera));
+				// Same label position seems to work with all models but ArrythmiaElectricity
+				// arguments are as followed scene, label, x, y, z and scaling
+				if (model_name == "ArrythmiaElectricity") {
+					addLabelToScene(scene, "RV", 0.0, 38.639515,50.421283, 15.0);
+					addLabelToScene(scene, "LV", 0.0,-38.639515,50.421283, 15.0);				
+				} else {
+					addLabelToScene(scene, "RV", -30.056679,88.639515,-0.421283, 30.0);
+					addLabelToScene(scene, "LV", -60.056679,-28.639515,-0.421283, 30.0);
+				}
 				zincRenderer.setCurrentScene(scene);
 				modelToSceneArray[model_name] = scene;
 			} else {
