@@ -31,9 +31,9 @@ var showAnswer = function(currentIndex, totalNumber, name) {
 		targetId = prefix + "a";
 		document.getElementById(targetId).classList.remove('open');
 		document.getElementById(targetId).classList.add('closed');
-		targetId = prefix + "d";
-		document.getElementById(targetId).classList.remove('open');
-		document.getElementById(targetId).classList.add('closed');
+		// targetId = prefix + "d";
+		// document.getElementById(targetId).classList.remove('open');
+		// document.getElementById(targetId).classList.add('closed');
 		targetId = prefix + "u";
 		document.getElementById(targetId).classList.remove('open');
 		document.getElementById(targetId).classList.add('closed');
@@ -46,6 +46,9 @@ var showAnswer = function(currentIndex, totalNumber, name) {
 	var targetId = prefix + "q";
 	document.getElementById(targetId).classList.remove('closed');
 	document.getElementById(targetId).classList.add('open');
+	targetId = prefix + "d";
+	document.getElementById(targetId).classList.remove('open');
+	document.getElementById(targetId).classList.add('closed');
 	targetId = prefix + "a";
 	document.getElementById(targetId).classList.remove('closed');
 	document.getElementById(targetId).classList.add('open');
