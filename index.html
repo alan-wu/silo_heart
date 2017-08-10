@@ -188,14 +188,14 @@
 						<b>Is this what your heart looks like?</b>
 					</div>
 					<div class="leftAnswer closed" id="normal_1_a">
-						<p>Mostly. The pumping chambers of the heart, called the left and the
-							right ventricles, are shown. There are two other chambers which sit
-							on top of these called the left and right atria, and they receive
-							blood from the body and push it to the ventricles for pumping.</p>
+						<p>Mostly. What you can see are the left and right ventricles, which are the main pumping chambers of the heart.
+							 There are two other chambers (not shown), called the left and right atria,
+							 which are located above the ventricles. The atria receive
+							blood from the body and pump it into the ventricles.</p>
 					</div>
-					<div class="downArrow open" id="normal_1_d" onclick="showNormalAnswer(1, 3)">
+					<div class="downArrow open" id="normal_1_d" onclick="showNormalAnswer(1, 4)">
 					</div>
-					<div class="upArrow closed" id="normal_1_u" onclick="showNormalQuestions(3)">
+					<div class="upArrow closed" id="normal_1_u" onclick="showNormalQuestions(4)">
 					</div>
 				</div>
 				<div class ="leftQuestionWidget open" id="normal_2_block">
@@ -203,27 +203,43 @@
 						<b>What is the heart’s job?</b>
 					</div>
 					<div class="leftAnswer closed" id="normal_2_a">
-						<p>The purpose of the heart is to pump blood around the body so all the organ
-						systems get the oxygen and nutrients (food) they need, as well as having their
-						wastes taken away.</p>
+						<p>The purpose of the heart is to pump blood around the body to
+							provide all the organ systems with essential oxygen and nutrients,
+							and to take away the waste.</p>
 					</div>
-					<div class="downArrow open" id="normal_2_d" onclick="showNormalAnswer(2, 3)">
+					<div class="downArrow open" id="normal_2_d" onclick="showNormalAnswer(2, 4)">
 					</div>
-					<div class="upArrow closed"  id="normal_2_u" onclick="showNormalQuestions(3)">
+					<div class="upArrow closed"  id="normal_2_u" onclick="showNormalQuestions(4)">
 					</div>
 				</div>
 				<div class ="leftQuestionWidget open" id="normal_3_block">
 					<div class="leftQuestionPic open" id="normal_3_q">
-						<b>What can you observe happening to the heart?</b>
+						<b>Can you describe what the heart is doing?</b>
 					</div>
 					<div class="leftAnswer closed" id="normal_3_a">
-						<p>Did you see it get smaller then larger? This contraction (shortening) of the
-						heart muscle squeezes the blood inside the ventricles increasing the pressure allowing
-						the blood to be pumped around the body. When the heart relaxes it fills with blood again.</p>
+						<p>Did you see it get smaller and larger? Contraction of the
+						heart muscle squeezes the blood inside the ventricles.</p>
+						<p>Did you see the pressure trace increase as the heart gets smaller? This increase in pressure drives the blood around the body. </p>
+						<p>The heart is filled with blood again when it relaxes.</p>
 					</div>
-					<div class="downArrow open" id="normal_3_d" onclick="showNormalAnswer(3, 3)">
+					<div class="downArrow open" id="normal_3_d" onclick="showNormalAnswer(3, 4)">
 					</div>
-					<div class="upArrow closed" id="normal_3_u" onclick="showNormalQuestions(3)">
+					<div class="upArrow closed" id="normal_3_u" onclick="showNormalQuestions(4)">
+					</div>
+				</div>
+				<div class ="leftQuestionWidget open" id="normal_4_block">
+					<div class="leftQuestionPic open" id="normal_4_q">
+						<b>What are the main things that can go wrong with the heart?</b>
+					</div>
+					<div class="leftAnswer closed" id="normal_4_a">
+						<p><span style="color:yellow" onclick="heartAttackClicked()"><i>Heart
+							attacks</i></span>,
+							<span style="color:yellow" onclick="heartElectricityClicked()"><i>electrical fibrillation</i></span>,
+							and <span style="color:yellow" onclick="heartFailureClicked()"><i>heart failure</i></span>. </p>
+					</div>
+					<div class="downArrow open" id="normal_4_d" onclick="showNormalAnswer(4, 4)">
+					</div>
+					<div class="upArrow closed" id="normal_4_u" onclick="showNormalQuestions(4)">
 					</div>
 				</div>
 				<!-- <div class="leftQuestionWidget open" id="normal_4_block">
@@ -257,10 +273,10 @@
 						<b> Does the heart muscle need blood?</b>
 					</div>
 					<div class="leftAnswer closed" id="attack_1_a">
-						<p>The heart pumps blood, but it is also an organ which needs oxygen and nutrients from the blood to survive.
+						<p>Yes, the heart muscle walls need blood to survive.
 						The heart pumps blood to itself through vessels called the coronary
-						arteries.Unhealthy lifestyle choices can cause fatty deposits to block these vessels in what is called a heart attack.</p>
-						<img src="images/heart_v7/coronary_heart.png" alt="coronary" style="width:45%;">
+						arteries. Unhealthy lifestyle choices can cause narrowing of these arteries in what is called a heart attack.</p>
+						<img src="images/heart_v7/coronary_heart.png" alt="coronary" style="width:60%;">
 					</div>
 					<div class="downArrow open" id="attack_1_d" onclick="showAttackAnswer(1, 3)">
 					</div>
@@ -269,10 +285,10 @@
 				</div>
 				<div class="leftQuestionWidget open" id="attack_2_block">
 					<div class="leftQuestionPic open" id="attack_2_q">
-						<b>How do you keep you heart healthy?</b>
+						<b>How can you maintain a healthy heart?</b>
 					</div>
 					<div class="leftAnswer closed" id="attack_2_a">
-						<p>Our life style choices can affect the health of our heart:</p>
+						<p>Lifestyle choices affect heart health:</p>
 						<div id="exercise_icon" class = "medicationLifestyle" >
 							<img src="images/heart_v7/exercise.png" alt="home"  onclick="showVideo('5_exercise_v2.mp4')" style="top:10%;height:83%;position:relative">
 						</div>
@@ -290,14 +306,13 @@
 				</div>
 				<div class ="leftQuestionWidget open" id="attack_3_block">
 					<div class="leftQuestionPic open" id="attack_3_q">
-						<b>What could happen if a coronary artery was blocked? </b>
+						<b>What could happen if a coronary artery narrowed? </b>
 					</div>
 					<div class="leftAnswer closed" id="attack_3_a">
-						<p>If a coronary artery gets blocked then less oxygen and nutrients
-							can reach the muscle. Without oxygen and nutrients, the heart muscle
-							becomes damaged, which can lead to a
+						<p>If a coronary artery narrows then less oxygen and nutrients
+							can reach the muscle. This can cause damage of the heart muscle, which can lead to a
 							<span onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')"
-								style="color:rgb(255,255,0)"><i>moderate</i></span> or
+								style="color:rgb(255,255,0)"><i>minor</i></span> or
 							<span onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')"
 								style="color:rgb(255,50,0)"><i>severe</i></span> heart attack.</p>
 							<!-- <p>Click "Moderate" below to see what this looks like. </p> -->
@@ -435,21 +450,35 @@
 				</div>
 				<div class ="leftQuestionWidget open" id="moderate_1_block">
 					<div class="leftQuestionPic open" id="moderate_1_q">
-						<b>What changes can you observe in the heart after a heart attack?</b>
+						<b>What causes a heart attack?</b>
 					</div>
 					<div class="leftAnswer closed" id="moderate_1_a">
-						<p>Did you see that the dark part can’t contract as much? (Look inside)</p>
+						<p>Bad lifestyle choices can cause fatty deposits to build up inside
+							the coronary arteries, obstructing the blood flow. </p>
+
+						<img src="images/heart_v7/coronary_block_moderate_no_vid.png" alt="moderate" style="width:60%;">
+
+					</div>
+					<div class="downArrow open" id="moderate_1_d" onclick="showModerateAnswer(1, 2)">
+					</div>
+					<div class="upArrow closed" id="moderate_1_u" onclick="showModerateQuestions(2)">
+					</div>
+				</div>
+				<div class ="leftQuestionWidget open" id="moderate_2_block">
+					<div class="leftQuestionPic open" id="moderate_2_q">
+						<b>What changes can you observe in the heart after a heart attack?</b>
+					</div>
+					<div class="leftAnswer closed" id="moderate_2_a">
+						<p>Did you see that the darker part did not contract as much? (Double click to look inside)</p>
 						<p>Did you notice the pressure drop? </p>
 						<p>If the heart cannot contract very well then it’s ability to pump blood is reduced.</p>
 						<p>If left untreated, this can result in a
 							<span onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')"
 								style="color:rgb(255,50,0)"><i>severe</i></span> heart attack.</p>
-						<img src="images/heart_v7/coronary_block_moderate_no_vid.png" alt="moderate" style="width:45%;">
-
 					</div>
-					<div class="downArrow open" id="moderate_1_d" onclick="showModerateAnswer(1, 1)">
+					<div class="downArrow open" id="moderate_2_d" onclick="showModerateAnswer(2, 2)">
 					</div>
-					<div class="upArrow closed" id="moderate_1_u" onclick="showModerateQuestions(1)">
+					<div class="upArrow closed" id="moderate_2_u" onclick="showModerateQuestions(2)">
 					</div>
 				</div>
 			</div>
@@ -739,14 +768,14 @@
 		</div>
 		<div id="myRenderer" class="open">
 		</div>
-		<!--<div data-dojo-type="dijit/Dialog" data-dojo-id="videoDialog" id="videoDialog" onHide="pauseVideo()" style="background-color:#666;width:980px;height:760px">-->
-    		<!--&lt;!&ndash;<table class="dijitDialogPaneContentArea">&ndash;&gt;-->
-				<!--&lt;!&ndash;&lt;!&ndash;<video width="960" height="720" align="center" style = "left:10px;top:6px;position:relative" id="heart_video" controls>&ndash;&gt;&ndash;&gt;-->
-  					<!--&lt;!&ndash;&lt;!&ndash;<source src="videos/1_healthy_heart.mp4" type="video/mp4">&ndash;&gt;&ndash;&gt;-->
-					<!--&lt;!&ndash;&lt;!&ndash;Your browser does not support the video tag.&ndash;&gt;&ndash;&gt;-->
-				<!--&lt;!&ndash;&lt;!&ndash;</video>&ndash;&gt;&ndash;&gt;-->
-    		<!--&lt;!&ndash;</table>&ndash;&gt;-->
-		<!--</div>-->
+		<!-- <div data-dojo-type="dijit/Dialog" data-dojo-id="videoDialog" id="videoDialog" onHide="pauseVideo()" style="background-color:#666;width:980px;height:760px">
+    		<table class="dijitDialogPaneContentArea">
+				<video width="960" height="720" align="center" style = "left:10px;top:6px;position:relative" id="heart_video" controls>
+  					<source src="videos/1_healthy_heart.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+    		</table>
+		</div> -->
 	</div>
 
 	<script>
@@ -820,6 +849,7 @@
 				document.getElementById("healthy_heart_selected_icon").className = "open";
 				showIcons("electricity_icon", "attack_icon", "failure_icon");
 				leftPanelGreenTrigger("initialNormal");
+				showNormalQuestions(4);
 				document.getElementById("bottom_control_green_sub").className = "closed";
 				document.getElementById("bottom_control_yellow_sub").className = "closed";
 				document.getElementById("bottom_control_red_sub").className = "closed";
