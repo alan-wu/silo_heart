@@ -12,6 +12,10 @@
 				color: #fff;
 				margin: 0px;
 				overflow: hidden;
+				-webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    			-moz-user-select: none; /* mozilla browsers */
+    			-khtml-user-select: none; /* webkit (konqueror) browsers */
+    			-ms-user-select: none; /* IE */
 			}
 		</style>
 		<link rel="stylesheet" href="styles/new_style.css">
@@ -806,6 +810,7 @@
 			// document.getElementById("rightPanelBottom").className = "closed";
 			//showFibres(false);
 			//displayFibresIcon(true);
+			
 			showECGAndLVP("Normal", 0.0);
 		}
 
@@ -1187,7 +1192,7 @@
 			document.getElementById("feedback_selected_icon").className="aboutUsButtons open";
 			leftPanelPurpleTrigger("feedback")
 		}
-
+		
 		window.addEventListener("mousedown", function() {idleTime = 0;oldTime = new Date(); }, false);
 		window.addEventListener("mousemove", function() {idleTime = 0;oldTime = new Date();}, false);
 		window.addEventListener("mouseup", function(){idleTime = 0;oldTime = new Date();}, false);
@@ -1377,7 +1382,9 @@
 
 			showHalf();
 		}
-
+		
+		window.addEventListener("dblclick", halfHeartPressed, true);
+		
 		function setUpArrays() {
 			ECGurls["Normal"] = "ECG/NormalECG.json";
 			ECGurls["Diastolic"] = "ECG/DiastolicECG.json";
