@@ -130,8 +130,9 @@ var showLVPInternal = function(chartName) {
 var rescaleXAxis = function(viewData) {
 	var len = viewData.length;
 	var max_x = viewData[len - 1].x;
+	var min_x = viewData[0].x;
 	for (var i = 0; i < len; i++) {
-		viewData[i].x = viewData[i].x / max_x * 100.0;
+		viewData[i].x = (viewData[i].x - min_x) / (max_x - min_x) * 100.0;
 	}
 
 	return viewData;
