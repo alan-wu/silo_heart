@@ -9,14 +9,47 @@ var showQuestions = function(totalNumber, name) {
 		document.getElementById(targetId).classList.remove('open');
 		document.getElementById(targetId).classList.add('closed');
 		targetId = prefix + "d";
-		document.getElementById(targetId).classList.remove('closed');
-		document.getElementById(targetId).classList.add('open');
+		if (document.getElementById(targetId).classList.contains("closed")) {
+            document.getElementById(targetId).classList.remove('closed');
+            document.getElementById(targetId).classList.add('open');
+        }
 		targetId = prefix + "u";
 		document.getElementById(targetId).classList.remove('open');
 		document.getElementById(targetId).classList.add('closed');
 		targetId = prefix + "block";
 		document.getElementById(targetId).classList.remove('closed');
 		document.getElementById(targetId).classList.add('show');
+	}
+	console.log(name)
+	if(name=='attack_'){
+		document.getElementById("exercise_video").className = "video_player closed";
+		document.getElementById("diet_video").className = "video_player closed";
+		document.getElementById("smoking_video").className = "video_player closed";
+		document.getElementById("exercise").pause();
+		document.getElementById("diet").pause();
+		document.getElementById("smoking").pause();
+		var icons = ["exercise_icon","diet_icon","smoking_icon"]
+		var selected_icons = ["exercise_selected_icon","diet_selected_icon","smoking_selected_icon"]
+		for (var i=0;i<icons.length; i++){
+			var id = icons[i];
+			var sel = selected_icons[i];
+			document.getElementById(id).style = "display:inline-block;"
+			document.getElementById(sel).style = "display:none;"
+		}
+	}
+	if(name=='severe_'){
+		document.getElementById("aspirin_video").className = "video_player closed";
+		document.getElementById("statin_video").className = "video_player closed";
+		document.getElementById("aspirin").pause();
+		document.getElementById("statin").pause();
+		var severe_icons = ["aspirin_icon","statin_icon"]
+		var severe_selected_icons = ["aspirin_selected_icon","statin_selected_icon"]
+		for (var i=0;i<severe_icons.length; i++){
+			var id = severe_icons[i];
+			var sel = severe_selected_icons[i];
+			document.getElementById(id).style = "display:inline-block;"
+			document.getElementById(sel).style = "display:none;"
+		}
 	}
 }
 
@@ -31,9 +64,13 @@ var showAnswer = function(currentIndex, totalNumber, name) {
 		targetId = prefix + "a";
 		document.getElementById(targetId).classList.remove('open');
 		document.getElementById(targetId).classList.add('closed');
-		// targetId = prefix + "d";
-		// document.getElementById(targetId).classList.remove('open');
-		// document.getElementById(targetId).classList.add('closed');
+		targetId = prefix + "d";
+		if (document.getElementById(targetId).classList.contains("closed")) {
+            document.getElementById(targetId).classList.remove('closed');
+            document.getElementById(targetId).classList.add('open');
+        }
+//		document.getElementById(targetId).classList.remove('open');
+//		document.getElementById(targetId).classList.add('closed');
 		targetId = prefix + "u";
 		document.getElementById(targetId).classList.remove('open');
 		document.getElementById(targetId).classList.add('closed');
