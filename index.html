@@ -49,7 +49,7 @@
 				Your browser does not support the video tag.
 			</video>
 			<div class="close_video" onclick="closeVideo('exercise')" >
-				<span style="display:table-cell;vertical-align: middle;">x</span>
+				<span style="display:table-cell;vertical-align: middle;">Click to close</span>
 			</div>
 		</div>
 		<div id="diet_video" class="video_player closed">
@@ -58,7 +58,7 @@
 				Your browser does not support the video tag.
 			</video>
 			<div class="close_video" onclick="closeVideo('diet')" >
-				<span style="display:table-cell;vertical-align: middle;">x</span>
+				<span style="display:table-cell;vertical-align: middle;">Click to close</span>
 			</div>
 		</div>
 		<div id="smoking_video" class="video_player closed">
@@ -67,7 +67,7 @@
 				Your browser does not support the video tag.
 			</video>
 			<div class="close_video" onclick="closeVideo('smoking')" >
-				<span style="display:table-cell;vertical-align: middle;">x</span>
+				<span style="display:table-cell;vertical-align: middle;">Click to close</span>
 			</div>
 		</div>
 		<div id="aspirin_video" class="video_player closed">
@@ -76,7 +76,7 @@
 				Your browser does not support the video tag.
 			</video>
 			<div class="close_video" onclick="closeVideo('aspirin')" >
-				<span style="display:table-cell;vertical-align: middle;">x</span>
+				<span style="display:table-cell;vertical-align: middle;">Click to close</span>
 			</div>
 		</div>
 		<div id="statin_video" class="video_player closed">
@@ -85,7 +85,7 @@
 				Your browser does not support the video tag.
 			</video>
 			<div class="close_video" onclick="closeVideo('statin')" >
-				<span style="display:table-cell;vertical-align: middle;">x</span>
+				<span style="display:table-cell;vertical-align: middle;">Click to close</span>
 			</div>
 		</div>
 		<div id="rightInformation" class="closed">
@@ -405,7 +405,7 @@
 				</div>
 				<div class ="leftQuestionWidget open" id="failure_1_block">
 					<div class="leftQuestionPic open" id="failure_1_q">
-						<b>Can our heart wear out?</b>
+						<b>Can the heart wear out?</b>
 					</div>
 					<div class="leftAnswer closed" id="failure_1_a">
 						<br>Yes. Long term problems such as high blood pressure or untreated heart attacks
@@ -422,7 +422,7 @@
 					</div>
 					<div class="leftAnswer closed" id="failure_2_a">
 						<p>The shape, stiffness, and contraction of the heart
-						are abnormal.</p>
+						are abnormal and the heart needs to work harder than normal to meet the demands of the body.</p>
 						In the early stages of heart failure, the heart can
 							<span onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')"
 								style="color:rgb(255,255,0)"><i>compensate</i></span> for these problems.
@@ -472,7 +472,7 @@
 				</div>
 				<div id="attack_sub_moderate_selected_icon" class="closed" style="left:33.2%;position:absolute;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/attack_sub_moderate_icon.png" alt="moderate_attack" style="height:100%;width:100%"
-					onclick="heartAttackStagePressed("SmallInfarct", "MildHeartAttack", "leftModerateAttack")">
+					onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')">
 				</div>
 				<div id="attack_sub_severe_icon_yp" class="bottomButton closed" style="left:49.8%;position:absolute;z-index:10;height:100%;width:16.6%" >
 					<img src="images/heart_v7/attack_sub_severe_icon.png" alt="severe_attack" style="height:100%;width:100%"
@@ -548,9 +548,9 @@
 						<b>What changes can you observe in the heart?</b>
 					</div>
 					<div class="leftAnswer closed" id="compensated_1_a">
-						<p>Did you see that the walls are thicker?</p>
+						<p>Did you see that the walls are thicker? (Double tap to look inside.)</p>
 						Long term heart problems such as high blood pressure or heart attacks require the heart to work harder.
-						The muscular walls of the heart compensate for this higher load by becoming thicker (double tap to look inside).
+						The muscular walls of the heart compensate for this higher load by becoming thicker.
 					</div>
 					<div class="downArrow open" id="compensated_1_d" onclick="showCompensatedAnswer(1, 2)">
 					</div>
@@ -844,13 +844,13 @@
 			<div id="ourResearch" class="closed">
 				<div id="ourMission" class="mission open" style="position:absolute;top:0%;width:100%;left:0%;color:rgb(175,175,175)">
 					<span style="color:white;font-size:1.4em;"><b>Our Research</b></span><br>
-					Improving diagnosis and management of heart diseases <br>using personalised biomechanics and image-driven computer modelling.
+					Improving diagnosis and management of heart diseases <br>using personalised biomechanics and image-driven computer modelling
 				</div>
 				<img src="images/heart_v7/abi_banner.png" style="bottom:2%;left:0%;height:30%;position:absolute;" alt="abi_banner">
 			</div>
 			<div id="ourTeam" class="closed">
 				<div id="ourMission" class="mission open" style="position:absolute;top:0%;width:100%;left:0%;color:rgb(175,175,175)">
-					<span style="color:white;font-size:1.4em;"><b>Our Team</b></span><br>
+					<span style="color:white;font-size:1.4em;"><b>Our Heart Research Team</b></span><br>
 					An inter-disciplinary collaboration between experts in  <br>bioengineering, physiology, software development, and medical imaging
 				</div>
 				<div id="headshots" style="position:absolute;top:17%;left:20%;height:60%">
@@ -934,8 +934,8 @@
 			document.getElementById("healthy_heart_icon").className = "closed";
 			document.getElementById("healthy_heart_selected_icon").className = "open";
 			document.getElementById("gestures_panel").className="open";
-			loadModel("NoInfarct", 1, 1.0);
-			addLabel("NoInfarct");
+			loadModel("Healthy", 1.0);
+			addLabel("Healthy");
 			//showFibres(false);
 			//displayFibresIcon(true);
 			showECGAndLVP("Normal", 0.0);
@@ -958,7 +958,7 @@
 				<!--document.getElementById("halfHeart").classList.add("open");-->
 				<!--document.getElementById("fullHeart").classList.remove("open");-->
 				<!--document.getElementById("fullHeart").classList.add("closed");-->
-				loadModel("NoInfarct", 1, 1.0);
+				loadModel("Healthy", 1.0);
 				//showFibres(false);
 				//displayFibresIcon(true);
 				showECGAndLVP("Normal", 0.0);
@@ -1128,7 +1128,7 @@
 			document.getElementById("healthy_heart_icon").className = "bottomButton open";
 			document.getElementById("healthy_heart_selected_icon").className = "closed";
 			previousCamera = undefined;
-			loadModel("NormalElectricity",0, 1.0);
+			loadModel("NormalElectricity", 1.0);
 			showECGAndLVP("Normal", 0.0);
 		}
 
@@ -1141,7 +1141,7 @@
 			showIcons("electricity_fibrillation_selected_icon","attack_icon_rp","failure_icon_rp");
 			showSubGraphics("fibrillation_line","fibrillation_box")
 			showArrhythmiaQuestions(2)
-			loadModel("ArrythmiaElectricity",0, 0.25);
+			loadModel("ArrythmiaElectricity", 0.25);
 			showECGAndLVP("Arrhythmia", 0.0);
 		}
 
@@ -1155,12 +1155,15 @@
 			document.getElementById("healthy_heart_icon").className = "bottomButton open";
 			document.getElementById("healthy_heart_selected_icon").className = "closed";
 			previousCamera = undefined;
-			loadModel("NormalElectricity",0, 1.0);
+			loadModel("NormalElectricity", 1.0);
 			showECGAndLVP("Normal", 0.0);
 		}
 
 		function heartAttackClicked() {
-			loadModel("NoInfarct",0, 1.0);
+			loadModel("NoInfarct", 1.0);
+			var scene = zincRenderer.getSceneByName("NoInfarct");
+			zincRenderer.render(scene)
+			console.log(scene)
 			showIcons("electricity_icon", "attack_healthy_selected_icon", "failure_icon");
 			showSubGraphics("attack_line","attack_box");
 			document.getElementById("bottom_control_green_sub").className = "open";
@@ -1175,7 +1178,7 @@
 		}
 
 		var heartAttackStagePressed = function(StageName, pressedElement, descriptionId) {
-			loadModel(StageName,0, 1.0);
+			loadModel(StageName, 1.0);
 			previousCamera = zincRenderer.getCurrentScene().camera;
 			showECGAndLVP(StageName, 0.0);
 			document.getElementById("leftHeartAttack").classList.remove("open");
@@ -1205,7 +1208,7 @@
 				showSubIcons("attack_sub_healthy_icon_yp","attack_sub_moderate_selected_icon",
 					"attack_sub_severe_icon_yp")
 				showSubGraphics("attack_moderate_line","attack_moderate_box")
-				showModerateQuestions(1)
+				showModerateQuestions(2)
 				leftPanelYellowTrigger("leftModerateAttack")
 				// document.getElementById("rightPanel").className = "closed";
 				// document.getElementById("rightPanelBottom").className = "closed";
@@ -1216,7 +1219,7 @@
 				showSubIcons("attack_sub_healthy_icon_rp","attack_sub_moderate_icon_rp",
 					"attack_sub_severe_selected_icon")
 				showSubGraphics("attack_severe_line","attack_severe_box")
-				showSevereQuestions(2)
+				showSevereQuestions(3)
 				leftPanelRedTrigger("leftSevereAttack")
 				// document.getElementById("rightPanel").className = "closed";
 				// document.getElementById("rightPanelBottom").className = "closed";
@@ -1228,7 +1231,7 @@
 			showSubGraphics("failure_line","failure_box");
 			document.getElementById("bottom_control_green_sub").className = "open";
 			showSubIcons("failure_sub_healthy_selected_icon","failure_sub_compensated_icon","failure_sub_decompensated_icon")
-			showFailureQuestions(1)
+			showFailureQuestions(2)
 			//displayFibresIcon(false);
 			document.getElementById("healthy_heart_icon").className = "bottomButton open";
 			document.getElementById("healthy_heart_selected_icon").className = "closed";
@@ -1238,7 +1241,7 @@
 		}
 
 		var heartFailureStagePressed = function(StageName, pressedElement, descriptionId){
-			loadModel(StageName,0, 1.0);
+			loadModel(StageName, 1.0);
 			previousCamera = zincRenderer.getCurrentScene().camera;
 			showECGAndLVP(StageName, 0.0);
 			document.getElementById("leftHeartFailure").classList.remove("open");
@@ -1255,7 +1258,7 @@
 				showSubIcons("failure_sub_healthy_selected_icon","failure_sub_compensated_icon",
 					"failure_sub_decompensated_icon")
 				showSubGraphics("failure_line","failure_box")
-				showFailureQuestions(1)
+				showFailureQuestions(2)
 				leftPanelGreenTrigger("leftHeartFailure")
 				// document.getElementById("rightPanel").className = "closed";
 				// document.getElementById("rightPanelBottom").className = "closed";
@@ -1266,7 +1269,7 @@
 				showSubIcons("failure_sub_healthy_icon_yp","failure_sub_compensated_selected_icon",
 					"failure_sub_decompensated_icon_yp")
 				showSubGraphics("failure_compensated_line","failure_compensated_box")
-				showCompensatedQuestions(1)
+				showCompensatedQuestions(2)
 				leftPanelYellowTrigger("leftCompensatedFailure")
 				// document.getElementById("rightPanel").className = "closed";
 				// document.getElementById("rightPanelBottom").className = "closed";
@@ -1277,7 +1280,7 @@
 				showSubIcons("failure_sub_healthy_icon_rp","failure_sub_compensated_icon_rp",
 					"failure_sub_decompensated_selected_icon")
 				showSubGraphics("failure_decompensated_line","failure_decompensated_box")
-				showDecompensatedQuestions(1)
+				showDecompensatedQuestions(2)
 				leftPanelRedTrigger("leftDecompensatedFailure")
 				// document.getElementById("rightPanel").className = "closed";
 				// document.getElementById("rightPanelBottom").className = "closed";
@@ -1330,7 +1333,7 @@
 		window.addEventListener("touchcancel", function(){idleTime = 0;oldTime = new Date();}, false);
 		window.addEventListener("touchmove", function(){idleTime = 0;oldTime = new Date();}, false);
 
-		loadModel("NoInfarct",0, 1.0);
+		loadModel("Healthy", 1.0);
 		zincRenderer.animate();
 		document.getElementById("speed_slider").value = 2000;
 
@@ -1441,6 +1444,7 @@
 			document.getElementById(videoName+"_video").className = "video_player slide_open";
 			document.getElementById(videoName).load();
 			document.getElementById(videoName).play();
+
 		}
 
 		function closeVideo(videoName){
@@ -1541,23 +1545,23 @@
 		function setUpArrays() {
 			ECGurls["Normal"] = "ECG/NormalECG.json";
 			ECGurls["Diastolic"] = "ECG/DiastolicECG.json";
-			ECGurls["Systolic"] = "ECG/SystolicECG.json";
+			ECGurls["Systolic"] = "ECG/SystolicECG_shifted.json";
 			LVPurls["Normal"] = "LVP/NormalLVP.json";
 			LVPurls["Diastolic"] = "LVP/DiastolicLVP.json";
 			LVPurls["Systolic"] = "LVP/SystolicLVP.json";
 			ECGurls["NoInfarct"] = "ECG/NormalECG.json";
-			ECGurls["SmallInfarct"] = "ECG/MildInfarctECG.json";
-			ECGurls["LargeInfarct"] = "ECG/LargeInfarctECG.json";
+			ECGurls["SmallInfarct"] = "ECG/MildInfarctECG_shifted.json";
+			ECGurls["LargeInfarct"] = "ECG/LargeInfarctECG_shifted.json";
 			LVPurls["NoInfarct"] = "LVP/NormalLVP.json";
 			LVPurls["SmallInfarct"] = "LVP/smallInfarctLVP.json";
-			LVPurls["LargeInfarct"] = "LVP/largeInfarctLVP.json";
+			LVPurls["LargeInfarct"] = "LVP/largeInfarctLVP_shifted.json";
 			ECGurls["Arrhythmia"] = "ECG/ArrhythmiaECG.json";
 			LVPurls["Arrhythmia"] = "LVP/ArrhythmiaLVP.json";
 			ECGurls["NoFailure"] = "ECG/NormalECG.json";
 			LVPurls["NoFailure"] = "LVP/NormalLVP.json";
 			ECGurls["CompensatedFailure"] = "ECG/DiastolicECG.json";
 			LVPurls["CompensatedFailure"] = "LVP/DiastolicLVP.json";
-			ECGurls["DecompensatedFailure"] = "ECG/SystolicECG.json";
+			ECGurls["DecompensatedFailure"] = "ECG/SystolicECG_shifted.json";
 			LVPurls["DecompensatedFailure"] = "LVP/SystolicLVP.json";
 
 			modelURLsArray["DeformingHeart"] = ["models/deforming_heart_metadata.json",
@@ -1571,6 +1575,8 @@
 			modelURLsArray["SmallInfarct"] = ["heartInfarct/smallInfarct_metadata.json",
 				"heartInfarct/smallInfarct_view.json"];
 			modelURLsArray["NoInfarct"] = ["heartInfarct/noInfarct_metadata.json",
+				"heartInfarct/noInfarct_view.json"];
+			modelURLsArray["Healthy"] = ["heartInfarct/healthy_metadata.json",
 				"heartInfarct/noInfarct_view.json"];
 			modelURLsArray["NoFailure"] = ["heartInfarct/noInfarct_metadata.json",
 				"heartInfarct/noInfarct_view.json"];
@@ -1616,7 +1622,7 @@
 			}
 		}
 
-		function loadModel(model_name, labeltoggle, rateScaling) {
+		function loadModel(model_name, rateScaling) {
 			metaURL = modelURLsArray[model_name][0];
 			viewURL = modelURLsArray[model_name][1];
 			var scene = zincRenderer.getSceneByName(model_name);
@@ -1627,10 +1633,10 @@
 				scene.loadMetadataURL(metaURL, meshReady(previousCamera));
 				// Same label position seems to work with all models but ArrythmiaElectricity
 				// arguments are as followed scene, label, x, y, z and scaling
-				<!--if (model_name == "ArrythmiaElectricity") {-->
-					<!--addLabelToScene(scene, "right ventricle", 0.0, 38.639515,50.421283, 15.0);-->
-					<!--addLabelToScene(scene, "left ventricle", 0.0,-38.639515,50.421283, 15.0);-->
-				<!--} else {-->
+				// <!--if (model_name == "ArrythmiaElectricity") {-->
+				// 	<!--addLabelToScene(scene, "right ventricle", 0.0, 38.639515,50.421283, 15.0);-->
+				// 	<!--addLabelToScene(scene, "left ventricle", 0.0,-38.639515,50.421283, 15.0);-->
+				// <!--} else {-->
 				zincRenderer.setCurrentScene(scene);
 				modelToSceneArray[model_name] = scene;
 				//if (labeltoggle==1){
@@ -1646,8 +1652,8 @@
 
 		function addLabel(model_name){
 			var scene = zincRenderer.getSceneByName(model_name);
-			addLabelToScene(scene, "right ventricle", -35.056679,35.639515,10.421283, 60.0);
-			addLabelToScene(scene, "left ventricle", -45.056679,-5.639515,5.421283, 60.0);
+			addLabelToScene(scene, "right ventricle", -38.056679,35.639515,10.421283, 60.0);
+			addLabelToScene(scene, "left ventricle", -48.056679,-5.639515,5.421283, 60.0);
 		}
 
 		function resetView()	{
