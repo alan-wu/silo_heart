@@ -1,8 +1,8 @@
 var createFont = function(text, x, y, z, scaling) {
 	//create an element to render the font on
 	var bitmap = document.createElement('canvas');
-	bitmap.width = 512;
-	bitmap.height = 512;
+	bitmap.width = 8192;
+	bitmap.height = 8192;
 	var g = bitmap.getContext('2d');
 	//draw boundary for debugging
 	//g.strokeStyle = '#ff0000';
@@ -14,12 +14,12 @@ var createFont = function(text, x, y, z, scaling) {
 	var textWidth = metrics.width; 
 	
 	//draw the font on the element
-	g.fillStyle = 'rgb(175, 175, 175)';
+	g.fillStyle = 'rgb(255,255,255)';
 	g.textAlign = "centre"; 
-	g.font = '25px Helvetica';
-    g.fillText(text, 256,256);
-	g.strokeStyle = 'rgb(175, 175, 175)';
-	g.strokeText(text, 256,256);
+	g.font = '480px Helvetica';
+    g.fillText(text, 4096,4096);
+	g.strokeStyle = 'rgba(255,255,255)';
+	g.strokeText(text,4096,4096);
 	
 	//create a texture with the element and put it on threejs object
 	var texture = new THREE.Texture(bitmap);
