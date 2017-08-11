@@ -746,6 +746,14 @@ div.bottomButton:hover {
  cursor: hand;
 }
 
+div.bottomButton{
+  background: -webkit-linear-gradient(rgba(23,29,34,0), rgba(23,29,34,1) 4%,  rgba(23,29,34,0)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(rgba(23,29,34,0), rgba(23,29,34,1) 4%,  rgba(23,29,34,0)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(rgba(23,29,34,0), rgba(23,29,34,1) 4%,  rgba(23,29,34,0)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(rgba(23,29,34,0), rgba(23,29,34,1) 4%,  rgba(23,29,34,0)); /* Standard syntax */;
+  border-left: 1px black solid;
+}
+
 div#bottom_control {
  background-color: rgba(0, 0, 0, 1);
  z-index:10;
@@ -987,4 +995,3 @@ div#bottom_logo{
   height: 9%;
   z-index: 11;
 }
-
