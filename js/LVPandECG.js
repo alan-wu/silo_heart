@@ -35,11 +35,18 @@ require(["dojo/ready"], function(ready){
 							minorLabels: false,
 							microTicks: false});
 						/* add the y-axis */
-						ECGchart.addAxis("y", {type: "Invisible", vertical: true,
-							majorLabels: false,
-							minorTicks: false,
+						ECGchart.addAxis("y", {
+							vertical: true,
+							majorLabels: true,
+							majorTickStep: 200,
+							minorTick: {color: "rgba(0,0,0,0)"},
+							majorTick: {color: "rgba(0,0,0,0)"},
 							minorLabels: false,
-							microTicks: false});
+							font: "normal normal normal 14pt Helvetica",
+							fontColor: "rgba(0,0,0,0)",
+							stroke: [0,0,0,0],
+							//tickStroke: [0,0,0,0]
+						});
 						/* optional add the grid */
 						ECGchart.addPlot("grid", { type: Grid,
 							hMajorLines: false,
@@ -71,14 +78,15 @@ require(["dojo/ready"], function(ready){
 							minorLabels: false,
 							microTicks: false});
 						/* add the y-axis */
-						LVPchart.addAxis("y", {
+						LVPchart.addAxis("y",{
 							vertical: true,
 							min: -40,
 							max: 160,
 							minorTicks: false,
-							majorTickStep: 40,
-							titleFont: "normal normal normal 11pt Helvetica",
-							title:"(mmHg)",
+							majorTickStep: 120,
+							font: "normal normal normal 14pt Helvetica",
+							titleFont: "normal normal normal 16pt Helvetica",
+							title:"",
 							titleFontColor:[120, 120, 120]
 						});
 						/* optional add the grid */
@@ -113,14 +121,18 @@ var showLVPInternal = function(chartName) {
 		LVPchart.removeSeries(currentLVPName);
 		LVPchart.removeSeries("Normal");
 		currentLVPName = chartName;
-		var colourName = "lime";
-		if (chartName == "CompensatedFailure" || chartName == "SmallInfarct")
-			colourName = "orange";
-		else if (chartName == "DecompensatedFailure" || chartName == "LargeInfarct" || chartName == "Arrhythmia")
-			colourName = "red";
-		LVPchart.addSeries(chartName, currentLVP, { stroke: {color: colourName, width: 2}});
+		var colourName = "rgba(50,205,50,1)";
+		var widthvar = 2;
+		if (chartName == "CompensatedFailure" || chartName == "SmallInfarct"){
+			colourName = "rgba(255,255,0,1)";
+			widthvar = 3;
+		}else if (chartName == "DecompensatedFailure" || chartName == "LargeInfarct" || chartName == "Arrhythmia"){
+			colourName = "rgba(255,50,0,1)";
+			widthvar = 3;
+		}
+		LVPchart.addSeries(chartName, currentLVP, { stroke: {color: colourName, width: widthvar}});
 		if (chartName == "CompensatedFailure" || chartName == "DecompensatedFailure" ||  chartName == "SmallInfarct" || chartName == "LargeInfarct" || chartName == "Arrhythmia") {
-			LVPchart.addSeries("Normal", LVPs["Normal"], { stroke: {color: "lime", width: 2}});
+			LVPchart.addSeries("Normal", LVPs["Normal"], { stroke: {color: "rgba(50,205,50,0.6)", width: 2}});
 		}
 		LVPchart.render();
 		LVPchart.resize('100%','100%');
@@ -132,7 +144,7 @@ var rescaleXAxis = function(viewData) {
 	var max_x = viewData[len - 1].x;
 	var min_x = viewData[0].x;
 	for (var i = 0; i < len; i++) {
-		viewData[i].x = (viewData[i].x - min_x) / (max_x - min_x) * 100.0;
+	    viewData[i].x = (viewData[i].x - min_x) / (max_x - min_x) * 100.0;
 	}
 
 	return viewData;
@@ -157,15 +169,18 @@ var showECGInternal = function(chartName) {
 		ECGchart.removeSeries(currentECGName);
 		ECGchart.removeSeries("Normal");
 		currentECGName = chartName;
-		var colourName = "lime";
-
-		if (chartName == "CompensatedFailure" || chartName == "SmallInfarct")
-			colourName = "orange";
-		else if (chartName == "DecompensatedFailure" || chartName == "LargeInfarct" || chartName == "Arrhythmia")
-			colourName = "red";
-		ECGchart.addSeries(chartName, currentECG, { stroke: {color: colourName, width: 2}});
+		var colourName = "rgba(50,205,50,1)";
+		var widthvar = 2;
+		if (chartName == "CompensatedFailure" || chartName == "SmallInfarct"){
+			colourName = "rgba(255,255,0,1)";
+			widthvar=3;
+		}else if (chartName == "DecompensatedFailure" || chartName == "LargeInfarct" || chartName == "Arrhythmia"){
+			colourName = "rgba(255,50,0,1)";
+			widthvar = 3;
+		}
+		ECGchart.addSeries(chartName, currentECG, { stroke: {color: colourName, width: widthvar}});
 		if (chartName == "CompensatedFailure" || chartName == "DecompensatedFailure" ||  chartName == "SmallInfarct" || chartName == "LargeInfarct" || chartName == "Arrhythmia") {
-			ECGchart.addSeries("Normal", ECGs["Normal"], { stroke: {color: "lime", width: 2}});
+			ECGchart.addSeries("Normal", ECGs["Normal"], { stroke: {color: "rgba(50,205,50,0.6)", width: 2}});
 		}
 		ECGchart.render();
 		ECGchart.resize('100%','100%');
