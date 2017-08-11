@@ -1145,7 +1145,7 @@ Zinc.Renderer = function (containerIn, window) {
 	var clock = new THREE.Clock();
 	this.playAnimation = true
 	/* default animation update rate, rate is 500 and duration is default to 3000, 6s to finish a full animation */
-	var playRate = 500;
+	var playRate = 1000;
 	var preRenderCallbackFunctions = {};
 	var preRenderCallbackFunctions_id = 0;
 	var animated_id = undefined;
