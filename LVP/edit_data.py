@@ -1,6 +1,11 @@
 import os
 import json
 
+filename = '../ECG/NormalECG.json'
+with open(filename, 'r') as f:
+	datanormal = json.load(f)
+print datanormal[0][u'y']
+
 filename = 'largeInfarctLVP.json'
 with open(filename, 'r') as f:
 	data = json.load(f)
@@ -70,12 +75,16 @@ for i in range(0, len(data)):
 print len(data)
 
 # Shift trace. 
+y_amp_shifted = y;
+shift = y[0] - datanormal[0][u'y'];
+for i in range(0, len(data)):
+	y_amp_shifted[i] = y[i] - shift;
+
+# Shift trace. 
 t_end = 203
-y_shifted = y[t_end:]
+y_shifted = y_amp_shifted[t_end:]
 for i in range(0, t_end):
-	y_shifted.append(y[i])
-print len(y)
-print len(y_shifted)
+	y_shifted.append(y_amp_shifted[i])
 
 for i in range(0, len(data)):
 	data[i][u'y'] = y_shifted[i]
@@ -83,10 +92,7 @@ for i in range(0, len(data)):
 with open('../ECG/MildInfarctECG_shifted.json','w') as f:
 	json.dump(data, f, indent=4)
 
-filename = '../ECG/NormalECG.json'
-with open(filename, 'r') as f:
-	datanormal = json.load(f)
-print datanormal[0][u'y']
+
 
 filename = '../ECG/LargeInfarctECG.json'
 with open(filename, 'r') as f:
@@ -102,10 +108,20 @@ for i in range(0, len(data)):
 	y.append(data[i][u'y'])
 print len(data)
 
+
 # Shift trace. 
+y_amp_shifted = y;
 shift = y[0] - datanormal[0][u'y'];
 for i in range(0, len(data)):
-	data[i][u'y'] = y[i] - shift;
+	y_amp_shifted[i] = y[i] - shift;
+
+# Shift trace. 
+t_end = 245
+y_shifted = y_amp_shifted[t_end:]
+for i in range(0, t_end):
+	y_shifted.append(y_amp_shifted[i])
+for i in range(0, len(data)):
+	data[i][u'y'] = y_shifted[i]
 
 with open('../ECG/LargeInfarctECG_shifted.json','w') as f:
 	json.dump(data, f, indent=4)
