@@ -613,7 +613,7 @@
 					<img src="images/heart_v7/about_us_icon.png" alt="information" style="height:100%;width:100%" onclick="aboutUsClicked()">
 				</div>
 			</div>
-			
+
 			<div id="bottom_control_red_sub" class="open">
 
 				<div id="attack_sub_healthy_icon_rp" class="bottomButton closed" style="left:16.6%;position:absolute;z-index:11;height:100%;width:16.6%">
@@ -935,7 +935,7 @@
 
 		function loadFirstPage() {
 			console.log('LoadFirstPage')
-			document.getElementById("bottom_control_back").className="open";
+			// document.getElementById("bottom_control_back").className="open";
 			leftPanelGreenTrigger("initialNormal");
 			document.getElementById("bottom_logo").className = "open";
 			document.getElementById("rightInformation").className = "open";
@@ -1341,32 +1341,32 @@
 		// 	leftPanelPurpleTrigger("feedback")
 		// }
 
-		window.addEventListener("mousedown", function() {idleTime = 0;oldTime = new Date(); }, false);
-		window.addEventListener("mousemove", function() {idleTime = 0;oldTime = new Date();}, false);
-		window.addEventListener("mouseup", function(){idleTime = 0;oldTime = new Date();}, false);
-		window.addEventListener("touchstart", function() {idleTime = 0;oldTime = new Date(); }, false);
-		window.addEventListener("touchend", function() {idleTime = 0;oldTime = new Date();}, false);
-		window.addEventListener("touchcancel", function(){idleTime = 0;oldTime = new Date();}, false);
-		window.addEventListener("touchmove", function(){idleTime = 0;oldTime = new Date();}, false);
+		// window.addEventListener("mousedown", function() {idleTime = 0;oldTime = new Date(); }, false);
+		// window.addEventListener("mousemove", function() {idleTime = 0;oldTime = new Date();}, false);
+		// window.addEventListener("mouseup", function(){idleTime = 0;oldTime = new Date();}, false);
+		// window.addEventListener("touchstart", function() {idleTime = 0;oldTime = new Date(); }, false);
+		// window.addEventListener("touchend", function() {idleTime = 0;oldTime = new Date();}, false);
+		// window.addEventListener("touchcancel", function(){idleTime = 0;oldTime = new Date();}, false);
+		// window.addEventListener("touchmove", function(){idleTime = 0;oldTime = new Date();}, false);
 
 		//loadModel("Healthy", 1.0);
 		loadModel("NoInfarct", 1.0);
 		zincRenderer.animate();
 		document.getElementById("speed_slider").value = 2000;
 
-		var updateIndicatorsAndTimer = function() {
-			var newTime = new Date();
-			idleTime = idleTime + newTime.getTime() - oldTime.getTime();
-			oldTime = newTime;
-			if (idleTime > idleTimeLimit) {
-				idleTimerReached();
-			}
+		// var updateIndicatorsAndTimer = function() {
+		// 	var newTime = new Date();
+		// 	idleTime = idleTime + newTime.getTime() - oldTime.getTime();
+		// 	oldTime = newTime;
+		// 	if (idleTime > idleTimeLimit) {
+		// 		idleTimerReached();
+		// 	}
+		//
+		// 	var normaliseTime = zincRenderer.getCurrentTime() / 3000.0;
+		// 	updateIndicator(normaliseTime);
+		// }
 
-			var normaliseTime = zincRenderer.getCurrentTime() / 3000.0;
-			updateIndicator(normaliseTime);
-		}
-
-		zincRenderer.addPreRenderCallbackFunction(updateIndicatorsAndTimer);
+		// zincRenderer.addPreRenderCallbackFunction(updateIndicatorsAndTimer);
 
 		<!--function displayHalfHeartIcon() {-->
 			<!--if (halfHeartFlag) {-->
@@ -1414,40 +1414,40 @@
 			}
 		}
 
-		function idleTimerReached() {
-			var openedPage = "";
-			for (var i = 0; i < leftPanelGreenIDs.length; i++) {
-				if (document.getElementById(leftPanelGreenIDs[i]).classList.contains("open")) {
-					openedPage = leftPanelGreenIDs[i];
-				}
-			}
-			zincRenderer.getCurrentScene().getZincCameraControls().stopAutoTumble();
-			if (openedPage == "initialNormal"){
-				heartElectricityClicked();
-			} else if (openedPage == "leftHeartElectricity") {
-				arrhythmiaClicked();
-			} else if (openedPage == "leftHeartArrhythmia") {
-				heartAttackClicked();
-			} else if (openedPage == "leftHeartAttack") {
-				heartAttackStagePressed("SmallInfarct", "MildHeartAttack", "leftModerateAttack");
-			} else if (openedPage == "leftModerateAttack") {
-				heartAttackStagePressed("LargeInfarct", "SevereHeartAttack", "leftSevereAttack");
-			} else if (openedPage == "leftSevereAttack") {
-				heartFailureClicked();
-			} else if (openedPage == "leftHeartFailure") {
-				heartFailureStagePressed("CompensatedFailure", "CompensatedFailure", "leftCompensatedFailure");
-			} else if (openedPage == "leftCompensatedFailure") {
-				heartFailureStagePressed("DecompensatedFailure", "DecompensatedFailure", "leftDecompensatedFailure");
-			} else if (openedPage == "leftDecompensatedFailure") {
-				homeClicked();
-			}
-			zincRenderer.getCurrentScene().resetView();
-			zincRenderer.getCurrentScene().getZincCameraControls().autoTumble(
-				[1.0, 0.0], 0.01, true);
-			zincRenderer.getCurrentScene().getZincCameraControls().enableAutoTumble();
-			idleTime = 0;
-			oldTime = new Date();
-		}
+		// function idleTimerReached() {
+		// 	var openedPage = "";
+		// 	for (var i = 0; i < leftPanelGreenIDs.length; i++) {
+		// 		if (document.getElementById(leftPanelGreenIDs[i]).classList.contains("open")) {
+		// 			openedPage = leftPanelGreenIDs[i];
+		// 		}
+		// 	}
+		// 	zincRenderer.getCurrentScene().getZincCameraControls().stopAutoTumble();
+		// 	if (openedPage == "initialNormal"){
+		// 		heartElectricityClicked();
+		// 	} else if (openedPage == "leftHeartElectricity") {
+		// 		arrhythmiaClicked();
+		// 	} else if (openedPage == "leftHeartArrhythmia") {
+		// 		heartAttackClicked();
+		// 	} else if (openedPage == "leftHeartAttack") {
+		// 		heartAttackStagePressed("SmallInfarct", "MildHeartAttack", "leftModerateAttack");
+		// 	} else if (openedPage == "leftModerateAttack") {
+		// 		heartAttackStagePressed("LargeInfarct", "SevereHeartAttack", "leftSevereAttack");
+		// 	} else if (openedPage == "leftSevereAttack") {
+		// 		heartFailureClicked();
+		// 	} else if (openedPage == "leftHeartFailure") {
+		// 		heartFailureStagePressed("CompensatedFailure", "CompensatedFailure", "leftCompensatedFailure");
+		// 	} else if (openedPage == "leftCompensatedFailure") {
+		// 		heartFailureStagePressed("DecompensatedFailure", "DecompensatedFailure", "leftDecompensatedFailure");
+		// 	} else if (openedPage == "leftDecompensatedFailure") {
+		// 		homeClicked();
+		// 	}
+		// 	zincRenderer.getCurrentScene().resetView();
+		// 	zincRenderer.getCurrentScene().getZincCameraControls().autoTumble(
+		// 		[1.0, 0.0], 0.01, true);
+		// 	zincRenderer.getCurrentScene().getZincCameraControls().enableAutoTumble();
+		// 	idleTime = 0;
+		// 	oldTime = new Date();
+		// }
 
 		function showVideo(videoName) {
 			for(var i = 0; i < videoNameIds.length; i++){
