@@ -342,11 +342,11 @@
 				</div>
 				<div class ="leftQuestionWidget open" id="attack_3_block">
 					<div class="leftQuestionPic open" id="attack_3_q">
-						<b>What could happen if a coronary artery narrowed? </b>
+						<b>What could happen if a coronary artery narrows? </b>
 					</div>
 					<div class="leftAnswer closed" id="attack_3_a">
-						<br>If a coronary artery narrows then less oxygen and nutrients
-							can reach the muscle. This can cause damage of the heart muscle, which can lead to a
+						<br>If a coronary artery narrows, then blood flow is obstructed and less oxygen and nutrients
+							can reach the muscular walls of the heart. This can cause damage to the heart muscle, which can lead to a
 							<span onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')"
 								style="color:rgb(255,255,0)"><i>minor</i></span> or
 							<span onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')"
@@ -409,7 +409,7 @@
 					</div>
 					<div class="leftAnswer closed" id="failure_1_a">
 						<br>Yes. Long term problems such as high blood pressure or untreated heart attacks
-						can eventually cause the heart to wear out. This is called heart failure.
+						can eventually cause the heart to wear out. This is known as heart failure.
 					</div>
 					<div class="downArrow open" id="failure_1_d" onclick="showFailureAnswer(1, 2)">
 					</div>
@@ -422,7 +422,7 @@
 					</div>
 					<div class="leftAnswer closed" id="failure_2_a">
 						<p>The shape, stiffness, and contraction of the heart
-						are abnormal and the heart needs to work harder than normal to meet the demands of the body.</p>
+						are abnormal, and the heart needs to work harder than normal to meet the demands of the body.</p>
 						In the early stages of heart failure, the heart can
 							<span onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')"
 								style="color:rgb(255,255,0)"><i>compensate</i></span> for these problems.
@@ -525,7 +525,7 @@
 					</div>
 					<div class="leftAnswer closed" id="moderate_2_a">
 						<p>Did you see that the darker part did not contract as much? (Double tap to look inside.) Did you notice the pressure drop?</p>
-						<p>If the heart cannot contract very well then it’s ability to develop pressure and pump the blood is reduced.</p>
+						<p>If the heart cannot contract very well then its ability to develop pressure and pump the blood is reduced.</p>
 						If left untreated, this can lead to a
 							<span onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')"
 								style="color:rgb(255,50,0)"><i>severe</i></span> heart attack.
@@ -544,7 +544,7 @@
 					<span style="color:rgba(255,255,0,0.6)"><b>Compensated</b></span>
 				</div>
 				<div class ="leftQuestionWidget open" id="compensated_1_block">
-					<div class="leftQuestionPic open" style="font-size:1.5em;" id="compensated_1_q">
+					<div class="leftQuestionPic open" id="compensated_1_q">
 						<b>What changes can you observe in the heart?</b>
 					</div>
 					<div class="leftAnswer closed" id="compensated_1_a">
@@ -558,11 +558,11 @@
 					</div>
 				</div>
 				<div class ="leftQuestionWidget open" id="compensated_2_block">
-					<div class="leftQuestionPic open" style="font-size:1.5em;" id="compensated_2_q">
+					<div class="leftQuestionPic open" id="compensated_2_q">
 						<b>Why should you treat heart problems as early as possible?</b>
 					</div>
 					<div class="leftAnswer closed" id="compensated_2_a">
-						<br>If heart problems are left untreated,
+						<br>If heart problems are left untreated then
 						eventually the heart muscle will no longer be able to cope. This leads to
 						<span onclick="heartFailureStagePressed('DecompensatedFailure','DecompensatedFailure', 'leftDecompensatedFailure')"
 						style="color:rgb(255,50,0)"><i>decompensated</i></span> heart failure.
@@ -574,6 +574,11 @@
 				</div>
 			</div>
 		</div>
+		<!-- <div id="bottom_control_back" class="closed">
+			<div id="back_icon" class="open" style="left:0%;position:absolute;z-index:11;width:4.5%;bottom:8.5%;height:9%;">
+				<img src="images/heart_v7/back.png" style="height:100%;width:100%" onclick="backClicked()">
+			</div>
+		</div> -->
 
 		<div id="leftPanelRed" class="closed">
 			<div id="bottom_control_red" class="open">
@@ -608,6 +613,7 @@
 					<img src="images/heart_v7/about_us_icon.png" alt="information" style="height:100%;width:100%" onclick="aboutUsClicked()">
 				</div>
 			</div>
+			
 			<div id="bottom_control_red_sub" class="open">
 
 				<div id="attack_sub_healthy_icon_rp" class="bottomButton closed" style="left:16.6%;position:absolute;z-index:11;height:100%;width:16.6%">
@@ -691,7 +697,7 @@
 							<img src="images/heart_v7/aspirin_selected.png" alt="home"  onclick="closeVideo('aspirin')"
 							style="top:10%;height:83%;position:relative">
 						</div>
-						<br>These treatments must be combined with improvement lifestyle choices, such as more exercise, better diet, and avoid smoking.
+						<br>To avoid future heart attacks, these treatments must be combined with improvements in lifestyle choices, such as more exercise, better diet, and avoid smoking.
 					</div>
 					<div class="downArrow open" id="severe_2_d" onclick="showSevereAnswer(2, 3)">
 					</div>
@@ -704,8 +710,8 @@
 					</div>
 					<div class="leftAnswer closed" id="severe_3_a">
 						<br>Muscle damage due to a heart attack can lead to problems with the
-						<span style="color:yellow" onclick="heartAttackClicked()"><i>electrical activity</i></span> in the heart.
-						Untreated heart attacks can eventually lead on to <span style="color:yellow" onclick="heartAttackClicked()"><i>heart failure</i></span>.
+						<span style="color:yellow" onclick="heartElectricityClicked()"><i>electrical activity</i></span> in the heart.
+						Untreated heart attacks can eventually lead on to <span style="color:yellow" onclick="heartFailureClicked()"><i>heart failure</i></span>.
 					</div>
 					<div class="downArrow open" id="severe_3_d" onclick="showSevereAnswer(3, 3)">
 					</div>
@@ -743,7 +749,7 @@
 						apply a large electrical shock, which resets the electrical waves.
 						</p>
 						<p>CLEAR! </p>
-						<img src="images/heart_v7/defibrillation.png" alt="aed" style="left:20%" onclick="AEDClicked()">
+						<img src="images/heart_v7/defibrillation.png" alt="aed" style="left:20%;height:60px" onclick="AEDClicked()">
 					</div>
 					<div class="downArrow open" id="arrhythmia_2_d" onclick="showArrhythmiaAnswer(2, 2)">
 					</div>
@@ -846,6 +852,7 @@
 					<span style="color:white;font-size:1.4em;"><b>Our Research</b></span><br>
 					Improving diagnosis and management of heart diseases <br>using personalised biomechanics and image-driven computer modelling
 				</div>
+				<img src="images/heart_v7/video_placeholder.png" style="top:15%;left:25%;height:50%;position:absolute;" alt="video_placeholder">
 				<img src="images/heart_v7/abi_banner.png" style="bottom:2%;left:0%;height:30%;position:absolute;" alt="abi_banner">
 			</div>
 			<div id="ourTeam" class="closed">
@@ -853,7 +860,7 @@
 					<span style="color:white;font-size:1.4em;"><b>Our Heart Mechanics Research Team</b></span><br>
 					An inter-disciplinary collaboration between experts in  <br>bioengineering, physiology, software development, and medical imaging
 				</div>
-				<div id="headshots" style="position:absolute;top:17%;left:20%;height:60%">
+				<div id="headshots" style="position:absolute;top:17%;left:10%;height:60%">
 					<img src="images/heart_v7/headshots.png" style="height:100%" alt="headshots">
 				</div>
 				<div id="funding" style="position:absolute;left:20%;top:80%;width:65%">
@@ -871,6 +878,7 @@
 				<img src="images/heart_v7/gestures_icon.png" alt="gestures_icon" style="width:100%">
 			</div>
 		</div>
+
 		<div id="myRenderer">
 		</div>
 	</div>
@@ -927,6 +935,7 @@
 
 		function loadFirstPage() {
 			console.log('LoadFirstPage')
+			document.getElementById("bottom_control_back").className="open";
 			leftPanelGreenTrigger("initialNormal");
 			document.getElementById("bottom_logo").className = "open";
 			document.getElementById("rightInformation").className = "open";
@@ -936,6 +945,7 @@
 			document.getElementById("gestures_panel").className="open";
 			loadModel("NoInfarct", 1.0);
 			addLabel("NoInfarct");
+			//loadModel("ArrythmiaElectricity",0.25);
 			//showFibres(false);
 			//displayFibresIcon(true);
 			showECGAndLVP("Normal", 0.0);
@@ -965,6 +975,11 @@
 				// document.getElementById("rightPanel").className = "closed";
 				// document.getElementById("rightPanelBottom").className = "closed"
 			}
+		}
+
+		function backClicked(){
+			console.log('back clicked!')
+			window.history.back();
 		}
 
         function realHomeClicked() {
@@ -1229,6 +1244,7 @@
 		function heartFailureClicked() {
 			showIcons("electricity_icon", "attack_icon", "failure_healthy_selected_icon");
 			showSubGraphics("failure_line","failure_box");
+			//loadModel("NoInfarct",1.0);
 			document.getElementById("bottom_control_green_sub").className = "open";
 			showSubIcons("failure_sub_healthy_selected_icon","failure_sub_compensated_icon","failure_sub_decompensated_icon")
 			showFailureQuestions(2)
@@ -1237,7 +1253,7 @@
 			document.getElementById("healthy_heart_selected_icon").className = "closed";
 			leftPanelGreenTrigger("leftHeartFailure");
 			previousCamera = undefined;
-			heartFailureStagePressed("Nonfarct", "NoFailure", "leftHeartFailure");
+			heartFailureStagePressed("NoInfarct", "NoFailure", "leftHeartFailure");
 		}
 
 		var heartFailureStagePressed = function(StageName, pressedElement, descriptionId){
@@ -1333,7 +1349,8 @@
 		window.addEventListener("touchcancel", function(){idleTime = 0;oldTime = new Date();}, false);
 		window.addEventListener("touchmove", function(){idleTime = 0;oldTime = new Date();}, false);
 
-		loadModel("Healthy", 1.0);
+		//loadModel("Healthy", 1.0);
+		loadModel("NoInfarct", 1.0);
 		zincRenderer.animate();
 		document.getElementById("speed_slider").value = 2000;
 
@@ -1548,7 +1565,7 @@
 			ECGurls["Systolic"] = "ECG/SystolicECG_shifted.json";
 			LVPurls["Normal"] = "LVP/NormalLVP.json";
 			LVPurls["Diastolic"] = "LVP/DiastolicLVP.json";
-			LVPurls["Systolic"] = "LVP/SystolicLVP.json";
+			LVPurls["Systolic"] = "LVP/SystolicLVP_shifted.json";
 			ECGurls["NoInfarct"] = "ECG/NormalECG.json";
 			ECGurls["SmallInfarct"] = "ECG/MildInfarctECG_shifted.json";
 			ECGurls["LargeInfarct"] = "ECG/LargeInfarctECG_shifted.json";
@@ -1559,10 +1576,10 @@
 			LVPurls["Arrhythmia"] = "LVP/ArrhythmiaLVP.json";
 			ECGurls["NoFailure"] = "ECG/NormalECG.json";
 			LVPurls["NoFailure"] = "LVP/NormalLVP.json";
-			ECGurls["CompensatedFailure"] = "ECG/DiastolicECG.json";
-			LVPurls["CompensatedFailure"] = "LVP/DiastolicLVP.json";
+			ECGurls["CompensatedFailure"] = "ECG/DiastolicECG_shifted.json";
+			LVPurls["CompensatedFailure"] = "LVP/DiastolicLVP_shifted.json";
 			ECGurls["DecompensatedFailure"] = "ECG/SystolicECG_shifted.json";
-			LVPurls["DecompensatedFailure"] = "LVP/SystolicLVP.json";
+			LVPurls["DecompensatedFailure"] = "LVP/SystolicLVP_shifted.json";
 
 			modelURLsArray["DeformingHeart"] = ["models/deforming_heart_metadata.json",
 				"models/deforming_heart_view.json"];
@@ -1589,9 +1606,9 @@
 			LVPTexts["Arrhythmia"] = "poor pump pressure";
 			ECGTexts["NoInfarct"] = "electrical pulses make the heart muscle contract";
 			LVPTexts["NoInfarct"] = "muscle contraction generates pump pressure";
-			ECGTexts["SmallInfarct"] = "electrical pulses make the heart muscle contract";
+			ECGTexts["SmallInfarct"] = "minor heart muscle damage can show up as subtle changes to the ECG";
 			LVPTexts["SmallInfarct"] = "damaged muscle leads to less contraction force and less pressure generated";
-			ECGTexts["LargeInfarct"] = "electrical pulses make the heart muscle contract";
+			ECGTexts["LargeInfarct"] = "severe heart muscle damage can show up as large changes to the ECG";
 			LVPTexts["LargeInfarct"] = "damaged muscle leads to less contraction force and less pressure generated";
 			ECGTexts["NoFailure"] = "electrical pulses make the heart muscle contract";
 			LVPTexts["NoFailure"] = "muscle contraction generates pump pressure";
