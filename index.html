@@ -1354,19 +1354,19 @@
 		zincRenderer.animate();
 		document.getElementById("speed_slider").value = 2000;
 
-		// var updateIndicatorsAndTimer = function() {
-		// 	var newTime = new Date();
-		// 	idleTime = idleTime + newTime.getTime() - oldTime.getTime();
-		// 	oldTime = newTime;
-		// 	if (idleTime > idleTimeLimit) {
-		// 		idleTimerReached();
-		// 	}
-		//
-		// 	var normaliseTime = zincRenderer.getCurrentTime() / 3000.0;
-		// 	updateIndicator(normaliseTime);
-		// }
+		var updateIndicatorsAndTimer = function() {
+			var newTime = new Date();
+		 	idleTime = idleTime + newTime.getTime() - oldTime.getTime();
+		 	oldTime = newTime;
+		 	//if (idleTime > idleTimeLimit) {
+		 	//	idleTimerReached();
+		 	//}
+		
+		 	var normaliseTime = zincRenderer.getCurrentTime() / 3000.0;
+		 	updateIndicator(normaliseTime);
+		}
 
-		// zincRenderer.addPreRenderCallbackFunction(updateIndicatorsAndTimer);
+		zincRenderer.addPreRenderCallbackFunction(updateIndicatorsAndTimer);
 
 		<!--function displayHalfHeartIcon() {-->
 			<!--if (halfHeartFlag) {-->
