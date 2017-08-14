@@ -803,6 +803,20 @@ div#bottom_control_green_sub{
   height:9%;
   position:absolute;
 }
+
+div#bottom_control_back_panel{
+  padding-top: 3%;
+  padding-left: 2%;
+  padding-right: 2%;
+  height:9%;
+  width:4.5%;
+  left:0%;
+  bottom:9%;
+  position: absolute;
+  background-color: red;
+  z-index:12;
+}
+
 div.bottom_control_green_graphics{
   background-color: rgba(50,205,50,0.6);
   z-index:9;
