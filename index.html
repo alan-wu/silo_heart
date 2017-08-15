@@ -24,7 +24,7 @@
 		<script src="js/zinc_3js_renderer.js"></script>
 		<script src="js/show_hide_answer.js" ></script>
 		<script src="js/Add3DLabel.js" ></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.11.2/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script>
 		<!-- <script src="../../dojo-release-1.11.2/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script> -->
 		<script>
 			var dojoConfig = {
@@ -147,12 +147,12 @@
 				<div id="electricity_healthy_selected_icon" class="closed" style="left:49.8%;position:absolute;;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/electricity_healthy_selected_icon.png" alt="information" style="height:100%;width:100%">
 				</div>
-				<div id="electricity_healthy_icon" class="bottomButton closed" style="left:49.8%;position:absolute;;bottom:0%;z-index:10;height:100%;width:16.6%">
+				<!-- <div id="electricity_healthy_icon" class="bottomButton closed" style="left:49.8%;position:absolute;;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/electricity_healthy_icon.png" alt="information" style="height:100%;width:100%">
-				</div>
-				<div id="electricity_fibrillation_icon" class="bottomButton closed" style="left:49.8%;position:absolute;;bottom:0%;z-index:10;height:100%;width:16.6%">
+				</div> -->
+				<!-- <div id="electricity_fibrillation_icon" class="bottomButton closed" style="left:49.8%;position:absolute;;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/electricity_fibrillation_icon.png" alt="information" style="height:100%;width:100%">
-				</div>
+				</div> -->
 				<!-- <div id="electricity_fibrillation_selected_icon" class="bottomButton closed" style="left:33.2%;position:absolute;;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/electricity_fibrillation_selected_icon.png" alt="information" style="height:100%;width:100%">
 				</div> -->
@@ -580,9 +580,9 @@
 				<div id="attack_icon_rp" class="bottomButton open" style="left:33.2%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/attack_icon.png" alt="information" style="height:100%;width:100%" onclick="heartAttackClicked()">
 				</div>
-				<div id="attack_moderate_icon_rp" class="bottomButton closed" style="left:33.2%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
-					<img src="images/heart_v7/attack_attack_moderate_icon.png" alt="information" style="height:100%;width:100%">
-				</div>
+				<!-- <div id="attack_moderate_icon_rp" class="bottomButton closed" style="left:33.2%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
+					<img src="images/heart_v7/attack_moderate_icon.png" alt="information" style="height:100%;width:100%">
+				</div> -->
 				<div id="attack_severe_selected_icon" class="closed" style="left:33.2%;position:absolute;bottom:0%;z-index:10;height:100%;width:16.6%">
 					<img src="images/heart_v7/attack_severe_selected_icon.png" alt="information" style="height:100%;width:100%">
 				</div>
@@ -898,9 +898,8 @@
 		var idleTime = 0;
 		var idleTimeLimit = 300000;
 		var oldTime = new Date();
-		var iconIds = ["electricity_icon","electricity_icon_yp", "electricity_icon_rp",
-		  "electricity_healthy_icon","electricity_healthy_selected_icon",
-		  "electricity_fibrillation_icon","electricity_fibrillation_selected_icon",
+		var iconIds = ["electricity_icon","electricity_icon_yp", "electricity_icon_rp","electricity_healthy_selected_icon",
+		 	"electricity_fibrillation_selected_icon",
 			"attack_icon", "attack_icon_yp", "attack_icon_rp",
 			"attack_healthy_selected_icon","attack_moderate_selected_icon","attack_severe_selected_icon",
 			"failure_icon", "failure_icon_yp","failure_icon_rp",
@@ -930,7 +929,6 @@
 		var previousCamera = undefined;
 
 		function loadFirstPage() {
-			console.log('LoadFirstPage')
 			// document.getElementById("bottom_control_back").className="open";
 			leftPanelGreenTrigger("initialNormal");
 			document.getElementById("bottom_logo").className = "open";
@@ -964,7 +962,7 @@
 				<!--document.getElementById("halfHeart").classList.add("open");-->
 				<!--document.getElementById("fullHeart").classList.remove("open");-->
 				<!--document.getElementById("fullHeart").classList.add("closed");-->
-				loadModel("Healthy", 1.0);
+				loadModel("NoInfarct", 1.0);
 				//showFibres(false);
 				//displayFibresIcon(true);
 				showECGAndLVP("Normal", 0.0);
@@ -1172,7 +1170,6 @@
 		}
 
 		function heartAttackClicked() {
-			console.log("attack clicked")
 			loadModel("NoInfarct", 1.0);
 			// var scene = zincRenderer.getSceneByName("NoInfarct");
 			// zincRenderer.render(scene)
