@@ -931,8 +931,8 @@ div.downArrow{
   left:0%;
   vertical-align: middle;
   position: relative;
-  height:55px;
-  width:60%;
+  height:60px;
+  width:50%;
   /*width: 90%;*/
   font-size: 1.3em;
   z-index:1;
@@ -949,8 +949,8 @@ div.upArrow{
   left:0%;
   vertical-align: middle;
   position: relative;
-  height:55px;
-  width:60%;
+  height:60px;
+  width:50%;
   /*width: 90%;*/
   font-size: 1.3em;
   z-index:1;
