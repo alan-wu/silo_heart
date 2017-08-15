@@ -1575,8 +1575,52 @@
 
 			showHalf();
 		}
+		
+		function getMobileOperatingSystem() {
+			var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+		
+		    if (/windows phone/i.test(userAgent)) {
+		        return "Windows Phone";
+		    }
+		
+		    if (/android/i.test(userAgent)) {
+		        return "Android";
+		    }
+		
+		    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+		        return "iOS";
+		    }
+		
+		    return "unknown";
+		}
+		
+		
+		var lastTap = 0;
+		var doubleTimeout;
 
-		window.addEventListener("dblclick", halfHeartPressed, true);
+		function addDoubleClickCallback() {
+			var os_string = getMobileOperatingSystem();
+			if (os_string == "unknown") {
+				window.addEventListener("dblclick", halfHeartPressed, true);
+			} else {
+				window.addEventListener('touchend', function(event) {
+		   			var currentTime = new Date().getTime();
+		    		var tapLength = currentTime - lastTap;
+		    		clearTimeout(doubleTimeout);
+		    		if (tapLength < 500 && tapLength > 0) {
+		    		console.log("tab");
+						halfHeartPressed();
+		    		} else {
+		    		    doubleTimeout = setTimeout(function() {
+		            		clearTimeout(doubleTimeout);
+		        		}, 500);
+		    		}
+		    		lastTap = currentTime;
+				}, false);			
+			}
+		}
+		
+		addDoubleClickCallback();
 
 		function setUpArrays() {
 			ECGurls["Normal"] = "ECG/NormalECG.json";
