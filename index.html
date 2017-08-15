@@ -41,7 +41,7 @@
 		<script>require(["dijit/Dialog"]);</script>
 		<script src="js/LVPandECG.js" ></script>
 	</head>
-	<body style="height:100%;font-family='Helvetica'" oncontextmenu="return false" unselectable="on" onselectstart="return false;">
+	<body onload="setTimer()" style="height:100%;font-family='Helvetica'" oncontextmenu="return false" unselectable="on" onselectstart="return false;">
 	<div id="main_page" class="heartpage">
 		<div id="exercise_video" class="video_player closed">
 			<video id="exercise" controls controlsList="nodownload" style = "position:absolute;height:95%;width:100%" class="closed">
@@ -1442,6 +1442,28 @@
 		// 	idleTime = 0;
 		// 	oldTime = new Date();
 		// }
+
+		function setTimer() {
+			var t;
+			window.onload = resetTimer;
+			// DOM Events
+			document.onmousemove = resetTimer;
+			document.onkeypress = resetTimer;
+			document.onmousedown = resetTimer; // touchscreen presses
+			document.ontouchstart = resetTimer;
+			document.onclick = resetTimer;     // touchpad clicks
+			document.onscroll = resetTimer;    // scrolling with arrow keys
+			function logout() {
+			    //alert("You are now logged out.")
+			    clearTimeout(t);
+			    document.location.href = '../index.html'
+			}
+			function resetTimer() {
+			    clearTimeout(t);
+			    t = setTimeout(logout, 300000)
+			    // 1000 milisec = 1 sec
+			}
+		}
 
 		function showVideo(videoName) {
 			for(var i = 0; i < videoNameIds.length; i++){
