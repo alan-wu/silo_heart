@@ -746,6 +746,11 @@ div.bottomButton:hover {
  cursor: hand;
 }
 
+div#aed_button:hover{
+  cursor: pointer;
+  cursor: hand;
+}
+
 div.bottomButton{
   background: -webkit-linear-gradient(rgba(23,29,34,0), rgba(23,29,34,1) 4%,  rgba(23,29,34,0)); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(rgba(23,29,34,0), rgba(23,29,34,1) 4%,  rgba(23,29,34,0)); /* For Opera 11.1 to 12.0 */
@@ -927,7 +932,8 @@ div.downArrow{
   vertical-align: middle;
   position: relative;
   height:55px;
-  width: 90%;
+  width:60%;
+  /*width: 90%;*/
   font-size: 1.3em;
   z-index:1;
   font-weight: normal;
@@ -944,7 +950,8 @@ div.upArrow{
   vertical-align: middle;
   position: relative;
   height:55px;
-  width: 90%;
+  width:60%;
+  /*width: 90%;*/
   font-size: 1.3em;
   z-index:1;
   font-weight: normal;

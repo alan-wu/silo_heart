@@ -25,7 +25,7 @@
 		<script src="js/show_hide_answer.js" ></script>
 		<script src="js/Add3DLabel.js" ></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script>
-		<script src="../../dojo-release-1.11.2/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script>
+		<!-- <script src="../../dojo-release-1.11.2/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script> -->
 		<script>
 			var dojoConfig = {
 		        async: true,
@@ -277,10 +277,7 @@
 						<b>What are the main things that can go wrong with the heart?</b>
 					</div>
 					<div class="leftAnswer closed" id="normal_4_a">
-						<br><span style="color:yellow" onclick="heartAttackClicked()"><i>Heart
-							attacks</i></span>,
-							<span style="color:yellow" onclick="heartElectricityClicked()"><i>electrical fibrillation</i></span>,
-							and <span style="color:yellow" onclick="heartFailureClicked()"><i>heart failure</i></span>.
+						<br>Heart attacks, electrical fibrillation, and heart failure.
 					</div>
 					<div class="downArrow open" id="normal_4_d" onclick="showNormalAnswer(4, 4)">
 					</div>
@@ -302,7 +299,7 @@
 					<div class="leftAnswer closed" id="attack_1_a">
 						<br>Yes, the heart muscle walls need blood to survive.
 						The heart pumps blood to itself through vessels called the coronary
-						arteries. Unhealthy lifestyle choices can cause narrowing of these arteries in what is called a heart attack.
+						arteries. A heart attack occurs when one of these arteries becomes narrowed.
 						<img src="images/heart_v7/coronary_heart.png" alt="coronary" style="width:60%;">
 					</div>
 					<div class="downArrow open" id="attack_1_d" onclick="showAttackAnswer(1, 3)">
@@ -315,24 +312,25 @@
 						<b>How can you maintain a healthy heart?</b>
 					</div>
 					<div class="leftAnswer closed" id="attack_2_a">
-						<p>Lifestyle choices affect heart health:</p>
+						<p>A healthy lifestyle can help to keep the coronary arteries healthy
+							and prevent heart attacks from happening:</p>
 						<div id="exercise_icon" class = "medicationLifestyle open">
-							<img src="images/heart_v7/exercise.png" alt="home"  onclick="showVideo('exercise')" style="top:10%;height:83%;position:relative">
+							<img src="images/heart_v7/exercise.png" alt="home"  onclick="showVideo('exercise')" style="top:0%;height:83%;position:relative">
 						</div>
 						<div id="exercise_selected_icon" style="display:none" class = "medicationLifestyle" >
-							<img src="images/heart_v7/exercise_selected.png" alt="home" onclick="closeVideo('exercise')" style="top:10%;height:83%;position:relative">
+							<img src="images/heart_v7/exercise_selected.png" alt="home" onclick="closeVideo('exercise')" style="top:0%;height:83%;position:relative">
 						</div>
 						<div id="diet_icon" class = "medicationLifestyle open" >
-							<img src="images/heart_v7/diet.png" alt="home"  onclick="showVideo('diet')" style="top:10%;height:83%;position:relative">
+							<img src="images/heart_v7/diet.png" alt="home"  onclick="showVideo('diet')" style="top:0%;height:83%;position:relative">
 						</div>
 						<div id="diet_selected_icon" style="display:none" class = "medicationLifestyle closed" >
-							<img src="images/heart_v7/diet_selected.png" alt="home" onclick="closeVideo('diet')" style="top:10%;height:83%;position:relative">
+							<img src="images/heart_v7/diet_selected.png" alt="home" onclick="closeVideo('diet')" style="top:0%;height:83%;position:relative">
 						</div>
 						<div id="smoking_icon" class = "medicationLifestyle open" >
-							<img src="images/heart_v7/smoking.png" alt="home"  onclick="showVideo('smoking')" style="top:10%;height:83%;position:relative">
+							<img src="images/heart_v7/smoking.png" alt="home"  onclick="showVideo('smoking')" style="top:0%;height:83%;position:relative">
 						</div>
 						<div id="smoking_selected_icon" style="display:none" class = "medicationLifestyle closed" >
-							<img src="images/heart_v7/smoking_selected.png" alt="home" onclick="closeVideo('smoking')" style="top:10%;height:83%;position:relative">
+							<img src="images/heart_v7/smoking_selected.png" alt="home" onclick="closeVideo('smoking')" style="top:0%;height:83%;position:relative">
 						</div>
 					</div>
 					<div class="downArrow open" id="attack_2_d" onclick="showAttackAnswer(2, 3)">
@@ -347,10 +345,7 @@
 					<div class="leftAnswer closed" id="attack_3_a">
 						<br>If a coronary artery narrows, then blood flow is obstructed and less oxygen and nutrients
 							can reach the muscular walls of the heart. This can cause damage to the heart muscle, which can lead to a
-							<span onclick="heartAttackStagePressed('SmallInfarct', 'MildHeartAttack', 'leftModerateAttack')"
-								style="color:rgb(255,255,0)"><i>minor</i></span> or
-							<span onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')"
-								style="color:rgb(255,50,0)"><i>severe</i></span> heart attack.
+							minor or severe heart attack.
 							<!-- <p>Click "Moderate" below to see what this looks like. </p> -->
 					</div>
 					<div class="downArrow open" id="attack_3_d" onclick="showAttackAnswer(3, 3)">
@@ -387,8 +382,7 @@
 					</div>
 					<div class="leftAnswer closed" id="electricity_2_a">
 						<br>The electrical waves become random and the heart muscle just wobbles
-						in a state called <span onclick="arrhythmiaClicked()"
-								style="color:rgb(255,50,0)"><i>fibrillation</i></span>.
+						in a state called fibrillation.
 					</div>
 					<div class="downArrow open" id="electricity_2_d" onclick="showElectricityAnswer(2, 2)">
 					</div>
@@ -424,10 +418,8 @@
 						<p>The shape, stiffness, and contraction of the heart
 						are abnormal, and the heart needs to work harder than normal to meet the demands of the body.</p>
 						In the early stages of heart failure, the heart can
-							<span onclick="heartFailureStagePressed('CompensatedFailure', 'CompensatedFailure', 'leftCompensatedFailure')"
-								style="color:rgb(255,255,0)"><i>compensate</i></span> for these problems.
-						However, if left untreated, this can lead to <span onclick="heartFailureStagePressed('DecompensatedFailure','DecompensatedFailure', 'leftDecompensatedFailure')"
-								style="color:rgb(255,50,0)"><i>decompensated</i></span> heart failure, during which it can no longer pump enough blood.
+							compensate for these problems.
+						However, if left untreated, this can lead to decompensated heart failure, during which it can no longer pump enough blood.
 					</div>
 					<div class="downArrow open" id="failure_2_d" onclick="showFailureAnswer(2, 2)">
 					</div>
@@ -526,9 +518,7 @@
 					<div class="leftAnswer closed" id="moderate_2_a">
 						<p>Did you see that the darker part did not contract as much? (Double tap to look inside.) Did you notice the pressure drop?</p>
 						<p>If the heart cannot contract very well then its ability to develop pressure and pump the blood is reduced.</p>
-						If left untreated, this can lead to a
-							<span onclick="heartAttackStagePressed('LargeInfarct', 'SevereHeartAttack', 'leftSevereAttack')"
-								style="color:rgb(255,50,0)"><i>severe</i></span> heart attack.
+						If left untreated, this can lead to a severe heart attack.
 					</div>
 					<div class="downArrow open" id="moderate_2_d" onclick="showModerateAnswer(2, 2)">
 					</div>
@@ -564,8 +554,7 @@
 					<div class="leftAnswer closed" id="compensated_2_a">
 						<br>If heart problems are left untreated then
 						eventually the heart muscle will no longer be able to cope. This leads to
-						<span onclick="heartFailureStagePressed('DecompensatedFailure','DecompensatedFailure', 'leftDecompensatedFailure')"
-						style="color:rgb(255,50,0)"><i>decompensated</i></span> heart failure.
+						decompensated heart failure.
 					</div>
 					<div class="downArrow open" id="compensated_2_d" onclick="showCompensatedAnswer(2, 2)">
 					</div>
@@ -677,25 +666,25 @@
 
 				<div class ="leftQuestionWidget open" id="severe_2_block">
 					<div class="leftQuestionPic open" id="severe_2_q">
-						<b>How do doctors treat heart attacks?</b>
+						<b>What are the most common medicines for treating heart attacks?</b>
 					</div>
 					<div class="leftAnswer closed" id="severe_2_a">
 						<p>Standard medicines to treat heart disease include:</p>
 						<div id="statin_icon" class = "medicationLifestyle open">
 							<img src="images/heart_v7/statin.png" alt="home"  onclick="showVideo('statin')"
-							style="top:10%;height:83%;position:relative">
+							style="top:0%;height:83%;position:relative">
 						</div>
 						<div id="statin_selected_icon" class = "medicationLifestyle" style="display:none">
 							<img src="images/heart_v7/statin_selected.png" alt="home"  onclick="closeVideo('statin')"
-							style="top:10%;height:83%;position:relative">
+							style="top:0%;height:83%;position:relative">
 						</div>
 						<div id="aspirin_icon" class = "medicationLifestyle open">
 							<img src="images/heart_v7/aspirin.png" alt="home"  onclick="showVideo('aspirin')"
-							style="top:10%;height:83%;position:relative">
+							style="top:0%;height:83%;position:relative">
 						</div>
 						<div id="aspirin_selected_icon" class = "medicationLifestyle" style="display:none">
 							<img src="images/heart_v7/aspirin_selected.png" alt="home"  onclick="closeVideo('aspirin')"
-							style="top:10%;height:83%;position:relative">
+							style="top:0%;height:83%;position:relative">
 						</div>
 						<br>To avoid future heart attacks, these treatments must be combined with improvements in lifestyle choices, such as more exercise, better diet, and avoid smoking.
 					</div>
@@ -710,8 +699,8 @@
 					</div>
 					<div class="leftAnswer closed" id="severe_3_a">
 						<br>Muscle damage due to a heart attack can lead to problems with the
-						<span style="color:yellow" onclick="heartElectricityClicked()"><i>electrical activity</i></span> in the heart.
-						Untreated heart attacks can eventually lead on to <span style="color:yellow" onclick="heartFailureClicked()"><i>heart failure</i></span>.
+						electrical activity in the heart.
+						Untreated heart attacks can eventually lead on to heart failure.
 					</div>
 					<div class="downArrow open" id="severe_3_d" onclick="showSevereAnswer(3, 3)">
 					</div>
@@ -749,7 +738,9 @@
 						apply a large electrical shock, which resets the electrical waves.
 						</p>
 						<p>CLEAR! </p>
-						<img src="images/heart_v7/defibrillation.png" alt="aed" style="left:20%;height:60px" onclick="AEDClicked()">
+						<div id="aed_button" class="open">
+							<img src="images/heart_v7/defibrillation.png" alt="aed" style="left:30%;height:100px" onclick="AEDClicked()">
+						</div>
 					</div>
 					<div class="downArrow open" id="arrhythmia_2_d" onclick="showArrhythmiaAnswer(2, 2)">
 					</div>
@@ -848,12 +839,17 @@
 		</div>
 		<div id="aboutUsInfoPanel" class="closed">
 			<div id="ourResearch" class="closed">
-				<div id="ourMission" class="mission open" style="position:absolute;top:0%;width:100%;left:0%;color:rgb(175,175,175)">
+				<div id="ourMission" class="mission open" style="position:absolute;top:0%;width:100%;left:0%;height:20%;color:rgb(175,175,175)">
 					<span style="color:white;font-size:1.4em;"><b>Our Research</b></span><br>
 					Improving diagnosis and management of heart diseases <br>using personalised biomechanics and image-driven computer modelling
 				</div>
-				<img src="images/heart_v7/video_placeholder.png" style="top:15%;left:25%;height:50%;position:absolute;" alt="video_placeholder">
-				<img src="images/heart_v7/abi_banner.png" style="bottom:2%;left:0%;height:30%;position:absolute;" alt="abi_banner">
+				<div id="video_placeholder" class="open" style="top:20%;left:20%;width:60%;position:absolute;">
+					<img src="images/heart_v7/video_placeholder.png" style="width:100%" alt="video_placeholder">
+				</div>
+				<!-- <div id="abi_banner" class="open" style="bottom:2%;left:0%;height:30%;position:absolute;">
+					<img src="images/heart_v7/abi_banner.png" style="height:100%"  alt="abi_banner">
+				</div> -->
+
 			</div>
 			<div id="ourTeam" class="closed">
 				<div id="ourMission" class="mission open" style="position:absolute;top:0%;width:100%;left:0%;color:rgb(175,175,175)">
@@ -982,8 +978,9 @@
 			window.history.back();
 		}
 
-        function realHomeClicked() {
-			window.location.assign("../index.html");
+    function realHomeClicked() {
+			homeClicked();
+			//window.location.assign("../index.html");
 		}
 
 		function leftPanelGreenTrigger(elementIdToDisplay) {
@@ -1175,10 +1172,10 @@
 		}
 
 		function heartAttackClicked() {
+			console.log("attack clicked")
 			loadModel("NoInfarct", 1.0);
-			var scene = zincRenderer.getSceneByName("NoInfarct");
-			zincRenderer.render(scene)
-			console.log(scene)
+			// var scene = zincRenderer.getSceneByName("NoInfarct");
+			// zincRenderer.render(scene)
 			showIcons("electricity_icon", "attack_healthy_selected_icon", "failure_icon");
 			showSubGraphics("attack_line","attack_box");
 			document.getElementById("bottom_control_green_sub").className = "open";
@@ -1361,7 +1358,7 @@
 		 	//if (idleTime > idleTimeLimit) {
 		 	//	idleTimerReached();
 		 	//}
-		
+
 		 	var normaliseTime = zincRenderer.getCurrentTime() / 3000.0;
 		 	updateIndicator(normaliseTime);
 		}
