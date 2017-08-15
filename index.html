@@ -248,7 +248,7 @@
 						<b>What is the heart’s job?</b>
 					</div>
 					<div class="leftAnswer closed" id="normal_2_a">
-						<br>The purpose of the heart is to pump blood around the body to
+						<br>The heart pumps blood around the body to
 							provide all the organ systems with essential oxygen and nutrients,
 							and to take away the waste.
 					</div>
@@ -277,7 +277,7 @@
 						<b>What are the main things that can go wrong with the heart?</b>
 					</div>
 					<div class="leftAnswer closed" id="normal_4_a">
-						<br>Heart attacks, electrical fibrillation, and heart failure.
+						<br>Heart attacks, electrical fibrillation, and heart failure. Tap the icons below to learn more about these heart problems.
 					</div>
 					<div class="downArrow open" id="normal_4_d" onclick="showNormalAnswer(4, 4)">
 					</div>
@@ -299,7 +299,7 @@
 					<div class="leftAnswer closed" id="attack_1_a">
 						<br>Yes, the heart muscle walls need blood to survive.
 						The heart pumps blood to itself through vessels called the coronary
-						arteries. A heart attack occurs when one of these arteries becomes narrowed.
+						arteries. If one of these arteries becomes narrow so that blood flow is obstructed, then this is known as a heart attack.
 						<img src="images/heart_v7/coronary_heart.png" alt="coronary" style="width:60%;">
 					</div>
 					<div class="downArrow open" id="attack_1_d" onclick="showAttackAnswer(1, 3)">
@@ -312,8 +312,8 @@
 						<b>How can you maintain a healthy heart?</b>
 					</div>
 					<div class="leftAnswer closed" id="attack_2_a">
-						<p>A healthy lifestyle can help to keep the coronary arteries healthy
-							and prevent heart attacks from happening:</p>
+						<p>A healthy lifestyle can help to keep the coronary arteries healthy,
+							and to prevent heart attacks:</p>
 						<div id="exercise_icon" class = "medicationLifestyle open">
 							<img src="images/heart_v7/exercise.png" alt="home"  onclick="showVideo('exercise')" style="top:0%;height:83%;position:relative">
 						</div>
@@ -340,7 +340,7 @@
 				</div>
 				<div class ="leftQuestionWidget open" id="attack_3_block">
 					<div class="leftQuestionPic open" id="attack_3_q">
-						<b>What could happen if a coronary artery narrows? </b>
+						<b>What could happen if a coronary artery becomes narrow? </b>
 					</div>
 					<div class="leftAnswer closed" id="attack_3_a">
 						<br>If a coronary artery narrows, then blood flow is obstructed and less oxygen and nutrients
@@ -382,7 +382,7 @@
 					</div>
 					<div class="leftAnswer closed" id="electricity_2_a">
 						<br>The electrical waves become random and the heart muscle just wobbles
-						in a state called fibrillation.
+						in a state called fibrillation. Tap fibrillation below to see what this looks like.
 					</div>
 					<div class="downArrow open" id="electricity_2_d" onclick="showElectricityAnswer(2, 2)">
 					</div>
@@ -403,7 +403,7 @@
 					</div>
 					<div class="leftAnswer closed" id="failure_1_a">
 						<br>Yes. Long term problems such as high blood pressure or untreated heart attacks
-						can eventually cause the heart to wear out. This is known as heart failure.
+						can eventually cause the heart to wear out. This is known as heart failure. Find out more about heart failure by tapping the icons below.
 					</div>
 					<div class="downArrow open" id="failure_1_d" onclick="showFailureAnswer(1, 2)">
 					</div>
@@ -554,7 +554,7 @@
 					<div class="leftAnswer closed" id="compensated_2_a">
 						<br>If heart problems are left untreated then
 						eventually the heart muscle will no longer be able to cope. This leads to
-						decompensated heart failure.
+						decompensated heart failure. Tap below to see what can happen.
 					</div>
 					<div class="downArrow open" id="compensated_2_d" onclick="showCompensatedAnswer(2, 2)">
 					</div>
@@ -686,7 +686,7 @@
 							<img src="images/heart_v7/aspirin_selected.png" alt="home"  onclick="closeVideo('aspirin')"
 							style="top:0%;height:83%;position:relative">
 						</div>
-						<br>To avoid future heart attacks, these treatments must be combined with improvements in lifestyle choices, such as more exercise, better diet, and avoid smoking.
+						<br>To avoid future heart attacks, these treatments must be combined with improvements in lifestyle choices. Heart patients should make better dietary choices, do more exercise, and avoid smoking.
 					</div>
 					<div class="downArrow open" id="severe_2_d" onclick="showSevereAnswer(2, 3)">
 					</div>
@@ -735,7 +735,7 @@
 					</div>
 					<div class="leftAnswer closed" id="arrhythmia_2_a">
 						<p>We need to use an Automated External Defibrillator (AED) to
-						apply a large electrical shock, which resets the electrical waves.
+						apply a large electrical shock, which resets the electrical waves in the heart.
 						</p>
 						<p>CLEAR! </p>
 						<div id="aed_button" class="open">
@@ -816,25 +816,26 @@
 				<div class="leftDescription">
 					<span>&nbsp;</span>
 				</div>
-				<div id="our_research_icon" style="top:25%;" class="aboutUsButtons closed" onclick="ourResearchClicked()">
-					Our Research
-				</div>
-				<div id="our_research_selected_icon"
-					style="top:25%;background-color:rgba(150,30,150,0.4);color:rgb(255,255,255)"
-					class="aboutUsButtons open" onclick="ourResearchClicked()">
-					Our Research
-				</div>
-				<div id="our_team_icon" style="top:40%;" class="aboutUsButtons open" onclick="ourTeamClicked()">
+				<div id="our_team_icon" style="top:25%;" class="aboutUsButtons closed" onclick="ourTeamClicked()">
 					Our Team
 				</div>
 				<div id="our_team_selected_icon"
+					style="top:25%;background-color:rgba(150,30,150,0.4);color:rgb(255,255,255)"
+					class="aboutUsButtons open">
+					Our Team
+				</div>
+				<div id="our_research_icon" style="top:40%;" class="aboutUsButtons open" onclick="ourResearchClicked()">
+					Our Research
+				</div>
+				<div id="our_research_selected_icon"
 					style="top:40%;background-color:rgba(150,30,150,0.4);color:rgb(255,255,255)"
 					class="aboutUsButtons closed">
-					Our Team
+					Our Research
 				</div>
 				<div id="feedback_icon" style="position:absolute;top:55%;width:80%;left:10%" >
 					<img src="images/heart_v7/feedback_icon.png" style="width:100%" alt="feedback">
 				</div>
+				
 			</div>
 		</div>
 		<div id="aboutUsInfoPanel" class="closed">
@@ -849,7 +850,6 @@
 				<!-- <div id="abi_banner" class="open" style="bottom:2%;left:0%;height:30%;position:absolute;">
 					<img src="images/heart_v7/abi_banner.png" style="height:100%"  alt="abi_banner">
 				</div> -->
-
 			</div>
 			<div id="ourTeam" class="closed">
 				<div id="ourMission" class="mission open" style="position:absolute;top:0%;width:100%;left:0%;color:rgb(175,175,175)">
@@ -1298,8 +1298,8 @@
 		}
 
 		function aboutUsClicked(){
-			leftPanelPurpleTrigger("ourResearch");
-			ourResearchClicked();
+			leftPanelPurpleTrigger("ourTeam");
+			ourTeamClicked();
 			document.getElementById("gestures_panel").className = "closed";
 			document.getElementById("healthy_heart_icon").className = "bottomButton open";
 			document.getElementById("healthy_heart_selected_icon").className = "closed";
@@ -1347,6 +1347,7 @@
 		loadModel("NoInfarct", 1.0);
 		zincRenderer.animate();
 		document.getElementById("speed_slider").value = 2000;
+		updateSlider(2000)
 
 		var updateIndicatorsAndTimer = function() {
 			var newTime = new Date();
@@ -1696,7 +1697,7 @@
 		}
 
 		function updateSlider(newValue)	{
-			console.log('UpdateSlider')
+			console.log(newValue);
 			zincRenderer.setPlayRate(newValue);
 		}
 
