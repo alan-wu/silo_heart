@@ -49,7 +49,7 @@
 				Your browser does not support the video tag.
 			</video>
 			<div class="close_video" onclick="closeVideo('exercise')" >
-				<span style="display:table-cell;vertical-align: middle;">Click to close</span>
+				<span style="display:table-cell;vertical-align: middle;">Click to close (Movie by Annie Jones and Liz Broadbent, University of Auckland)</span>
 			</div>
 		</div>
 		<div id="diet_video" class="video_player closed">
@@ -58,7 +58,7 @@
 				Your browser does not support the video tag.
 			</video>
 			<div class="close_video" onclick="closeVideo('diet')" >
-				<span style="display:table-cell;vertical-align: middle;">Click to close</span>
+				<span style="display:table-cell;vertical-align: middle;">Click to close (Movie by Annie Jones and Liz Broadbent, University of Auckland)</span>
 			</div>
 		</div>
 		<div id="smoking_video" class="video_player closed">
@@ -67,7 +67,7 @@
 				Your browser does not support the video tag.
 			</video>
 			<div class="close_video" onclick="closeVideo('smoking')" >
-				<span style="display:table-cell;vertical-align: middle;">Click to close</span>
+				<span style="display:table-cell;vertical-align: middle;">Click to close (Movie by Annie Jones and Liz Broadbent, University of Auckland)</span>
 			</div>
 		</div>
 		<div id="aspirin_video" class="video_player closed">
@@ -76,7 +76,7 @@
 				Your browser does not support the video tag.
 			</video>
 			<div class="close_video" onclick="closeVideo('aspirin')" >
-				<span style="display:table-cell;vertical-align: middle;">Click to close</span>
+				<span style="display:table-cell;vertical-align: middle;">Click to close (Movie by Annie Jones and Liz Broadbent, University of Auckland)</span>
 			</div>
 		</div>
 		<div id="statin_video" class="video_player closed">
@@ -85,7 +85,7 @@
 				Your browser does not support the video tag.
 			</video>
 			<div class="close_video" onclick="closeVideo('statin')" >
-				<span style="display:table-cell;vertical-align: middle;">Click to close</span>
+				<span style="display:table-cell;vertical-align: middle;">Click to close (Movie by Annie Jones and Liz Broadbent, University of Auckland)</span>
 			</div>
 		</div>
 		<div id="rightInformation" class="closed">
@@ -835,7 +835,7 @@
 				<div id="feedback_icon" style="position:absolute;top:55%;width:80%;left:10%" >
 					<img src="images/heart_v7/feedback_icon.png" style="width:100%" alt="feedback">
 				</div>
-				
+
 			</div>
 		</div>
 		<div id="aboutUsInfoPanel" class="closed">
@@ -958,6 +958,7 @@
 				previousCamera = undefined;
 				resetAllModelsView();
 				halfHeartFlag = false;
+				closeAllVideos();
 				<!--document.getElementById("halfHeart").classList.remove("closed");-->
 				<!--document.getElementById("halfHeart").classList.add("open");-->
 				<!--document.getElementById("fullHeart").classList.remove("open");-->
@@ -1140,6 +1141,7 @@
 			previousCamera = undefined;
 			loadModel("NormalElectricity", 1.0);
 			showECGAndLVP("Normal", 0.0);
+			closeAllVideos();
 		}
 
 		function arrhythmiaClicked() {
@@ -1184,6 +1186,7 @@
 			leftPanelGreenTrigger("leftHeartAttack");
 			previousCamera = undefined;
 			heartAttackStagePressed("NoInfarct","NoHeartAttack", "leftHeartAttack");
+			closeAllVideos();
 		}
 
 		var heartAttackStagePressed = function(StageName, pressedElement, descriptionId) {
@@ -1248,6 +1251,7 @@
 			leftPanelGreenTrigger("leftHeartFailure");
 			previousCamera = undefined;
 			heartFailureStagePressed("NoInfarct", "NoFailure", "leftHeartFailure");
+			closeAllVideos();
 		}
 
 		var heartFailureStagePressed = function(StageName, pressedElement, descriptionId){
@@ -1303,6 +1307,7 @@
 			document.getElementById("gestures_panel").className = "closed";
 			document.getElementById("healthy_heart_icon").className = "bottomButton open";
 			document.getElementById("healthy_heart_selected_icon").className = "closed";
+			closeAllVideos();
 		}
 
 		function ourResearchClicked(){
@@ -1469,12 +1474,7 @@
 
 
 		function showVideo(videoName) {
-			for(var i = 0; i < videoNameIds.length; i++){
-    			var id = videoNameIds[i];
-				document.getElementById(id+"_video").className = "video_player closed";
-				document.getElementById(id).pause();
-			}
-			resetVideoIcons()
+			closeAllVideos()
 			document.getElementById(videoName+"_icon").style = "display:none;"
 			document.getElementById(videoName+"_selected_icon").style = "display:inline-block;"
 			document.getElementById(videoName+"_video").className = "video_player slide_open";
@@ -1486,6 +1486,15 @@
 		function closeVideo(videoName){
 			document.getElementById(videoName+"_video").className = "video_player slide_closed";
 			document.getElementById(videoName).pause();
+			resetVideoIcons()
+		}
+
+		function closeAllVideos(){
+			for(var i = 0; i < videoNameIds.length; i++){
+    			var id = videoNameIds[i];
+				document.getElementById(id+"_video").className = "video_player closed";
+				document.getElementById(id).pause();
+			}
 			resetVideoIcons()
 		}
 
@@ -1575,26 +1584,26 @@
 
 			showHalf();
 		}
-		
+
 		function getMobileOperatingSystem() {
 			var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-		
+
 		    if (/windows phone/i.test(userAgent)) {
 		        return "Windows Phone";
 		    }
-		
+
 		    if (/android/i.test(userAgent)) {
 		        return "Android";
 		    }
-		
+
 		    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
 		        return "iOS";
 		    }
-		
+
 		    return "unknown";
 		}
-		
-		
+
+
 		var lastTap = 0;
 		var doubleTimeout;
 
@@ -1616,10 +1625,10 @@
 		        		}, 500);
 		    		}
 		    		lastTap = currentTime;
-				}, false);			
+				}, false);
 			}
 		}
-		
+
 		addDoubleClickCallback();
 
 		function setUpArrays() {
