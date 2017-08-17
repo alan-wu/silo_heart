@@ -44,48 +44,58 @@
 	<body onload="setTimer()" style="height:100%;font-family='Helvetica'" oncontextmenu="return false" unselectable="on" onselectstart="return false;">
 	<div id="main_page" class="heartpage">
 		<div id="exercise_video" class="video_player closed">
-			<video id="exercise" controls controlsList="nodownload" style = "position:absolute;height:95%;width:100%" class="closed">
+			<video id="exercise" controls controlsList="nodownload" style = "position:absolute;height:90%;width:100%" class="closed">
 				<source src="videos/5_exercise_v2.mp4">
 				Your browser does not support the video tag.
 			</video>
-			<div class="close_video" onclick="closeVideo('exercise')" >
-				<span style="display:table-cell;vertical-align: middle;">Click to close (Movie by Annie Jones and Liz Broadbent, University of Auckland)</span>
+			<div class="close_video" onclick="closeVideo('exercise')" style="display:inline-block">
+				<img src="images/heart_v7/Annie_Jones.png" style="height:90%;top:5%;left:5%;position:absolute" alt="annie_jones">
+				<img src="images/heart_v7/close_video_icon.png" style="height:90%;top:5%;width:55%;left:22.5%;position:absolute"alt="click_to_close">
+				<img src="images/heart_v7/Liz_Broadbent.png" style="height:90%;top:5%;right:5%;position:absolute" alt="liz_broadbent">
 			</div>
 		</div>
 		<div id="diet_video" class="video_player closed">
-			<video id="diet" controls controlsList="nodownload" style = "position:absolute;height:95%;width:100%" class="closed">
+			<video id="diet" controls controlsList="nodownload" style = "position:absolute;height:90%;width:100%" class="closed">
 				<source src="videos/6_diet_v2.mp4">
 				Your browser does not support the video tag.
 			</video>
 			<div class="close_video" onclick="closeVideo('diet')" >
-				<span style="display:table-cell;vertical-align: middle;">Click to close (Movie by Annie Jones and Liz Broadbent, University of Auckland)</span>
+				<img src="images/heart_v7/Annie_Jones.png" style="height:90%;top:5%;left:5%;position:absolute" alt="annie_jones">
+				<img src="images/heart_v7/close_video_icon.png" style="height:90%;top:5%;width:55%;left:22.5%;position:absolute"alt="click_to_close">
+				<img src="images/heart_v7/Liz_Broadbent.png" style="height:90%;top:5%;right:5%;position:absolute" alt="liz_broadbent">
 			</div>
 		</div>
 		<div id="smoking_video" class="video_player closed">
-			<video id="smoking" controls controlsList="nodownload" style = "position:absolute;height:95%;width:100%" class="closed">
+			<video id="smoking" controls controlsList="nodownload" style = "position:absolute;height:90%;width:100%" class="closed">
 				<source src="videos/7_smoking_v2.mp4">
 				Your browser does not support the video tag.
 			</video>
 			<div class="close_video" onclick="closeVideo('smoking')" >
-				<span style="display:table-cell;vertical-align: middle;">Click to close (Movie by Annie Jones and Liz Broadbent, University of Auckland)</span>
+				<img src="images/heart_v7/Annie_Jones.png" style="height:90%;top:5%;left:5%;position:absolute" alt="annie_jones">
+				<img src="images/heart_v7/close_video_icon.png" style="height:90%;top:5%;width:55%;left:22.5%;position:absolute"alt="click_to_close">
+				<img src="images/heart_v7/Liz_Broadbent.png" style="height:90%;top:5%;right:5%;position:absolute" alt="liz_broadbent">
 			</div>
 		</div>
 		<div id="aspirin_video" class="video_player closed">
-			<video id="aspirin" controls controlsList="nodownload" style = "position:absolute;height:95%;width:100%" class="closed">
+			<video id="aspirin" controls controlsList="nodownload" style = "position:absolute;height:90%;width:100%" class="closed">
 				<source src="videos/4_aspirin.mp4">
 				Your browser does not support the video tag.
 			</video>
 			<div class="close_video" onclick="closeVideo('aspirin')" >
-				<span style="display:table-cell;vertical-align: middle;">Click to close (Movie by Annie Jones and Liz Broadbent, University of Auckland)</span>
+				<img src="images/heart_v7/Annie_Jones.png" style="height:90%;top:5%;left:5%;position:absolute" alt="annie_jones">
+				<img src="images/heart_v7/close_video_icon.png" style="height:90%;top:5%;width:55%;left:22.5%;position:absolute"alt="click_to_close">
+				<img src="images/heart_v7/Liz_Broadbent.png" style="height:90%;top:5%;right:5%;position:absolute" alt="liz_broadbent">
 			</div>
 		</div>
 		<div id="statin_video" class="video_player closed">
-			<video id="statin" controls controlsList="nodownload" style = "position:absolute;height:95%;width:100%" class="closed">
+			<video id="statin" controls controlsList="nodownload" style = "position:absolute;height:90%;width:100%" class="closed">
 				<source src="videos/3_Statins.mp4">
 				Your browser does not support the video tag.
 			</video>
 			<div class="close_video" onclick="closeVideo('statin')" >
-				<span style="display:table-cell;vertical-align: middle;">Click to close (Movie by Annie Jones and Liz Broadbent, University of Auckland)</span>
+				<img src="images/heart_v7/Annie_Jones.png" style="height:90%;top:5%;left:5%;position:absolute" alt="annie_jones">
+				<img src="images/heart_v7/close_video_icon.png" style="height:90%;top:5%;width:55%;left:22.5%;position:absolute"alt="click_to_close">
+				<img src="images/heart_v7/Liz_Broadbent.png" style="height:90%;top:5%;right:5%;position:absolute" alt="liz_broadbent">
 			</div>
 		</div>
 		<div id="rightInformation" class="closed">
@@ -1211,6 +1221,7 @@
 				showSubGraphics("attack_line","attack_box")
 				showAttackQuestions(3)
 				leftPanelGreenTrigger("leftHeartAttack")
+				closeAllVideos();
 				// document.getElementById("rightPanel").className = "closed";
 				// document.getElementById("rightPanelBottom").className = "closed";
 			}
@@ -1222,6 +1233,7 @@
 				showSubGraphics("attack_moderate_line","attack_moderate_box")
 				showModerateQuestions(2)
 				leftPanelYellowTrigger("leftModerateAttack")
+				closeAllVideos();
 				// document.getElementById("rightPanel").className = "closed";
 				// document.getElementById("rightPanelBottom").className = "closed";
 			}
@@ -1233,6 +1245,7 @@
 				showSubGraphics("attack_severe_line","attack_severe_box")
 				showSevereQuestions(3)
 				leftPanelRedTrigger("leftSevereAttack")
+				closeAllVideos();
 				// document.getElementById("rightPanel").className = "closed";
 				// document.getElementById("rightPanelBottom").className = "closed";
 			}
@@ -1478,6 +1491,7 @@
 			document.getElementById(videoName+"_icon").style = "display:none;"
 			document.getElementById(videoName+"_selected_icon").style = "display:inline-block;"
 			document.getElementById(videoName+"_video").className = "video_player slide_open";
+			console.log(document.getElementById(videoName))
 			document.getElementById(videoName).load();
 			document.getElementById(videoName).play();
 
