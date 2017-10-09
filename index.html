@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" style="height:100%">
 	<head>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-107203086-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments)};
+		  gtag('js', new Date());
+		  gtag('config', 'UA-107203086-1');
+		</script>
 		<title>MedTechHeart</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
@@ -24,7 +31,7 @@
 		<script src="js/zinc_3js_renderer.js"></script>
 		<script src="js/show_hide_answer.js" ></script>
 		<script src="js/Add3DLabel.js" ></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.11.2/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ><
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/dojo/1.11.2/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script>
 		<!-- <script src="../../dojo-release-1.11.2/dojo/dojo.js" data-dojo-config="async: 1, parseOnLoad: true" ></script>-->
 		<script>
 			var dojoConfig = {
@@ -104,7 +111,7 @@
 			</div>
 			<div id="rightECG" class="rightChart" style="width:100%;float:right;">
 			</div>
-			<div id="ECGDescription" class="rightChartDescription" style="width:75%;clear:right;float:right;padding:10px;color:#888888">
+			<div id="ECGDescription" class="rightChartDescription" style="width:75%;clear:right;float:right;padding:10px;color:rgb(175, 175, 175)">
 				electrical waves make the heart muscle contract
 			</div>
 			<div class="rightChartTitle" style="top:6%;width:75%;float:right;padding:10px;">
@@ -124,12 +131,13 @@
 			<div class="rightChartDescription" style="top:10%;width:75%;clear:right;float:right;padding:10px;color:rgb(175, 175, 175)">
 				beats per minute
 			</div>
-
+			<div class="rightChartDescription" style="top:14%;width:75%;clear:right;float:right;padding:10px;color:rgb(175, 175, 175)">
+				<img src="images/heart_v7/medtechcore_abi_logo.png" alt="medtech_logo" style="width:100%;">
+		  </div>
 		</div>
-		<div id="bottom_logo" class="closed" style="background-color:rgba(255,0,0,0)">
-			<img src="images/heart_v7/medtechCORE.png" alt="medtech_logo" style="position:absolute;right:6%;top:3%;height:50%;">
-			<img src="images/heart_v7/abi-v-white.png" alt="abi_logo" style="position:absolute;right:2%;bottom:3%;height:27%;">
-		</div>
+		<!-- <div id="bottom_logo" class="closed" style="background-color:rgba(255,0,0,0)">
+			<img src="images/heart_v7/medtechcore_abi_logo.png" alt="medtech_logo" style="width:100%;">
+		</div> -->
 
 		<div id="leftPanelGreen" class="closed">
 			<div id="bottom_control" class="closed">
@@ -224,12 +232,11 @@
 					<span style="color:rgba(50,255,50,0.6)"><b>The Heart</b></span>
 				</div>
 				<div class="leftAnswer open">
-					<p class="big">This is an interactive model of the heart where only the left and right ventricles of the heart are shown.</p>
+					<p class="big">This is an interactive model of the heart's two main pumping chambers: the ventricles. Spin, zoom, drag, and open the heart using the gestures shown at the bottom. Vary the heart rate using the slider on the right. </p>
 					<img src="images/heart_v7/schematic.png" alt="schematic" style="position:relative;left:5%;width:90%;">
-					<p class="big">Spin, zoom, drag, and look inside the heart using the gestures shown at the bottom of the page. Set the heart rate using the slider on the right. </p>
 					<hr class="style">
-					<p class="big">The heart pumps blood around the body to provide all the organ systems with access to oxygen, nutrients, and waste disposal. </p>
-					<p class="big">Electrical pulses pass through the heart muscles (see ECG trace on the right) and signal the muscle to contract and generate pressure (see pressure trace on the right). </p>
+					<p class="big">The heart pumps blood around the body to provide all the organ systems with oxygen and nutrients. </p>
+					<p class="big">The ECG trace (top right) represents the electrical waves in the heart that stimulate contraction and generate pressure (middle right) to pump blood.  </p>
 					<hr class="style">
 					<p class="big">Click through the tabs below to learn about various heart diseases.</p>
 				</div>
@@ -242,9 +249,28 @@
 					<span style="color:rgba(50,205,50,0.6)"><b>Coronary Arteries</b></span>
 				</div>
 				<div class="leftAnswer open">
-					<p class="big">The heart pumps blood to itself through blood vessels called the coronary arteries (not shown in the 3D model).</p>
-					<p class="big">In a heart attack, fatty deposits build up inside the coronary arteries. This obstructs blood flow to the heart muscle and causes damage. </p>
-					<img src="images/heart_v7/coronary_block_moderate_no_vid.png" alt="moderate" style="position:relative;left:10%;width:80%">
+					<p class="big">The heart pumps blood to itself through blood vessels called the coronary arteries (not shown in the 3D model). A heart attack occurs when blood flow is obstructed by a narrowing of these arteries.</p>
+					<img src="images/heart_v7/coronary_heart.png" alt="moderate" style="position:relative;left:24%;width:52%">
+
+					<p class="big">Good lifestyle choices help to keep the coronary arteries healthy and prevent heart attacks. Learn more about how lifestyle factors can affect the heart in the following movie clips.</p>
+					<div id="exercise_icon" class = "medicationLifestyle open">
+						<img src="images/heart_v7/exercise.png" alt="home"  onclick="showVideo('exercise')" style="top:0%;height:93%;position:relative">
+					</div>
+					<div id="exercise_selected_icon" style="display:none" class = "medicationLifestyle" >
+						<img src="images/heart_v7/exercise_selected.png" alt="home" onclick="closeVideo('exercise')" style="top:0%;height:93%;position:relative">
+					</div>
+					<div id="diet_icon" class = "medicationLifestyle open" >
+						<img src="images/heart_v7/diet.png" alt="home"  onclick="showVideo('diet')" style="top:0%;height:93%;position:relative">
+					</div>
+					<div id="diet_selected_icon" style="display:none" class = "medicationLifestyle closed" >
+						<img src="images/heart_v7/diet_selected.png" alt="home" onclick="closeVideo('diet')" style="top:0%;height:93%;position:relative">
+					</div>
+					<div id="smoking_icon" class = "medicationLifestyle open" >
+						<img src="images/heart_v7/smoking.png" alt="home"  onclick="showVideo('smoking')" style="top:0%;height:93%;position:relative">
+					</div>
+					<div id="smoking_selected_icon" style="display:none" class = "medicationLifestyle closed" >
+						<img src="images/heart_v7/smoking_selected.png" alt="home" onclick="closeVideo('smoking')" style="top:0%;height:93%;position:relative">
+					</div>
 					<hr class="style">
 					<p class="big">Click on the tabs below to learn more about minor or severe heart attacks.</p>
 				</div>
@@ -254,14 +280,14 @@
 					<b>Heart Electricity</b>
 				</div>
 				<div class="leftDescription" >
-					<span style="color:rgba(50,255,50,0.6)"><b>Healthy</b></span>
+					<span style="color:rgba(50,255,50,0.6)"><b>Electrocardiograms</b></span>
 				</div>
 				<div class="leftAnswer open">
-					<p class="big">Coordinated electrical waves passing through the heart muscle triggers smooth contractions. The heart needs to contract smoothly to pump effectively.</p>
-					<p class="big">The electrical activity of the heart can be measured by placing electrodes on the skin of the chest. This is called an electrocardiogram (ECG) reading.</p>
-					<img src="images/heart_v7/ecg_einthoven.png" alt="severe" style="position:relative;left:0%;width:100%;">
+					<p class="big">Electrical waves (coloured yellow) pass through the heart to trigger contraction of the muscular walls. The heart needs coordinated electrical waves and smooth contraction to pump effectively.</p>
+					<p class="big">The electrical waves in the heart can be measured by placing electrodes on the chest. This is called an electrocardiogram (ECG) recording, as shown at the right.</p>
+					<!-- <img src="images/heart_v7/ecg.jpg" alt="severe" style="position:relative;left:0%;width:100%;"> -->
 					<hr class="style">
-					<p class="big">Click on fibrillation below to find out what happens when this electrical activity is disrupted.</p>
+					<p class="big">Click on fibrillation below to see what happens when this smooth electrical activity is disrupted.</p>
 				</div>
 			</div>
 			<div id="leftHeartFailure" class="closed">
@@ -269,36 +295,13 @@
 					<b>Heart Failure</b>
 				</div>
 				<div class="leftDescription">
-					<span>&nbsp;</span>
+					<span style="color:rgba(50,255,50,0.6)"><b>Chronic problems</b></span>
 				</div>
-				<div class ="leftQuestionWidget open" id="failure_1_block">
-					<div class="leftQuestionPic open" id="failure_1_q">
-						<b>Can the heart wear out?</b>
-					</div>
-					<div class="leftAnswer closed" id="failure_1_a">
-						<br>Yes. Long term problems such as high blood pressure or untreated heart attacks
-						can eventually cause the heart to wear out. This is known as heart failure. Find out more about heart failure by tapping the icons below.
-					</div>
-					<div class="downArrow open" id="failure_1_d" onclick="showFailureAnswer(1, 2)">
-					</div>
-					<div class="upArrow closed" id="failure_1_u" onclick="showFailureQuestions(2)">
-					</div>
-				</div>
-				<div class ="leftQuestionWidget open" id="failure_2_block">
-					<div class="leftQuestionPic open" id="failure_2_q">
-						<b>What happens during heart failure?</b>
-					</div>
-					<div class="leftAnswer closed" id="failure_2_a">
-						<p>The shape, stiffness, and contraction of the heart
-						are abnormal, and the heart needs to work harder than normal to meet the demands of the body.</p>
-						In the early stages of heart failure, the heart can
-							compensate for these problems.
-						However, if left untreated, this can lead to decompensated heart failure, during which it can no longer pump enough blood.
-					</div>
-					<div class="downArrow open" id="failure_2_d" onclick="showFailureAnswer(2, 2)">
-					</div>
-					<div class="upArrow closed" id="failure_2_u" onclick="showFailureQuestions(2)">
-					</div>
+				<div class="leftAnswer open">
+					<p class="big">Long term problems such as high blood pressure or untreated heart attacks can eventually cause the heart to fail. </p>
+					<p class="big">In heart failure, the heart needs to work harder than normal to meet the demands of the body. This can lead to changes in the heart's shape and stiffness, and its ability to contract and relax. </p>
+					<hr class="style">
+					<p class="big">Click on the tabs below to learn more about the different types of heart failure.</p>
 				</div>
 			</div>
 		</div>
@@ -368,9 +371,11 @@
 					<span style="color:rgba(255,255,0,0.6)"><b>Minor</b></span>
 				</div>
 				<div class="leftAnswer open">
-					<p class="big">Coronary blockages damage the heart muscle (purple region in the beating model).</p>
-					<p class="big">Damaged muscle cannot contract as well as healthy muscle. This decreases the pressure that can be generated by the ventricle (the yellow pressure trace). </p>
-					<p class="big">Medicines such as aspirin and statin medications help to reduce the blockage of the coronary arteries. These medicines must be combined with healthy lifestyle choices to help prevent further blockages.</p>
+					<p class="big">In a heart attack, fatty deposits build up inside the coronary arteries. This obstructs blood flow to the heart muscle and causes tissue damage. </p>
+					<img src="images/heart_v7/coronary_block_moderate_no_vid.png" alt="moderate" style="position:relative;left:24%;width:52%">
+					<p class="big">Less pressure is generated by hearts with damaged tissue (yellow trace) compared to healthy hearts (green trace). </p>
+					<hr class="style">
+					<p class="big">Medications such as statins and aspirin help to reduce coronary blockages. They must be combined with healthy lifestyle choices to help prevent further heart attacks.</p>
 					<div id="statin_icon" class = "medicationLifestyle open">
 						<img src="images/heart_v7/statin.png" alt="home"  onclick="showVideo('statin')"
 						style="top:0%;height:93%;position:relative">
@@ -414,33 +419,13 @@
 				<div class="leftDescription" >
 					<span style="color:rgba(255,255,0,0.6)"><b>Compensated</b></span>
 				</div>
-				<div class ="leftQuestionWidget open" id="compensated_1_block">
-					<div class="leftQuestionPic open" id="compensated_1_q">
-						<b>What changes can you observe in the heart?</b>
-					</div>
-					<div class="leftAnswer closed" id="compensated_1_a">
-						<p>Did you see that the walls are thicker? (Double tap to look inside.)</p>
-						Long term heart problems such as high blood pressure or heart attacks require the heart to work harder.
-						The muscular walls of the heart compensate for this higher load by becoming thicker.
-					</div>
-					<div class="downArrow open" id="compensated_1_d" onclick="showCompensatedAnswer(1, 2)">
-					</div>
-					<div class="upArrow closed" id="compensated_1_u" onclick="showCompensatedQuestions(2)">
-					</div>
-				</div>
-				<div class ="leftQuestionWidget open" id="compensated_2_block">
-					<div class="leftQuestionPic open" id="compensated_2_q">
-						<b>Why should you treat heart problems as early as possible?</b>
-					</div>
-					<div class="leftAnswer closed" id="compensated_2_a">
-						<br>If heart problems are left untreated then
-						eventually the heart muscle will no longer be able to cope. This leads to
-						decompensated heart failure. Tap below to see what can happen.
-					</div>
-					<div class="downArrow open" id="compensated_2_d" onclick="showCompensatedAnswer(2, 2)">
-					</div>
-					<div class="upArrow closed" id="compensated_2_u" onclick="showCompensatedQuestions(2)">
-					</div>
+				<div class="leftAnswer open">
+					<p class="big">In compensated heart failure the muscular walls of the heart get thicker in response to prolonged high blood pressure. Open the heart (double-click) to see the thicker heart walls.</p>
+					<hr class="style">
+					<p class="big">In compensated failure, during each beat less blood is able to enter the heart, because of thicker walls, increased stiffness, and/or delayed relaxation.</p>
+					<p class="big">At rest, the heart can cope with these problems, and patients may not show any symptoms. However, during exercise or stress, they may find that their hearts cannot effectively respond to the increased demand to pump blood.</p>
+					<hr class="style">
+					<p class="big">Researchers are still seeking effective treatment options for patients with compensated heart failure. Some suggest that it may lead on to decompensated heart failure, described in the tab below.</p>
 				</div>
 			</div>
 		</div>
@@ -518,10 +503,10 @@
 					<span style="color:rgba(255,50,0,0.6)"><b>Severe</b></span>
 				</div>
 				<div class="leftAnswer open">
-					<p class="big">If a minor blockage is left untreated or if medication is stopped too early, then a coronary artery blockage can become more severe.</p>
-					<img src="images/heart_v7/coronary_block_severe.png" alt="severe" style="position:relative;left:10%;width:80%;">
-					<p class="big">While minor heart attacks can be reversible, a severe heart attack can cause permanent damage to the heart muscle.</p>
-					<p class="big"> In a severe heart attack, a large portion of the heart is damaged and it can barely produce enough pressure to pump blood around the body (the red pressure curve). </p>
+					<p class="big">If a minor heart attack is left untreated, or if medication is stopped too early, then the coronary artery blockage can become more severe.</p>
+					<img src="images/heart_v7/coronary_block_severe.png" alt="severe" style="position:relative;left:24%;width:52%;">
+					<p class="big">A severe heart attack can cause permanent damage to a large portion of heart tissue. This prevents the heart from generating enough pressure to pump blood around the body (red trace). </p>
+					<p class="big">Muscle damage due to a heart attack can lead to problems with electrical activity of the heart. Untreated heart attacks can eventually lead to heart failure.</p>
 				</div>
 			</div>
 			<div id="leftHeartArrhythmia" class="closed">
@@ -532,12 +517,12 @@
 					<span style="color:rgba(255,50,0,0.6)"><b>Fibrillation</b></span>
 				</div>
 				<div class="leftAnswer open">
-					<p class="big">Chaotic electrical waves (red ECG trace) causes the heart muscle to wobble. The lack of coordinated contraction causes low pressure generation (red pressure trace).</p>
-					<p class="big">This is a serious medical condition that needs to be treated immediately. An automated external defibrillator (AED) is able to restore the smooth electrical waves in the heart by applying a large electrical shock to the heart.</p>
+					<p class="big">Chaotic electrical waves (red ECG trace) cause uncoordinated contraction of the heart muscle. This reduces the heart's ability to generate pressure (red trace).</p>
+					<p class="big">This is a serious medical condition that needs to be treated immediately. An automated external defibrillator (AED) is able to restore the smooth electrical waves in the heart by applying a large electrical shock across the chest.</p>
 					<hr class="style">
-					<p class="big">These AED devices can be found in many public places. Click on the standard AED icon below to defibrillate the model heart!</p>
+					<p class="big">AED devices can be found in many public places. Click on the standard AED logo below to defibrillate the virtual heart!</p>
 					<div id="aed_button" class="open">
-						<img src="images/heart_v7/defibrillation.png" alt="aed" style="position:relative;left:20%;width:60%;" onclick="AEDClicked()">
+						<img src="images/heart_v7/defibrillation.png" alt="aed" style="position:relative;left:35%;width:30%;" onclick="AEDClicked()">
 					</div>
 				</div>
 			</div>
@@ -548,35 +533,13 @@
 				<div class="leftDescription" >
 					<span style="color:rgba(255,50,0,0.6)"><b>Decompensated</b></span>
 				</div>
-				<div class ="leftQuestionWidget open" id="decompensated_1_block">
-					<div class="leftQuestionPic open" id="decompensated_1_q">
-						<b>What changes can you observe in the heart?</b>
-					</div>
-					<div class="leftAnswer closed" id="decompensated_1_a">
-						<p>Did you see that the heart has ballooned and the walls are thinner? (Double tap to look inside.)
-						</p>
-					By this point, the heart has worn out and the larger heart is no longer able to cope with the
-					high work load.
-					</div>
-					<div class="downArrow open" id="decompensated_1_d" onclick="showDecompensatedAnswer(1, 2)">
-					</div>
-					<div class="upArrow closed" id="decompensated_1_u" onclick="showDecompensatedQuestions(2)">
-					</div>
-				</div>
-				<div class ="leftQuestionWidget open" id="decompensated_2_block">
-					<div class="leftQuestionPic open" id="decompensated_2_q">
-						<b>What effects does decompensated heart failure have on the body?</b>
-					</div>
-					<div class="leftAnswer closed" id="decompensated_2_a">
-						<p>Did you see that the pressure has decreased?</p>
-						The failing heart cannot generate as much pressure to pump enough
-							blood to meet the demands of the body. This results in symptoms such as
-							dizziness, breathing difficulties, inability to exercise, and chest pains.
-					</div>
-					<div class="downArrow open" id="decompensated_2_d" onclick="showDecompensatedAnswer(2, 2)">
-					</div>
-					<div class="upArrow closed" id="decompensated_2_u" onclick="showDecompensatedQuestions(2)">
-					</div>
+				<div class="leftAnswer open">
+					<p class="big">In decompensated heart failure the muscular walls of the heart become thinner and the heart balloons out. See these changes by opening the heart (double-click).</p>
+					<hr class="style">
+					<p class="big">A heart with decompensated failure is weak and has problems with contraction and pumping of blood.</p>
+					<p class="big">Patients with decompensated heart failure will have symptoms, even at rest. These symptoms include dizziness, breathing difficulties, inability to exercise, and chest pains.</p>
+					<hr class="style">
+					<p class="big">Treatments for this disease include ACE inhibitors, beta blockers, and diuretics, which work to lower blood pressure and decrease the load on the heart.</p>
 				</div>
 			</div>
 		</div>
@@ -623,9 +586,14 @@
 					Our Research
 				</div>
 				<div id="feedback_icon" style="position:absolute;top:55%;width:80%;left:10%" >
-					<img src="images/heart_v7/feedback_icon.png" style="width:100%" alt="feedback">
-				</div>
+					<div class="leftAnswer open" style="font-size:2.0em;">
+						<p class="big">Visit our <a href="https://tinyurl.com/medtechheartfeedback" target="_blank" style="color:yellow">online form</a> to give us your valuable feedback about this app.</p>
+					</div>
 
+				</div>
+				<!-- <div id="feedback_icon" style="position:absolute;top:55%;width:80%;left:10%" >
+					<img src="images/heart_v7/feedback_icon.png" style="width:100%" alt="feedback">
+				</div> -->
 			</div>
 		</div>
 
@@ -635,8 +603,18 @@
 					<span style="color:white;font-size:1.4em;"><b>Our Research</b></span><br>
 					Improving diagnosis and management of heart diseases <br>using personalised biomechanics and image-driven computer modelling
 				</div>
-				<div id="video_placeholder" class="open" style="top:20%;left:25%;width:50%;position:absolute;">
+				<!-- <div id="video_placeholder" class="open" style="top:20%;left:25%;width:50%;position:absolute;">
 					<img src="images/heart_v7/video_placeholder.png" style="width:100%" alt="video_placeholder">
+				</div> -->
+				<!-- <video id="exercise" controls controlsList="nodownload" style = "position:absolute;height:90%;width:100%" class="closed">
+					<source src="videos/5_exercise_v2.mp4">
+					Your browser does not support the video tag.
+				</video> -->
+				<div id="about_us_video" class="open">
+					<video id="about_us" poster="images/heart_v7/video_placeholder.png" controls controlslist="nodownload" style="top:20%;left:10%;width:80%;position:absolute;">
+						<source src="videos/heartresearchvideo.mp4">
+							Your browser does not support the video tag.
+					</video>
 				</div>
 				<!-- <div id="abi_banner" class="open" style="bottom:2%;left:0%;height:30%;position:absolute;">
 					<img src="images/heart_v7/abi_banner.png" style="height:100%"  alt="abi_banner">
@@ -650,14 +628,16 @@
 				<div id="headshots" style="position:absolute;top:17%;left:10%;height:60%">
 					<img src="images/heart_v7/headshots.png" style="height:100%" alt="headshots">
 				</div>
-				<div id="funding" style="position:absolute;left:10%;top:80%;width:65%">
-					<img src="images/heart_v7/funding.png" style="width:100%" alt="funding">
+				<div id="funding" style="position:absolute;left:20%;top:80%;width:60%">
+					<img src="images/heart_v7/funding_abi_medtech.png" style="width:100%" alt="funding">
 				</div>
 			</div>
 			<div id="feedback" class="closed">
-				<div id="funding" style="position:absolute;left:16%;top:10%;width:80%">
+				<p>Feedback</p>
+				<p>Visit our <a href="https://tinyurl.com/medtechheartfeedback">online form</a> to give us your valuable feedback on this app.</p>
+				<!-- <div id="funding" style="position:absolute;left:16%;top:10%;width:80%">
 					<img src="images/heart_v7/feedback.jpg" style="width:100%" alt="feedback">
-				</div>
+				</div> -->
 			</div>
 		</div>
 
@@ -665,7 +645,9 @@
 			<div id="gestures_icon" class="closed">
 				<img src="images/heart_v7/gestures_icon.png" alt="gestures_icon" style="width:100%">
 			</div>
-			<div id="halfheart" class="open" style="background-color:transparent;position:absolute;top:0%;left:60%;width:5%;height:20%;z-index:20" onclick="halfHeartPressed()">
+			<div id="halfheart" class="open" style="background-color:rgba(255,0,0,0);position:absolute;bottom:0%;left:59%;width:4%;height:11%;z-index:20" onclick="halfHeartPressed()">
+				</div>
+			<div id="reset" class="open" style="background-color:rgba(255,0,0,0);position:absolute;bottom:0%;left:45%;width:3.5%;height:11%;z-index:20" onclick="resetAllModelsView()">
 			</div>
 		</div>
 
@@ -717,14 +699,14 @@
 			"failure_line","failure_box", "attack_moderate_line", "attack_moderate_box",
 			"failure_compensated_line","failure_compensated_box","attack_severe_line",
 			"attack_severe_box","failure_decompensated_line","failure_decompensated_box"];
-		var videoNameIds = ["exercise","diet","smoking","aspirin","statin"];
+		var videoNameIds = ["exercise","diet","smoking","aspirin","statin", "about_us"];
 		var modelToSceneArray = [];
 		var previousCamera = undefined;
 
 		function loadFirstPage() {
 			// document.getElementById("bottom_control_back").className="open";
 			leftPanelGreenTrigger("initialNormal");
-			document.getElementById("bottom_logo").className = "open";
+			//document.getElementById("bottom_logo").className = "open";
 			document.getElementById("rightInformation").className = "open";
 			document.getElementById("bottom_control").className = "open";
 			document.getElementById("home_icon").className = "closed";
@@ -1002,6 +984,7 @@
 					"attack_sub_severe_icon_yp")
 				showSubGraphics("attack_moderate_line","attack_moderate_box")
 				leftPanelYellowTrigger("leftModerateAttack")
+				addInfarctLabel(StageName)
 				closeAllVideos();
 			}
 			if (descriptionId== "leftSevereAttack"){
@@ -1011,6 +994,7 @@
 					"attack_sub_severe_selected_icon")
 				showSubGraphics("attack_severe_line","attack_severe_box")
 				leftPanelRedTrigger("leftSevereAttack")
+				addSevereInfarctLabel(StageName)
 				closeAllVideos();
 			}
 		}
@@ -1021,7 +1005,7 @@
 			//loadModel("NoInfarct",1.0);
 			document.getElementById("bottom_control_green_sub").className = "open";
 			showSubIcons("failure_sub_healthy_selected_icon","failure_sub_compensated_icon","failure_sub_decompensated_icon")
-			showFailureQuestions(2)
+			//showFailureQuestions(2)
 			//displayFibresIcon(false);
 			document.getElementById("home_icon").className = "bottomButton open";
 			document.getElementById("home_selected_icon").className = "closed";
@@ -1049,7 +1033,7 @@
 				showSubIcons("failure_sub_healthy_selected_icon","failure_sub_compensated_icon",
 					"failure_sub_decompensated_icon")
 				showSubGraphics("failure_line","failure_box")
-				showFailureQuestions(2)
+				//showFailureQuestions(2)
 				leftPanelGreenTrigger("leftHeartFailure")
 				// document.getElementById("rightPanel").className = "closed";
 				// document.getElementById("rightPanelBottom").className = "closed";
@@ -1060,7 +1044,7 @@
 				showSubIcons("failure_sub_healthy_icon_yp","failure_sub_compensated_selected_icon",
 					"failure_sub_decompensated_icon_yp")
 				showSubGraphics("failure_compensated_line","failure_compensated_box")
-				showCompensatedQuestions(2)
+				//showCompensatedQuestions(2)
 				leftPanelYellowTrigger("leftCompensatedFailure")
 				// document.getElementById("rightPanel").className = "closed";
 				// document.getElementById("rightPanelBottom").className = "closed";
@@ -1071,7 +1055,7 @@
 				showSubIcons("failure_sub_healthy_icon_rp","failure_sub_compensated_icon_rp",
 					"failure_sub_decompensated_selected_icon")
 				showSubGraphics("failure_decompensated_line","failure_decompensated_box")
-				showDecompensatedQuestions(2)
+				//showDecompensatedQuestions(2)
 				leftPanelRedTrigger("leftDecompensatedFailure")
 				// document.getElementById("rightPanel").className = "closed";
 				// document.getElementById("rightPanelBottom").className = "closed";
@@ -1092,6 +1076,8 @@
 			document.getElementById("our_research_selected_icon").className="aboutUsButtons open";
 			document.getElementById("our_team_icon").className="aboutUsButtons open";
 			document.getElementById("our_team_selected_icon").className="aboutUsButtons closed";
+			document.getElementById("about_us_video").className = "open";
+			showAboutUsVideo();
 			// document.getElementById("feedback_icon").className="aboutUsButtons open";
 			// document.getElementById("feedback_selected_icon").className="aboutUsButtons closed";
 			leftPanelPurpleTrigger("ourResearch");
@@ -1102,6 +1088,7 @@
 			document.getElementById("our_research_selected_icon").className="aboutUsButtons closed";
 			document.getElementById("our_team_icon").className="aboutUsButtons closed";
 			document.getElementById("our_team_selected_icon").className="aboutUsButtons open";
+			closeAllVideos();
 			// document.getElementById("feedback_icon").className="aboutUsButtons open";
 			// document.getElementById("feedback_selected_icon").className="aboutUsButtons closed";
 			leftPanelPurpleTrigger("ourTeam")
@@ -1261,6 +1248,13 @@
 
 		}
 
+		function showAboutUsVideo(){
+			closeAllVideos()
+			document.getElementById("about_us_video").className = "open";
+			document.getElementById("about_us").load();
+			document.getElementById("about_us").play();
+		}
+
 		function closeVideo(videoName){
 			document.getElementById(videoName+"_video").className = "video_player slide_closed";
 			document.getElementById(videoName).pause();
@@ -1269,7 +1263,7 @@
 
 		function closeAllVideos(){
 			for(var i = 0; i < videoNameIds.length; i++){
-    			var id = videoNameIds[i];
+    		var id = videoNameIds[i];
 				document.getElementById(id+"_video").className = "video_player closed";
 				document.getElementById(id).pause();
 			}
@@ -1456,10 +1450,10 @@
 			LVPTexts["Arrhythmia"] = "poor pump pressure";
 			ECGTexts["NoInfarct"] = "electrical pulses make the heart muscle contract";
 			LVPTexts["NoInfarct"] = "muscle contraction generates pump pressure";
-			ECGTexts["SmallInfarct"] = "minor heart muscle damage can show up as subtle changes to the ECG";
-			LVPTexts["SmallInfarct"] = "damaged muscle leads to less contraction force and less pressure generated";
-			ECGTexts["LargeInfarct"] = "severe heart muscle damage can show up as large changes to the ECG";
-			LVPTexts["LargeInfarct"] = "damaged muscle leads to less contraction force and less pressure generated";
+			ECGTexts["SmallInfarct"] = "minor heart tissue damage can show up as subtle changes to the ECG";
+			LVPTexts["SmallInfarct"] = "damaged tissue leads to less contraction force and less pressure";
+			ECGTexts["LargeInfarct"] = "severe heart tissue damage can show up as large changes to the ECG";
+			LVPTexts["LargeInfarct"] = "damaged tissue leads to less contraction force and less pressure";
 			ECGTexts["NoFailure"] = "electrical pulses make the heart muscle contract";
 			LVPTexts["NoFailure"] = "muscle contraction generates pump pressure";
 			ECGTexts["CompensatedFailure"] = "electrical pulses make the heart muscle contract";
@@ -1521,6 +1515,16 @@
 			var scene = zincRenderer.getSceneByName(model_name);
 			addLabelToScene(scene, "right ventricle", -38.056679,35.639515,10.421283, 60.0);
 			addLabelToScene(scene, "left ventricle", -48.056679,-5.639515,5.421283, 60.0);
+		}
+
+		function addInfarctLabel(model_name){
+			var scene = zincRenderer.getSceneByName(model_name);
+			addLabelToScene(scene, "damaged tissue", 30,-50,0, 60.0);
+		}
+
+		function addSevereInfarctLabel(model_name){
+			var scene = zincRenderer.getSceneByName(model_name);
+			addLabelToScene(scene, "damaged tissue", 15,-55,0, 60.0);
 		}
 
 		function resetView()	{
