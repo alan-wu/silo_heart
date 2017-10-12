@@ -50,8 +50,30 @@
 	</head>
 	<body onload="setTimer()" style="height:100%;font-family='Helvetica'" oncontextmenu="return false" unselectable="on" onselectstart="return false;">
 	<div id="main_page" class="heartpage">
+		<div id="heart_video" class="video_player closed">
+			<video id="heart" controls controlsList="nodownload" style = "position:absolute;height:90%;width:100%" class="closed" onended="ExitFullScreen('heart')">
+				<source src="videos/1_healthy_heart.mp4">
+				Your browser does not support the video tag.
+			</video>
+			<div class="close_video" onclick="closeVideo('heart')" style="display:inline-block">
+				<img src="images/heart_v7/Annie_Jones.png" style="height:90%;top:5%;left:5%;position:absolute" alt="annie_jones">
+				<img src="images/heart_v7/close_video_icon.png" style="height:90%;top:5%;width:55%;left:22.5%;position:absolute"alt="click_to_close">
+				<img src="images/heart_v7/Liz_Broadbent.png" style="height:90%;top:5%;right:5%;position:absolute" alt="liz_broadbent">
+			</div>
+		</div>
+		<div id="blockage_video" class="video_player closed">
+			<video id="blockage" controls controlsList="nodownload" style = "position:absolute;height:90%;width:100%" class="closed" onended="ExitFullScreen('blockage')">
+				<source src="videos/2_blocked_arteries.mp4">
+				Your browser does not support the video tag.
+			</video>
+			<div class="close_video" onclick="closeVideo('blockage')" style="display:inline-block">
+				<img src="images/heart_v7/Annie_Jones.png" style="height:90%;top:5%;left:5%;position:absolute" alt="annie_jones">
+				<img src="images/heart_v7/close_video_icon.png" style="height:90%;top:5%;width:55%;left:22.5%;position:absolute"alt="click_to_close">
+				<img src="images/heart_v7/Liz_Broadbent.png" style="height:90%;top:5%;right:5%;position:absolute" alt="liz_broadbent">
+			</div>
+		</div>
 		<div id="exercise_video" class="video_player closed">
-			<video id="exercise" controls controlsList="nodownload" style = "position:absolute;height:90%;width:100%" class="closed">
+			<video id="exercise" controls controlsList="nodownload" style = "position:absolute;height:90%;width:100%" class="closed" onended="ExitFullScreen('exercise')">
 				<source src="videos/5_exercise_v2.mp4">
 				Your browser does not support the video tag.
 			</video>
@@ -62,7 +84,7 @@
 			</div>
 		</div>
 		<div id="diet_video" class="video_player closed">
-			<video id="diet" controls controlsList="nodownload" style = "position:absolute;height:90%;width:100%" class="closed">
+			<video id="diet" controls controlsList="nodownload" style = "position:absolute;height:90%;width:100%" class="closed" onended="ExitFullScreen('diet')">
 				<source src="videos/6_diet_v2.mp4">
 				Your browser does not support the video tag.
 			</video>
@@ -73,7 +95,7 @@
 			</div>
 		</div>
 		<div id="smoking_video" class="video_player closed">
-			<video id="smoking" controls controlsList="nodownload" style = "position:absolute;height:90%;width:100%" class="closed">
+			<video id="smoking" controls controlsList="nodownload" style = "position:absolute;height:90%;width:100%" class="closed" onended="ExitFullScreen('smoking')">
 				<source src="videos/7_smoking_v2.mp4">
 				Your browser does not support the video tag.
 			</video>
@@ -84,7 +106,7 @@
 			</div>
 		</div>
 		<div id="aspirin_video" class="video_player closed">
-			<video id="aspirin" controls controlsList="nodownload" style = "position:absolute;height:90%;width:100%" class="closed">
+			<video id="aspirin" controls controlsList="nodownload" style = "position:absolute;height:90%;width:100%" class="closed" onended="ExitFullScreen('aspirin')">
 				<source src="videos/4_aspirin.mp4">
 				Your browser does not support the video tag.
 			</video>
@@ -95,7 +117,7 @@
 			</div>
 		</div>
 		<div id="statin_video" class="video_player closed">
-			<video id="statin" controls controlsList="nodownload" style = "position:absolute;height:90%;width:100%" class="closed">
+			<video id="statin" controls controlsList="nodownload" style = "position:absolute;height:90%;width:100%" class="closed" onended="ExitFullScreen('statin')">
 				<source src="videos/3_Statins.mp4">
 				Your browser does not support the video tag.
 			</video>
@@ -235,8 +257,17 @@
 					<p class="big">This is an interactive model of the heart's two main pumping chambers: the ventricles. Spin, zoom, drag, and open the heart using the gestures shown at the bottom. Vary the heart rate using the slider on the right. </p>
 					<img src="images/heart_v7/schematic.png" alt="schematic" style="position:relative;left:5%;width:90%;">
 					<hr class="style">
-					<p class="big">The heart pumps blood around the body to provide all the organ systems with oxygen and nutrients. </p>
+					<p class="big" style="width:80%;display:inline-block">The heart pumps blood around the body to provide all the organ systems with oxygen and nutrients. </p>
+					<div id="heart_icon" class = "medicationLifestyle open">
+						<img src="images/heart_v7/heart_video.png" alt="home"  onclick="showVideo('heart')"
+						style="top:10%;height:93%;left:10%;position:relative">
+					</div>
+					<div id="heart_selected_icon" class = "medicationLifestyle" style="display:none;">
+						<img src="images/heart_v7/heart_video_selected.png" alt="home"  onclick="closeVideo('heart')"
+						style="top:10%;height:93%;left:10%;position:relative">
+					</div>
 					<p class="big">The ECG trace (top right) represents the electrical waves in the heart that stimulate contraction and generate pressure (middle right) to pump blood.  </p>
+
 					<hr class="style">
 					<p class="big">Click through the tabs below to learn about various heart diseases.</p>
 				</div>
@@ -250,8 +281,15 @@
 				</div>
 				<div class="leftAnswer open">
 					<p class="big">The heart pumps blood to itself through blood vessels called the coronary arteries (not shown in the 3D model). A heart attack occurs when blood flow is obstructed by a narrowing of these arteries.</p>
-					<img src="images/heart_v7/coronary_heart.png" alt="moderate" style="position:relative;left:24%;width:52%">
-
+					<img src="images/heart_v7/coronary_heart.png" alt="moderate" style="position:relative;left:20%;width:60%;display:inline-block">
+					<div id="blockage_icon" class = "medicationLifestyle" style="display:inline-block">
+						<img src="images/heart_v7/blockage_icon.png" alt="home"  onclick="showVideo('blockage')"
+						style="top:10%;height:100%;left:95%;position:relative">
+					</div>
+					<div id="blockage_selected_icon" class = "medicationLifestyle" style="display:none;">
+						<img src="images/heart_v7/blockage_selected_icon.png" alt="home"  onclick="closeVideo('blockage')"
+						style="top:10%;height:100%;left:95%;position:relative">
+					</div>
 					<p class="big">Good lifestyle choices help to keep the coronary arteries healthy and prevent heart attacks. Learn more about how lifestyle factors can affect the heart in the following movie clips.</p>
 					<div id="exercise_icon" class = "medicationLifestyle open">
 						<img src="images/heart_v7/exercise.png" alt="home"  onclick="showVideo('exercise')" style="top:0%;height:93%;position:relative">
@@ -373,9 +411,17 @@
 				<div class="leftAnswer open">
 					<p class="big">In a heart attack, fatty deposits build up inside the coronary arteries. This obstructs blood flow to the heart muscle and causes tissue damage. </p>
 					<img src="images/heart_v7/coronary_block_moderate_no_vid.png" alt="moderate" style="position:relative;left:20%;width:60%">
+					<div id="blockage_yp_icon" class = "medicationLifestyle" style="display:none">
+						<img src="images/heart_v7/blockage_icon.png" alt="home"  onclick="showVideo('blockage_yp')"
+						style="top:10%;height:100%;left:95%;position:relative">
+					</div>
+					<div id="blockage_yp_selected_icon" class = "medicationLifestyle" style="display:inline_block">
+						<img src="images/heart_v7/blockage_selected_icon.png" alt="home"  onclick="closeVideo('blockage_yp')"
+						style="top:10%;height:100%;left:95%;position:relative">
+					</div>
 					<p class="big">Less pressure is generated by hearts with damaged tissue (yellow trace) compared to healthy hearts (green trace). </p>
 					<hr class="style">
-					<p class="big">Medications such as statins and aspirin help to reduce coronary blockages. They must be combined with healthy lifestyle choices to help prevent further heart attacks.</p>
+					<p class="big">Medications such as statins and aspirin help to clear and prevent coronary blockages. They must be combined with healthy lifestyle choices to help prevent further heart attacks.</p>
 					<div id="statin_icon" class = "medicationLifestyle open">
 						<img src="images/heart_v7/statin.png" alt="home"  onclick="showVideo('statin')"
 						style="top:0%;height:93%;position:relative">
@@ -505,6 +551,14 @@
 				<div class="leftAnswer open">
 					<p class="big">If a minor heart attack is left untreated, or if medication is stopped too early, then the coronary artery blockage can become more severe.</p>
 					<img src="images/heart_v7/coronary_block_severe.png" alt="severe" style="position:relative;left:20%;width:60%;">
+					<div id="blockage_rp_icon" class = "medicationLifestyle" style="display:inline-block">
+						<img src="images/heart_v7/blockage_icon.png" alt="home"  onclick="showVideo('blockage_rp')"
+						style="top:10%;height:100%;left:95%;position:relative">
+					</div>
+					<div id="blockage_rp_selected_icon" class = "medicationLifestyle" style="display:none;">
+						<img src="images/heart_v7/blockage_selected_icon.png" alt="home"  onclick="closeVideo('blockage_rp')"
+						style="top:10%;height:100%;left:95%;position:relative">
+					</div>
 					<p class="big">A severe heart attack can cause permanent damage to a large portion of heart tissue. This prevents the heart from generating enough pressure to pump blood around the body (red trace). </p>
 					<p class="big">Muscle damage due to a heart attack can lead to problems with electrical activity of the heart. Untreated heart attacks can eventually lead to heart failure.</p>
 				</div>
@@ -569,20 +623,20 @@
 				<div class="leftDescription">
 					<span>&nbsp;</span>
 				</div>
-				<div id="our_team_icon" style="top:25%;" class="aboutUsButtons closed" onclick="ourTeamClicked()">
+				<div id="our_team_icon" style="top:40%;" class="aboutUsButtons open" onclick="ourTeamClicked()">
 					Our Team
 				</div>
 				<div id="our_team_selected_icon"
-					style="top:25%;background-color:rgba(150,30,150,0.4);color:rgb(255,255,255)"
-					class="aboutUsButtons open">
+					style="top:40%;background-color:rgba(150,30,150,0.4);color:rgb(255,255,255)"
+					class="aboutUsButtons closed">
 					Our Team
 				</div>
-				<div id="our_research_icon" style="top:40%;" class="aboutUsButtons open" onclick="ourResearchClicked()">
+				<div id="our_research_icon" style="top:25%;" class="aboutUsButtons closed" onclick="ourResearchClicked()">
 					Our Research
 				</div>
 				<div id="our_research_selected_icon"
-					style="top:40%;background-color:rgba(150,30,150,0.4);color:rgb(255,255,255)"
-					class="aboutUsButtons closed">
+					style="top:25%;background-color:rgba(150,30,150,0.4);color:rgb(255,255,255)"
+					class="aboutUsButtons open">
 					Our Research
 				</div>
 				<div id="feedback_icon" style="position:absolute;top:55%;width:80%;left:10%" >
@@ -603,28 +657,13 @@
 					<span style="color:white;font-size:1.4em;"><b>Our Research</b></span><br>
 					Improving diagnosis and management of heart diseases <br>using personalised biomechanics and image-driven computer modelling
 				</div>
-				<!-- <div id="video_placeholder" class="open" style="top:20%;left:25%;width:50%;position:absolute;">
-					<img src="images/heart_v7/video_placeholder.png" style="width:100%" alt="video_placeholder">
-				</div> -->
-				<!-- <video id="exercise" controls controlsList="nodownload" style = "position:absolute;height:90%;width:100%" class="closed">
-					<source src="videos/5_exercise_v2.mp4">
-					Your browser does not support the video tag.
-				</video> -->
 				<div id="about_us_video" class="open">
-					<iframe id="iframe1" style="top:20%;left:10%;width:80%;height:70%;position:absolute;" src="https://www.youtube.com/embed/coY3nXBpegA?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-					<!-- <video id="about_us" poster="images/heart_v7/video_placeholder.png" controls controlslist="nodownload" style="top:20%;left:10%;width:80%;position:absolute;">
-						<source src="https://www.youtube.com/embed/coY3nXBpegA">
-							Your browser does not support the video tag.
-
-					</video> -->
+					<iframe id="iframe1" style="top:20%;left:5%;width:90%;height:70%;position:absolute;" src="https://www.youtube.com/embed/FazkF5oQTU0?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 				</div>
-				<!-- <div id="abi_banner" class="open" style="bottom:2%;left:0%;height:30%;position:absolute;">
-					<img src="images/heart_v7/abi_banner.png" style="height:100%"  alt="abi_banner">
-				</div> -->
 			</div>
 			<div id="ourTeam" class="closed">
 				<div id="ourMission" class="mission open" style="position:absolute;top:0%;width:100%;left:0%;color:rgb(175,175,175)">
-					<span style="color:white;font-size:1.4em;"><b>Our Heart Mechanics Research Team</b></span><br>
+					<span style="color:white;font-size:1.4em;"><b>Our Heart Mechanics Research</b></span><br>
 					An inter-disciplinary collaboration between experts in  <br>bioengineering, physiology, software development, and medical imaging
 				</div>
 				<div id="headshots" style="position:absolute;top:17%;left:10%;height:60%">
@@ -701,7 +740,7 @@
 			"failure_line","failure_box", "attack_moderate_line", "attack_moderate_box",
 			"failure_compensated_line","failure_compensated_box","attack_severe_line",
 			"attack_severe_box","failure_decompensated_line","failure_decompensated_box"];
-		var videoNameIds = ["exercise","diet","smoking","aspirin","statin"];
+		var videoNameIds = ["exercise","diet","smoking","aspirin","statin","heart","blockage"];
 		var modelToSceneArray = [];
 		var previousCamera = undefined;
 		// Insert Youtube API;
@@ -712,6 +751,23 @@
 
 		function onYouTubePlayerAPIReady() {
 			iframe1 = new YT.Player('iframe1');
+		}
+
+		function ExitFullScreen(id){
+			if (document.exitFullscreen){
+				console.log('Exit fullscreen');
+				document.exitFullscreen();
+			}else if(document.mozCancelFullScreen){
+				console.log('Moz cancel full screen');
+				document.mozCancelFullScreen();
+			}else if (document.webkitExitFullscreen) {
+				console.log('webkit exit full screen');
+				document.webkitExitFullscreen();
+			} else if (document.msExitFullscreen){
+				console.log('ms exit full screen');
+				document.msExitFullscreen();
+			}
+			closeVideo(id);
 		}
 
 		function loadFirstPage() {
@@ -1074,12 +1130,13 @@
 		}
 
 		function aboutUsClicked(){
-			leftPanelPurpleTrigger("ourTeam");
-			ourTeamClicked();
+			closeAllVideos();
+			leftPanelPurpleTrigger("ourResearch");
+			ourResearchClicked();
 			document.getElementById("gestures_panel").className = "closed";
 			document.getElementById("home_icon").className = "bottomButton open";
 			document.getElementById("home_selected_icon").className = "closed";
-			closeAllVideos();
+
 		}
 
 		function ourResearchClicked(){
@@ -1092,7 +1149,7 @@
 			// document.getElementById("feedback_icon").className="aboutUsButtons open";
 			// document.getElementById("feedback_selected_icon").className="aboutUsButtons closed";
 			leftPanelPurpleTrigger("ourResearch");
-			document.getElementById("iframe1").src="https://www.youtube.com/embed/coY3nXBpegA?rel=0&amp;showinfo=0&autoplay=1";
+			document.getElementById("iframe1").src="https://www.youtube.com/embed/FazkF5oQTU0?rel=0&amp;showinfo=0&autoplay=1";
 		}
 
 		function ourTeamClicked(){
@@ -1248,15 +1305,19 @@
 			}
 		}
 
-
 		function showVideo(videoName) {
-			closeAllVideos()
+			closeAllVideos();
 			document.getElementById(videoName+"_icon").style = "display:none;"
 			document.getElementById(videoName+"_selected_icon").style = "display:inline-block;"
-			document.getElementById(videoName+"_video").className = "video_player slide_open";
-			console.log(document.getElementById(videoName))
-			document.getElementById(videoName).load();
-			document.getElementById(videoName).play();
+			if ((videoName == "blockage_yp")||(videoName=="blockage_rp")){
+				document.getElementById("blockage_video").className = "video_player slide_open";
+				document.getElementById("blockage").load();
+				document.getElementById("blockage").play();
+			}else{
+				document.getElementById(videoName+"_video").className = "video_player slide_open";
+				document.getElementById(videoName).load();
+				document.getElementById(videoName).play();
+			}
 		}
 
 		// Inject YouTube API script
@@ -1278,9 +1339,14 @@
 		}
 
 		function closeVideo(videoName){
-			document.getElementById(videoName+"_video").className = "video_player slide_closed";
-			document.getElementById(videoName).pause();
-			resetVideoIcons()
+			if ((videoName == "blockage_yp")||(videoName=="blockage_rp")){
+				document.getElementById("blockage_video").className = "video_player slide_closed";
+				document.getElementById("blockage").pause();
+			}else{
+				document.getElementById(videoName+"_video").className = "video_player slide_closed";
+				document.getElementById(videoName).pause();
+			}
+			resetVideoIcons();
 		}
 
 		function closeAllVideos(){
@@ -1290,19 +1356,21 @@
 				document.getElementById(id).pause();
 			}
 			//iframe1.stopVideo();
-			document.getElementById("iframe1").src="https://www.youtube.com/embed/coY3nXBpegA?rel=0&amp;showinfo=0";
+			document.getElementById("iframe1").src="https://www.youtube.com/embed/FazkF5oQTU0?rel=0&amp;showinfo=0";
 			// document.getElementById("iframe1").pauseVideo();
 			resetVideoIcons()
 		}
 
 		function resetVideoIcons(){
-			var icons = ["exercise_icon","diet_icon","smoking_icon","aspirin_icon","statin_icon"]
-			var selected_icons = ["exercise_selected_icon","diet_selected_icon","smoking_selected_icon","aspirin_selected_icon","statin_selected_icon"]
+			var icons = ["heart_icon","blockage_icon","blockage_yp_icon","blockage_rp_icon","exercise_icon","diet_icon","smoking_icon","aspirin_icon","statin_icon"]
+			var selected_icons = ["heart_selected_icon","blockage_selected_icon","blockage_yp_selected_icon","blockage_rp_selected_icon","exercise_selected_icon","diet_selected_icon","smoking_selected_icon","aspirin_selected_icon","statin_selected_icon"]
 			for (var i=0;i<icons.length; i++){
 				var id = icons[i];
 				var sel = selected_icons[i];
 				document.getElementById(id).style = "display:inline-block;"
 				document.getElementById(sel).style = "display:none;"
+				console.log(sel)
+				console.log(document.getElementById(sel).style)
 			}
 		}
 
@@ -1532,7 +1600,7 @@
 			} else {
 				zincRenderer.setCurrentScene(scene);
 				shareCameraSettings(previousCamera);
-				showHalf();
+				//showHalf();
 			}
 		}
 
