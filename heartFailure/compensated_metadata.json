@@ -1,43 +1,11 @@
 [
    {
-      "GroupName" : "Cut",
-      "MorphColours" : false,
-      "MorphNormals" : false,
-      "MorphVertices" : true,
-      "Type" : "Surfaces",
-      "URL" : "heartFailure/compensated_1.json"
-   },
-   {
       "GroupName" : "Post_top",
       "MorphColours" : false,
       "MorphNormals" : false,
       "MorphVertices" : true,
       "Type" : "Surfaces",
-      "URL" : "heartFailure/compensated_2.json"
-   },
-   {
-      "GroupName" : "Post_inner",
-      "MorphColours" : false,
-      "MorphNormals" : false,
-      "MorphVertices" : true,
-      "Type" : "Surfaces",
-      "URL" : "heartFailure/compensated_3.json"
-   },
-   {
-      "GroupName" : "inner",
-      "MorphColours" : false,
-      "MorphNormals" : false,
-      "MorphVertices" : true,
-      "Type" : "Surfaces",
-      "URL" : "heartFailure/compensated_4.json"
-   },
-   {
-      "GroupName" : "Ant_NonInfarct",
-      "MorphColours" : false,
-      "MorphNormals" : false,
-      "MorphVertices" : true,
-      "Type" : "Surfaces",
-      "URL" : "heartFailure/compensated_5.json"
+      "URL" : "compensated_1.json"
    },
    {
       "GroupName" : "Ant_top",
@@ -45,7 +13,39 @@
       "MorphNormals" : false,
       "MorphVertices" : true,
       "Type" : "Surfaces",
-      "URL" : "heartFailure/compensated_6.json"
+      "URL" : "compensated_2.json"
+   },
+   {
+      "GroupName" : "Cut",
+      "MorphColours" : false,
+      "MorphNormals" : false,
+      "MorphVertices" : true,
+      "Type" : "Surfaces",
+      "URL" : "compensated_3.json"
+   },
+   {
+      "GroupName" : "Ant_NonInfarct",
+      "MorphColours" : false,
+      "MorphNormals" : false,
+      "MorphVertices" : true,
+      "Type" : "Surfaces",
+      "URL" : "compensated_4.json"
+   },
+   {
+      "GroupName" : "Post_inner",
+      "MorphColours" : false,
+      "MorphNormals" : false,
+      "MorphVertices" : true,
+      "Type" : "Surfaces",
+      "URL" : "compensated_5.json"
+   },
+   {
+      "GroupName" : "inner",
+      "MorphColours" : false,
+      "MorphNormals" : false,
+      "MorphVertices" : true,
+      "Type" : "Surfaces",
+      "URL" : "compensated_6.json"
    },
    {
       "GroupName" : "Post_NonInfarct",
@@ -53,6 +53,6 @@
       "MorphNormals" : false,
       "MorphVertices" : true,
       "Type" : "Surfaces",
-      "URL" : "heartFailure/compensated_7.json"
+      "URL" : "compensated_7.json"
    }
 ]

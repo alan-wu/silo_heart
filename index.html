@@ -1520,22 +1520,45 @@
 
 			modelURLsArray["DeformingHeart"] = ["models/deforming_heart_metadata.json",
 				"models/deforming_heart_view.json"];
-			modelURLsArray["NormalElectricity"] = ["heartElectricity/normalActivity_metadata.json",
+
+			// Heart electricity
+			modelURLsArray["NormalElectricity_lowres"] = ["heartElectricity/normalActivity_lowres_metadata.json",
 				"heartElectricity/normalActivity_view.json"];
-			modelURLsArray["ArrythmiaElectricity"] = ["heartElectricity/arrythmiaActivity_metadata.json",
+			modelURLsArray["NormalElectricity_highres"] = ["heartElectricity/normalActivity_highres_metadata.json",
+				"heartElectricity/normalActivity_view.json"];
+
+			modelURLsArray["ArrythmiaElectricity_lowres"] = ["heartElectricity/arrythmiaActivity_lowres_metadata.json",
 				"heartElectricity/arrythmiaActivity_view.json"];
-			modelURLsArray["LargeInfarct"] = ["heartInfarct/largeInfarct_metadata.json",
+			modelURLsArray["ArrythmiaElectricity_highres"] = ["heartElectricity/arrythmiaActivity_highres_metadata.json",
+				"heartElectricity/arrythmiaActivity_view.json"];
+
+			// Heart attack models
+			modelURLsArray["LargeInfarct_lowres"] = ["heartInfarct/largeInfarct_lowres_metadata.json",
 				"heartInfarct/largeInfarct_view.json"];
-			modelURLsArray["SmallInfarct"] = ["heartInfarct/smallInfarct_metadata.json",
+			modelURLsArray["LargeInfarct_highres"] = ["heartInfarct/largeInfarct_highres_metadata.json",
+				"heartInfarct/largeInfarct_view.json"];
+
+			modelURLsArray["SmallInfarct_lowres"] = ["heartInfarct/smallInfarct_lowres_metadata.json",
 				"heartInfarct/smallInfarct_view.json"];
-			modelURLsArray["NoInfarct"] = ["heartInfarct/noInfarct_metadata.json",
+			modelURLsArray["SmallInfarct_highres"] = ["heartInfarct/smallInfarct_highres_metadata.json",
+				"heartInfarct/smallInfarct_view.json"];
+
+			modelURLsArray["NoInfarct_lowres"] = ["heartInfarct/noInfarct_lowres_metadata.json",
 				"heartInfarct/noInfarct_view.json"];
+			modelURLsArray["NoInfarct_highres"] = ["heartInfarct/noInfarct_highres_metadata.json",
+				"heartInfarct/noInfarct_view.json"];
+
 			modelURLsArray["Healthy"] = ["heartInfarct/healthy_metadata.json",
 				"heartInfarct/noInfarct_view.json"];
 			modelURLsArray["NoFailure"] = ["heartInfarct/noInfarct_metadata.json",
 				"heartInfarct/noInfarct_view.json"];
-			modelURLsArray["CompensatedFailure"] = ["heartFailure/compensated_metadata.json", "heartFailure/compensated_view.json"];
-			modelURLsArray["DecompensatedFailure"] = ["heartFailure/decompensated_metadata.json", "heartFailure/decompensated_view.json"];
+
+			// Heart failure models
+			modelURLsArray["CompensatedFailure_lowres"] = ["heartFailure/compensated_lowres_metadata.json", "heartFailure/compensated_view.json"];
+			modelURLsArray["CompensatedFailure_highres"] = ["heartFailure/compensated_highres_metadata.json", "heartFailure/compensated_view.json"];
+
+			modelURLsArray["DecompensatedFailure_lowres"] = ["heartFailure/decompensated_lowres_metadata.json", "heartFailure/decompensated_view.json"];
+			modelURLsArray["DecompensatedFailure_highres"] = ["heartFailure/decompensated_highres_metadata.json", "heartFailure/decompensated_view.json"];
 
 			ECGTexts["Normal"] = "electrical pulses make the heart muscle contract";
 			LVPTexts["Normal"] = "muscle contraction generates pump pressure";
@@ -1577,8 +1600,16 @@
 		}
 
 		function loadModel(model_name, rateScaling) {
-			metaURL = modelURLsArray[model_name][0];
-			viewURL = modelURLsArray[model_name][1];
+            var model_prefix = '_highres';
+		    var onMobile = false;
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                onMobile = true;
+            }
+            if (onMobile) {
+                model_prefix = '_lowres';
+            }
+			metaURL = modelURLsArray[model_name+model_prefix][0];
+			viewURL = modelURLsArray[model_name+model_prefix][1];
 			var scene = zincRenderer.getSceneByName(model_name);
 			if (scene == undefined) {
 				scene = zincRenderer.createScene(model_name);
